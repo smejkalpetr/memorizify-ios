@@ -15,6 +15,11 @@
 		1D1BC5A02BA6487E00B30A77 /* MemorizifyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1BC59F2BA6487E00B30A77 /* MemorizifyUITests.swift */; };
 		1D1BC5A22BA6487E00B30A77 /* MemorizifyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1BC5A12BA6487E00B30A77 /* MemorizifyUITestsLaunchTests.swift */; };
 		1D1BC5B22BA64AC100B30A77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1BC5B12BA64AC100B30A77 /* AppDelegate.swift */; };
+		1DD8F5D02BA64F530099BEA0 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD8F5CF2BA64F530099BEA0 /* Tab.swift */; };
+		1DD8F5D22BA64F620099BEA0 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD8F5D12BA64F620099BEA0 /* Router.swift */; };
+		1DD8F5D42BA64FD20099BEA0 /* InAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD8F5D32BA64FD20099BEA0 /* InAppView.swift */; };
+		1DD8F5D62BA650630099BEA0 /* InAppRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD8F5D52BA650630099BEA0 /* InAppRoutes.swift */; };
+		1DD8F5D82BA650A40099BEA0 /* PushedScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD8F5D72BA650A40099BEA0 /* PushedScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +51,11 @@
 		1D1BC59F2BA6487E00B30A77 /* MemorizifyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizifyUITests.swift; sourceTree = "<group>"; };
 		1D1BC5A12BA6487E00B30A77 /* MemorizifyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizifyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1D1BC5B12BA64AC100B30A77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1DD8F5CF2BA64F530099BEA0 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		1DD8F5D12BA64F620099BEA0 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		1DD8F5D32BA64FD20099BEA0 /* InAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppView.swift; sourceTree = "<group>"; };
+		1DD8F5D52BA650630099BEA0 /* InAppRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppRoutes.swift; sourceTree = "<group>"; };
+		1DD8F5D72BA650A40099BEA0 /* PushedScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushedScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +142,7 @@
 			children = (
 				1D1BC5AF2BA64A9400B30A77 /* Assets */,
 				1D1BC58A2BA6487D00B30A77 /* Preview Content */,
+				1DD8F5CE2BA64F480099BEA0 /* Navigation */,
 				1D1BC5B02BA64AA400B30A77 /* DependencyInjection */,
 				1D1BC5842BA6487D00B30A77 /* MemorizifyApp.swift */,
 				1D1BC5B12BA64AC100B30A77 /* AppDelegate.swift */,
@@ -157,9 +168,29 @@
 		1D1BC5B32BA64B6000B30A77 /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				1DD8F5D92BA650A70099BEA0 /* TestNavigation */,
 				1D1BC5862BA6487D00B30A77 /* ContentView.swift */,
+				1DD8F5D32BA64FD20099BEA0 /* InAppView.swift */,
 			);
 			path = PresentationLayer;
+			sourceTree = "<group>";
+		};
+		1DD8F5CE2BA64F480099BEA0 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				1DD8F5CF2BA64F530099BEA0 /* Tab.swift */,
+				1DD8F5D12BA64F620099BEA0 /* Router.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		1DD8F5D92BA650A70099BEA0 /* TestNavigation */ = {
+			isa = PBXGroup;
+			children = (
+				1DD8F5D52BA650630099BEA0 /* InAppRoutes.swift */,
+				1DD8F5D72BA650A40099BEA0 /* PushedScreenView.swift */,
+			);
+			path = TestNavigation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,8 +327,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D1BC5B22BA64AC100B30A77 /* AppDelegate.swift in Sources */,
+				1DD8F5D42BA64FD20099BEA0 /* InAppView.swift in Sources */,
+				1DD8F5D62BA650630099BEA0 /* InAppRoutes.swift in Sources */,
 				1D1BC5872BA6487D00B30A77 /* ContentView.swift in Sources */,
+				1DD8F5D22BA64F620099BEA0 /* Router.swift in Sources */,
+				1DD8F5D82BA650A40099BEA0 /* PushedScreenView.swift in Sources */,
 				1D1BC5852BA6487D00B30A77 /* MemorizifyApp.swift in Sources */,
+				1DD8F5D02BA64F530099BEA0 /* Tab.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,7 +495,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202403162254;
+				CURRENT_PROJECT_VERSION = 202403162322;
 				DEVELOPMENT_ASSET_PATHS = "\"Memorizify/Application/Preview Content\"";
 				DEVELOPMENT_TEAM = 4C5MQDTY94;
 				ENABLE_PREVIEWS = YES;
@@ -473,7 +509,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.1;
+				MARKETING_VERSION = 0.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.smejkalp.Memorizify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -488,7 +524,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202403162254;
+				CURRENT_PROJECT_VERSION = 202403162322;
 				DEVELOPMENT_ASSET_PATHS = "\"Memorizify/Application/Preview Content\"";
 				DEVELOPMENT_TEAM = 4C5MQDTY94;
 				ENABLE_PREVIEWS = YES;
@@ -502,7 +538,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.1;
+				MARKETING_VERSION = 0.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.smejkalp.Memorizify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

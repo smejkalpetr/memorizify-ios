@@ -11,9 +11,18 @@ import SwiftUI
 struct MemorizifyApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
+    @StateObject var router = Router()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack(path: $router.path) {
+                if router.isLoggedIn {
+                    ContentView()
+                } else {
+                    InAppView()
+                        .environmentObject(router)
+                }
+            }
         }
     }
 }
