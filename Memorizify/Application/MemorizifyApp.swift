@@ -18,11 +18,13 @@ struct MemorizifyApp: App {
             NavigationStack(path: $router.path) {
                 if router.isLoggedIn {
                     ContentView()
+                        .environmentObject(router)
                 } else {
-                    InAppView()
+                    MainAuthenticationView()
                         .environmentObject(router)
                 }
             }
+            .onAppear { router.checkIsUserLoggedIn() }
         }
     }
 }
