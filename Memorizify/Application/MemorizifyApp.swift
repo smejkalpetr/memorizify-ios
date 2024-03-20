@@ -17,7 +17,7 @@ struct MemorizifyApp: App {
         WindowGroup {
             NavigationStack(path: $router.path) {
                 if router.isLoggedIn {
-                    ContentView()
+                    ContentView(model: SomeModel())
                         .environmentObject(router)
                 } else {
                     MainAuthenticationView()
