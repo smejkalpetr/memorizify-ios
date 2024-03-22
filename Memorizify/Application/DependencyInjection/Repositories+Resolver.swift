@@ -10,6 +10,8 @@ import Resolver
 public extension Resolver {
     static func registerRepositories() {
         
+        register { OnboardingRepositoryImpl(keychainProvider: resolve()) as OnboardingRepository }
+        
         register { AuthenticationRepositoryImpl() as AuthenticationRepository }
     }
 }

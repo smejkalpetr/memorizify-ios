@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D12AD2F2BAD635400257CB7 /* OnboardingCarouselFirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D12AD2E2BAD635400257CB7 /* OnboardingCarouselFirstView.swift */; };
+		1D12AD312BAD635C00257CB7 /* OnboardingCarouselSecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D12AD302BAD635C00257CB7 /* OnboardingCarouselSecondView.swift */; };
+		1D12AD332BAD636600257CB7 /* OnboardingCarouselThirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D12AD322BAD636600257CB7 /* OnboardingCarouselThirdView.swift */; };
+		1D12AD352BAD637000257CB7 /* MainOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D12AD342BAD637000257CB7 /* MainOnboardingView.swift */; };
+		1D1AD34C2BAD6674008827BA /* CheckHasUserSeenOnboardingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1AD34B2BAD6674008827BA /* CheckHasUserSeenOnboardingUseCase.swift */; };
+		1D1AD34E2BAD66BF008827BA /* OnboardingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1AD34D2BAD66BF008827BA /* OnboardingRepository.swift */; };
+		1D1AD3512BAD6708008827BA /* OnboardingRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1AD3502BAD6708008827BA /* OnboardingRepositoryImpl.swift */; };
+		1D1AD3532BAD67F2008827BA /* SaveHasUserSeenOnboardingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1AD3522BAD67F2008827BA /* SaveHasUserSeenOnboardingUseCase.swift */; };
 		1D1BC5852BA6487D00B30A77 /* MemorizifyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1BC5842BA6487D00B30A77 /* MemorizifyApp.swift */; };
 		1D1BC5872BA6487D00B30A77 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1BC5862BA6487D00B30A77 /* ContentView.swift */; };
 		1D1BC5892BA6487D00B30A77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D1BC5882BA6487D00B30A77 /* Assets.xcassets */; };
@@ -114,6 +122,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D12AD2E2BAD635400257CB7 /* OnboardingCarouselFirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCarouselFirstView.swift; sourceTree = "<group>"; };
+		1D12AD302BAD635C00257CB7 /* OnboardingCarouselSecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCarouselSecondView.swift; sourceTree = "<group>"; };
+		1D12AD322BAD636600257CB7 /* OnboardingCarouselThirdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCarouselThirdView.swift; sourceTree = "<group>"; };
+		1D12AD342BAD637000257CB7 /* MainOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainOnboardingView.swift; sourceTree = "<group>"; };
+		1D1AD34B2BAD6674008827BA /* CheckHasUserSeenOnboardingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckHasUserSeenOnboardingUseCase.swift; sourceTree = "<group>"; };
+		1D1AD34D2BAD66BF008827BA /* OnboardingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRepository.swift; sourceTree = "<group>"; };
+		1D1AD3502BAD6708008827BA /* OnboardingRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRepositoryImpl.swift; sourceTree = "<group>"; };
+		1D1AD3522BAD67F2008827BA /* SaveHasUserSeenOnboardingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveHasUserSeenOnboardingUseCase.swift; sourceTree = "<group>"; };
 		1D1BC5812BA6487D00B30A77 /* Memorizify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memorizify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D1BC5842BA6487D00B30A77 /* MemorizifyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizifyApp.swift; sourceTree = "<group>"; };
 		1D1BC5862BA6487D00B30A77 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -232,6 +248,67 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D12AD2C2BAD62FB00257CB7 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				1D1AD3492BAD6651008827BA /* UseCases */,
+				1D1AD34A2BAD6657008827BA /* Repositories */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		1D12AD2D2BAD631F00257CB7 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				1D12AD362BAD637600257CB7 /* Main */,
+				1D12AD372BAD637A00257CB7 /* Carousel */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		1D12AD362BAD637600257CB7 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				1D12AD342BAD637000257CB7 /* MainOnboardingView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		1D12AD372BAD637A00257CB7 /* Carousel */ = {
+			isa = PBXGroup;
+			children = (
+				1D12AD2E2BAD635400257CB7 /* OnboardingCarouselFirstView.swift */,
+				1D12AD302BAD635C00257CB7 /* OnboardingCarouselSecondView.swift */,
+				1D12AD322BAD636600257CB7 /* OnboardingCarouselThirdView.swift */,
+			);
+			path = Carousel;
+			sourceTree = "<group>";
+		};
+		1D1AD3492BAD6651008827BA /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				1D1AD34B2BAD6674008827BA /* CheckHasUserSeenOnboardingUseCase.swift */,
+				1D1AD3522BAD67F2008827BA /* SaveHasUserSeenOnboardingUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		1D1AD34A2BAD6657008827BA /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				1D1AD34D2BAD66BF008827BA /* OnboardingRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		1D1AD34F2BAD66F4008827BA /* OnboardingToolkit */ = {
+			isa = PBXGroup;
+			children = (
+				1D1AD3502BAD6708008827BA /* OnboardingRepositoryImpl.swift */,
+			);
+			path = OnboardingToolkit;
+			sourceTree = "<group>";
+		};
 		1D1BC5782BA6487C00B30A77 = {
 			isa = PBXGroup;
 			children = (
@@ -316,6 +393,7 @@
 		1D1BC5B32BA64B6000B30A77 /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				1D12AD2D2BAD631F00257CB7 /* Onboarding */,
 				1D3D328A2BA6FB340039DA08 /* Authentication */,
 				1DD8F5D92BA650A70099BEA0 /* TestNavigation */,
 				1D1BC5862BA6487D00B30A77 /* ContentView.swift */,
@@ -337,8 +415,9 @@
 		1D3D326A2BA6EFE40039DA08 /* DomainLayer */ = {
 			isa = PBXGroup;
 			children = (
-				1D544DF72BA76A00003C486F /* User */,
+				1D12AD2C2BAD62FB00257CB7 /* Onboarding */,
 				1D3D326B2BA6EFF00039DA08 /* Authentication */,
+				1D544DF72BA76A00003C486F /* User */,
 			);
 			path = DomainLayer;
 			sourceTree = "<group>";
@@ -670,6 +749,7 @@
 		1D8B38482BAB710C00204C3A /* Toolkits */ = {
 			isa = PBXGroup;
 			children = (
+				1D1AD34F2BAD66F4008827BA /* OnboardingToolkit */,
 				1D84AD282BAB71340048AC9C /* AuthenticationToolkit */,
 			);
 			path = Toolkits;
@@ -877,6 +957,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D88B1DF2BAA285F00B3D903 /* LogOutUseCase.swift in Sources */,
+				1D12AD312BAD635C00257CB7 /* OnboardingCarouselSecondView.swift in Sources */,
 				1D1BC5B22BA64AC100B30A77 /* AppDelegate.swift in Sources */,
 				1D3D32752BA6F3950039DA08 /* AuthenticationRepository.swift in Sources */,
 				1D3D32822BA6F8A40039DA08 /* SignUpViewModel.swift in Sources */,
@@ -886,12 +967,15 @@
 				1D84AD392BAB77D30048AC9C /* UserDefaultsError.swift in Sources */,
 				1D84AD432BAB82A10048AC9C /* KeychainProvider.swift in Sources */,
 				1D5E9CC02BA9F8A900EF6400 /* PrimaryTextFieldStyle.swift in Sources */,
+				1D12AD352BAD637000257CB7 /* MainOnboardingView.swift in Sources */,
 				1D3D32892BA6FA100039DA08 /* MainAuthenticationView.swift in Sources */,
 				1D88B1D52BAA134500B3D903 /* LogInUseCase.swift in Sources */,
+				1D12AD332BAD636600257CB7 /* OnboardingCarouselThirdView.swift in Sources */,
 				1D84AD372BAB758A0048AC9C /* Providers+Resolver.swift in Sources */,
 				1DD8F5D42BA64FD20099BEA0 /* InAppView.swift in Sources */,
 				1D84AD452BAB82AA0048AC9C /* BasicKeychainProvider.swift in Sources */,
 				1D84AD472BAB82B20048AC9C /* KeychainKey.swift in Sources */,
+				1D1AD34C2BAD6674008827BA /* CheckHasUserSeenOnboardingUseCase.swift in Sources */,
 				1D5E9CBB2BA9E15900EF6400 /* ValidateRepeatedPassword.swift in Sources */,
 				1D544E032BA76ABD003C486F /* ValidationError.swift in Sources */,
 				1D84AD292BAB71340048AC9C /* AuthenticationRepositoryImpl.swift in Sources */,
@@ -907,11 +991,13 @@
 				1D84AD2D2BAB71640048AC9C /* UserDefaultsProvider.swift in Sources */,
 				1D5E9CBD2BA9F00200EF6400 /* SecondaryButtonStyle.swift in Sources */,
 				1D544DFA2BA76A31003C486F /* FirebaseUserError.swift in Sources */,
+				1D1AD34E2BAD66BF008827BA /* OnboardingRepository.swift in Sources */,
 				1D5E9CC22BA9FC3F00EF6400 /* SignUpCompletedView.swift in Sources */,
 				1D88B1E62BAA488B00B3D903 /* ResetPasswordViewModel.swift in Sources */,
 				1D5E9CB52BA9E06400EF6400 /* ValidateNameUseCase.swift in Sources */,
 				1D88B1D72BAA136400B3D903 /* LogInData.swift in Sources */,
 				1D88B1EA2BAA4DEE00B3D903 /* ResetPasswordUseCase.swift in Sources */,
+				1D1AD3532BAD67F2008827BA /* SaveHasUserSeenOnboardingUseCase.swift in Sources */,
 				1D5E9CB92BA9E10C00EF6400 /* ValidatePasswordUseCase.swift in Sources */,
 				1D3D327B2BA6F54D0039DA08 /* Repositories+Resolver.swift in Sources */,
 				1D84AD2F2BAB71A20048AC9C /* UserDefaultsKey.swift in Sources */,
@@ -922,10 +1008,12 @@
 				1D3D32712BA6F1690039DA08 /* SignUpUseCase.swift in Sources */,
 				1D88B1E82BAA489700B3D903 /* ResetPasswordCompletedView.swift in Sources */,
 				1D3D32732BA6F2220039DA08 /* SignUpData.swift in Sources */,
+				1D12AD2F2BAD635400257CB7 /* OnboardingCarouselFirstView.swift in Sources */,
 				1D3D327F2BA6F7640039DA08 /* UseCases+Resolver.swift in Sources */,
 				1D5E9CB72BA9E0D800EF6400 /* ValidateEmailUseCase.swift in Sources */,
 				1D88B1D12BAA090F00B3D903 /* LogInView.swift in Sources */,
 				1D84AD492BAB82BE0048AC9C /* KeychainError.swift in Sources */,
+				1D1AD3512BAD6708008827BA /* OnboardingRepositoryImpl.swift in Sources */,
 				1D544DFD2BA76A79003C486F /* FirebaseUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1090,7 +1178,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Memorizify/Application/Entitlements/Memorizify.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202403202304;
+				CURRENT_PROJECT_VERSION = 202403220930;
 				DEVELOPMENT_ASSET_PATHS = "\"Memorizify/Application/Preview Content\"";
 				DEVELOPMENT_TEAM = 4C5MQDTY94;
 				ENABLE_PREVIEWS = YES;
@@ -1104,7 +1192,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.7;
+				MARKETING_VERSION = 0.0.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.smejkalp.memorizify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1120,7 +1208,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Memorizify/Application/Entitlements/Memorizify.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202403202304;
+				CURRENT_PROJECT_VERSION = 202403220930;
 				DEVELOPMENT_ASSET_PATHS = "\"Memorizify/Application/Preview Content\"";
 				DEVELOPMENT_TEAM = 4C5MQDTY94;
 				ENABLE_PREVIEWS = YES;
@@ -1134,7 +1222,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.7;
+				MARKETING_VERSION = 0.0.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.smejkalp.memorizify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

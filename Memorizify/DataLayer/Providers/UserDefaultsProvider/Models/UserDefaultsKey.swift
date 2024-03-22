@@ -8,7 +8,7 @@
 import Foundation
 
 enum UserDefaultsKey: String, CaseIterable {
-    case testKey
+    case hasEverRunBefore
     
     
     // Don't remove those cases; they are used in XCTests

@@ -20,11 +20,17 @@ struct MemorizifyApp: App {
                     ContentView(model: SomeModel())
                         .environmentObject(router)
                 } else {
-                    MainAuthenticationView()
-                        .environmentObject(router)
+                    if router.hasSeenOnboarding {
+                        MainAuthenticationView()
+                            .environmentObject(router)
+                    } else {
+                        MainOnboardingView()
+                            .environmentObject(router)
+                    }
+
                 }
             }
-            .onAppear { router.checkIsUserLoggedIn() }
+            .onAppear { router.initialize() }
         }
     }
 }

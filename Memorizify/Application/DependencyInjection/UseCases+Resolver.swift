@@ -10,6 +10,11 @@ import Resolver
 public extension Resolver {
     static func registerUseCases() {
         
+        // Onboarding
+        register { SaveHasUserSeenOnboardingUseCaseImpl(onboardingRepository: resolve()) as SaveHasUserSeenOnboardingUseCase }
+        
+        register { CheckHasUserSeenOnboardingUseCaseImpl(onboardingRepository: resolve()) as CheckHasUserSeenOnboardingUseCase }
+        
         // Authentication
         register { ValidateNameUseCaseImpl() as ValidateNameUseCase }
         

@@ -19,6 +19,9 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         Resolver.registerRepositories()
         Resolver.registerUseCases()
         
+        // Clear Keychain
+        clearKeychain()
+        
         // Configure Firebase
         configureFirebase()
         
@@ -35,5 +38,22 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         guard let options else { fatalError("Couldn't find Firebase configuration!") }
         
         FirebaseApp.configure(options: options)
+    }
+    
+    private func clearKeychain() {
+        let keychainProvider: KeychainProvider = Resolver.resolve()
+        let userDefaultsProvider: UserDefaultsProvider = Resolver.resolve()
+        
+        do {
+            print("running clear")
+            let _ = try userDefaultsProvider.read(.hasEverRunBefore)
+            print("finshed clear")
+        } catch UserDefaultsError.valueForKeyNotFound {
+            do {
+                print("clearing keychain...")
+                try keychainProvider.removeAll(except: [.hasUserSeenOnboarding])
+                try userDefaultsProvider.add(.hasEverRunBefore, value: "true")
+            } catch {print("caught1")}
+        } catch {print("caught2")}
     }
 }

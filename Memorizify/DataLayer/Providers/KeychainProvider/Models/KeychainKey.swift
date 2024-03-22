@@ -6,7 +6,7 @@
 //
 
 enum KeychainKey: String, CaseIterable {
-    case testKey
+    case hasUserSeenOnboarding
     
     
     // Don't remove those cases; they are used in XCTests

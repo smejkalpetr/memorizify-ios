@@ -45,7 +45,7 @@ final class SomeModel: ObservableObject {
     
     func keychainAdd() {
         do {
-            try keychainProvider.add(.testKey, value: "some value here")
+//            try keychainProvider.add(.testKey, value: "some value here")
         } catch {
             print("error: \(error)")
         }
@@ -53,7 +53,7 @@ final class SomeModel: ObservableObject {
     
     func keychainRemove() {
         do {
-            try keychainProvider.remove(.testKey)
+//            try keychainProvider.remove(.testKey)
         } catch {
             print("error: \(error)")
         }
@@ -61,7 +61,7 @@ final class SomeModel: ObservableObject {
     
     func keychainRead() {
         do {
-            value = try keychainProvider.read(.testKey)
+//            value = try keychainProvider.read(.testKey)
         } catch {
             print("error: \(error)")
         }

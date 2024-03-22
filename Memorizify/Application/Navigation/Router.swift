@@ -9,12 +9,21 @@ import SwiftUI
 import Resolver
 
 final class Router: ObservableObject {
-    @Published var path = NavigationPath()
     @Published private(set) var isLoggedIn = false
+    @Published private(set) var hasSeenOnboarding = false
+    
+    @Published var path = NavigationPath()
     @Published var tab: Tab = .home
     
     @Injected private var logOutUseCase: LogOutUseCase
     @Injected private var isUserLoggedInUseCase: IsUserLoggedInUseCase
+    @Injected private var checkHasUserSeenOnboardingUseCase: CheckHasUserSeenOnboardingUseCase
+    @Injected private var saveHasUserSeenOnboardingUseCase: SaveHasUserSeenOnboardingUseCase
+    
+    func initialize() {
+        checkIsUserLoggedIn()
+        checkHasUserSeenOnboarding()
+    }
     
     func clearPath() {
         path = NavigationPath()
@@ -31,7 +40,16 @@ final class Router: ObservableObject {
         checkIsUserLoggedIn()
     }
     
+    func saveHasUserSeenOnboarding() {
+        try? saveHasUserSeenOnboardingUseCase.execute()
+        checkHasUserSeenOnboarding()
+    }
+    
     func checkIsUserLoggedIn() {
         isLoggedIn = isUserLoggedInUseCase.execute()
+    }
+    
+    func checkHasUserSeenOnboarding() {
+        hasSeenOnboarding = checkHasUserSeenOnboardingUseCase.execute()
     }
 }
