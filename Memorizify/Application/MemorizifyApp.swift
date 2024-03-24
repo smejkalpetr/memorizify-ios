@@ -15,20 +15,22 @@ struct MemorizifyApp: App {
 
     var body: some Scene {
         WindowGroup {
-            NavigationStack(path: $router.path) {
+            VStack {
+                //            NavigationStack(path: $router.path) {
                 if router.isLoggedIn {
-                    ContentView(model: SomeModel())
+                    RootView()
                         .environmentObject(router)
                 } else {
                     if router.hasSeenOnboarding {
-                        MainAuthenticationView()
+                        RootAuthenticationView()
                             .environmentObject(router)
                     } else {
-                        MainOnboardingView()
+                        RootOnboardingView()
                             .environmentObject(router)
                     }
-
+                    
                 }
+                //            }
             }
             .onAppear { router.initialize() }
         }

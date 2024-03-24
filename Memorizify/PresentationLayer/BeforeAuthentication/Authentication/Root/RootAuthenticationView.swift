@@ -1,5 +1,5 @@
 //
-//  MainAuthenticationView.swift
+//  RootAuthenticationView.swift
 //  Memorizify
 //
 //  Created by Petr Šmejkal on 17.03.2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MainAuthenticationView: View {
+struct RootAuthenticationView: View {
     
     @EnvironmentObject var router: Router
     
@@ -65,5 +65,5 @@ struct MainAuthenticationView: View {
 }
 
 #Preview {
-    MainAuthenticationView()
+    RootAuthenticationView()
 }
