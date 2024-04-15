@@ -12,7 +12,7 @@ struct BoardView: View {
     @EnvironmentObject var router: Router
     
     var body: some View {
-        NavigationStack(path: $router.path) {
+        NavigationStack(path: $router.boardPath) {
             VStack {
                 Text("Board View")
             }
@@ -22,7 +22,8 @@ struct BoardView: View {
                     EmptyView()
                 }
             }
-            
+            .navigationTitle(router.tab.rawValue)
+            .navigationBarTitleDisplayMode(.large)
         }
     }
 }

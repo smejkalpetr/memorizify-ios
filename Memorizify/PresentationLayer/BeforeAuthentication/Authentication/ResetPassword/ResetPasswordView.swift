@@ -53,7 +53,7 @@ struct ResetPasswordView: View {
     var resetPasswordButton: some View {
         VStack {
             Button("Reset password") {
-                viewModel.resetPassword() { router.path.append(AuthenticationRoute.resetPasswordCompleted) }
+                viewModel.resetPassword() { router.authenticationPath.append(AuthenticationRoute.resetPasswordCompleted) }
             }
             .buttonStyle(PrimaryButtonStyle(isLoading: viewModel.state.isResetPasswordButtonLoading))
             .opacity(viewModel.state.canResetPassword ? 1.0 : 0.3)

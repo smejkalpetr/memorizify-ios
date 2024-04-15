@@ -9,20 +9,23 @@ import Firebase
 
 struct AuthenticationRepositoryImpl: AuthenticationRepository {
     
+    func getUser() -> FirebaseUser? {
+        return Auth.auth().currentUser
+    }
+    
     func signUp(data: SignUpData) async throws -> FirebaseUser {
         // Create a new user in Authentication
         let authResult = try await Auth.auth().createUser(withEmail: data.email, password: data.password)
         
         // Store user data in Firestore
         let db = Firestore.firestore()
-        try await db.collection("users")
+        
+        // Encode User model as [String: Any]
+        let userDict = try Firestore.Encoder().encode(User(name: data.name, email: data.email, score: 0))
+        
+        try await db.collection(Constants.FIREBASE_COLLECTION_USERS)
             .document(authResult.user.uid)
-            .setData(
-                [
-                    "name": data.name,
-                    "email": data.email
-                ]
-            )
+            .setData(userDict)
         
         return authResult.user
     }

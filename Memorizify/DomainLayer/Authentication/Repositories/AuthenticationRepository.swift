@@ -8,6 +8,7 @@
 import Firebase
 
 protocol AuthenticationRepository {
+    func getUser() -> FirebaseUser?
     func signUp(data: SignUpData) async throws -> FirebaseUser
     func signOut() throws
     func sendEmailVerification() async throws

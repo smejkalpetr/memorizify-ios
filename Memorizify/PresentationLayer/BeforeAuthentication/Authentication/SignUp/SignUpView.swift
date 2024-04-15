@@ -74,7 +74,7 @@ struct SignUpView: View {
             Text(viewModel.state.signUpError)
                 .foregroundStyle(.red)
             Button("Sign Up") {
-                viewModel.signUp() { router.path.append(AuthenticationRoute.signUpCompleted) }
+                viewModel.signUp() { router.authenticationPath.append(AuthenticationRoute.signUpCompleted) }
             }
             .buttonStyle(PrimaryButtonStyle(isLoading: viewModel.state.isSignUpButtonLoading))
             .opacity(viewModel.state.canSignUp ? 1.0 : 0.3)

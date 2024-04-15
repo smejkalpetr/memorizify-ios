@@ -22,6 +22,9 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         // Clear Keychain
         clearKeychain()
         
+        // Notification authorization
+        authorizeLocalNotifications()
+        
         // Configure Firebase
         configureFirebase()
         
@@ -45,15 +48,17 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         let userDefaultsProvider: UserDefaultsProvider = Resolver.resolve()
         
         do {
-            print("running clear")
             let _ = try userDefaultsProvider.read(.hasEverRunBefore)
-            print("finshed clear")
         } catch UserDefaultsError.valueForKeyNotFound {
             do {
-                print("clearing keychain...")
                 try keychainProvider.removeAll(except: [.hasUserSeenOnboarding])
                 try userDefaultsProvider.add(.hasEverRunBefore, value: "true")
-            } catch {print("caught1")}
-        } catch {print("caught2")}
+            } catch {}
+        } catch {}
+    }
+    
+    private func authorizeLocalNotifications() {
+        @Injected var checkLocalNotificationAuthorizationUseCase: CheckLocalNotificationAuthorizationUseCase
+        checkLocalNotificationAuthorizationUseCase.execute()
     }
 }

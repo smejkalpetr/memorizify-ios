@@ -11,24 +11,32 @@ struct RootView: View {
     
     @EnvironmentObject var router: Router
     
+    @StateObject var homeViewModel = HomeViewModel()
+    @StateObject var storylinesViewModel = StorylinesViewModel()
+//    @StateObject var boardViewModel = BoardViewModel()
+    @StateObject var settingsViewModel = SettingsViewModel()
+    
     var body: some View {
-        TabView {
-            HomeView()
+        TabView(selection: $router.tab) {
+            
+            HomeView(viewModel: homeViewModel)
                 .tabItem {
                     VStack {
                         Image(systemName: "house")
                         Text("Home")
                     }
                 }
+                .tag(Tab.home)
                 .environmentObject(router)
             
-            StorylinesView()
+            StorylinesView(viewModel: storylinesViewModel)
                 .tabItem {
                     VStack {
                         Image(systemName: "scroll.fill")
                         Text("Storylines")
                     }
                 }
+                .tag(Tab.storylines)
                 .environmentObject(router)
             
             BoardView()
@@ -38,19 +46,19 @@ struct RootView: View {
                         Text("Board")
                     }
                 }
+                .tag(Tab.board)
                 .environmentObject(router)
             
-            SettingsView()
+            SettingsView(viewModel: settingsViewModel)
                 .tabItem {
                     VStack {
                         Image(systemName: "gear")
                         Text("Settings")
                     }
                 }
+                .tag(Tab.settings)
                 .environmentObject(router)
         }
-        .navigationTitle("Storylines")
-        .navigationBarTitleDisplayMode(.large)
     }
 }
 

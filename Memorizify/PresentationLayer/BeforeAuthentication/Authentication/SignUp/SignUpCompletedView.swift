@@ -23,7 +23,7 @@ struct SignUpCompletedView: View {
             }
             .padding()
             Button("Back") {
-                router.clearPath()
+                router.clearAllPaths()
             }
             .buttonStyle(PrimaryButtonStyle())
             .padding()

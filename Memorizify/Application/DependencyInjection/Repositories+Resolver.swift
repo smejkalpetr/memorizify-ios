@@ -13,5 +13,9 @@ public extension Resolver {
         register { OnboardingRepositoryImpl(keychainProvider: resolve()) as OnboardingRepository }
         
         register { AuthenticationRepositoryImpl() as AuthenticationRepository }
+        
+        register { UserRepositoryImpl(authenticationRepository: resolve()) as UserRepository }
+        
+        register { StorylinesRepositoryImpl(authenticationRepository: resolve()) as StorylinesRepository }
     }
 }

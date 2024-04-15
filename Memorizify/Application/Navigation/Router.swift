@@ -12,7 +12,12 @@ final class Router: ObservableObject {
     @Published private(set) var isLoggedIn = false
     @Published private(set) var hasSeenOnboarding = false
     
-    @Published var path = NavigationPath()
+    @Published var authenticationPath = NavigationPath()
+    @Published var homePath = NavigationPath()
+    @Published var storylinesPath = NavigationPath()
+    @Published var boardPath = NavigationPath()
+    @Published var settingsPath = NavigationPath()
+    
     @Published var tab: Tab = .home
     
     @Injected private var logOutUseCase: LogOutUseCase
@@ -25,17 +30,21 @@ final class Router: ObservableObject {
         checkHasUserSeenOnboarding()
     }
     
-    func clearPath() {
-        path = NavigationPath()
+    func clearAllPaths() {
+        authenticationPath = NavigationPath()
+        homePath = NavigationPath()
+        storylinesPath = NavigationPath()
+        boardPath = NavigationPath()
+        settingsPath = NavigationPath()
     }
     
     func logIn() {
-        clearPath()
+        clearAllPaths()
         checkIsUserLoggedIn()
     }
     
     func logOut() {
-        clearPath()
+        clearAllPaths()
         try? logOutUseCase.execute()
         checkIsUserLoggedIn()
     }

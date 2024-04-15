@@ -15,4 +15,3 @@ public extension Resolver {
         register { BasicKeychainProvider() as KeychainProvider }
     }
 }
-

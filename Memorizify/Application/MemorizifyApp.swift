@@ -16,7 +16,6 @@ struct MemorizifyApp: App {
     var body: some Scene {
         WindowGroup {
             VStack {
-                //            NavigationStack(path: $router.path) {
                 if router.isLoggedIn {
                     RootView()
                         .environmentObject(router)
@@ -30,7 +29,6 @@ struct MemorizifyApp: App {
                     }
                     
                 }
-                //            }
             }
             .onAppear { router.initialize() }
         }

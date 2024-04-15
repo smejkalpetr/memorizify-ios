@@ -18,7 +18,7 @@ struct ResetPasswordCompletedView: View {
                 .bold()
                 .padding()
             Button("Back") {
-                router.clearPath()
+                router.clearAllPaths()
             }
             .buttonStyle(PrimaryButtonStyle())
             .padding()

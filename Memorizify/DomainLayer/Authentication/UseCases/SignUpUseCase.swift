@@ -24,6 +24,7 @@ struct SignUpUseCaseImpl: SignUpUseCase {
     }
     
     func execute(data: SignUpData) async throws {
+        try await authenticationRepository.signUp(data: data)
         try await sendEmailVerificationUseCase.execute()
     }
 }

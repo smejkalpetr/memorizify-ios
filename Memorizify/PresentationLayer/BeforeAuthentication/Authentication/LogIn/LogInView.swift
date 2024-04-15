@@ -57,7 +57,7 @@ struct LogInView: View {
         HStack {
             Text("Forgot password?")
             Button("Reset it now!") {
-                router.path.append(AuthenticationRoute.resetPassword)
+                router.authenticationPath.append(AuthenticationRoute.resetPassword)
             }
         }
     }
