@@ -21,6 +21,13 @@
 		1D0821762BCC6E1800F1F8F3 /* GetCurrentUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0821752BCC6E1800F1F8F3 /* GetCurrentUserUseCase.swift */; };
 		1D0821792BCC6E9200F1F8F3 /* UserRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0821782BCC6E9200F1F8F3 /* UserRepositoryImpl.swift */; };
 		1D0AA5502BC71F75003016EF /* DeleteStorylineUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0AA54F2BC71F75003016EF /* DeleteStorylineUseCase.swift */; };
+		1D0F824B2BD153BF00FAD74C /* DeleteAllInvitationsForGuildUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0F824A2BD153BF00FAD74C /* DeleteAllInvitationsForGuildUseCase.swift */; };
+		1D0F824E2BD154D300FAD74C /* RemoveGuildForCurrentUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0F824D2BD154D300FAD74C /* RemoveGuildForCurrentUserUseCase.swift */; };
+		1D0F82502BD15F4700FAD74C /* PomodorTimerKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0F824F2BD15F4700FAD74C /* PomodorTimerKind.swift */; };
+		1D0F82522BD1664C00FAD74C /* IncreaseMemberScoreUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0F82512BD1664C00FAD74C /* IncreaseMemberScoreUseCase.swift */; };
+		1D0F82552BD18DD000FAD74C /* GuildDetailUpdateGuildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0F82542BD18DD000FAD74C /* GuildDetailUpdateGuildView.swift */; };
+		1D0F82572BD18DD800FAD74C /* GuildDetailUpdateGuildViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0F82562BD18DD800FAD74C /* GuildDetailUpdateGuildViewModel.swift */; };
+		1D0F82592BD1904A00FAD74C /* UpdateGuildUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0F82582BD1904A00FAD74C /* UpdateGuildUseCase.swift */; };
 		1D12AD2F2BAD635400257CB7 /* OnboardingCarouselFirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D12AD2E2BAD635400257CB7 /* OnboardingCarouselFirstView.swift */; };
 		1D12AD312BAD635C00257CB7 /* OnboardingCarouselSecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D12AD302BAD635C00257CB7 /* OnboardingCarouselSecondView.swift */; };
 		1D12AD332BAD636600257CB7 /* OnboardingCarouselThirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D12AD322BAD636600257CB7 /* OnboardingCarouselThirdView.swift */; };
@@ -30,7 +37,6 @@
 		1D1AD3512BAD6708008827BA /* OnboardingRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1AD3502BAD6708008827BA /* OnboardingRepositoryImpl.swift */; };
 		1D1AD3532BAD67F2008827BA /* SaveHasUserSeenOnboardingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1AD3522BAD67F2008827BA /* SaveHasUserSeenOnboardingUseCase.swift */; };
 		1D1AD35A2BAD8135008827BA /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1AD3592BAD8135008827BA /* RootView.swift */; };
-		1D1AD3612BAD820E008827BA /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1AD3602BAD820E008827BA /* BoardView.swift */; };
 		1D1AD3632BAD8220008827BA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1AD3622BAD8220008827BA /* SettingsView.swift */; };
 		1D1AD3662BAD8374008827BA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1AD3652BAD8374008827BA /* HomeView.swift */; };
 		1D1AD3682BAD837E008827BA /* StorylinesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1AD3672BAD837E008827BA /* StorylinesView.swift */; };
@@ -74,6 +80,31 @@
 		1D5E9CBD2BA9F00200EF6400 /* SecondaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5E9CBC2BA9F00200EF6400 /* SecondaryButtonStyle.swift */; };
 		1D5E9CC02BA9F8A900EF6400 /* PrimaryTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5E9CBF2BA9F8A900EF6400 /* PrimaryTextFieldStyle.swift */; };
 		1D5E9CC22BA9FC3F00EF6400 /* SignUpCompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5E9CC12BA9FC3F00EF6400 /* SignUpCompletedView.swift */; };
+		1D7B7A0C2BCE7DB500A18E12 /* GlobalBoardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B7A042BCE7DB500A18E12 /* GlobalBoardDetailView.swift */; };
+		1D7B7A0D2BCE7DB500A18E12 /* GlobalBoardDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B7A052BCE7DB500A18E12 /* GlobalBoardDetailViewModel.swift */; };
+		1D7B7A0E2BCE7DB500A18E12 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B7A072BCE7DB500A18E12 /* BoardView.swift */; };
+		1D7B7A0F2BCE7DB500A18E12 /* BoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B7A082BCE7DB500A18E12 /* BoardViewModel.swift */; };
+		1D7B7A102BCE7DB500A18E12 /* BoardRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B7A0A2BCE7DB500A18E12 /* BoardRoute.swift */; };
+		1D7B7A162BCE7F9400A18E12 /* SendGuildInvitationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B7A152BCE7F9400A18E12 /* SendGuildInvitationUseCase.swift */; };
+		1D7B7A182BCE7FCE00A18E12 /* Guild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B7A172BCE7FCE00A18E12 /* Guild.swift */; };
+		1D7B7A1F2BCE825600A18E12 /* GuildsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B7A1E2BCE825600A18E12 /* GuildsRepository.swift */; };
+		1D7B7A212BCE830200A18E12 /* CreateGuildUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B7A202BCE830200A18E12 /* CreateGuildUseCase.swift */; };
+		1D7B7A242BCE841900A18E12 /* GuildsRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B7A232BCE841900A18E12 /* GuildsRepositoryImpl.swift */; };
+		1D7B7A282BCE850900A18E12 /* GuildsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B7A272BCE850900A18E12 /* GuildsView.swift */; };
+		1D7B7A2A2BCE851300A18E12 /* GuildsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B7A292BCE851300A18E12 /* GuildsViewModel.swift */; };
+		1D7B7A2D2BCE891300A18E12 /* GuildDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B7A2C2BCE891300A18E12 /* GuildDetailView.swift */; };
+		1D7B7A2F2BCE891E00A18E12 /* GuildDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B7A2E2BCE891E00A18E12 /* GuildDetailViewModel.swift */; };
+		1D7B7A312BCEAA3900A18E12 /* GuildPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B7A302BCEAA3900A18E12 /* GuildPreview.swift */; };
+		1D7B7A342BCEAD3E00A18E12 /* InvitationsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B7A332BCEAD3E00A18E12 /* InvitationsError.swift */; };
+		1D7B7A372BCEB1A600A18E12 /* GuildSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B7A362BCEB1A600A18E12 /* GuildSetupView.swift */; };
+		1D7B7A392BCEB1AF00A18E12 /* GuildSetupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B7A382BCEB1AF00A18E12 /* GuildSetupViewModel.swift */; };
+		1D7B7A3C2BCEC4A100A18E12 /* Invitation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B7A3B2BCEC4A100A18E12 /* Invitation.swift */; };
+		1D7B7A3E2BCEC9A300A18E12 /* LoadMyGuildsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B7A3D2BCEC9A300A18E12 /* LoadMyGuildsUseCase.swift */; };
+		1D7B7A402BCEC9B700A18E12 /* LoadMyInvitationsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B7A3F2BCEC9B700A18E12 /* LoadMyInvitationsUseCase.swift */; };
+		1D7B7A422BCED11E00A18E12 /* DeleteGuildUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B7A412BCED11E00A18E12 /* DeleteGuildUseCase.swift */; };
+		1D7B7A442BCED15A00A18E12 /* RemoveGuildMemberUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B7A432BCED15A00A18E12 /* RemoveGuildMemberUseCase.swift */; };
+		1D7B7A462BCED5EE00A18E12 /* AcceptGuildInvitationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B7A452BCED5EE00A18E12 /* AcceptGuildInvitationUseCase.swift */; };
+		1D7B7A482BCED69400A18E12 /* DeclineGuildInvitationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B7A472BCED69400A18E12 /* DeclineGuildInvitationUseCase.swift */; };
 		1D7DA8CE2BC682AB0092E18C /* SaveStorylineUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7DA8CD2BC682AB0092E18C /* SaveStorylineUseCase.swift */; };
 		1D7DA8D02BC682CE0092E18C /* LoadAllStorylinesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7DA8CF2BC682CE0092E18C /* LoadAllStorylinesUseCase.swift */; };
 		1D7DA8D32BC6834B0092E18C /* StorylinesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7DA8D22BC6834B0092E18C /* StorylinesRepository.swift */; };
@@ -108,12 +139,23 @@
 		1D88B1E62BAA488B00B3D903 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D88B1E52BAA488B00B3D903 /* ResetPasswordViewModel.swift */; };
 		1D88B1E82BAA489700B3D903 /* ResetPasswordCompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D88B1E72BAA489700B3D903 /* ResetPasswordCompletedView.swift */; };
 		1D88B1EA2BAA4DEE00B3D903 /* ResetPasswordUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D88B1E92BAA4DEE00B3D903 /* ResetPasswordUseCase.swift */; };
+		1D9CC5FE2BCF19ED00D279BB /* GuildDetailAddFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9CC5FD2BCF19ED00D279BB /* GuildDetailAddFriendView.swift */; };
+		1D9CC6002BCF19F400D279BB /* GuildDetailAddFriendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9CC5FF2BCF19F400D279BB /* GuildDetailAddFriendViewModel.swift */; };
+		1D9CC6022BCFBFDB00D279BB /* UserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9CC6012BCFBFDB00D279BB /* UserError.swift */; };
+		1D9CC6042BCFD40F00D279BB /* LoadGuildUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9CC6032BCFD40F00D279BB /* LoadGuildUseCase.swift */; };
+		1D9CC6092BCFDBB000D279BB /* MembersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9CC6082BCFDBB000D279BB /* MembersRepository.swift */; };
+		1D9CC60C2BCFDBD300D279BB /* MembersRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9CC60B2BCFDBD300D279BB /* MembersRepositoryImpl.swift */; };
 		1DA1DD1E2BCD7A9200185C76 /* IncreaseUserScoreUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1DD1D2BCD7A9200185C76 /* IncreaseUserScoreUseCase.swift */; };
 		1DA1DD212BCD891400185C76 /* Notification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1DD202BCD891400185C76 /* Notification+Extension.swift */; };
+		1DA1DD272BCD988E00185C76 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1DD262BCD988E00185C76 /* Board.swift */; };
+		1DA1DD292BCD989E00185C76 /* BoardRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1DD282BCD989E00185C76 /* BoardRecord.swift */; };
+		1DA1DD2D2BCD9B8E00185C76 /* BoardsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1DD2C2BCD9B8E00185C76 /* BoardsRepository.swift */; };
+		1DA1DD302BCD9BD800185C76 /* BoardRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1DD2F2BCD9BD800185C76 /* BoardRepositoryImpl.swift */; };
+		1DA1DD322BCD9C0600185C76 /* LoadGlobalBoardUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1DD312BCD9C0600185C76 /* LoadGlobalBoardUseCase.swift */; };
+		1DA1DD342BCDA07600185C76 /* ValidateNicknameUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1DD332BCDA07600185C76 /* ValidateNicknameUseCase.swift */; };
 		1DC1E47C2BB0696E00D19181 /* StorylinesRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC1E47B2BB0696E00D19181 /* StorylinesRoute.swift */; };
 		1DC1E4812BB08EC000D19181 /* HomeRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC1E4802BB08EC000D19181 /* HomeRoute.swift */; };
 		1DC1E4832BB08EE900D19181 /* SettingsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC1E4822BB08EE900D19181 /* SettingsRoute.swift */; };
-		1DC1E4872BB08F1300D19181 /* BoardRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC1E4862BB08F1300D19181 /* BoardRoute.swift */; };
 		1DD7EB172BB09B81005CE24D /* RequestLocalNotificationAuthorizationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD7EB162BB09B81005CE24D /* RequestLocalNotificationAuthorizationUseCase.swift */; };
 		1DD7EB192BB09BAE005CE24D /* ScheduleLocalNotificationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD7EB182BB09BAE005CE24D /* ScheduleLocalNotificationUseCase.swift */; };
 		1DD7EB1B2BB09BBD005CE24D /* LocalNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD7EB1A2BB09BBD005CE24D /* LocalNotification.swift */; };
@@ -149,6 +191,10 @@
 		1DD8F6122BA657A10099BEA0 /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1DD8F6112BA657A10099BEA0 /* FirebaseRemoteConfigSwift */; };
 		1DD8F6142BA657A10099BEA0 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 1DD8F6132BA657A10099BEA0 /* FirebaseStorage */; };
 		1DD8F6162BA657A10099BEA0 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 1DD8F6152BA657A10099BEA0 /* FirebaseStorageCombine-Community */; };
+		1DF42B3F2BCEE17B0094C263 /* InvitationsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF42B3E2BCEE17B0094C263 /* InvitationsRepository.swift */; };
+		1DF42B422BCEE21D0094C263 /* InvitationsRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF42B412BCEE21D0094C263 /* InvitationsRepositoryImpl.swift */; };
+		1DF42B442BCEE41E0094C263 /* GuildsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF42B432BCEE41E0094C263 /* GuildsRoute.swift */; };
+		1DF42B482BCEF8620094C263 /* GuildsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF42B472BCEF8620094C263 /* GuildsError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -183,6 +229,13 @@
 		1D0821752BCC6E1800F1F8F3 /* GetCurrentUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentUserUseCase.swift; sourceTree = "<group>"; };
 		1D0821782BCC6E9200F1F8F3 /* UserRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryImpl.swift; sourceTree = "<group>"; };
 		1D0AA54F2BC71F75003016EF /* DeleteStorylineUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteStorylineUseCase.swift; sourceTree = "<group>"; };
+		1D0F824A2BD153BF00FAD74C /* DeleteAllInvitationsForGuildUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAllInvitationsForGuildUseCase.swift; sourceTree = "<group>"; };
+		1D0F824D2BD154D300FAD74C /* RemoveGuildForCurrentUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveGuildForCurrentUserUseCase.swift; sourceTree = "<group>"; };
+		1D0F824F2BD15F4700FAD74C /* PomodorTimerKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodorTimerKind.swift; sourceTree = "<group>"; };
+		1D0F82512BD1664C00FAD74C /* IncreaseMemberScoreUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncreaseMemberScoreUseCase.swift; sourceTree = "<group>"; };
+		1D0F82542BD18DD000FAD74C /* GuildDetailUpdateGuildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildDetailUpdateGuildView.swift; sourceTree = "<group>"; };
+		1D0F82562BD18DD800FAD74C /* GuildDetailUpdateGuildViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildDetailUpdateGuildViewModel.swift; sourceTree = "<group>"; };
+		1D0F82582BD1904A00FAD74C /* UpdateGuildUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateGuildUseCase.swift; sourceTree = "<group>"; };
 		1D12AD2E2BAD635400257CB7 /* OnboardingCarouselFirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCarouselFirstView.swift; sourceTree = "<group>"; };
 		1D12AD302BAD635C00257CB7 /* OnboardingCarouselSecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCarouselSecondView.swift; sourceTree = "<group>"; };
 		1D12AD322BAD636600257CB7 /* OnboardingCarouselThirdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCarouselThirdView.swift; sourceTree = "<group>"; };
@@ -192,7 +245,6 @@
 		1D1AD3502BAD6708008827BA /* OnboardingRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRepositoryImpl.swift; sourceTree = "<group>"; };
 		1D1AD3522BAD67F2008827BA /* SaveHasUserSeenOnboardingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveHasUserSeenOnboardingUseCase.swift; sourceTree = "<group>"; };
 		1D1AD3592BAD8135008827BA /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
-		1D1AD3602BAD820E008827BA /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		1D1AD3622BAD8220008827BA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		1D1AD3652BAD8374008827BA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		1D1AD3672BAD837E008827BA /* StorylinesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorylinesView.swift; sourceTree = "<group>"; };
@@ -239,6 +291,31 @@
 		1D5E9CBC2BA9F00200EF6400 /* SecondaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButtonStyle.swift; sourceTree = "<group>"; };
 		1D5E9CBF2BA9F8A900EF6400 /* PrimaryTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryTextFieldStyle.swift; sourceTree = "<group>"; };
 		1D5E9CC12BA9FC3F00EF6400 /* SignUpCompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCompletedView.swift; sourceTree = "<group>"; };
+		1D7B7A042BCE7DB500A18E12 /* GlobalBoardDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalBoardDetailView.swift; sourceTree = "<group>"; };
+		1D7B7A052BCE7DB500A18E12 /* GlobalBoardDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalBoardDetailViewModel.swift; sourceTree = "<group>"; };
+		1D7B7A072BCE7DB500A18E12 /* BoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
+		1D7B7A082BCE7DB500A18E12 /* BoardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardViewModel.swift; sourceTree = "<group>"; };
+		1D7B7A0A2BCE7DB500A18E12 /* BoardRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardRoute.swift; sourceTree = "<group>"; };
+		1D7B7A152BCE7F9400A18E12 /* SendGuildInvitationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendGuildInvitationUseCase.swift; sourceTree = "<group>"; };
+		1D7B7A172BCE7FCE00A18E12 /* Guild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guild.swift; sourceTree = "<group>"; };
+		1D7B7A1E2BCE825600A18E12 /* GuildsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildsRepository.swift; sourceTree = "<group>"; };
+		1D7B7A202BCE830200A18E12 /* CreateGuildUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGuildUseCase.swift; sourceTree = "<group>"; };
+		1D7B7A232BCE841900A18E12 /* GuildsRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildsRepositoryImpl.swift; sourceTree = "<group>"; };
+		1D7B7A272BCE850900A18E12 /* GuildsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildsView.swift; sourceTree = "<group>"; };
+		1D7B7A292BCE851300A18E12 /* GuildsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildsViewModel.swift; sourceTree = "<group>"; };
+		1D7B7A2C2BCE891300A18E12 /* GuildDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildDetailView.swift; sourceTree = "<group>"; };
+		1D7B7A2E2BCE891E00A18E12 /* GuildDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildDetailViewModel.swift; sourceTree = "<group>"; };
+		1D7B7A302BCEAA3900A18E12 /* GuildPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildPreview.swift; sourceTree = "<group>"; };
+		1D7B7A332BCEAD3E00A18E12 /* InvitationsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationsError.swift; sourceTree = "<group>"; };
+		1D7B7A362BCEB1A600A18E12 /* GuildSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildSetupView.swift; sourceTree = "<group>"; };
+		1D7B7A382BCEB1AF00A18E12 /* GuildSetupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildSetupViewModel.swift; sourceTree = "<group>"; };
+		1D7B7A3B2BCEC4A100A18E12 /* Invitation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Invitation.swift; sourceTree = "<group>"; };
+		1D7B7A3D2BCEC9A300A18E12 /* LoadMyGuildsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMyGuildsUseCase.swift; sourceTree = "<group>"; };
+		1D7B7A3F2BCEC9B700A18E12 /* LoadMyInvitationsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMyInvitationsUseCase.swift; sourceTree = "<group>"; };
+		1D7B7A412BCED11E00A18E12 /* DeleteGuildUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteGuildUseCase.swift; sourceTree = "<group>"; };
+		1D7B7A432BCED15A00A18E12 /* RemoveGuildMemberUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveGuildMemberUseCase.swift; sourceTree = "<group>"; };
+		1D7B7A452BCED5EE00A18E12 /* AcceptGuildInvitationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptGuildInvitationUseCase.swift; sourceTree = "<group>"; };
+		1D7B7A472BCED69400A18E12 /* DeclineGuildInvitationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeclineGuildInvitationUseCase.swift; sourceTree = "<group>"; };
 		1D7DA8CD2BC682AB0092E18C /* SaveStorylineUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveStorylineUseCase.swift; sourceTree = "<group>"; };
 		1D7DA8CF2BC682CE0092E18C /* LoadAllStorylinesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadAllStorylinesUseCase.swift; sourceTree = "<group>"; };
 		1D7DA8D22BC6834B0092E18C /* StorylinesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorylinesRepository.swift; sourceTree = "<group>"; };
@@ -273,12 +350,23 @@
 		1D88B1E52BAA488B00B3D903 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
 		1D88B1E72BAA489700B3D903 /* ResetPasswordCompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordCompletedView.swift; sourceTree = "<group>"; };
 		1D88B1E92BAA4DEE00B3D903 /* ResetPasswordUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordUseCase.swift; sourceTree = "<group>"; };
+		1D9CC5FD2BCF19ED00D279BB /* GuildDetailAddFriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildDetailAddFriendView.swift; sourceTree = "<group>"; };
+		1D9CC5FF2BCF19F400D279BB /* GuildDetailAddFriendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildDetailAddFriendViewModel.swift; sourceTree = "<group>"; };
+		1D9CC6012BCFBFDB00D279BB /* UserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserError.swift; sourceTree = "<group>"; };
+		1D9CC6032BCFD40F00D279BB /* LoadGuildUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadGuildUseCase.swift; sourceTree = "<group>"; };
+		1D9CC6082BCFDBB000D279BB /* MembersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersRepository.swift; sourceTree = "<group>"; };
+		1D9CC60B2BCFDBD300D279BB /* MembersRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersRepositoryImpl.swift; sourceTree = "<group>"; };
 		1DA1DD1D2BCD7A9200185C76 /* IncreaseUserScoreUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncreaseUserScoreUseCase.swift; sourceTree = "<group>"; };
 		1DA1DD202BCD891400185C76 /* Notification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extension.swift"; sourceTree = "<group>"; };
+		1DA1DD262BCD988E00185C76 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		1DA1DD282BCD989E00185C76 /* BoardRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardRecord.swift; sourceTree = "<group>"; };
+		1DA1DD2C2BCD9B8E00185C76 /* BoardsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardsRepository.swift; sourceTree = "<group>"; };
+		1DA1DD2F2BCD9BD800185C76 /* BoardRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardRepositoryImpl.swift; sourceTree = "<group>"; };
+		1DA1DD312BCD9C0600185C76 /* LoadGlobalBoardUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadGlobalBoardUseCase.swift; sourceTree = "<group>"; };
+		1DA1DD332BCDA07600185C76 /* ValidateNicknameUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateNicknameUseCase.swift; sourceTree = "<group>"; };
 		1DC1E47B2BB0696E00D19181 /* StorylinesRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorylinesRoute.swift; sourceTree = "<group>"; };
 		1DC1E4802BB08EC000D19181 /* HomeRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRoute.swift; sourceTree = "<group>"; };
 		1DC1E4822BB08EE900D19181 /* SettingsRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRoute.swift; sourceTree = "<group>"; };
-		1DC1E4862BB08F1300D19181 /* BoardRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardRoute.swift; sourceTree = "<group>"; };
 		1DD7EB162BB09B81005CE24D /* RequestLocalNotificationAuthorizationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestLocalNotificationAuthorizationUseCase.swift; sourceTree = "<group>"; };
 		1DD7EB182BB09BAE005CE24D /* ScheduleLocalNotificationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleLocalNotificationUseCase.swift; sourceTree = "<group>"; };
 		1DD7EB1A2BB09BBD005CE24D /* LocalNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotification.swift; sourceTree = "<group>"; };
@@ -286,6 +374,10 @@
 		1DD8F5CF2BA64F530099BEA0 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		1DD8F5D12BA64F620099BEA0 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		1DD8F5DB2BA656C80099BEA0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1DF42B3E2BCEE17B0094C263 /* InvitationsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationsRepository.swift; sourceTree = "<group>"; };
+		1DF42B412BCEE21D0094C263 /* InvitationsRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationsRepositoryImpl.swift; sourceTree = "<group>"; };
+		1DF42B432BCEE41E0094C263 /* GuildsRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildsRoute.swift; sourceTree = "<group>"; };
+		1DF42B472BCEF8620094C263 /* GuildsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildsError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -390,6 +482,7 @@
 			children = (
 				1D0821752BCC6E1800F1F8F3 /* GetCurrentUserUseCase.swift */,
 				1DA1DD1D2BCD7A9200185C76 /* IncreaseUserScoreUseCase.swift */,
+				1D0F824D2BD154D300FAD74C /* RemoveGuildForCurrentUserUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -408,6 +501,15 @@
 				1D0821782BCC6E9200F1F8F3 /* UserRepositoryImpl.swift */,
 			);
 			path = UserToolkit;
+			sourceTree = "<group>";
+		};
+		1D0F82532BD18DBC00FAD74C /* GuildDetailUpdateGuild */ = {
+			isa = PBXGroup;
+			children = (
+				1D0F82542BD18DD000FAD74C /* GuildDetailUpdateGuildView.swift */,
+				1D0F82562BD18DD800FAD74C /* GuildDetailUpdateGuildViewModel.swift */,
+			);
+			path = GuildDetailUpdateGuild;
 			sourceTree = "<group>";
 		};
 		1D12AD2C2BAD62FB00257CB7 /* Onboarding */ = {
@@ -487,7 +589,8 @@
 				1D2BB2BC2BBB0D330052AB37 /* Common */,
 				1D1AD3642BAD8369008827BA /* Home */,
 				1D1AD35B2BAD8142008827BA /* Storylines */,
-				1D1AD35C2BAD8147008827BA /* Board */,
+				1D7B7A262BCE84F300A18E12 /* Guilds */,
+				1D7B7A0B2BCE7DB500A18E12 /* Boards */,
 				1D1AD35D2BAD8152008827BA /* Settings */,
 			);
 			path = AfterAuthentication;
@@ -508,15 +611,6 @@
 				1DC1E47B2BB0696E00D19181 /* StorylinesRoute.swift */,
 			);
 			path = Storylines;
-			sourceTree = "<group>";
-		};
-		1D1AD35C2BAD8147008827BA /* Board */ = {
-			isa = PBXGroup;
-			children = (
-				1DC1E4852BB08F0800D19181 /* Root */,
-				1DC1E4862BB08F1300D19181 /* BoardRoute.swift */,
-			);
-			path = Board;
 			sourceTree = "<group>";
 		};
 		1D1AD35D2BAD8152008827BA /* Settings */ = {
@@ -655,6 +749,7 @@
 				1D2BB2B52BB758930052AB37 /* PomodoroTimer.swift */,
 				1D2BB2C42BBB0F4D0052AB37 /* PomodoroTimerState.swift */,
 				1D2BB2C22BBB0F420052AB37 /* PomodoroTimerStatus.swift */,
+				1D0F824F2BD15F4700FAD74C /* PomodorTimerKind.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -744,6 +839,10 @@
 				1D544DF72BA76A00003C486F /* User */,
 				1D2BB2B12BB756390052AB37 /* PomodoroTimer */,
 				1D2BB2C62BBB2B4D0052AB37 /* Storylines */,
+				1DA1DD242BCD986600185C76 /* Boards */,
+				1DF42B3A2BCEE1370094C263 /* Invitations */,
+				1D7B7A192BCE81FC00A18E12 /* Guilds */,
+				1D9CC6052BCFDB6F00D279BB /* Members */,
 			);
 			path = DomainLayer;
 			sourceTree = "<group>";
@@ -845,6 +944,7 @@
 			isa = PBXGroup;
 			children = (
 				1D544DF92BA76A31003C486F /* FirebaseUserError.swift */,
+				1D9CC6012BCFBFDB00D279BB /* UserError.swift */,
 			);
 			path = Errors;
 			sourceTree = "<group>";
@@ -898,6 +998,7 @@
 			isa = PBXGroup;
 			children = (
 				1D5E9CB42BA9E06400EF6400 /* ValidateNameUseCase.swift */,
+				1DA1DD332BCDA07600185C76 /* ValidateNicknameUseCase.swift */,
 				1D5E9CB62BA9E0D800EF6400 /* ValidateEmailUseCase.swift */,
 				1D5E9CB82BA9E10C00EF6400 /* ValidatePasswordUseCase.swift */,
 				1D5E9CBA2BA9E15900EF6400 /* ValidateRepeatedPassword.swift */,
@@ -911,6 +1012,121 @@
 				1D5E9CBF2BA9F8A900EF6400 /* PrimaryTextFieldStyle.swift */,
 			);
 			path = TextField;
+			sourceTree = "<group>";
+		};
+		1D7B7A062BCE7DB500A18E12 /* GlobalBoardDetail */ = {
+			isa = PBXGroup;
+			children = (
+				1D7B7A042BCE7DB500A18E12 /* GlobalBoardDetailView.swift */,
+				1D7B7A052BCE7DB500A18E12 /* GlobalBoardDetailViewModel.swift */,
+			);
+			path = GlobalBoardDetail;
+			sourceTree = "<group>";
+		};
+		1D7B7A092BCE7DB500A18E12 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				1D7B7A072BCE7DB500A18E12 /* BoardView.swift */,
+				1D7B7A082BCE7DB500A18E12 /* BoardViewModel.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		1D7B7A0B2BCE7DB500A18E12 /* Boards */ = {
+			isa = PBXGroup;
+			children = (
+				1D7B7A092BCE7DB500A18E12 /* Root */,
+				1D7B7A062BCE7DB500A18E12 /* GlobalBoardDetail */,
+				1D7B7A0A2BCE7DB500A18E12 /* BoardRoute.swift */,
+			);
+			path = Boards;
+			sourceTree = "<group>";
+		};
+		1D7B7A192BCE81FC00A18E12 /* Guilds */ = {
+			isa = PBXGroup;
+			children = (
+				1DF42B462BCEF85A0094C263 /* Errors */,
+				1D7B7A1A2BCE820900A18E12 /* Models */,
+				1D7B7A1D2BCE821B00A18E12 /* UseCases */,
+				1D7B7A1C2BCE821500A18E12 /* Repositories */,
+			);
+			path = Guilds;
+			sourceTree = "<group>";
+		};
+		1D7B7A1A2BCE820900A18E12 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1D7B7A172BCE7FCE00A18E12 /* Guild.swift */,
+				1D7B7A302BCEAA3900A18E12 /* GuildPreview.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1D7B7A1C2BCE821500A18E12 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				1D7B7A1E2BCE825600A18E12 /* GuildsRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		1D7B7A1D2BCE821B00A18E12 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				1D7B7A202BCE830200A18E12 /* CreateGuildUseCase.swift */,
+				1D7B7A3D2BCEC9A300A18E12 /* LoadMyGuildsUseCase.swift */,
+				1D9CC6032BCFD40F00D279BB /* LoadGuildUseCase.swift */,
+				1D7B7A412BCED11E00A18E12 /* DeleteGuildUseCase.swift */,
+				1D0F82582BD1904A00FAD74C /* UpdateGuildUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		1D7B7A222BCE83E300A18E12 /* GuildsToolkit */ = {
+			isa = PBXGroup;
+			children = (
+				1D7B7A232BCE841900A18E12 /* GuildsRepositoryImpl.swift */,
+			);
+			path = GuildsToolkit;
+			sourceTree = "<group>";
+		};
+		1D7B7A262BCE84F300A18E12 /* Guilds */ = {
+			isa = PBXGroup;
+			children = (
+				1DF42B452BCEE4390094C263 /* Root */,
+				1D7B7A352BCEB19500A18E12 /* SetupGuild */,
+				1D7B7A2B2BCE890500A18E12 /* GuildDetail */,
+				1DF42B432BCEE41E0094C263 /* GuildsRoute.swift */,
+			);
+			path = Guilds;
+			sourceTree = "<group>";
+		};
+		1D7B7A2B2BCE890500A18E12 /* GuildDetail */ = {
+			isa = PBXGroup;
+			children = (
+				1D0F82532BD18DBC00FAD74C /* GuildDetailUpdateGuild */,
+				1D9CC5FC2BCF19CB00D279BB /* GuildDetailAddFriend */,
+				1D7B7A2C2BCE891300A18E12 /* GuildDetailView.swift */,
+				1D7B7A2E2BCE891E00A18E12 /* GuildDetailViewModel.swift */,
+			);
+			path = GuildDetail;
+			sourceTree = "<group>";
+		};
+		1D7B7A322BCEAD3600A18E12 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				1D7B7A332BCEAD3E00A18E12 /* InvitationsError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		1D7B7A352BCEB19500A18E12 /* SetupGuild */ = {
+			isa = PBXGroup;
+			children = (
+				1D7B7A362BCEB1A600A18E12 /* GuildSetupView.swift */,
+				1D7B7A382BCEB1AF00A18E12 /* GuildSetupViewModel.swift */,
+			);
+			path = SetupGuild;
 			sourceTree = "<group>";
 		};
 		1D7DA8CC2BC6829A0092E18C /* UseCases */ = {
@@ -1135,8 +1351,55 @@
 				1D84AD282BAB71340048AC9C /* AuthenticationToolkit */,
 				1D0821772BCC6E7100F1F8F3 /* UserToolkit */,
 				1D7DA8D42BC683520092E18C /* StorylinesToolkit */,
+				1DA1DD2E2BCD9BB100185C76 /* BoardsToolkit */,
+				1DF42B402BCEE2090094C263 /* InvitationsToolkit */,
+				1D7B7A222BCE83E300A18E12 /* GuildsToolkit */,
+				1D9CC60A2BCFDBC000D279BB /* MembersToolkit */,
 			);
 			path = Toolkits;
+			sourceTree = "<group>";
+		};
+		1D9CC5FC2BCF19CB00D279BB /* GuildDetailAddFriend */ = {
+			isa = PBXGroup;
+			children = (
+				1D9CC5FD2BCF19ED00D279BB /* GuildDetailAddFriendView.swift */,
+				1D9CC5FF2BCF19F400D279BB /* GuildDetailAddFriendViewModel.swift */,
+			);
+			path = GuildDetailAddFriend;
+			sourceTree = "<group>";
+		};
+		1D9CC6052BCFDB6F00D279BB /* Members */ = {
+			isa = PBXGroup;
+			children = (
+				1D9CC6062BCFDB7D00D279BB /* UseCases */,
+				1D9CC6072BCFDBA100D279BB /* Repositories */,
+			);
+			path = Members;
+			sourceTree = "<group>";
+		};
+		1D9CC6062BCFDB7D00D279BB /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				1D7B7A432BCED15A00A18E12 /* RemoveGuildMemberUseCase.swift */,
+				1D0F82512BD1664C00FAD74C /* IncreaseMemberScoreUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		1D9CC6072BCFDBA100D279BB /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				1D9CC6082BCFDBB000D279BB /* MembersRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		1D9CC60A2BCFDBC000D279BB /* MembersToolkit */ = {
+			isa = PBXGroup;
+			children = (
+				1D9CC60B2BCFDBD300D279BB /* MembersRepositoryImpl.swift */,
+			);
+			path = MembersToolkit;
 			sourceTree = "<group>";
 		};
 		1DA1DD1F2BCD890600185C76 /* Notifications */ = {
@@ -1145,6 +1408,49 @@
 				1DA1DD202BCD891400185C76 /* Notification+Extension.swift */,
 			);
 			path = Notifications;
+			sourceTree = "<group>";
+		};
+		1DA1DD242BCD986600185C76 /* Boards */ = {
+			isa = PBXGroup;
+			children = (
+				1DA1DD252BCD987800185C76 /* Models */,
+				1DA1DD2A2BCD9B4C00185C76 /* UseCases */,
+				1DA1DD2B2BCD9B5200185C76 /* Repositories */,
+			);
+			path = Boards;
+			sourceTree = "<group>";
+		};
+		1DA1DD252BCD987800185C76 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1DA1DD262BCD988E00185C76 /* Board.swift */,
+				1DA1DD282BCD989E00185C76 /* BoardRecord.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1DA1DD2A2BCD9B4C00185C76 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				1DA1DD312BCD9C0600185C76 /* LoadGlobalBoardUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		1DA1DD2B2BCD9B5200185C76 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				1DA1DD2C2BCD9B8E00185C76 /* BoardsRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		1DA1DD2E2BCD9BB100185C76 /* BoardsToolkit */ = {
+			isa = PBXGroup;
+			children = (
+				1DA1DD2F2BCD9BD800185C76 /* BoardRepositoryImpl.swift */,
+			);
+			path = BoardsToolkit;
 			sourceTree = "<group>";
 		};
 		1DC1E47D2BB08E7900D19181 /* Root */ = {
@@ -1170,14 +1476,6 @@
 			children = (
 				1D1AD3622BAD8220008827BA /* SettingsView.swift */,
 				1D1AD3692BAD8775008827BA /* SettingsViewModel.swift */,
-			);
-			path = Root;
-			sourceTree = "<group>";
-		};
-		1DC1E4852BB08F0800D19181 /* Root */ = {
-			isa = PBXGroup;
-			children = (
-				1D1AD3602BAD820E008827BA /* BoardView.swift */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -1231,6 +1529,70 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1DF42B3A2BCEE1370094C263 /* Invitations */ = {
+			isa = PBXGroup;
+			children = (
+				1D7B7A322BCEAD3600A18E12 /* Errors */,
+				1DF42B3B2BCEE1590094C263 /* Models */,
+				1DF42B3C2BCEE15E0094C263 /* UseCases */,
+				1DF42B3D2BCEE1630094C263 /* Repositories */,
+			);
+			path = Invitations;
+			sourceTree = "<group>";
+		};
+		1DF42B3B2BCEE1590094C263 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1D7B7A3B2BCEC4A100A18E12 /* Invitation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1DF42B3C2BCEE15E0094C263 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				1D7B7A152BCE7F9400A18E12 /* SendGuildInvitationUseCase.swift */,
+				1D7B7A3F2BCEC9B700A18E12 /* LoadMyInvitationsUseCase.swift */,
+				1D7B7A452BCED5EE00A18E12 /* AcceptGuildInvitationUseCase.swift */,
+				1D7B7A472BCED69400A18E12 /* DeclineGuildInvitationUseCase.swift */,
+				1D0F824A2BD153BF00FAD74C /* DeleteAllInvitationsForGuildUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		1DF42B3D2BCEE1630094C263 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				1DF42B3E2BCEE17B0094C263 /* InvitationsRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		1DF42B402BCEE2090094C263 /* InvitationsToolkit */ = {
+			isa = PBXGroup;
+			children = (
+				1DF42B412BCEE21D0094C263 /* InvitationsRepositoryImpl.swift */,
+			);
+			path = InvitationsToolkit;
+			sourceTree = "<group>";
+		};
+		1DF42B452BCEE4390094C263 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				1D7B7A272BCE850900A18E12 /* GuildsView.swift */,
+				1D7B7A292BCE851300A18E12 /* GuildsViewModel.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		1DF42B462BCEF85A0094C263 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				1DF42B472BCEF8620094C263 /* GuildsError.swift */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1401,15 +1763,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DA1DD292BCD989E00185C76 /* BoardRecord.swift in Sources */,
+				1D0F824B2BD153BF00FAD74C /* DeleteAllInvitationsForGuildUseCase.swift in Sources */,
 				1D88B1DF2BAA285F00B3D903 /* LogOutUseCase.swift in Sources */,
 				1D12AD312BAD635C00257CB7 /* OnboardingCarouselSecondView.swift in Sources */,
 				1D1BC5B22BA64AC100B30A77 /* AppDelegate.swift in Sources */,
 				1D3D32752BA6F3950039DA08 /* AuthenticationRepository.swift in Sources */,
+				1D7B7A402BCEC9B700A18E12 /* LoadMyInvitationsUseCase.swift in Sources */,
 				1D3D32822BA6F8A40039DA08 /* SignUpViewModel.swift in Sources */,
+				1D7B7A392BCEB1AF00A18E12 /* GuildSetupViewModel.swift in Sources */,
+				1D7B7A0D2BCE7DB500A18E12 /* GlobalBoardDetailViewModel.swift in Sources */,
 				1D88B1DA2BAA1F3F00B3D903 /* AlertData.swift in Sources */,
 				1D08215F2BCACE3A00F1F8F3 /* StorylineTimerViewModel.swift in Sources */,
 				1DA1DD1E2BCD7A9200185C76 /* IncreaseUserScoreUseCase.swift in Sources */,
+				1D7B7A102BCE7DB500A18E12 /* BoardRoute.swift in Sources */,
+				1D7B7A212BCE830200A18E12 /* CreateGuildUseCase.swift in Sources */,
 				1D7DA8E32BC6C1A80092E18C /* StorylineTileViewModel.swift in Sources */,
+				1D7B7A3C2BCEC4A100A18E12 /* Invitation.swift in Sources */,
+				1D7B7A0F2BCE7DB500A18E12 /* BoardViewModel.swift in Sources */,
 				1D1AD3682BAD837E008827BA /* StorylinesView.swift in Sources */,
 				1D88B1DC2BAA215300B3D903 /* Alert+Extensions.swift in Sources */,
 				1D26EBB62BC5841600F5E1B5 /* StorylineSetupView.swift in Sources */,
@@ -1417,40 +1788,57 @@
 				1D84AD392BAB77D30048AC9C /* UserDefaultsError.swift in Sources */,
 				1DC1E4832BB08EE900D19181 /* SettingsRoute.swift in Sources */,
 				1D84AD432BAB82A10048AC9C /* KeychainProvider.swift in Sources */,
+				1D7B7A3E2BCEC9A300A18E12 /* LoadMyGuildsUseCase.swift in Sources */,
 				1D5E9CC02BA9F8A900EF6400 /* PrimaryTextFieldStyle.swift in Sources */,
 				1D12AD352BAD637000257CB7 /* RootOnboardingView.swift in Sources */,
 				1D3D32892BA6FA100039DA08 /* RootAuthenticationView.swift in Sources */,
 				1D1AD35A2BAD8135008827BA /* RootView.swift in Sources */,
+				1D7B7A162BCE7F9400A18E12 /* SendGuildInvitationUseCase.swift in Sources */,
 				1D7DA8CE2BC682AB0092E18C /* SaveStorylineUseCase.swift in Sources */,
+				1DF42B442BCEE41E0094C263 /* GuildsRoute.swift in Sources */,
 				1DD7EB1B2BB09BBD005CE24D /* LocalNotification.swift in Sources */,
 				1D88B1D52BAA134500B3D903 /* LogInUseCase.swift in Sources */,
+				1D7B7A442BCED15A00A18E12 /* RemoveGuildMemberUseCase.swift in Sources */,
 				1D12AD332BAD636600257CB7 /* OnboardingCarouselThirdView.swift in Sources */,
 				1D2BB2C52BBB0F4D0052AB37 /* PomodoroTimerState.swift in Sources */,
 				1D7DA8D92BC697390092E18C /* Constants.swift in Sources */,
+				1DA1DD272BCD988E00185C76 /* Board.swift in Sources */,
 				1D84AD372BAB758A0048AC9C /* Providers+Resolver.swift in Sources */,
 				1D84AD452BAB82AA0048AC9C /* BasicKeychainProvider.swift in Sources */,
 				1DA1DD212BCD891400185C76 /* Notification+Extension.swift in Sources */,
 				1D84AD472BAB82B20048AC9C /* KeychainKey.swift in Sources */,
+				1D0F82552BD18DD000FAD74C /* GuildDetailUpdateGuildView.swift in Sources */,
+				1D9CC6042BCFD40F00D279BB /* LoadGuildUseCase.swift in Sources */,
 				1D1AD34C2BAD6674008827BA /* CheckHasUserSeenOnboardingUseCase.swift in Sources */,
 				1DD7EB172BB09B81005CE24D /* RequestLocalNotificationAuthorizationUseCase.swift in Sources */,
+				1D7B7A312BCEAA3900A18E12 /* GuildPreview.swift in Sources */,
+				1D7B7A422BCED11E00A18E12 /* DeleteGuildUseCase.swift in Sources */,
+				1D7B7A182BCE7FCE00A18E12 /* Guild.swift in Sources */,
 				1D26EBB32BC5633E00F5E1B5 /* StorylinesViewModel.swift in Sources */,
 				1D7DA8E12BC6C19D0092E18C /* StorylineTileView.swift in Sources */,
+				1D7B7A282BCE850900A18E12 /* GuildsView.swift in Sources */,
 				1D2BB2CF2BBB2CDD0052AB37 /* StorylinePage.swift in Sources */,
 				1D5E9CBB2BA9E15900EF6400 /* ValidateRepeatedPassword.swift in Sources */,
 				1D544E032BA76ABD003C486F /* ValidationError.swift in Sources */,
 				1D26EBB12BC5605000F5E1B5 /* StorylineKind.swift in Sources */,
+				1DF42B3F2BCEE17B0094C263 /* InvitationsRepository.swift in Sources */,
 				1D84AD292BAB71340048AC9C /* AuthenticationRepositoryImpl.swift in Sources */,
+				1D9CC5FE2BCF19ED00D279BB /* GuildDetailAddFriendView.swift in Sources */,
+				1DA1DD322BCD9C0600185C76 /* LoadGlobalBoardUseCase.swift in Sources */,
 				1D544E082BA76B1D003C486F /* PrimaryButtonStyle.swift in Sources */,
 				1DD8F5D22BA64F620099BEA0 /* Router.swift in Sources */,
 				1D0821702BCC6D6300F1F8F3 /* User.swift in Sources */,
 				1DC1E47C2BB0696E00D19181 /* StorylinesRoute.swift in Sources */,
+				1D7B7A462BCED5EE00A18E12 /* AcceptGuildInvitationUseCase.swift in Sources */,
 				1D84AD352BAB754E0048AC9C /* BasicUserDefaultsProvider.swift in Sources */,
 				1D1AD3632BAD8220008827BA /* SettingsView.swift in Sources */,
 				1D2BB2BA2BB75CA80052AB37 /* PomodoroTimerDelegate.swift in Sources */,
-				1DC1E4872BB08F1300D19181 /* BoardRoute.swift in Sources */,
+				1DF42B422BCEE21D0094C263 /* InvitationsRepositoryImpl.swift in Sources */,
 				1D88B1D32BAA091900B3D903 /* LogInViewModel.swift in Sources */,
 				1DC1E4812BB08EC000D19181 /* HomeRoute.swift in Sources */,
+				1D0F82502BD15F4700FAD74C /* PomodorTimerKind.swift in Sources */,
 				1D2BB2C32BBB0F420052AB37 /* PomodoroTimerStatus.swift in Sources */,
+				1D7B7A342BCEAD3E00A18E12 /* InvitationsError.swift in Sources */,
 				1D2BB2CA2BBB2C370052AB37 /* TestStoryline.swift in Sources */,
 				1D26EBB82BC5841D00F5E1B5 /* StorylineSetupViewModel.swift in Sources */,
 				1D1BC5852BA6487D00B30A77 /* MemorizifyApp.swift in Sources */,
@@ -1461,6 +1849,8 @@
 				1D08215C2BCAC98800F1F8F3 /* CreatePomodoroTimerUseCase.swift in Sources */,
 				1D3D328C2BA6FB4F0039DA08 /* AuthenticationRoute.swift in Sources */,
 				1D0821632BCADD8400F1F8F3 /* SetPomodoroTimerDelegateUseCase.swift in Sources */,
+				1D9CC6002BCF19F400D279BB /* GuildDetailAddFriendViewModel.swift in Sources */,
+				1D0F82522BD1664C00FAD74C /* IncreaseMemberScoreUseCase.swift in Sources */,
 				1D84AD2D2BAB71640048AC9C /* UserDefaultsProvider.swift in Sources */,
 				1D0AA5502BC71F75003016EF /* DeleteStorylineUseCase.swift in Sources */,
 				1D5E9CBD2BA9F00200EF6400 /* SecondaryButtonStyle.swift in Sources */,
@@ -1471,21 +1861,33 @@
 				1D5E9CC22BA9FC3F00EF6400 /* SignUpCompletedView.swift in Sources */,
 				1D88B1E62BAA488B00B3D903 /* ResetPasswordViewModel.swift in Sources */,
 				1D08216E2BCAE10F00F1F8F3 /* TimeFormatterError.swift in Sources */,
+				1DF42B482BCEF8620094C263 /* GuildsError.swift in Sources */,
+				1D7B7A2D2BCE891300A18E12 /* GuildDetailView.swift in Sources */,
 				1D5E9CB52BA9E06400EF6400 /* ValidateNameUseCase.swift in Sources */,
+				1D7B7A2F2BCE891E00A18E12 /* GuildDetailViewModel.swift in Sources */,
 				1DD7EB1D2BB0A136005CE24D /* CheckLocalNotificationAuthorizationUseCase.swift in Sources */,
 				1D0821592BCAC76E00F1F8F3 /* GetCurrentStorylinePageUseCase.swift in Sources */,
 				1D88B1D72BAA136400B3D903 /* LogInData.swift in Sources */,
 				1D2BB2CD2BBB2CC90052AB37 /* StorylineData.swift in Sources */,
 				1D88B1EA2BAA4DEE00B3D903 /* ResetPasswordUseCase.swift in Sources */,
 				1D1AD3532BAD67F2008827BA /* SaveHasUserSeenOnboardingUseCase.swift in Sources */,
+				1D9CC6022BCFBFDB00D279BB /* UserError.swift in Sources */,
 				1D0821742BCC6DE700F1F8F3 /* UserRepository.swift in Sources */,
 				1D0821692BCAE0A400F1F8F3 /* FormatSecondsToStringUseCase.swift in Sources */,
+				1D7B7A2A2BCE851300A18E12 /* GuildsViewModel.swift in Sources */,
+				1D7B7A0C2BCE7DB500A18E12 /* GlobalBoardDetailView.swift in Sources */,
+				1DA1DD2D2BCD9B8E00185C76 /* BoardsRepository.swift in Sources */,
+				1D0F824E2BD154D300FAD74C /* RemoveGuildForCurrentUserUseCase.swift in Sources */,
 				1D5E9CB92BA9E10C00EF6400 /* ValidatePasswordUseCase.swift in Sources */,
 				1D3D327B2BA6F54D0039DA08 /* Repositories+Resolver.swift in Sources */,
+				1D0F82572BD18DD800FAD74C /* GuildDetailUpdateGuildViewModel.swift in Sources */,
 				1D84AD2F2BAB71A20048AC9C /* UserDefaultsKey.swift in Sources */,
 				1D0821552BCAC31800F1F8F3 /* Phase.swift in Sources */,
+				1DA1DD342BCDA07600185C76 /* ValidateNicknameUseCase.swift in Sources */,
+				1DA1DD302BCD9BD800185C76 /* BoardRepositoryImpl.swift in Sources */,
+				1D7B7A242BCE841900A18E12 /* GuildsRepositoryImpl.swift in Sources */,
 				1D3D32842BA6F8AB0039DA08 /* SignUpView.swift in Sources */,
-				1D1AD3612BAD820E008827BA /* BoardView.swift in Sources */,
+				1D0F82592BD1904A00FAD74C /* UpdateGuildUseCase.swift in Sources */,
 				1D544DF62BA769DF003C486F /* SendEmailVerificationUseCase.swift in Sources */,
 				1DD8F5D02BA64F530099BEA0 /* Tab.swift in Sources */,
 				1D7DA8DE2BC6A6E30092E18C /* HomeViewModel.swift in Sources */,
@@ -1493,13 +1895,18 @@
 				1D3D32712BA6F1690039DA08 /* SignUpUseCase.swift in Sources */,
 				1D2BB2B62BB758930052AB37 /* PomodoroTimer.swift in Sources */,
 				1D88B1E82BAA489700B3D903 /* ResetPasswordCompletedView.swift in Sources */,
+				1D9CC6092BCFDBB000D279BB /* MembersRepository.swift in Sources */,
 				1DD7EB192BB09BAE005CE24D /* ScheduleLocalNotificationUseCase.swift in Sources */,
+				1D7B7A1F2BCE825600A18E12 /* GuildsRepository.swift in Sources */,
 				1D3D32732BA6F2220039DA08 /* SignUpData.swift in Sources */,
 				1D7DA8DC2BC69EDF0092E18C /* StorylinesError.swift in Sources */,
 				1D12AD2F2BAD635400257CB7 /* OnboardingCarouselFirstView.swift in Sources */,
+				1D7B7A0E2BCE7DB500A18E12 /* BoardView.swift in Sources */,
 				1D3D327F2BA6F7640039DA08 /* UseCases+Resolver.swift in Sources */,
 				1D5E9CB72BA9E0D800EF6400 /* ValidateEmailUseCase.swift in Sources */,
+				1D9CC60C2BCFDBD300D279BB /* MembersRepositoryImpl.swift in Sources */,
 				1D0821612BCACF3400F1F8F3 /* StorylineTimerView.swift in Sources */,
+				1D7B7A482BCED69400A18E12 /* DeclineGuildInvitationUseCase.swift in Sources */,
 				1D1AD36A2BAD8775008827BA /* SettingsViewModel.swift in Sources */,
 				1D0821762BCC6E1800F1F8F3 /* GetCurrentUserUseCase.swift in Sources */,
 				1D88B1D12BAA090F00B3D903 /* LogInView.swift in Sources */,
@@ -1507,6 +1914,7 @@
 				1D1AD3512BAD6708008827BA /* OnboardingRepositoryImpl.swift in Sources */,
 				1D544DFD2BA76A79003C486F /* FirebaseUser.swift in Sources */,
 				1D7DA8D32BC6834B0092E18C /* StorylinesRepository.swift in Sources */,
+				1D7B7A372BCEB1A600A18E12 /* GuildSetupView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1672,7 +2080,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Memorizify/Application/Entitlements/Memorizify.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202404151850;
+				CURRENT_PROJECT_VERSION = 202404181953;
 				DEVELOPMENT_ASSET_PATHS = "\"Memorizify/Application/Preview Content\"";
 				DEVELOPMENT_TEAM = 4C5MQDTY94;
 				ENABLE_PREVIEWS = YES;
@@ -1686,7 +2094,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.3;
+				MARKETING_VERSION = 0.1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.smejkalp.memorizify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1702,7 +2110,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Memorizify/Application/Entitlements/Memorizify.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202404151850;
+				CURRENT_PROJECT_VERSION = 202404181953;
 				DEVELOPMENT_ASSET_PATHS = "\"Memorizify/Application/Preview Content\"";
 				DEVELOPMENT_TEAM = 4C5MQDTY94;
 				ENABLE_PREVIEWS = YES;
@@ -1716,7 +2124,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.3;
+				MARKETING_VERSION = 0.1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.smejkalp.memorizify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

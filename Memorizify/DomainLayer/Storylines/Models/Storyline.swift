@@ -8,6 +8,9 @@
 import Foundation
 
 struct Storyline: Codable, Identifiable {
+    
+    // MARK: Properties
+    
     let id: String
     let kind: StorylineKind
     let goalHours: TimeInterval
@@ -15,6 +18,7 @@ struct Storyline: Codable, Identifiable {
     let finished: TimeInterval
     let studyInterval: TimeInterval
     let breakInterval: TimeInterval
+    let guild: Guild?
     var phase: Phase = .study
     
     var goal: TimeInterval {
@@ -27,7 +31,16 @@ struct Storyline: Codable, Identifiable {
     
     // MARK: Initialization
     
-    init(kind: StorylineKind, goalHours: TimeInterval, goalMinutes: TimeInterval, finished: TimeInterval, studyInterval: TimeInterval, breakInterval: TimeInterval, id: String? = nil) {
+    init(
+        kind: StorylineKind,
+        goalHours: TimeInterval,
+        goalMinutes: TimeInterval,
+        finished: TimeInterval,
+        studyInterval: TimeInterval,
+        breakInterval: TimeInterval,
+        id: String? = nil,
+        guild: Guild? = nil
+    ) {
         self.kind = kind
         self.goalHours = goalHours
         self.goalMinutes = goalMinutes
@@ -35,9 +48,20 @@ struct Storyline: Codable, Identifiable {
         self.studyInterval = studyInterval
         self.breakInterval = breakInterval
         self.id = id ?? UUID().uuidString
+        self.guild = guild
     }
     
-    init(copy: Storyline, kind: StorylineKind? = nil, goalHours: TimeInterval? = nil, goalMinutes: TimeInterval? = nil, finished: TimeInterval? = nil, studyInterval: TimeInterval? = nil, breakInterval: TimeInterval? = nil, id: String? = nil) {
+    init(
+        copy: Storyline,
+        kind: StorylineKind? = nil,
+        goalHours: TimeInterval? = nil,
+        goalMinutes: TimeInterval? = nil,
+        finished: TimeInterval? = nil,
+        studyInterval: TimeInterval? = nil,
+        breakInterval: TimeInterval? = nil,
+        id: String? = nil,
+        guild: Guild? = nil
+    ) {
         self.kind = kind ?? copy.kind
         self.goalHours = goalHours ?? copy.goalHours
         self.goalMinutes = goalMinutes ?? copy.goalMinutes
@@ -45,10 +69,11 @@ struct Storyline: Codable, Identifiable {
         self.studyInterval = studyInterval ?? copy.studyInterval
         self.breakInterval = breakInterval ?? copy.breakInterval
         self.id = id ?? copy.id
+        self.guild = guild ?? copy.guild
     }
     
     // MARK: Codable
-    // Coding keys for encoding and decoding
+    
     private enum CodingKeys: String, CodingKey {
         case kind, phase, goalHours, goalMinutes, finished, studyInterval, breakInterval, id
     }
@@ -79,5 +104,6 @@ struct Storyline: Codable, Identifiable {
         self.studyInterval = try container.decode(TimeInterval.self, forKey: .studyInterval)
         self.breakInterval = try container.decode(TimeInterval.self, forKey: .breakInterval)
         self.id = try container.decode(String.self, forKey: .id)
+        self.guild = nil
     }
 }

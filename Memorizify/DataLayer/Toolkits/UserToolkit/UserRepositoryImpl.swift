@@ -19,23 +19,83 @@ struct UserRepositoryImpl: UserRepository {
         let db = Firestore.firestore()
         let usersCollectionRef = db.collection(Constants.FIREBASE_COLLECTION_USERS)
         
-        guard let user = authenticationRepository.getUser() else { throw FirebaseUserError.notFound }
+        let firUser = try authenticationRepository.getUser()
 
-        let documentReference = usersCollectionRef.document(user.uid)
+        let documentReference = usersCollectionRef.document(firUser.uid)
         let documentSnapshot = try await documentReference.getDocument()
         
         return try documentSnapshot.data(as: User.self)
+    }
+    
+    func getUser(with email: String) async throws -> User {
+        let db = Firestore.firestore()
+        
+        // Make reference to users collection
+        let usersCollectionRef = db.collection(Constants.FIREBASE_COLLECTION_USERS)
+        
+        let user = try authenticationRepository.getUser()
+        
+        // Fetch all documents from the collection
+        let querySnapshot = try await usersCollectionRef.getDocuments()
+        
+        // Iterate through the documents and decode them into Guild objects
+        for document in querySnapshot.documents {
+            let searchedUser = try document.data(as: User.self)
+            if searchedUser.email == email {
+                return searchedUser
+            }
+        }
+        
+        throw UserError.notFound
+    }
+    
+    func getUser(uid: String) async throws -> User {
+        let db = Firestore.firestore()
+        
+        // Make reference to users collection
+        let usersCollectionRef = db.collection(Constants.FIREBASE_COLLECTION_USERS)
+        
+        let user = try authenticationRepository.getUser()
+        
+        // Fetch all documents from the collection
+        let querySnapshot = try await usersCollectionRef.getDocuments()
+        
+        // Iterate through the documents and decode them into Guild objects
+        for document in querySnapshot.documents {
+            let searchedUser = try document.data(as: User.self)
+            if searchedUser.uid == uid {
+                return searchedUser
+            }
+        }
+        
+        throw UserError.notFound
     }
     
     func update(user: User) async throws {
         let db = Firestore.firestore()
         let usersCollectionRef = db.collection(Constants.FIREBASE_COLLECTION_USERS)
         
-        guard let firUser = authenticationRepository.getUser() else { throw FirebaseUserError.notFound }
-
-        let documentReference = usersCollectionRef.document(firUser.uid)
+        // Fetch all documents from the collection
+        let query = usersCollectionRef.whereField("uid", isEqualTo: user.uid)
         
-        let userDict = try Firestore.Encoder().encode(user)
-        try await documentReference.setData(userDict)
+        let querySnapshot = try await query.getDocuments()
+        
+        // Iterate through the documents and decode them into Guild objects
+        for document in querySnapshot.documents {
+            let userDict = try Firestore.Encoder().encode(user)
+            let documentRef = usersCollectionRef.document(document.documentID)
+            try await documentRef.setData(userDict)
+        }
+    }
+    
+    func removeGuildForCurrentUser(_ guild: Guild) async throws {
+        // Remove guild from User entity
+        let user = try await getCurrentUser()
+        
+        var newGuildIds = user.guildIds
+        newGuildIds?.removeAll { $0 == guild.id }
+        
+        let newUser = User(copy: user, guildIds: newGuildIds)
+        try await update(user: newUser)
     }
 }

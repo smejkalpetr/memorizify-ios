@@ -8,4 +8,5 @@
 enum StorylinesError: Error {
     case userNotFound
     case pageNotFound
+    case failedToInitializeFromRawValue
 }

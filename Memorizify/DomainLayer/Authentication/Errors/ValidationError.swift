@@ -7,6 +7,7 @@
 
 enum ValidationError: Error {
     case invalidName
+    case invalidNickname
     case invalidEmail
     case invalidPassword
     case invalidRepeatedPassword

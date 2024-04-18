@@ -14,17 +14,20 @@ final class SignUpViewModel: ObservableObject {
     
     @Injected private var signUpUseCase: SignUpUseCase
     @Injected private var validateNameUseCase: ValidateNameUseCase
+    @Injected private var validateNicknameUseCase: ValidateNicknameUseCase
     @Injected private var validateEmailUseCase: ValidateEmailUseCase
     @Injected private var validatePasswordUseCase: ValidatePasswordUseCase
     @Injected private var validateRepeatedPasswordUseCase: ValidateRepeatedPasswordUseCase
     
     struct State {
         var name = ""
+        var nickname = ""
         var email = ""
         var password = ""
         var repeatedPassword = ""
         
         var nameError = ""
+        var nicknameError = ""
         var emailError = ""
         var passwordError = ""
         var repeatedPasswordError = ""
@@ -54,6 +57,7 @@ final class SignUpViewModel: ObservableObject {
                 try await signUpUseCase.execute(
                     data: SignUpData(
                         name: state.name,
+                        nickname: state.nickname,
                         email: state.email,
                         password: state.password,
                         repeatedPassword: state.repeatedPassword
@@ -74,6 +78,19 @@ final class SignUpViewModel: ObservableObject {
             try validateNameUseCase.execute(name: state.name)
         } catch ValidationError.invalidName {
             state.nameError = "Name must be 2-32 characters long"
+        } catch {
+            state.signUpError = "Unknown error"
+        }
+    }
+    
+    @MainActor
+    func validateNicknameField() {
+        state.nameError = ""
+        
+        do {
+            try validateNicknameUseCase.execute(nickname: state.nickname)
+        } catch ValidationError.invalidNickname {
+            state.nickname = "Nickname must be 2-32 characters long"
         } catch {
             state.signUpError = "Unknown error"
         }

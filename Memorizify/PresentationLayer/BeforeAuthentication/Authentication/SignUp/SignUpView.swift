@@ -43,6 +43,15 @@ struct SignUpView: View {
             .textInputAutocapitalization(.never)
             Text(viewModel.state.nameError)
                 .foregroundStyle(.red)
+            TextField("Nickname", text: $viewModel.state.nickname, onEditingChanged: { isStart in
+                guard (!isStart) else { return }
+                viewModel.validateNicknameField()
+            })
+            .textFieldStyle(PrimaryTextFieldStyle())
+            .autocorrectionDisabled()
+            .textInputAutocapitalization(.never)
+            Text(viewModel.state.nicknameError)
+                .foregroundStyle(.red)
             TextField("Email", text: $viewModel.state.email, onEditingChanged: { isStart in
                 guard (!isStart) else { return }
                 viewModel.validateEmailField()

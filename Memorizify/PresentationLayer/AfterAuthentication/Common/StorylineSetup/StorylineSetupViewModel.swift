@@ -101,7 +101,7 @@ final class StorylineSetupViewModel: ObservableObject {
         state.alert = nil
     }
     
-    func refreshStorylinesOnHomeTab() {
+    private func refreshStorylinesOnHomeTab() {
         NotificationCenter.default.post(name: .refreshStorylines, object: nil)
     }
 }

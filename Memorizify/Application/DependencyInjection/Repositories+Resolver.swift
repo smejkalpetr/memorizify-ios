@@ -17,5 +17,23 @@ public extension Resolver {
         register { UserRepositoryImpl(authenticationRepository: resolve()) as UserRepository }
         
         register { StorylinesRepositoryImpl(authenticationRepository: resolve()) as StorylinesRepository }
+        
+        register { BoardsRepositoryImpl(authenticationRepository: resolve()) as BoardsRepository }
+        
+        register { 
+            GuildsRepositoryImpl(
+                authenticationRepository: resolve(),
+                userRepository: resolve()
+            ) as GuildsRepository }
+        
+        register {
+            InvitationsRepositoryImpl(
+                authenticationRepository: resolve(),
+                userRepository: resolve(),
+                guildsRepository: resolve()
+            ) as InvitationsRepository
+        }
+        
+        register { MembersRepositoryImpl(guildsRepository: resolve(), userRepository: resolve()) as MembersRepository }
     }
 }

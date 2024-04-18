@@ -6,5 +6,5 @@
 //
 
 enum BoardRoute: Hashable {
-    case testPush
+    case showFullGlobalBoard
 }

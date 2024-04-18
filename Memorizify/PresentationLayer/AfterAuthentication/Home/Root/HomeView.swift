@@ -48,7 +48,7 @@ struct HomeView: View {
             .navigationDestination(for: HomeRoute.self) { route in
                 switch route {
                 case let .storylineTimer(storyline, page, timer):
-                    let vm = StorylineTimerViewModel(storyline: storyline, page: page, timer: timer)
+                    let vm = StorylineTimerViewModel(storyline: storyline, page: page, timer: timer, timerKind: .storyline)
                     StorylineTimerView(viewModel: vm)
                 }
             }

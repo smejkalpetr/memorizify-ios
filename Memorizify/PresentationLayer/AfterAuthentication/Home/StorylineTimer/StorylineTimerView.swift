@@ -82,7 +82,8 @@ struct StorylineTimerView: View {
                 breakInterval: 0.0
             ),
             page: TestStorylinePage1(),
-            timer: PomodoroTimer(duration: 60.0)
+            timer: PomodoroTimer(duration: 60.0),
+            timerKind: .storyline
         )
     )
 }

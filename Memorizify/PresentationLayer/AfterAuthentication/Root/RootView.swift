@@ -13,7 +13,8 @@ struct RootView: View {
     
     @StateObject var homeViewModel = HomeViewModel()
     @StateObject var storylinesViewModel = StorylinesViewModel()
-//    @StateObject var boardViewModel = BoardViewModel()
+    @StateObject var guildsViewModel = GuildsViewModel()
+    @StateObject var boardViewModel = BoardViewModel()
     @StateObject var settingsViewModel = SettingsViewModel()
     
     var body: some View {
@@ -39,7 +40,19 @@ struct RootView: View {
                 .tag(Tab.storylines)
                 .environmentObject(router)
             
-            BoardView()
+            
+            GuildsView(viewModel: guildsViewModel)
+                .tabItem {
+                    VStack {
+                        Image(systemName: "person.3")
+                        Text("Guilds")
+                    }
+                }
+                .tag(Tab.guilds)
+                .environmentObject(router)
+            
+            
+            BoardView(viewModel: boardViewModel)
                 .tabItem {
                     VStack {
                         Image(systemName: "crown.fill")

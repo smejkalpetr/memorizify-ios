@@ -16,6 +16,7 @@ final class Router: ObservableObject {
     @Published var homePath = NavigationPath()
     @Published var storylinesPath = NavigationPath()
     @Published var boardPath = NavigationPath()
+    @Published var guildsPath = NavigationPath()
     @Published var settingsPath = NavigationPath()
     
     @Published var tab: Tab = .home
@@ -35,6 +36,7 @@ final class Router: ObservableObject {
         homePath = NavigationPath()
         storylinesPath = NavigationPath()
         boardPath = NavigationPath()
+        guildsPath = NavigationPath()
         settingsPath = NavigationPath()
     }
     

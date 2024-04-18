@@ -19,13 +19,13 @@ struct StorylinesRepositoryImpl: StorylinesRepository {
     func loadAll() async throws -> [Storyline]? {
         let db = Firestore.firestore()
         
-        guard let user = authenticationRepository.getUser() else { throw StorylinesError.userNotFound }
+        let firUser = try authenticationRepository.getUser()
         
         var storylines: [Storyline] = []
             
         // Reference to the user's storylines subcollection
         let storylinesCollectionRef = db.collection(Constants.FIREBASE_COLLECTION_STORYLINES)
-                                        .document(user.uid)
+                                        .document(firUser.uid)
                                         .collection(Constants.FIREBASE_COLLECTION_USER_STORYLINES)
     
         // Fetch all documents from the subcollection
@@ -43,14 +43,14 @@ struct StorylinesRepositoryImpl: StorylinesRepository {
     func update(_ storyline: Storyline) async throws {
         let db = Firestore.firestore()
         
-        guard let user = authenticationRepository.getUser() else { throw StorylinesError.userNotFound }
+        let firUser = try authenticationRepository.getUser()
                 
         // Encode Storyline using the Firestore encoder
         let storylineDict = try Firestore.Encoder().encode(storyline)
         
         // Add Storyline to the user's storylines collection as a document
         try await db.collection(Constants.FIREBASE_COLLECTION_STORYLINES)
-                    .document(user.uid)
+                    .document(firUser.uid)
                     .collection(Constants.FIREBASE_COLLECTION_USER_STORYLINES)
                     .document(storyline.id)
                     .setData(storylineDict)
@@ -59,11 +59,11 @@ struct StorylinesRepositoryImpl: StorylinesRepository {
     func delete(_ storyline: Storyline) async throws {
         let db = Firestore.firestore()
         
-        guard let user = authenticationRepository.getUser() else { throw StorylinesError.userNotFound }
+        let firUser = try authenticationRepository.getUser()
         
-        // Add Storyline to the user's storylines collection as a document
+        // Delete Storyline from the user's storylines collection
         try await db.collection(Constants.FIREBASE_COLLECTION_STORYLINES)
-                    .document(user.uid)
+                    .document(firUser.uid)
                     .collection(Constants.FIREBASE_COLLECTION_USER_STORYLINES)
                     .document(storyline.id)
                     .delete()

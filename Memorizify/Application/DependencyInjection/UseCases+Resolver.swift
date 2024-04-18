@@ -31,6 +31,8 @@ public extension Resolver {
         // Authentication
         register { ValidateNameUseCaseImpl() as ValidateNameUseCase }
         
+        register { ValidateNicknameUseCaseImpl() as ValidateNicknameUseCase }
+        
         register { ValidateEmailUseCaseImpl() as ValidateEmailUseCase }
         
         register { ValidatePasswordUseCaseImpl() as ValidatePasswordUseCase }
@@ -54,6 +56,8 @@ public extension Resolver {
         
         register { IncreaseUserScoreUseCaseImpl(userRepository: resolve(), getCurretUserUseCase: resolve()) as IncreaseUserScoreUseCase }
         
+        register { RemoveGuildForCurrentUserUseCaseImpl(userRepository: resolve()) as RemoveGuildForCurrentUserUseCase }
+        
         // PomodoroTimer
         register { CreatePomodoroTimerUseCaseImpl() as CreatePomodoroTimerUseCase }
         
@@ -72,5 +76,41 @@ public extension Resolver {
             createPomodoroTimerUseCase: resolve(),
             getCurrentStorylinePageUseCase: resolve()
         ) as StartStorylineUseCase }
+        
+        // Board
+        register { LoadGlobalBoardUseCaseImpl(boardsRepository: resolve()) as LoadGlobalBoardUseCase }
+        
+        // Invitations
+        register { SendGuildInvitationUseCaseImpl(invitationsRepository: resolve()) as SendGuildInvitationUseCase }
+        
+        register { LoadMyInvitationsUseCaseImpl(invitationsRepository: resolve()) as LoadMyInvitationsUseCase }
+        
+        register { AcceptGuildInvitationUseCaseImpl(invitationsRepository: resolve()) as AcceptGuildInvitationUseCase }
+        
+        register { DeclineGuildInvitationUseCaseImpl(invitationsRepository: resolve()) as DeclineGuildInvitationUseCase }
+        
+        register { DeleteAllInvitationsForGuildUseCaseImpl(invitationsRepository: resolve()) as DeleteAllInvitationsForGuildUseCase }
+        
+        // Guilds
+        register { CreateGuildUseCaseImpl(guildsRepository: resolve()) as CreateGuildUseCase }
+        
+        register { LoadMyGuildsUseCaseImpl(guildsRepository: resolve()) as LoadMyGuildsUseCase }
+        
+        register { LoadGuildUseCaseImpl(guildsRepository: resolve()) as LoadGuildUseCase }
+        
+        register {
+            DeleteGuildUseCaseImpl(
+                guildsRepository: resolve(),
+                removeGuildForCurrentUserUseCase: resolve(),
+                deleteAllInvitationsForGuildUseCase: resolve()
+            ) as DeleteGuildUseCase
+        }
+        
+        register { UpdateGuildUseCaseImpl(guildsRepository: resolve()) as UpdateGuildUseCase }
+        
+        // Members
+        register { RemoveGuildMemberUseCaseImpl(membersRepository: resolve()) as RemoveGuildMemberUseCase }
+        
+        register { IncreaseMemberScoreUseCaseImpl(membersRepository: resolve()) as IncreaseMemberScoreUseCase }
     }
 }

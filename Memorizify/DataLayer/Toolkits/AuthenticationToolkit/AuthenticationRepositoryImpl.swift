@@ -9,8 +9,8 @@ import Firebase
 
 struct AuthenticationRepositoryImpl: AuthenticationRepository {
     
-    func getUser() -> FirebaseUser? {
-        return Auth.auth().currentUser
+    func getUser() throws -> FirebaseUser {
+        try getFirebaseUser()
     }
     
     func signUp(data: SignUpData) async throws -> FirebaseUser {
@@ -21,7 +21,15 @@ struct AuthenticationRepositoryImpl: AuthenticationRepository {
         let db = Firestore.firestore()
         
         // Encode User model as [String: Any]
-        let userDict = try Firestore.Encoder().encode(User(name: data.name, email: data.email, score: 0))
+        let userDict = try Firestore.Encoder().encode(
+            User(
+                uid: authResult.user.uid,
+                name: data.name,
+                nickname: data.nickname.isEmpty ? nil : data.nickname,
+                email: data.email,
+                score: 0
+            )
+        )
         
         try await db.collection(Constants.FIREBASE_COLLECTION_USERS)
             .document(authResult.user.uid)
@@ -67,5 +75,4 @@ struct AuthenticationRepositoryImpl: AuthenticationRepository {
         
         return user
     }
-    
 }
