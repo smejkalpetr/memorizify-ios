@@ -54,6 +54,9 @@
 		1D1BC5A02BA6487E00B30A77 /* MemorizifyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1BC59F2BA6487E00B30A77 /* MemorizifyUITests.swift */; };
 		1D1BC5A22BA6487E00B30A77 /* MemorizifyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1BC5A12BA6487E00B30A77 /* MemorizifyUITestsLaunchTests.swift */; };
 		1D1BC5B22BA64AC100B30A77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1BC5B12BA64AC100B30A77 /* AppDelegate.swift */; };
+		1D1E2A512BD7F1B10005B4A6 /* SettingsChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1E2A502BD7F1B10005B4A6 /* SettingsChangePasswordView.swift */; };
+		1D1E2A532BD7F1BF0005B4A6 /* SettingsChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1E2A522BD7F1BF0005B4A6 /* SettingsChangePasswordViewModel.swift */; };
+		1D1E2A552BD7F65B0005B4A6 /* ChangePasswordUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1E2A542BD7F65B0005B4A6 /* ChangePasswordUseCase.swift */; };
 		1D26EBAF2BC55FC000F5E1B5 /* Storyline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D26EBAE2BC55FC000F5E1B5 /* Storyline.swift */; };
 		1D26EBB12BC5605000F5E1B5 /* StorylineKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D26EBB02BC5605000F5E1B5 /* StorylineKind.swift */; };
 		1D26EBB32BC5633E00F5E1B5 /* StorylinesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D26EBB22BC5633E00F5E1B5 /* StorylinesViewModel.swift */; };
@@ -278,6 +281,9 @@
 		1D1BC59F2BA6487E00B30A77 /* MemorizifyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizifyUITests.swift; sourceTree = "<group>"; };
 		1D1BC5A12BA6487E00B30A77 /* MemorizifyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizifyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1D1BC5B12BA64AC100B30A77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1D1E2A502BD7F1B10005B4A6 /* SettingsChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsChangePasswordView.swift; path = Memorizify/PresentationLayer/AfterAuthentication/Home/SettingsChangePasswordView.swift; sourceTree = SOURCE_ROOT; };
+		1D1E2A522BD7F1BF0005B4A6 /* SettingsChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsChangePasswordViewModel.swift; sourceTree = "<group>"; };
+		1D1E2A542BD7F65B0005B4A6 /* ChangePasswordUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordUseCase.swift; sourceTree = "<group>"; };
 		1D26EBAE2BC55FC000F5E1B5 /* Storyline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyline.swift; sourceTree = "<group>"; };
 		1D26EBB02BC5605000F5E1B5 /* StorylineKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorylineKind.swift; sourceTree = "<group>"; };
 		1D26EBB22BC5633E00F5E1B5 /* StorylinesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorylinesViewModel.swift; sourceTree = "<group>"; };
@@ -707,6 +713,7 @@
 			isa = PBXGroup;
 			children = (
 				1DC1E4842BB08EED00D19181 /* Root */,
+				1D1E2A4F2BD7F19D0005B4A6 /* SettingsChangePassword */,
 				1DC1E4822BB08EE900D19181 /* SettingsRoute.swift */,
 			);
 			path = Settings;
@@ -813,6 +820,15 @@
 				1D544E042BA76B04003C486F /* UIToolkit */,
 			);
 			path = PresentationLayer;
+			sourceTree = "<group>";
+		};
+		1D1E2A4F2BD7F19D0005B4A6 /* SettingsChangePassword */ = {
+			isa = PBXGroup;
+			children = (
+				1D1E2A502BD7F1B10005B4A6 /* SettingsChangePasswordView.swift */,
+				1D1E2A522BD7F1BF0005B4A6 /* SettingsChangePasswordViewModel.swift */,
+			);
+			path = SettingsChangePassword;
 			sourceTree = "<group>";
 		};
 		1D26EBB42BC5840100F5E1B5 /* StorylineSetup */ = {
@@ -961,6 +977,7 @@
 				1D88B1DE2BAA285F00B3D903 /* LogOutUseCase.swift */,
 				1D88B1E02BAA2ECF00B3D903 /* IsUserLoggedInUseCase.swift */,
 				1D88B1E92BAA4DEE00B3D903 /* ResetPasswordUseCase.swift */,
+				1D1E2A542BD7F65B0005B4A6 /* ChangePasswordUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -1935,6 +1952,7 @@
 				1D84AD392BAB77D30048AC9C /* UserDefaultsError.swift in Sources */,
 				1DC1E4832BB08EE900D19181 /* SettingsRoute.swift in Sources */,
 				1D84AD432BAB82A10048AC9C /* KeychainProvider.swift in Sources */,
+				1D1E2A532BD7F1BF0005B4A6 /* SettingsChangePasswordViewModel.swift in Sources */,
 				1D7B7A3E2BCEC9A300A18E12 /* LoadMyGuildsUseCase.swift in Sources */,
 				1D5E9CC02BA9F8A900EF6400 /* PrimaryTextFieldStyle.swift in Sources */,
 				1D12AD352BAD637000257CB7 /* RootOnboardingView.swift in Sources */,
@@ -1983,6 +2001,7 @@
 				1D84AD352BAB754E0048AC9C /* BasicUserDefaultsProvider.swift in Sources */,
 				1D1AD3632BAD8220008827BA /* SettingsView.swift in Sources */,
 				1D2BB2BA2BB75CA80052AB37 /* PomodoroTimerDelegate.swift in Sources */,
+				1D1E2A552BD7F65B0005B4A6 /* ChangePasswordUseCase.swift in Sources */,
 				1DF42B422BCEE21D0094C263 /* InvitationsRepositoryImpl.swift in Sources */,
 				1D88B1D32BAA091900B3D903 /* LogInViewModel.swift in Sources */,
 				1DC1E4812BB08EC000D19181 /* HomeRoute.swift in Sources */,
@@ -2013,6 +2032,7 @@
 				1D5E9CC22BA9FC3F00EF6400 /* SignUpCompletedView.swift in Sources */,
 				1D88B1E62BAA488B00B3D903 /* ResetPasswordViewModel.swift in Sources */,
 				1D08216E2BCAE10F00F1F8F3 /* TimeFormatterError.swift in Sources */,
+				1D1E2A512BD7F1B10005B4A6 /* SettingsChangePasswordView.swift in Sources */,
 				1DF42B482BCEF8620094C263 /* GuildsError.swift in Sources */,
 				1DAA3FBF2BD5BD410035B77A /* PageControlView.swift in Sources */,
 				1D7B7A2D2BCE891300A18E12 /* GuildDetailView.swift in Sources */,
@@ -2238,7 +2258,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Memorizify/Application/Entitlements/Memorizify.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202404231504;
+				CURRENT_PROJECT_VERSION = 202404231636;
 				DEVELOPMENT_ASSET_PATHS = "\"Memorizify/Application/Preview Content\"";
 				DEVELOPMENT_TEAM = 4C5MQDTY94;
 				ENABLE_PREVIEWS = YES;
@@ -2254,7 +2274,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.16;
+				MARKETING_VERSION = 0.1.17;
 				PRODUCT_BUNDLE_IDENTIFIER = com.smejkalp.memorizify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -2270,7 +2290,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Memorizify/Application/Entitlements/Memorizify.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202404231504;
+				CURRENT_PROJECT_VERSION = 202404231636;
 				DEVELOPMENT_ASSET_PATHS = "\"Memorizify/Application/Preview Content\"";
 				DEVELOPMENT_TEAM = 4C5MQDTY94;
 				ENABLE_PREVIEWS = YES;
@@ -2286,7 +2306,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.16;
+				MARKETING_VERSION = 0.1.17;
 				PRODUCT_BUNDLE_IDENTIFIER = com.smejkalp.memorizify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

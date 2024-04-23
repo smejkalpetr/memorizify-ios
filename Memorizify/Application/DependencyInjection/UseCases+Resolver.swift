@@ -51,6 +51,8 @@ public extension Resolver {
         
         register { ResetPasswordUseCaseImpl(authenticationRepository: resolve()) as ResetPasswordUseCase }
         
+        register { ChangePasswordUseCaseImpl(authenticationRepository: resolve()) as ChangePasswordUseCase }
+        
         // User
         register { GetCurrentUserUseCaseImpl(userRepository: resolve()) as GetCurrentUserUseCase }
         

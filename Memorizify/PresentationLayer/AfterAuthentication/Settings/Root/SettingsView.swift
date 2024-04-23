@@ -43,8 +43,8 @@ struct SettingsView: View {
             .task { await viewModel.getUserInfo() }
             .navigationDestination(for: SettingsRoute.self) { route in
                 switch route {
-                default:
-                    EmptyView()
+                case .changePassword:
+                    SettingsChangePasswordView(viewModel: SettingsChangePasswordViewModel())
                 }
             }
             .navigationTitle(router.tab.rawValue)
@@ -135,10 +135,14 @@ struct SettingsView: View {
     
     private var changeUsernameItem: some View {
         Button() {
-            // todo
+            #warning("TODO: Proceed to view where user can change their username.")
         } label: {
             HStack {
                 Text("Username")
+                Spacer()
+                Text(viewModel.state.user?.nickname ?? "")
+                    .font(.subheadline)
+                    .foregroundStyle(.gray)
             }
         }
         .foregroundStyle(.primary)
@@ -146,10 +150,14 @@ struct SettingsView: View {
     
     private var changeEmailItem: some View {
         Button() {
-            // todo
+            #warning("TODO: Proceed to view where user can change their email.")
         } label: {
             HStack {
                 Text("Email")
+                Spacer()
+                Text(viewModel.state.user?.email ?? "")
+                    .font(.subheadline)
+                    .foregroundStyle(.gray)
             }
         }
         .foregroundStyle(.primary)
@@ -157,10 +165,14 @@ struct SettingsView: View {
     
     private var changePasswordItem: some View {
         Button() {
-            // todo
+            router.settingsPath.append(SettingsRoute.changePassword)
         } label: {
             HStack {
-                Text("Password")
+                Text("Change Password")
+                Spacer()
+                Image(systemName: "chevron.right")
+                    .font(.subheadline)
+                    .foregroundStyle(.gray)
             }
         }
         .foregroundStyle(.primary)
@@ -172,9 +184,12 @@ struct SettingsView: View {
                 viewModel.openLanguageSettings()
             } label: {
                 HStack {
-                    Text("Language")
+                    Text("Switch Language")
                     Spacer()
                     Text(viewModel.getLanguageName(identifier: Locale.current.language.languageCode?.identifier))
+                        .font(.subheadline)
+                        .foregroundStyle(.gray)
+                    Image(systemName: "chevron.right")
                         .font(.subheadline)
                         .foregroundStyle(.gray)
                 }
@@ -188,7 +203,11 @@ struct SettingsView: View {
             viewModel.openNotificationsSettings()
         } label: {
             HStack {
-                Text("Notifications")
+                Text("Change Notifications Settings")
+                Spacer()
+                Image(systemName: "chevron.right")
+                    .font(.subheadline)
+                    .foregroundStyle(.gray)
             }
         }
         .foregroundStyle(.primary)

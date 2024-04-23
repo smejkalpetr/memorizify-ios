@@ -38,10 +38,6 @@ struct AuthenticationRepositoryImpl: AuthenticationRepository {
         return authResult.user
     }
     
-    func signOut() throws {
-        try Auth.auth().signOut()
-    }
-    
     func sendEmailVerification() async throws {
         let user = try getFirebaseUser()
         guard !user.isEmailVerified else { throw FirebaseUserError.alreadyVerified }
@@ -64,6 +60,19 @@ struct AuthenticationRepositoryImpl: AuthenticationRepository {
     
     func resetPassword(with email: String) async throws {
         try await Auth.auth().sendPasswordReset(withEmail: email)
+    }
+    
+    func changePassword(from currentPassword: String, to newPassword: String) async throws {
+        // Get Firebase user
+        let firUser = try getUser()
+        
+        // Re-authenticate (required by Firebase for sensitive actions)
+        guard let email = firUser.email else { throw FirebaseUserError.emailMissing }
+        let credential = EmailAuthProvider.credential(withEmail: email, password: currentPassword)
+        try await firUser.reauthenticate(with: credential)
+        
+        // Update password
+        try await firUser.updatePassword(to: newPassword)
     }
     
     // MARK: Private

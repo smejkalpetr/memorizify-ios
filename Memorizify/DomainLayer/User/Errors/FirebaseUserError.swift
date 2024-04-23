@@ -8,5 +8,6 @@
 enum FirebaseUserError: Error {
     case notFound
     case emailNotVerified
+    case emailMissing
     case alreadyVerified
 }

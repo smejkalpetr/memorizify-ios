@@ -43,11 +43,6 @@ final class SettingsViewModel: ObservableObject {
     }
     
     @MainActor
-    func getLanguageInfo() {
-        
-    }
-    
-    @MainActor
     func openLanguageSettings() {
         state.alert = AlertData(
             title: "Change language",
