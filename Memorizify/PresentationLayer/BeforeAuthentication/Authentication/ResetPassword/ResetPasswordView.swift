@@ -73,7 +73,7 @@ struct ResetPasswordView: View {
     
     private var resetPasswordField: some View {
         VStack {
-            TextField("Email", text: $viewModel.state.email)
+            TextField("", text: $viewModel.state.email)
                 .textFieldStyle(PrimaryTextFieldStyle(title: "Email"))
                 .autocorrectionDisabled()
                 .textInputAutocapitalization(.never)

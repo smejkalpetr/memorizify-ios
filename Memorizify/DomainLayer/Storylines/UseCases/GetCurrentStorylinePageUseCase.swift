@@ -17,6 +17,8 @@ struct GetCurrentStorylinePageUseCaseImpl: GetCurrentStorylinePageUseCase {
         switch storyline.kind {
         case let .testStoryline(data):
             return try data.getCurrentPage(finished: storyline.finished, goal: storyline.goal)
+        case .plainTimerStoryline:
+            return PlainTimerStorylinePage()
         }
     }
 }

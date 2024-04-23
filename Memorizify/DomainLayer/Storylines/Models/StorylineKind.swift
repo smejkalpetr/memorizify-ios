@@ -12,14 +12,18 @@ enum StorylineKind: RawRepresentable, CaseIterable, Identifiable {
     // MARK: Properties
     
     static let TEST_STORYLINE_RAW_VALUE = "testStoryline"
+    static let PLAIN_TIMER_STORYLINE_RAW_VALUE = "testStoryline"
     
     case testStoryline(StorylineData)
+    case plainTimerStoryline(StorylineData)
     
     // MARK: Public
     
     func getDescription() -> String {
         switch self {
         case let .testStoryline(storylineData):
+            return storylineData.description
+        case let .plainTimerStoryline(storylineData):
             return storylineData.description
         }
     }
@@ -36,6 +40,8 @@ enum StorylineKind: RawRepresentable, CaseIterable, Identifiable {
         switch self {
         case .testStoryline:
             return StorylineKind.TEST_STORYLINE_RAW_VALUE
+        case .plainTimerStoryline:
+            return StorylineKind.PLAIN_TIMER_STORYLINE_RAW_VALUE
         }
     }
     
@@ -43,6 +49,8 @@ enum StorylineKind: RawRepresentable, CaseIterable, Identifiable {
         switch rawValue {
         case StorylineKind.TEST_STORYLINE_RAW_VALUE:
             self = .testStoryline(TestStoryline())
+        case StorylineKind.PLAIN_TIMER_STORYLINE_RAW_VALUE:
+            self = .plainTimerStoryline(PlainTimerStoryline())
         default:
             return nil
         }
@@ -50,5 +58,9 @@ enum StorylineKind: RawRepresentable, CaseIterable, Identifiable {
     
     // MARK: CaseIterable
     
-    static let allCases: [StorylineKind] = [.testStoryline(TestStoryline())]
+    static let allCases: [StorylineKind] = [
+        // Don't put PlainTimerStoryline here becuase it would then
+        // show in storyline selection on the Storylines tab
+        .testStoryline(TestStoryline())
+    ]
 }

@@ -6,6 +6,7 @@
 //
 
 enum PomodorTimerKind {
+    case plain
     case storyline
     case guild
 }

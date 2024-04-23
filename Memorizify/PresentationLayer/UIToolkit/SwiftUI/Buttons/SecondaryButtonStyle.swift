@@ -28,7 +28,7 @@ struct SecondaryButtonStyle: ButtonStyle {
         }
         .frame(maxWidth: .infinity)
         .padding()
-        .background(Color("secondary_color").opacity(colorScheme == .dark ? 0 : 1))
+        .background(Color("secondary_color").opacity(colorScheme == .dark ? 0.001 : 1))
         .cornerRadius(5)
         .overlay(
             RoundedRectangle(cornerRadius: 5)

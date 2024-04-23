@@ -78,6 +78,9 @@
 		1D3D32842BA6F8AB0039DA08 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3D32832BA6F8AB0039DA08 /* SignUpView.swift */; };
 		1D3D32892BA6FA100039DA08 /* RootAuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3D32882BA6FA100039DA08 /* RootAuthenticationView.swift */; };
 		1D3D328C2BA6FB4F0039DA08 /* AuthenticationRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3D328B2BA6FB4F0039DA08 /* AuthenticationRoute.swift */; };
+		1D3E70022BD8101D00C5BB34 /* PlainTimerSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E70012BD8101D00C5BB34 /* PlainTimerSetupView.swift */; };
+		1D3E70042BD8102800C5BB34 /* PlainTimerSetupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E70032BD8102800C5BB34 /* PlainTimerSetupViewModel.swift */; };
+		1D3E70072BD814C300C5BB34 /* PlainTimerStoryline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E70062BD814C300C5BB34 /* PlainTimerStoryline.swift */; };
 		1D544DF62BA769DF003C486F /* SendEmailVerificationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D544DF52BA769DF003C486F /* SendEmailVerificationUseCase.swift */; };
 		1D544DFA2BA76A31003C486F /* FirebaseUserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D544DF92BA76A31003C486F /* FirebaseUserError.swift */; };
 		1D544DFD2BA76A79003C486F /* FirebaseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D544DFC2BA76A79003C486F /* FirebaseUser.swift */; };
@@ -305,6 +308,9 @@
 		1D3D32832BA6F8AB0039DA08 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		1D3D32882BA6FA100039DA08 /* RootAuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootAuthenticationView.swift; sourceTree = "<group>"; };
 		1D3D328B2BA6FB4F0039DA08 /* AuthenticationRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRoute.swift; sourceTree = "<group>"; };
+		1D3E70012BD8101D00C5BB34 /* PlainTimerSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainTimerSetupView.swift; sourceTree = "<group>"; };
+		1D3E70032BD8102800C5BB34 /* PlainTimerSetupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainTimerSetupViewModel.swift; sourceTree = "<group>"; };
+		1D3E70062BD814C300C5BB34 /* PlainTimerStoryline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainTimerStoryline.swift; sourceTree = "<group>"; };
 		1D544DF52BA769DF003C486F /* SendEmailVerificationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendEmailVerificationUseCase.swift; sourceTree = "<group>"; };
 		1D544DF92BA76A31003C486F /* FirebaseUserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserError.swift; sourceTree = "<group>"; };
 		1D544DFC2BA76A79003C486F /* FirebaseUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUser.swift; sourceTree = "<group>"; };
@@ -723,6 +729,7 @@
 			isa = PBXGroup;
 			children = (
 				1DC1E47F2BB08EB900D19181 /* Root */,
+				1D3E70002BD8100E00C5BB34 /* SetupPlainTimer */,
 				1D7DA8DF2BC6C1870092E18C /* StorylineTile */,
 				1DC1E4802BB08EC000D19181 /* HomeRoute.swift */,
 			);
@@ -921,6 +928,7 @@
 		1D2BB2D02BBB2E9E0052AB37 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				1D3E70052BD814B300C5BB34 /* PlainTimerStoryline */,
 				1D2BB2C82BBB2C070052AB37 /* TestStoryline */,
 			);
 			path = Data;
@@ -1037,6 +1045,23 @@
 				1D3D328B2BA6FB4F0039DA08 /* AuthenticationRoute.swift */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		1D3E70002BD8100E00C5BB34 /* SetupPlainTimer */ = {
+			isa = PBXGroup;
+			children = (
+				1D3E70012BD8101D00C5BB34 /* PlainTimerSetupView.swift */,
+				1D3E70032BD8102800C5BB34 /* PlainTimerSetupViewModel.swift */,
+			);
+			path = SetupPlainTimer;
+			sourceTree = "<group>";
+		};
+		1D3E70052BD814B300C5BB34 /* PlainTimerStoryline */ = {
+			isa = PBXGroup;
+			children = (
+				1D3E70062BD814C300C5BB34 /* PlainTimerStoryline.swift */,
+			);
+			path = PlainTimerStoryline;
 			sourceTree = "<group>";
 		};
 		1D544DF72BA76A00003C486F /* User */ = {
@@ -1931,6 +1956,7 @@
 				1D88B1DF2BAA285F00B3D903 /* LogOutUseCase.swift in Sources */,
 				1D12AD312BAD635C00257CB7 /* OnboardingCarouselSecondView.swift in Sources */,
 				1D1BC5B22BA64AC100B30A77 /* AppDelegate.swift in Sources */,
+				1D3E70022BD8101D00C5BB34 /* PlainTimerSetupView.swift in Sources */,
 				1D3D32752BA6F3950039DA08 /* AuthenticationRepository.swift in Sources */,
 				1D7B7A402BCEC9B700A18E12 /* LoadMyInvitationsUseCase.swift in Sources */,
 				1D3D32822BA6F8A40039DA08 /* SignUpViewModel.swift in Sources */,
@@ -2005,6 +2031,7 @@
 				1DF42B422BCEE21D0094C263 /* InvitationsRepositoryImpl.swift in Sources */,
 				1D88B1D32BAA091900B3D903 /* LogInViewModel.swift in Sources */,
 				1DC1E4812BB08EC000D19181 /* HomeRoute.swift in Sources */,
+				1D3E70072BD814C300C5BB34 /* PlainTimerStoryline.swift in Sources */,
 				1D0F82502BD15F4700FAD74C /* PomodorTimerKind.swift in Sources */,
 				1D2BB2C32BBB0F420052AB37 /* PomodoroTimerStatus.swift in Sources */,
 				1D7B7A342BCEAD3E00A18E12 /* InvitationsError.swift in Sources */,
@@ -2080,6 +2107,7 @@
 				1D7B7A0E2BCE7DB500A18E12 /* BoardView.swift in Sources */,
 				1DAF516E2BD41BE000FCAE99 /* SliderView.swift in Sources */,
 				1D3D327F2BA6F7640039DA08 /* UseCases+Resolver.swift in Sources */,
+				1D3E70042BD8102800C5BB34 /* PlainTimerSetupViewModel.swift in Sources */,
 				1D5E9CB72BA9E0D800EF6400 /* ValidateEmailUseCase.swift in Sources */,
 				1D9CC60C2BCFDBD300D279BB /* MembersRepositoryImpl.swift in Sources */,
 				1D0821612BCACF3400F1F8F3 /* StorylineTimerView.swift in Sources */,
@@ -2258,7 +2286,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Memorizify/Application/Entitlements/Memorizify.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202404231636;
+				CURRENT_PROJECT_VERSION = 202404231842;
 				DEVELOPMENT_ASSET_PATHS = "\"Memorizify/Application/Preview Content\"";
 				DEVELOPMENT_TEAM = 4C5MQDTY94;
 				ENABLE_PREVIEWS = YES;
@@ -2274,7 +2302,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.17;
+				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.smejkalp.memorizify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -2290,7 +2318,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Memorizify/Application/Entitlements/Memorizify.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202404231636;
+				CURRENT_PROJECT_VERSION = 202404231842;
 				DEVELOPMENT_ASSET_PATHS = "\"Memorizify/Application/Preview Content\"";
 				DEVELOPMENT_TEAM = 4C5MQDTY94;
 				ENABLE_PREVIEWS = YES;
@@ -2306,7 +2334,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.17;
+				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.smejkalp.memorizify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

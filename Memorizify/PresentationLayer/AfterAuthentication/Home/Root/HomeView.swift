@@ -36,6 +36,26 @@ struct HomeView: View {
             }
             .navigationDestination(for: HomeRoute.self) { route in
                 switch route {
+                case let .plainTimer(studyInterval, breakInterval):
+                    StorylineTimerView(
+                        viewModel: StorylineTimerViewModel(
+                            storyline: Storyline(
+                                kind: StorylineKind(
+                                    rawValue: StorylineKind
+                                        .PLAIN_TIMER_STORYLINE_RAW_VALUE) ??
+                                        .plainTimerStoryline(PlainTimerStoryline()
+                                ),
+                                goalHours: .infinity,
+                                goalMinutes: .infinity,
+                                finished: 0.0,
+                                studyInterval: studyInterval,
+                                breakInterval: breakInterval
+                            ),
+                            page: PlainTimerStorylinePage(),
+                            timer: PomodoroTimer(duration: studyInterval * 60),
+                            timerKind: .plain
+                        )
+                    )
                 case let .storylineTimer(storyline, page, timer):
                     let vm = StorylineTimerViewModel(storyline: storyline, page: page, timer: timer, timerKind: .storyline)
                     StorylineTimerView(viewModel: vm)
@@ -48,6 +68,9 @@ struct HomeView: View {
                     await viewModel.loadAllStorylines()
                     viewModel.state.hasInitialyLoadedStorylines = true
                 }
+            }
+            .sheet(isPresented: $viewModel.state.isPlainTimerBottomSheetPresented) {
+                PlainTimerSetupView(viewModel: PlainTimerSetupViewModel())
             }
         }
     }
@@ -67,11 +90,16 @@ struct HomeView: View {
     
     private var plainTimer: some View {
         Section("Plain timer") {
-            ZStack(alignment: .bottomLeading) {
-                plainTimerImage
-                plainTimerText
+            Button() {
+                viewModel.state.isPlainTimerBottomSheetPresented = true
+            } label: {
+                ZStack(alignment: .bottomLeading) {
+                    plainTimerImage
+                    plainTimerText
+                }
+                .listRowInsets(EdgeInsets())
             }
-            .listRowInsets(EdgeInsets())
+            .buttonStyle(.plain)
         }
     }
     

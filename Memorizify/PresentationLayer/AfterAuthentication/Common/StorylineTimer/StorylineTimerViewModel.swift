@@ -137,6 +137,23 @@ final class StorylineTimerViewModel: ObservableObject, PomodoroTimerDelegate {
                 
                 state.storyline.phase.toggle()
             }
+        case .plain:
+            Task {
+                await savePlainTimerScore()
+                timer.stop()
+                
+                switch state.storyline.phase {
+                case .study:
+                    await startCountdownTransition()
+                    
+                    timer.reset(with: state.storyline.breakInterval * 60)
+                    timer.start()
+                case .break:
+                    state.isDone = true
+                }
+                
+                state.storyline.phase.toggle()
+            }
         }
     }
     
@@ -180,6 +197,24 @@ final class StorylineTimerViewModel: ObservableObject, PomodoroTimerDelegate {
             state.alert = AlertData(
                 title: "Guild error",
                 message: "Failed to save guild score data!"
+            )
+        }
+    }
+    
+    @MainActor
+    func savePlainTimerScore() async {
+        defer { state.isLoading = false }
+        state.isLoading = true
+        
+        do {
+            if state.storyline.phase == .study {
+                let finished = floor(timer.timeElapsed / 60.0)
+                try await increaseUserScoreUseCase.execute(by: finished)
+            }
+        } catch {
+            state.alert = AlertData(
+                title: "Plain timer error",
+                message: "Failed to save score data!"
             )
         }
     }

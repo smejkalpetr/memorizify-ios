@@ -347,6 +347,8 @@ struct GuildsView: View {
         switch guild.storylineKind {
         case .testStoryline:
             return Image("transparent_placeholder")
+        case .plainTimerStoryline:
+            return Image("transparent_placeholder")
         }
     }
     

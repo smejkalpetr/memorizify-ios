@@ -18,6 +18,7 @@ final class HomeViewModel: ObservableObject {
         var isInErrorState = false
         var isStorylinesLoading = false
         var hasInitialyLoadedStorylines = false
+        var isPlainTimerBottomSheetPresented = false
         var storylines: [Storyline] = []
     }
     
