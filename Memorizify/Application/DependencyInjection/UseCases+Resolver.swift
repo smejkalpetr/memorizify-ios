@@ -78,7 +78,7 @@ public extension Resolver {
         ) as StartStorylineUseCase }
         
         // Board
-        register { LoadGlobalBoardUseCaseImpl(boardsRepository: resolve()) as LoadGlobalBoardUseCase }
+        register { LoadBoardUseCaseImpl(boardsRepository: resolve()) as LoadBoardUseCase }
         
         // Invitations
         register { SendGuildInvitationUseCaseImpl(invitationsRepository: resolve()) as SendGuildInvitationUseCase }
@@ -112,5 +112,12 @@ public extension Resolver {
         register { RemoveGuildMemberUseCaseImpl(membersRepository: resolve()) as RemoveGuildMemberUseCase }
         
         register { IncreaseMemberScoreUseCaseImpl(membersRepository: resolve()) as IncreaseMemberScoreUseCase }
+        
+        // Settings
+        register { ChangeLanguageSettingsUseCaseImpl(settingsRepository: resolve()) as ChangeLanguageSettingsUseCase }
+        
+        register { ChangeNotificationsSettingsUseCaseImpl(settingsRepository: resolve()) as ChangeNotificationsSettingsUseCase }
+        
+        register { GetFullLanguageNameForIdentifierUseCaseImpl() as GetFullLanguageNameForIdentifierUseCase }
     }
 }

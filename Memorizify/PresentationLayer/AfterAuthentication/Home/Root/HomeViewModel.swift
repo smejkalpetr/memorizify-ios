@@ -14,18 +14,6 @@ final class HomeViewModel: ObservableObject {
     
     @Injected private var loadAllStorylinesUseCase: LoadAllStorylinesUseCase
     
-    // This variable is passed as Binding<Bool> to subviews of Home
-    // and is used to trigger an update
-    var shouldUpdate = false {
-        didSet {
-            if shouldUpdate {
-                Task { @MainActor in
-                    await loadAllStorylines()
-                }
-            }
-        }
-    }
-    
     struct State {
         var isInErrorState = false
         var isStorylinesLoading = false

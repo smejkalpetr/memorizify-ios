@@ -15,128 +15,23 @@ struct GuildDetailView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
-        VStack {
+        List {
             if viewModel.state.isLoading {
-                
+                guildDetailLoading
             } else {
-                if let user = viewModel.state.user, viewModel.state.guild.checkIsLeader(userUid: user.uid) {
-                    Menu("Actions") {
-                        Button {
-                            viewModel.state.isInviteBottomSheetPresented = true
-                        } label: {
-                            Label("Invite friend", systemImage: "person.fill.badge.plus")
-                        }
-                        Button() {
-                            viewModel.state.isUpdateBottomSheetPresented = true
-                        } label: {
-                            Label("Update guild", systemImage: "gearshape.arrow.triangle.2.circlepath")
-                        }
-                        Button(role: .destructive) {
-                            viewModel.deleteGuild() {
-                                presentationMode.wrappedValue.dismiss()
-                                viewModel.refreshGuildsOnGuildsTab()
-                            }
-                        } label: {
-                            Label("Delete guild", systemImage: "trash")
-                        }
-                        .disabled(viewModel.state.guild.board.records.count > 1)
-                    }
-                }
-                VStack {
-                    Text("Goal: \(viewModel.state.guild.goal)")
-                }
-                VStack {
-                    VStack {
-                        HStack {
-                            Text("Study interval")
-                            Spacer()
-                            Text("\(Int(viewModel.state.studyIntervalMinutes))")
-                        }
-                        Slider(value: $viewModel.state.studyIntervalMinutes, in: GuildDetailViewModel.studyIntervalRange, step: 1)
-                        HStack {
-                            Text("Break interval")
-                            Spacer()
-                            Text("\(Int(viewModel.state.breakIntervalMinutes))")
-                        }
-                        Slider(value: $viewModel.state.breakIntervalMinutes, in: GuildDetailViewModel.breakIntervalRange, step: 1)
-                    }
-                    Button("Start") {
-                        let (storyline, page, timer) = viewModel.prepareStorylinePageTimer()
-                        router.guildsPath.append(GuildsRoute.storylineTimer(storyline, page, timer))
-                    }
-                    .padding()
-                }
-                .padding()
-                List {
-                    Section(header: Text("Members")) {
-                        if viewModel.state.isListLoading {
-                            ProgressView()
-                        } else {
-                            ForEach(viewModel.state.guild.board.records) { record in
-                                if let user = viewModel.state.user, viewModel.state.guild.checkIsMyRecord(userUid: user.uid, record: record) || viewModel.state.guild.checkIsLeader(userUid: user.uid) {
-                                    HStack {
-                                        if record.score >= viewModel.state.guild.goal {
-                                            Image(systemName: "checkmark")
-                                        } else {
-                                            Image(systemName: "xmark")
-                                        }
-                                        if viewModel.state.guild.checkIsMyRecord(userUid: user.uid, record: record) {
-                                            Text(record.nickname)
-                                                .bold()
-                                            if record.isLeader {
-                                                Image(systemName: "crown")
-                                            }
-                                            Spacer()
-                                            Text("\(record.score)")
-                                                .bold()
-                                        } else {
-                                            Text(record.nickname)
-                                            if record.isLeader {
-                                                Image(systemName: "crown")
-                                            }
-                                            Spacer()
-                                            Text("\(record.score)")
-                                        }
-                                    }
-                                    .contextMenu {
-                                        Button(role: .destructive) {
-                                            viewModel.removeUserFromGuild(userUid: record.uid)
-                                        } label: {
-                                            Label(
-                                                viewModel.state.guild.checkIsMyRecord(userUid: user.uid, record: record) ? "Leave guild" : "Kick from guild",
-                                                systemImage: viewModel.state.guild.checkIsMyRecord(userUid: user.uid, record: record) ? "door.left.hand.open" : "figure.kickboxing")
-                                        }
-                                        .disabled(record.isLeader)
-                                    }
-                                } else {
-                                    HStack {
-                                        if record.score >= viewModel.state.guild.goal {
-                                            Image(systemName: "checkmark")
-                                        } else {
-                                            Image(systemName: "xmark")
-                                        }
-                                        Text(record.nickname)
-                                        if record.isLeader {
-                                            Image(systemName: "crown")
-                                        }
-                                        Spacer()
-                                        Text("\(record.score)")
-                                    }
-                                }
-                            }
-                            .listRowBackground(Color.yellow)
-                        }
-                    }
-                }
-                .background {
-                    Color.red
-                }
-                .scrollContentBackground(.hidden)
-                .refreshable { await viewModel.refreshGuildDetail() }
-
+                guildDetailLoaded
             }
         }
+        .padding()
+        .shadow(radius: 5, x: 3.5, y: 3.5)
+        .background {
+            backgroundImage
+        }
+        .scrollContentBackground(.hidden)
+        .refreshable { await viewModel.refreshGuildDetail() }
         .navigationTitle(viewModel.state.guild.name)
         .task { 
             await viewModel.getCurrentUser()
@@ -161,6 +56,328 @@ struct GuildDetailView: View {
                 viewModel.state.isUpdateBottomSheetPresented = false
             })
         }
+    }
+    
+    private var backgroundImage: some View {
+        ZStack {
+            Image("background_home")
+                .resizable()
+                .scaledToFill()
+                .edgesIgnoringSafeArea(.all)
+            if colorScheme == .dark {
+                Color.black.opacity(0.5)
+                    .edgesIgnoringSafeArea(.all)
+            }
+        }
+    }
+    
+    @ViewBuilder
+    private var guildDetailLoading: some View {
+        Section() {
+            ZStack(alignment: .bottomLeading) {
+                guildDetailLoadingImageNarrow
+                guildDetailLoadingTextVertical
+            }
+            .animatePlaceholder(isLoading: $viewModel.state.isLoading)
+        }
+        .listRowInsets(EdgeInsets())
+        Section() {
+            ZStack(alignment: .bottomLeading) {
+                guildDetailLoadingImageFull
+                guildDetailLoadingTextVertical
+            }
+            .animatePlaceholder(isLoading: $viewModel.state.isLoading)
+        }
+        .listRowInsets(EdgeInsets())
+        Section() {
+            ZStack(alignment: .bottomLeading) {
+                guildDetailLoadingImageFull
+                guildDetailLoadingTextHorizontalFull
+            }
+            .animatePlaceholder(isLoading: $viewModel.state.isLoading)
+        }
+        .listRowInsets(EdgeInsets())
+    }
+    
+    private var guildDetailLoadingImageFull: some View {
+        ZStack(alignment: .bottomLeading) {
+            Image("transparent_placeholder")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .clipped()
+        }
+    }
+    
+    private var guildDetailLoadingImageNarrow: some View {
+        ZStack(alignment: .bottomLeading) {
+            Image("transparent_placeholder_narrow")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .clipped()
+        }
+    }
+    
+    private var guildDetailLoadingTextVertical: some View {
+        VStack(alignment: .leading, spacing: 6.0) {
+            Spacer()
+            HStack {
+                RoundedRectangle(cornerRadius: 5)
+                    .fill(Color.gray.opacity(0.5))
+                    .frame(width: 100, height: 25)
+                    .padding(.horizontal)
+                Spacer()
+            }
+            HStack {
+                RoundedRectangle(cornerRadius: 5)
+                    .fill(Color.gray.opacity(0.35))
+                    .frame(width: 150, height: 20)
+                    .padding([.horizontal, .bottom])
+                Spacer()
+            }
+        }
+    }
+    
+    private var guildDetailLoadingTextHorizontalFull: some View {
+        VStack {
+            ForEach(0..<4) { _ in
+                HStack {
+                    RoundedRectangle(cornerRadius: 5)
+                        .fill(Color.gray.opacity(0.5))
+                        .frame(width: 100, height: 25)
+                        .padding([.horizontal, .bottom])
+                    Spacer()
+                    RoundedRectangle(cornerRadius: 5)
+                        .fill(Color.gray.opacity(0.35))
+                        .frame(width: 80, height: 25)
+                        .padding([.horizontal, .bottom])
+                }
+            }
+        }
+    }
+    
+    private var guildDetailLoadingTextHorizontalNarrow: some View {
+        VStack {
+            ForEach(0..<4) { _ in
+                HStack {
+                    RoundedRectangle(cornerRadius: 5)
+                        .fill(Color.gray.opacity(0.5))
+                        .frame(width: 100, height: 25)
+                        .padding([.horizontal, .bottom])
+                    Spacer()
+                    RoundedRectangle(cornerRadius: 5)
+                        .fill(Color.gray.opacity(0.35))
+                        .frame(width: 80, height: 25)
+                        .padding([.horizontal, .bottom])
+                }
+            }
+        }
+    }
+    
+    @ViewBuilder
+    private var guildDetailLoaded: some View {
+        guildInfo
+        timerSettings
+        memberList
+    }
+    
+    private var leaderActionsMenu: some View {
+        Menu("Leader actions") {
+            Button {
+                viewModel.state.isInviteBottomSheetPresented = true
+            } label: {
+                Label("Invite friend", systemImage: "person.fill.badge.plus")
+            }
+            Button() {
+                viewModel.state.isUpdateBottomSheetPresented = true
+            } label: {
+                Label("Update guild", systemImage: "gearshape.arrow.triangle.2.circlepath")
+            }
+            Button(role: .destructive) {
+                viewModel.deleteGuild() {
+                    presentationMode.wrappedValue.dismiss()
+                    viewModel.refreshGuildsOnGuildsTab()
+                }
+            } label: {
+                Label("Delete guild", systemImage: "trash")
+            }
+            .disabled(viewModel.state.guild.board.records.count > 1)
+        }
+        .foregroundStyle(.blue)
+        .padding([.horizontal, .top])
+    }
+    
+    private var guildInfo: some View {
+        Section("Guild info") {
+            VStack {
+                if let user = viewModel.state.user, viewModel.state.guild.checkIsLeader(userUid: user.uid) {
+                    leaderActionsMenu
+                }
+                guildInfoText
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .padding()
+        }
+        .listRowInsets(EdgeInsets())
+    }
+    
+    private var guildInfoText: some View {
+        VStack {
+            Text("Guild goal: \(Int(viewModel.state.guild.goal))".uppercased())
+                .font(.body)
+                .bold()
+                .opacity(0.45)
+                .padding()
+            Text("Number of members: \(viewModel.state.guild.board.records.count)".uppercased())
+                .font(.caption)
+                .opacity(0.45)
+        }
+    }
+    
+    private var timerSettings: some View {
+        Section("Timer settings") {
+            VStack {
+                timerSliders
+                startButton
+            }
+            .padding()
+        }
+        .listRowInsets(EdgeInsets())
+    }
+    
+    private var timerSliders: some View {
+        VStack {
+            SliderView(
+                title: "Study interval",
+                range: GuildDetailViewModel.studyIntervalRange,
+                valueBinding: $viewModel.state.studyIntervalMinutes
+            )
+            SliderView(
+                title: "Break interval",
+                range: GuildDetailViewModel.breakIntervalRange,
+                valueBinding: $viewModel.state.breakIntervalMinutes
+            )
+        }
+    }
+    
+    private var startButton: some View {
+        Button() {
+            let (storyline, page, timer) = viewModel.prepareStorylinePageTimer()
+            router.guildsPath.append(GuildsRoute.storylineTimer(storyline, page, timer))
+        } label: {
+            Text("Start".uppercased())
+                .bold()
+        }
+        .buttonStyle(.plain)
+        .foregroundStyle(.blue)
+        .padding()
+    }
+    
+    private var memberList: some View {
+        Section(header: Text("Members")) {
+            if viewModel.state.isListLoading {
+                memberListLoading
+            } else {
+                memberListLoaded
+            }
+        }
+        .listRowInsets(EdgeInsets())
+    }
+    
+    private var memberListLoading: some View {
+        ZStack(alignment: .bottomLeading) {
+            guildDetailLoadingImageFull
+            guildDetailLoadingTextHorizontalFull
+        }
+        .animatePlaceholder(isLoading: $viewModel.state.isListLoading)
+    }
+    
+    private var memberListLoaded: some View {
+        ForEach(viewModel.state.guild.board.records) { record in
+            if 
+                let user = viewModel.state.user,
+                viewModel.state.guild.checkIsMyRecord(userUid: user.uid, record: record) ||
+                viewModel.state.guild.checkIsLeader(userUid: user.uid)
+            {
+                leadersList(user: user, record: record)
+            } else {
+                othersList(record: record)
+            }
+        }
+    }
+    
+    private func leadersList(user: User, record: BoardRecord) -> some View {
+        HStack {
+            scoreMarkImage(record: record)
+            if viewModel.state.guild.checkIsMyRecord(userUid: user.uid, record: record) {
+                myRecord(record)
+            } else {
+                othersRecord(record)
+            }
+        }
+        .padding()
+        .contextMenu {
+            contextMenuButton(user: user, record: record)
+        }
+    }
+    
+    private func scoreMarkImage(record: BoardRecord) -> some View {
+        if record.score >= viewModel.state.guild.goal {
+            Image(systemName: "checkmark")
+        } else {
+            Image(systemName: "xmark")
+        }
+    }
+    
+    @ViewBuilder
+    private func myRecord(_ record: BoardRecord) -> some View {
+        Text(record.nickname)
+            .bold()
+        if record.isLeader {
+            Image(systemName: "crown")
+        }
+        Spacer()
+        Text("\(Int(record.score))")
+            .bold()
+    }
+    
+    @ViewBuilder
+    private func othersRecord(_ record: BoardRecord) -> some View {
+        Text(record.nickname)
+        if record.isLeader {
+            Image(systemName: "crown")
+        }
+        Spacer()
+        Text("\(Int(record.score))")
+    }
+    
+    private func contextMenuButton(user: User, record: BoardRecord) -> some View {
+        Button(role: .destructive) {
+            viewModel.removeUserFromGuild(userUid: record.uid)
+        } label: {
+            Label(
+                viewModel.state.guild.checkIsMyRecord(userUid: user.uid, record: record) ? "Leave guild" : "Kick from guild",
+                systemImage: viewModel.state.guild.checkIsMyRecord(userUid: user.uid, record: record) ? "door.left.hand.open" : "figure.kickboxing")
+        }
+        .disabled(record.isLeader)
+    }
+    
+    private func othersList(record: BoardRecord) -> some View {
+        HStack {
+            if record.score >= viewModel.state.guild.goal {
+                Image(systemName: "checkmark")
+            } else {
+                Image(systemName: "xmark")
+            }
+            Text(record.nickname)
+            if record.isLeader {
+                Image(systemName: "crown")
+            }
+            Spacer()
+            Text("\(Int(record.score))")
+        }
+        .padding()
     }
 }
 

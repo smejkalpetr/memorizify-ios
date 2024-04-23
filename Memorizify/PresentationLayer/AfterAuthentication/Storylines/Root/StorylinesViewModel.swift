@@ -12,7 +12,6 @@ final class StorylinesViewModel: ObservableObject {
     @Published var state = State()
     
     struct State {
-        var bottomSheetItem: StorylineKind?
         let availableStorylines = StorylineKind.allCases
     }
 }

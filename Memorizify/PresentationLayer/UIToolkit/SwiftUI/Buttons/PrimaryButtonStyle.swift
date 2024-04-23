@@ -21,14 +21,14 @@ struct PrimaryButtonStyle: ButtonStyle {
                 ProgressView()
             } else {
                 configuration.label
-                    .font(.callout)
-                    .foregroundColor(.cyan)
+                    .bold()
             }
         }
         .frame(maxWidth: .infinity)
         .padding()
-        .background(.yellow)
+        .background(Color("primary_color"))
         .cornerRadius(5)
+        .shadow(radius: 5, x: 2.5, y: 2.5)
     }
 }
 

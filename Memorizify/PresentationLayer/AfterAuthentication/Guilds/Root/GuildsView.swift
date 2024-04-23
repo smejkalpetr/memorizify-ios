@@ -13,101 +13,21 @@ struct GuildsView: View {
     
     @EnvironmentObject var router: Router
     
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
         NavigationStack(path: $router.guildsPath) {
-            VStack {
-                ScrollView {
-                    VStack {
-                        if viewModel.state.isInvitationsLoading {
-                            ProgressView()
-                        } else if viewModel.state.invitations.isEmpty {
-                            Text("No pending invitaions")
-                        } else {
-                            Text("Invitations")
-                            ForEach(viewModel.state.invitations) { invitation in
-                                VStack {
-                                    Text("Invitaion from \(invitation.senderNickname)")
-                                    Text("To guild \(invitation.guildName)")
-                                    HStack {
-                                        Button {
-                                            viewModel.acceptInvitation(invitation)
-                                        } label: {
-//                                            if viewModel.state.acepting == invitation  {
-//                                                ProgressView()
-//                                            } else {
-                                                Text("Accept")
-//                                            }
-                                        }
-                                        .padding(.horizontal)
-                                        Button {
-                                            viewModel.declineInvitation(invitation)
-                                        } label: {
-                                            if viewModel.state.decliningInvitation == invitation  {
-                                                ProgressView()
-                                            } else {
-                                                Text("Decline")
-                                            }
-                                        }
-                                        .padding(.horizontal)
-                                    }
-                                }
-                                .padding()
-                                .border(.blue)
-                            }
-                        }
-                    }
-                    Divider()
-                        .padding(.vertical)
-                    VStack {
-                        if viewModel.state.isGuildsLoading {
-                            ProgressView()
-                        } else if viewModel.state.guilds.isEmpty {
-                            VStack {
-                                Text("No guilds yet")
-                                    .padding()
-                                HStack {
-                                    Text("Get an invite from a fiend or")
-                                    Button("create a new guild!") {
-                                        viewModel.state.isBottomSheetPresented = true
-                                    }
-                                }
-                            }
-                        } else {
-                            Text("Guilds")
-                            ForEach(viewModel.state.guilds) { guild in
-                                VStack {
-                                    Button(guild.name) {
-                                        router.guildsPath.append(GuildsRoute.showGuildDetail(guild))
-                                    }
-                                }
-                                .padding()
-                                .border(.blue)
-                            }
-                            Button("Create new guild") {
-                                viewModel.state.isBottomSheetPresented = true
-                            }
-                            .padding()
-                        }
-                    }
-                }
-                .refreshable { await viewModel.refreshData() }
-                .onReceive(Notification.Name.refreshGuilds.publisher) { _ in
-                    Task { await viewModel.loadMyGuilds() }
-                }
-                .onReceive(Notification.Name.refreshInvitations.publisher) { _ in
-                    Task { await viewModel.loadMyInvitations() }
-                }
+            List {
+                invitationsSection
+                guildsSection
             }
-            .navigationDestination(for: GuildsRoute.self) { route in
-                switch route {
-                case let .showGuildDetail(guild):
-                    GuildDetailView(viewModel: GuildDetailViewModel(guild: guild))
-                        .environmentObject(router)
-                case let .storylineTimer(storyline, page, timer):
-                    let vm = StorylineTimerViewModel(storyline: storyline, page: page, timer: timer, timerKind: .guild)
-                    StorylineTimerView(viewModel: vm)
-                }
+            .listRowSpacing(25)
+            .padding()
+            .shadow(radius: 5, x: 3.5, y: 3.5)
+            .background {
+                backgroundImage
             }
+            .scrollContentBackground(.hidden)
             .navigationTitle(router.tab.rawValue)
             .navigationBarTitleDisplayMode(.large)
             .task {
@@ -123,7 +43,334 @@ struct GuildsView: View {
             .sheet(isPresented: $viewModel.state.isBottomSheetPresented) {
                 GuildSetupView(viewModel: GuildSetupViewModel())
             }
+            .refreshable { await viewModel.refreshData() }
+            .onReceive(Notification.Name.refreshGuilds.publisher) { _ in
+                Task { await viewModel.loadMyGuilds() }
+            }
+            .onReceive(Notification.Name.refreshInvitations.publisher) { _ in
+                Task { await viewModel.loadMyInvitations() }
+            }
+            .navigationDestination(for: GuildsRoute.self) { route in
+                switch route {
+                case let .showGuildDetail(guild):
+                    GuildDetailView(viewModel: GuildDetailViewModel(guild: guild))
+                        .environmentObject(router)
+                case let .storylineTimer(storyline, page, timer):
+                    let vm = StorylineTimerViewModel(storyline: storyline, page: page, timer: timer, timerKind: .guild)
+                    StorylineTimerView(viewModel: vm)
+                }
+            }
         }
+    }
+    
+    private var backgroundImage: some View {
+        ZStack {
+            Image("background_home")
+                .resizable()
+                .scaledToFill()
+                .edgesIgnoringSafeArea(.all)
+            if colorScheme == .dark {
+                Color.black.opacity(0.5)
+                    .edgesIgnoringSafeArea(.all)
+            }
+        }
+    }
+    
+    private var invitationsSection: some View {
+        Section("Invitations") {
+            if viewModel.state.isInvitationsLoading {
+                invitationsLoading
+            } else if viewModel.state.invitations.isEmpty {
+                invitationsEmpty
+            } else {
+                invitationsLoaded
+            }
+        }
+        .listRowInsets(EdgeInsets())
+    }
+    
+    private var invitationsLoading: some View {
+        ZStack(alignment: .bottomLeading) {
+            invitationsImage
+            invitationsLoadingText
+        }
+        .listRowInsets(EdgeInsets())
+        .animatePlaceholder(isLoading: $viewModel.state.isInvitationsLoading)
+    }
+    
+    private var invitationsImage: some View {
+        Image("transparent_placeholder_narrow")
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .clipped()
+    }
+    
+    private var invitationsLoadingText: some View {
+        VStack(alignment: .leading, spacing: 6.0) {
+            Spacer()
+            HStack {
+                RoundedRectangle(cornerRadius: 5)
+                    .fill(Color.gray.opacity(0.5))
+                    .frame(width: 100, height: 25)
+                    .padding(.horizontal)
+                Spacer()
+            }
+            HStack {
+                RoundedRectangle(cornerRadius: 5)
+                    .fill(Color.gray.opacity(0.35))
+                    .frame(width: 150, height: 20)
+                    .padding([.horizontal, .bottom])
+                Spacer()
+            }
+        }
+    }
+    
+    private var invitationsEmpty: some View {
+        ZStack {
+            invitationsEmptyImage
+            invitationsEmptyText
+        }
+    }
+    
+    private var invitationsEmptyText: some View {
+        Text("No pending invitaions".uppercased())
+            .font(.footnote)
+            .opacity(0.75)
+    }
+    
+    private var invitationsEmptyImage: some View {
+        ZStack(alignment: .bottomLeading) {
+            Image("transparent_placeholder_narrow")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .clipped()
+        }
+    }
+    
+    private var invitationsLoaded: some View {
+        ForEach(viewModel.state.invitations) { invitation in
+            HStack {
+                Spacer()
+                invitationBody(invitation: invitation)
+                Spacer()
+            }
+            .padding()
+        }
+    }
+    
+    private func invitationBody(invitation: Invitation) -> some View {
+        VStack{
+            invitationInfoText(for: invitation)
+            invitationButtons(invitation: invitation)
+        }
+    }
+    
+    private func invitationInfoText(for invitation: Invitation) -> some View {
+        VStack {
+            HStack {
+                Text("Invitation from".uppercased())
+                    .font(.footnote)
+                    .opacity(0.45)
+                Text("\(invitation.senderNickname)")
+                    .bold()
+            }
+            HStack {
+                Text("To guild".uppercased())
+                    .font(.footnote)
+                    .opacity(0.45)
+                Text("\(invitation.guildName)")
+                    .bold()
+            }
+        }
+    }
+    
+    private func invitationButtons(invitation: Invitation) -> some View {
+        HStack {
+            Button {
+                viewModel.acceptInvitation(invitation)
+            } label: {
+                VStack {
+                    if viewModel.state.acceptingInvitation == invitation  {
+                        ProgressView()
+                    } else {
+                        Text("Accept")
+                            .bold()
+                            .padding()
+                    }
+                }
+            }
+            .buttonStyle(.plain)
+            .padding(.horizontal)
+            Button {
+                viewModel.declineInvitation(invitation)
+            } label: {
+                VStack {
+                    if viewModel.state.decliningInvitation == invitation  {
+                        ProgressView()
+                    } else {
+                        Text("Decline")
+                            .foregroundStyle(.red)
+                            .padding()
+                    }
+                }
+            }
+            .buttonStyle(.plain)
+            .padding(.horizontal)
+        }
+    }
+    
+    private var guildsSection: some View {
+        Section("Guilds") {
+            if viewModel.state.isGuildsLoading {
+                guildsLoading
+            } else if viewModel.state.guilds.isEmpty {
+                guildsEmpty
+            } else {
+                guildsLoaded
+                createGuildTile
+            }
+        }
+        .listRowInsets(EdgeInsets())
+    }
+    
+    private var guildsLoading: some View {
+        ForEach(0..<3) { _ in
+            ZStack(alignment: .bottomLeading) {
+                guildsLoadingImage
+                guildsLoadingText
+            }
+            .animatePlaceholder(isLoading: $viewModel.state.isGuildsLoading)
+        }
+    }
+    
+    private var guildsLoadingImage: some View {
+        ZStack(alignment: .bottomLeading) {
+            Image("transparent_placeholder")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .clipped()
+        }
+    }
+    
+    private var guildsLoadingText: some View {
+        VStack(alignment: .leading, spacing: 6.0) {
+            Spacer()
+            HStack {
+                RoundedRectangle(cornerRadius: 5)
+                    .fill(Color.gray.opacity(0.5))
+                    .frame(width: 100, height: 25)
+                    .padding(.horizontal)
+                Spacer()
+            }
+            HStack {
+                RoundedRectangle(cornerRadius: 5)
+                    .fill(Color.gray.opacity(0.35))
+                    .frame(width: 150, height: 20)
+                    .padding([.horizontal, .bottom])
+                Spacer()
+            }
+        }
+    }
+    
+    private var guildsEmpty: some View {
+        ZStack {
+            guildsEmptyImage
+            guildsEmptyText
+        }
+    }
+    
+    private var guildsEmptyImage: some View {
+        Image("transparent_placeholder")
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .clipped()
+    }
+    
+    private var guildsEmptyText: some View {
+        VStack {
+            Text("No guilds yet")
+                .bold()
+                .padding()
+            Text("Get an invite from a fiend or")
+            Button("create a new guild!") {
+                viewModel.state.isBottomSheetPresented = true
+            }
+        }
+    }
+    
+    private var guildsLoaded: some View {
+        ForEach(viewModel.state.guilds) { guild in
+            ZStack(alignment: .bottomLeading) {
+                guildImage(guild: guild)
+                guildBody(guild: guild)
+            }
+            .listRowInsets(EdgeInsets())
+        }
+    }
+    
+    private func guildBody(guild: Guild) -> some View {
+        Button() {
+            router.guildsPath.append(GuildsRoute.showGuildDetail(guild))
+        } label: {
+            VStack(alignment: .leading, spacing: 8) {
+                Text("\(guild.name)")
+                    .font(.title)
+                    .bold()
+                    .foregroundStyle(colorScheme == .dark ? .white : .black)
+                Text(guild.storylineKind.rawValue)
+                    .font(.body)
+                    .bold()
+                    .opacity(0.45)
+                    .foregroundStyle(colorScheme == .dark ? .white : .black)
+                Text("Members: \(guild.board.records.count)".uppercased())
+                    .font(.caption)
+                    .opacity(0.45)
+                    .foregroundStyle(colorScheme == .dark ? .white : .black)
+            }
+            .padding()
+        }
+    }
+    
+    private func guildImage(guild: Guild) -> some View {
+        getGuildImage(guild: guild)
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .clipped()
+    }
+    
+    private func getGuildImage(guild: Guild) -> Image {
+        switch guild.storylineKind {
+        case .testStoryline:
+            return Image("transparent_placeholder")
+        }
+    }
+    
+    private var createGuildTile: some View {
+        ZStack(alignment: .center) {
+            createGuildImage
+            Button() {
+                viewModel.state.isBottomSheetPresented = true
+            } label: {
+                Text("Tap here to create a new guild".uppercased())
+                    .font(.footnote)
+                    .foregroundStyle(colorScheme == .dark ? .white : .black)
+            }
+            .padding()
+        }
+        .listRowInsets(EdgeInsets())
+    }
+    
+    private var createGuildImage: some View {
+        Image("transparent_placeholder_narrow")
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .clipped()
     }
 }
 

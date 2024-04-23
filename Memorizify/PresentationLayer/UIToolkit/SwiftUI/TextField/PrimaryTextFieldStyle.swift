@@ -9,30 +9,25 @@ import SwiftUI
 
 struct PrimaryTextFieldStyle: TextFieldStyle {
     
+    let title: String
+    
     func _body(configuration: TextField<Self._Label>) -> some View {
+        VStack(alignment: .leading) {
+            Text(title.uppercased())
+                .font(.caption)
+                .opacity(0.45)
             configuration
-                .padding(10)
-                .background(
-                    LinearGradient(
-                        gradient: Gradient(
-                            colors: [Color.orange, Color.yellow]
-                        ),
-                        startPoint: .topLeading, 
-                        endPoint: .bottomTrailing
-                    )
-                    .opacity(0.7)
-                )
-                .cornerRadius(5)
-                .shadow(color: .gray, radius: 4)
+            Divider()
         }
+    }
 }
 
 #Preview {
     @State var value = "Text field"
     
     return VStack {
-        TextField("Placeholder", text: $value)
-            .textFieldStyle(PrimaryTextFieldStyle())
+        TextField("", text: $value)
+            .textFieldStyle(PrimaryTextFieldStyle(title: "some title"))
             .padding()
     }
 }

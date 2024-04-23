@@ -12,54 +12,30 @@ final class BoardViewModel: ObservableObject {
     
     @Published var state = State()
     
-    @Injected private var loadGlobalBoardUseCase: LoadGlobalBoardUseCase
+    @Injected private var loadBoardUseCase: LoadBoardUseCase
     
     struct State {
         var hasInitialyLoadedBoard = false
         var alert: AlertData?
         var bottomSheetItem: Board?
-        var isGlobalBoardLoading = false
-        var globalBoard: Board?
+        var isBoardLoading = false
+        var board: Board?
     }
     
     @MainActor
-    func loadGlobalBoard() async {
-        defer { state.isGlobalBoardLoading = false }
-        state.isGlobalBoardLoading = true
+    func loadBoard() async {
+        defer { state.isBoardLoading = false }
+        state.isBoardLoading = true
         
         do {
-            state.globalBoard = try await loadGlobalBoardUseCase.execute()
-            state.globalBoard?.sortByScoreDescending()
+            state.board = try await loadBoardUseCase.execute()
+            state.board?.sortByScoreDescending()
         } catch {
             print("Error: \(error)")
             state.alert = AlertData(
                 title: "Error loading global board",
                 message: "An error occured when loading the global board. Please try again later."
             )
-        }
-    }
-    
-    @MainActor
-    func changeNicknameSorting() {
-        switch state.globalBoard?.sorted {
-        case .nicknameAscending:
-            state.globalBoard?.sortByNicknameDescending()
-        case .nicknameDescending:
-            state.globalBoard?.sortByNicknameAscending()
-        default:
-            state.globalBoard?.sortByNicknameAscending()
-        }
-    }
-    
-    @MainActor
-    func changeScoreSorting() {
-        switch state.globalBoard?.sorted {
-        case .scoreAscending:
-            state.globalBoard?.sortByScoreDescending()
-        case .scoreDescending:
-            state.globalBoard?.sortByScoreAscending()
-        default:
-            state.globalBoard?.sortByScoreDescending()
         }
     }
 

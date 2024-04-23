@@ -6,5 +6,5 @@
 //
 
 protocol BoardsRepository {
-    func getGlobalBoard() async throws -> Board
+    func getBoard() async throws -> Board
 }

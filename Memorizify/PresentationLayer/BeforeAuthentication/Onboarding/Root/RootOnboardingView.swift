@@ -11,25 +11,55 @@ struct RootOnboardingView: View {
     
     @EnvironmentObject var router: Router
     
+    @Environment(\.colorScheme) var colorScheme
+    
+    @State private var selection = 0
+    
     var body: some View {
         VStack {
-            TabView {
-                OnboardingCarouselFirstView()
-                    .tabItem { Text("first") }
-                
-                OnboardingCarouselSecondView()
-                    .tabItem { Text("second") }
-                
-                OnboardingCarouselThirdView()
-                    .environmentObject(router)
-                    .tabItem { Text("third") }
-            }
-            .background(Color.yellow)
-            .tabViewStyle(.page(indexDisplayMode: .never))
-            .indexViewStyle(.page(backgroundDisplayMode: .always))
+            onboardingTabView
+            PageControlView(numberOfPages: 3, currentPage: $selection)
+                .padding(.bottom, 20)
+        }
+        .background {
+            backgroundImage
         }
     }
+    
+    private var backgroundImage: some View {
+        ZStack {
+            Image("bg_authentication")
+                .resizable()
+                .scaledToFill()
+                .edgesIgnoringSafeArea(.all)
+            if colorScheme == .dark {
+                Color.black.opacity(0.4)
+                    .edgesIgnoringSafeArea(.all)
+            }
+        }
+    }
+    
+    private var onboardingTabView: some View {
+        TabView(selection: $selection) {
+            OnboardingCarouselFirstView()
+                .tabItem { Text("first") }
+                .tag(0)
+            
+            OnboardingCarouselSecondView()
+                .tabItem { Text("second") }
+                .tag(1)
+            
+            OnboardingCarouselThirdView()
+                .environmentObject(router)
+                .tabItem { Text("third") }
+                .tag(2)
+        }
+        .tabViewStyle(.page(indexDisplayMode: .never))
+        .indexViewStyle(.page(backgroundDisplayMode: .always))
+    }
 }
+
+
 
 #Preview {
     RootOnboardingView()

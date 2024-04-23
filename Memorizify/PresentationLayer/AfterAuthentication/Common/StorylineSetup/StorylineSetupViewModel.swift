@@ -22,14 +22,16 @@ final class StorylineSetupViewModel: ObservableObject {
     }
     
     private let setup: Setup
+    private let detailCompletion: (() -> ())?
     
     @Published var state: State
     
     @Injected private var saveStorylineUseCase: SaveStorylineUseCase
     
-    init(setup: Setup, shouldHomeUpdate: Binding<Bool>? = nil) {
+    init(setup: Setup, detailCompletion: (() -> ())? = nil) {
         self.setup = setup
         self.state = State(setup: setup)
+        self.detailCompletion = detailCompletion
     }
 
     struct State {
@@ -90,6 +92,7 @@ final class StorylineSetupViewModel: ObservableObject {
                 
                 refreshStorylinesOnHomeTab()
                 completion()
+                detailCompletion?()
             } catch {
                 state.alert = AlertData(title: "Error setting up storyline!")
             }

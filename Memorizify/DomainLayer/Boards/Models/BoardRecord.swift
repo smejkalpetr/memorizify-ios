@@ -20,6 +20,10 @@ struct BoardRecord: Identifiable , Codable {
     let score: Double
     let isLeader: Bool
     
+    var scoreString: String {
+        String(score)
+    }
+    
     // MARK: Initialization
     
     init(

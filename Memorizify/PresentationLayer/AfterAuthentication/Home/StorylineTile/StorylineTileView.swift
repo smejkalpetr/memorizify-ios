@@ -13,41 +13,23 @@ struct StorylineTileView: View {
     
     @EnvironmentObject var router: Router
     
+    @Environment(\.colorScheme) var colorScheme
+    
     init(viewModel: StorylineTileViewModel) {
         self.viewModel = viewModel
     }
     
     var body: some View {
         VStack {
-            VStack {
-                Text("Id: \(viewModel.state.storyline.id)")
-                Text("Kind: \(viewModel.state.storyline.kind)")
-                Text("GoalHours: \(viewModel.state.storyline.goalHours)")
-                Text("GoalMinutes: \(viewModel.state.storyline.goalMinutes)")
-                Text("Finished: \(viewModel.state.storyline.finished)")
-                Text("StudyInterval: \(viewModel.state.storyline.studyInterval)")
-                Text("BreakInterval: \(viewModel.state.storyline.breakInterval)")
-                HStack {
-                    Button("Update") {
-                        viewModel.state.bottomSheetItem = viewModel.state.storyline
-                    }
-                    .padding()
-                    Button("Delete") {
-                        viewModel.delete()
-                    }
-                    .padding()
-                    Button("Start") {
-                        viewModel.start() { storyline, page, timer in
-                            router.homePath.append(HomeRoute.storylineTimer(storyline, page, timer))
-                        }
-                    }
-                    .padding()
+            Button() {
+                viewModel.start() { storyline, page, timer in
+                    router.homePath.append(HomeRoute.storylineTimer(storyline, page, timer))
                 }
+            } label: {
+                storylineTileLabel
             }
-            .padding()
-            .border(.blue)
-            .padding()
         }
+        .listRowInsets(EdgeInsets())
         .alert(item: Binding<AlertData?>(
             get: { viewModel.state.alert },
             set: { _ in viewModel.dismissAlert() }
@@ -55,6 +37,59 @@ struct StorylineTileView: View {
         .sheet(item: $viewModel.state.bottomSheetItem) { item in
             StorylineSetupView(viewModel: StorylineSetupViewModel(setup: .update(item)))
                 .environmentObject(router)
+        }
+    }
+    
+    private var storylineTileLabel: some View {
+        ZStack(alignment: .bottomLeading) {
+            storylineTileLabelImage
+            storylineTileLabelText
+        }
+        .contextMenu {
+            updateContextItem
+            deleteContextItem
+        }
+    }
+    
+    private var storylineTileLabelImage: some View {
+        Image("transparent_placeholder")
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .clipped()
+    }
+    
+    private var storylineTileLabelText: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text("\(viewModel.state.storyline.kind.rawValue)")
+                .font(.title)
+                .bold()
+                .foregroundStyle(colorScheme == .dark ? .white : .black)
+            Text("\(Int(viewModel.state.storyline.finished))/\(Int(viewModel.state.storyline.goal))".uppercased())
+                .font(.caption)
+                .foregroundStyle(colorScheme == .dark ? .white : .black)
+                .opacity(0.45)
+        }
+        .padding()
+    }
+    
+    private var updateContextItem: some View {
+        VStack {
+            Button() {
+                viewModel.state.bottomSheetItem = viewModel.state.storyline
+            } label: {
+                Label("Update", systemImage: "pencil")
+            }
+        }
+    }
+    
+    private var deleteContextItem: some View {
+        VStack {
+            Button(role: .destructive) {
+                viewModel.delete()
+            } label: {
+                Label("Delete", systemImage: "trash.fill")
+            }
         }
     }
 }

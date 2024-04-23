@@ -15,82 +15,106 @@ struct StorylineSetupView: View {
     
     @Environment(\.presentationMode) var presentationMode
     
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
-        VStack() {
+        VStack {
             ScrollView {
-                Text("Setup new storyline of type: TODO: Switch here based on setup enum and show kind")
-                    .bold()
-                    .padding()
-                VStack {
-                    VStack {
-                        HStack {
-                            Text("Minutes")
-                            Spacer()
-                            Text("\(Int(viewModel.state.goalMinutes))")
-                        }
-                        Slider(value: $viewModel.state.goalMinutes, in: StorylineSetupViewModel.goalMinutesRange, step: 1)
-                    }
-                    .padding()
-                    VStack {
-                        HStack {
-                            Text("Hours")
-                            Spacer()
-                            Text("\(Int(viewModel.state.goalHours))")
-                        }
-                        Slider(value: $viewModel.state.goalHours, in: StorylineSetupViewModel.goalHoursRange, step: 1)
-                    }
-                    .padding()
-                }
-                .padding()
-                
-                VStack {
-                    VStack {
-                        HStack {
-                            Text("Study Interval")
-                            Spacer()
-                            Text("\(Int(viewModel.state.studyInterval))")
-                        }
-                        Slider(value: $viewModel.state.studyInterval, in: StorylineSetupViewModel.studyIntervalRange, step: 1)
-                    }
-                    .padding()
-                    VStack {
-                        HStack {
-                            Text("Break Interval")
-                            Spacer()
-                            Text("\(Int(viewModel.state.breakInterval))")
-                        }
-                        Slider(value: $viewModel.state.breakInterval, in: StorylineSetupViewModel.breakIntervalRange, step: 1)
-                    }
-                    .padding()
-                }
-                .padding()
-                
-                Spacer()
-                if viewModel.state.isButtonLoading {
-                    ProgressView()
-                        .padding()
-                } else {
-                    Button("Done") {
-                        viewModel.setupStoryline() {
-                            presentationMode.wrappedValue.dismiss()
-                            router.tab = .home
-                        }
-                    }
-                    .padding()
-                }
-                Button("Back") {
-                    presentationMode.wrappedValue.dismiss()
-                }
-                .padding()
+                storylineSettings
             }
+            Spacer()
+            footerButtons
+        }
+        .background {
+            backgroundImage
         }
         .alert(item: Binding<AlertData?>(
             get: { viewModel.state.alert },
             set: { _ in viewModel.dismissAlert() }
         )) { alert in .init(alert) }
     }
+    
+    private var backgroundImage: some View {
+        ZStack {
+            Image("bg_authentication")
+                .resizable()
+                .scaledToFill()
+                .edgesIgnoringSafeArea(.all)
+            if colorScheme == .dark {
+                Color.black.opacity(0.4)
+                    .edgesIgnoringSafeArea(.all)
+            }
+        }
+    }
+    
+    private var storylineSettings: some View {
+        VStack {
+            sliders
+        }
+        .background(
+            RoundedRectangle(
+                cornerRadius: 10
+            )
+            .fill(colorScheme == .dark ? .black : .white)
+            .shadow(radius: 5, x: 3.5, y: 3.5)
+        )
+        .padding()
+    }
+    
+    private var sliders: some View {
+        VStack {
+            VStack {
+                sliderGroupTitle("Storyline goal")
+                SliderView(title: "Hours", range: StorylineSetupViewModel.goalHoursRange, valueBinding: $viewModel.state.goalHours)
+                SliderView(title: "Minutes", range: StorylineSetupViewModel.goalMinutesRange, valueBinding: $viewModel.state.goalMinutes)
+            }
+            .padding(.bottom)
+            VStack {
+                sliderGroupTitle("Timer parameters")
+                SliderView(title: "Study Interval", range: StorylineSetupViewModel.studyIntervalRange, valueBinding: $viewModel.state.studyInterval)
+                SliderView(title: "Break Interval", range: StorylineSetupViewModel.breakIntervalRange, valueBinding: $viewModel.state.breakInterval)
+            }
+            .padding(.top)
+        }
+        .padding()
+    }
+    
+    private func sliderGroupTitle(_ title: String) -> some View {
+        VStack {
+            HStack {
+                Text(title.uppercased())
+                    .font(.callout)
+                    .foregroundStyle(colorScheme == .dark ? .white.opacity(0.6) : .gray)
+                Spacer()
+            }
+            Divider()
+        }
+        .padding(.bottom)
+    }
+    
+    private var footerButtons: some View {
+        VStack {
+            if viewModel.state.isButtonLoading {
+                ProgressView()
+                    .padding()
+            } else {
+                Button("Done") {
+                    viewModel.setupStoryline() {
+                        presentationMode.wrappedValue.dismiss()
+                        router.tab = .home
+                    }
+                }
+                .buttonStyle(PrimaryButtonStyle())
+            }
+            Button("Back") {
+                presentationMode.wrappedValue.dismiss()
+            }
+            .buttonStyle(SecondaryButtonStyle())
+        }
+        .padding()
+    }
 }
 
 #Preview {
-    StorylineSetupView(viewModel: StorylineSetupViewModel(setup: .create(.testStoryline(TestStoryline())), shouldHomeUpdate: Binding<Bool>(get: { return true }, set: { _ in })))
+    StorylineSetupView(viewModel: StorylineSetupViewModel(setup: .create(.testStoryline(TestStoryline()))))
 }

@@ -35,5 +35,7 @@ public extension Resolver {
         }
         
         register { MembersRepositoryImpl(guildsRepository: resolve(), userRepository: resolve()) as MembersRepository }
+        
+        register { SettingsRepositoryImpl() as SettingsRepository }
     }
 }

@@ -10,14 +10,26 @@
 enum StorylineKind: RawRepresentable, CaseIterable, Identifiable {
     
     // MARK: Properties
+    
     static let TEST_STORYLINE_RAW_VALUE = "testStoryline"
-        
+    
     case testStoryline(StorylineData)
     
+    // MARK: Public
+    
+    func getDescription() -> String {
+        switch self {
+        case let .testStoryline(storylineData):
+            return storylineData.description
+        }
+    }
+    
     // MARK: Identifiable
+    
     var id: String { self.rawValue }
     
     // MARK: RawRepresentable
+    
     typealias RawValue = String
     
     var rawValue: String {
@@ -37,5 +49,6 @@ enum StorylineKind: RawRepresentable, CaseIterable, Identifiable {
     }
     
     // MARK: CaseIterable
+    
     static let allCases: [StorylineKind] = [.testStoryline(TestStoryline())]
 }

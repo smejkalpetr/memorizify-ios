@@ -11,13 +11,19 @@ struct RootAuthenticationView: View {
     
     @EnvironmentObject var router: Router
     
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
         NavigationStack(path: $router.authenticationPath) {
             VStack {
                 Spacer()
                 headline
+                brainImage
                 Spacer()
                 signUpLoginButtons
+            }
+            .background {
+                backgroundImage
             }
             .navigationDestination(for: AuthenticationRoute.self) { route in
                 switch route {
@@ -44,9 +50,32 @@ struct RootAuthenticationView: View {
         }
     }
     
+    private var backgroundImage: some View {
+        ZStack {
+            Image("bg_authentication")
+                .resizable()
+                .scaledToFill()
+                .edgesIgnoringSafeArea(.all)
+            if colorScheme == .dark {
+                Color.black.opacity(0.35)
+                    .edgesIgnoringSafeArea(.all)
+            }
+        }
+    }
+    
     var headline: some View {
-        Text("Welcome to Memorizify!")
+        Text("Welcome to Memorizify")
             .font(.title)
+            .bold()
+            .padding()
+            .shadow(radius: 1)
+    }
+    
+    private var brainImage: some View {
+        Image("brain_logo_with_m_downscaled")
+            .resizable()
+            .scaledToFit()
+            .scaleEffect(0.9)
             .padding()
     }
     

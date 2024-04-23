@@ -17,9 +17,10 @@ struct RootView: View {
     @StateObject var boardViewModel = BoardViewModel()
     @StateObject var settingsViewModel = SettingsViewModel()
     
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
         TabView(selection: $router.tab) {
-            
             HomeView(viewModel: homeViewModel)
                 .tabItem {
                     VStack {
@@ -72,6 +73,9 @@ struct RootView: View {
                 .tag(Tab.settings)
                 .environmentObject(router)
         }
+        .tint(
+            colorScheme == .dark ? Color(.white).opacity(0.8) : Color(.black).opacity(0.6)
+        )
     }
 }
 

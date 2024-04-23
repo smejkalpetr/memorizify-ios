@@ -28,6 +28,13 @@
 		1D0F82552BD18DD000FAD74C /* GuildDetailUpdateGuildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0F82542BD18DD000FAD74C /* GuildDetailUpdateGuildView.swift */; };
 		1D0F82572BD18DD800FAD74C /* GuildDetailUpdateGuildViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0F82562BD18DD800FAD74C /* GuildDetailUpdateGuildViewModel.swift */; };
 		1D0F82592BD1904A00FAD74C /* UpdateGuildUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0F82582BD1904A00FAD74C /* UpdateGuildUseCase.swift */; };
+		1D0F825E2BD2A62900FAD74C /* SettingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0F825D2BD2A62900FAD74C /* SettingsRepository.swift */; };
+		1D0F82612BD2A64900FAD74C /* SettingsRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0F82602BD2A64900FAD74C /* SettingsRepositoryImpl.swift */; };
+		1D0F82642BD2A70100FAD74C /* SettingsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0F82632BD2A70100FAD74C /* SettingsError.swift */; };
+		1D0F82662BD2A75C00FAD74C /* ChangeLanguageSettingsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0F82652BD2A75C00FAD74C /* ChangeLanguageSettingsUseCase.swift */; };
+		1D0F82682BD2AD9A00FAD74C /* ChangeNotificationsSettingsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0F82672BD2AD9A00FAD74C /* ChangeNotificationsSettingsUseCase.swift */; };
+		1D0F826B2BD2B55900FAD74C /* GetFullLanguageNameForIdentifierUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0F826A2BD2B55900FAD74C /* GetFullLanguageNameForIdentifierUseCase.swift */; };
+		1D0F826E2BD2B56F00FAD74C /* LanguageSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0F826D2BD2B56F00FAD74C /* LanguageSetting.swift */; };
 		1D12AD2F2BAD635400257CB7 /* OnboardingCarouselFirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D12AD2E2BAD635400257CB7 /* OnboardingCarouselFirstView.swift */; };
 		1D12AD312BAD635C00257CB7 /* OnboardingCarouselSecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D12AD302BAD635C00257CB7 /* OnboardingCarouselSecondView.swift */; };
 		1D12AD332BAD636600257CB7 /* OnboardingCarouselThirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D12AD322BAD636600257CB7 /* OnboardingCarouselThirdView.swift */; };
@@ -80,8 +87,8 @@
 		1D5E9CBD2BA9F00200EF6400 /* SecondaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5E9CBC2BA9F00200EF6400 /* SecondaryButtonStyle.swift */; };
 		1D5E9CC02BA9F8A900EF6400 /* PrimaryTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5E9CBF2BA9F8A900EF6400 /* PrimaryTextFieldStyle.swift */; };
 		1D5E9CC22BA9FC3F00EF6400 /* SignUpCompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5E9CC12BA9FC3F00EF6400 /* SignUpCompletedView.swift */; };
-		1D7B7A0C2BCE7DB500A18E12 /* GlobalBoardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B7A042BCE7DB500A18E12 /* GlobalBoardDetailView.swift */; };
-		1D7B7A0D2BCE7DB500A18E12 /* GlobalBoardDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B7A052BCE7DB500A18E12 /* GlobalBoardDetailViewModel.swift */; };
+		1D7B7A0C2BCE7DB500A18E12 /* BoardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B7A042BCE7DB500A18E12 /* BoardDetailView.swift */; };
+		1D7B7A0D2BCE7DB500A18E12 /* BoardDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B7A052BCE7DB500A18E12 /* BoardDetailViewModel.swift */; };
 		1D7B7A0E2BCE7DB500A18E12 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B7A072BCE7DB500A18E12 /* BoardView.swift */; };
 		1D7B7A0F2BCE7DB500A18E12 /* BoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B7A082BCE7DB500A18E12 /* BoardViewModel.swift */; };
 		1D7B7A102BCE7DB500A18E12 /* BoardRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B7A0A2BCE7DB500A18E12 /* BoardRoute.swift */; };
@@ -151,8 +158,14 @@
 		1DA1DD292BCD989E00185C76 /* BoardRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1DD282BCD989E00185C76 /* BoardRecord.swift */; };
 		1DA1DD2D2BCD9B8E00185C76 /* BoardsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1DD2C2BCD9B8E00185C76 /* BoardsRepository.swift */; };
 		1DA1DD302BCD9BD800185C76 /* BoardRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1DD2F2BCD9BD800185C76 /* BoardRepositoryImpl.swift */; };
-		1DA1DD322BCD9C0600185C76 /* LoadGlobalBoardUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1DD312BCD9C0600185C76 /* LoadGlobalBoardUseCase.swift */; };
+		1DA1DD322BCD9C0600185C76 /* LoadBoardUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1DD312BCD9C0600185C76 /* LoadBoardUseCase.swift */; };
 		1DA1DD342BCDA07600185C76 /* ValidateNicknameUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1DD332BCDA07600185C76 /* ValidateNicknameUseCase.swift */; };
+		1DAA3FAF2BD4790F0035B77A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DAA3FAE2BD4790F0035B77A /* LaunchScreen.storyboard */; };
+		1DAA3FBF2BD5BD410035B77A /* PageControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAA3FBE2BD5BD410035B77A /* PageControlView.swift */; };
+		1DAF516A2BD3FD1A00FCAE99 /* AnimatePlaceholders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAF51692BD3FD1900FCAE99 /* AnimatePlaceholders.swift */; };
+		1DAF516E2BD41BE000FCAE99 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAF516D2BD41BE000FCAE99 /* SliderView.swift */; };
+		1DAF51712BD42BA000FCAE99 /* StorylineDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAF51702BD42BA000FCAE99 /* StorylineDetailView.swift */; };
+		1DAF51732BD42BB000FCAE99 /* StorylineDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAF51722BD42BB000FCAE99 /* StorylineDetailViewModel.swift */; };
 		1DC1E47C2BB0696E00D19181 /* StorylinesRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC1E47B2BB0696E00D19181 /* StorylinesRoute.swift */; };
 		1DC1E4812BB08EC000D19181 /* HomeRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC1E4802BB08EC000D19181 /* HomeRoute.swift */; };
 		1DC1E4832BB08EE900D19181 /* SettingsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC1E4822BB08EE900D19181 /* SettingsRoute.swift */; };
@@ -236,6 +249,13 @@
 		1D0F82542BD18DD000FAD74C /* GuildDetailUpdateGuildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildDetailUpdateGuildView.swift; sourceTree = "<group>"; };
 		1D0F82562BD18DD800FAD74C /* GuildDetailUpdateGuildViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildDetailUpdateGuildViewModel.swift; sourceTree = "<group>"; };
 		1D0F82582BD1904A00FAD74C /* UpdateGuildUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateGuildUseCase.swift; sourceTree = "<group>"; };
+		1D0F825D2BD2A62900FAD74C /* SettingsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRepository.swift; sourceTree = "<group>"; };
+		1D0F82602BD2A64900FAD74C /* SettingsRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRepositoryImpl.swift; sourceTree = "<group>"; };
+		1D0F82632BD2A70100FAD74C /* SettingsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsError.swift; sourceTree = "<group>"; };
+		1D0F82652BD2A75C00FAD74C /* ChangeLanguageSettingsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLanguageSettingsUseCase.swift; sourceTree = "<group>"; };
+		1D0F82672BD2AD9A00FAD74C /* ChangeNotificationsSettingsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNotificationsSettingsUseCase.swift; sourceTree = "<group>"; };
+		1D0F826A2BD2B55900FAD74C /* GetFullLanguageNameForIdentifierUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFullLanguageNameForIdentifierUseCase.swift; sourceTree = "<group>"; };
+		1D0F826D2BD2B56F00FAD74C /* LanguageSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSetting.swift; sourceTree = "<group>"; };
 		1D12AD2E2BAD635400257CB7 /* OnboardingCarouselFirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCarouselFirstView.swift; sourceTree = "<group>"; };
 		1D12AD302BAD635C00257CB7 /* OnboardingCarouselSecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCarouselSecondView.swift; sourceTree = "<group>"; };
 		1D12AD322BAD636600257CB7 /* OnboardingCarouselThirdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCarouselThirdView.swift; sourceTree = "<group>"; };
@@ -291,8 +311,8 @@
 		1D5E9CBC2BA9F00200EF6400 /* SecondaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButtonStyle.swift; sourceTree = "<group>"; };
 		1D5E9CBF2BA9F8A900EF6400 /* PrimaryTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryTextFieldStyle.swift; sourceTree = "<group>"; };
 		1D5E9CC12BA9FC3F00EF6400 /* SignUpCompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCompletedView.swift; sourceTree = "<group>"; };
-		1D7B7A042BCE7DB500A18E12 /* GlobalBoardDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalBoardDetailView.swift; sourceTree = "<group>"; };
-		1D7B7A052BCE7DB500A18E12 /* GlobalBoardDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalBoardDetailViewModel.swift; sourceTree = "<group>"; };
+		1D7B7A042BCE7DB500A18E12 /* BoardDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardDetailView.swift; sourceTree = "<group>"; };
+		1D7B7A052BCE7DB500A18E12 /* BoardDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardDetailViewModel.swift; sourceTree = "<group>"; };
 		1D7B7A072BCE7DB500A18E12 /* BoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		1D7B7A082BCE7DB500A18E12 /* BoardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardViewModel.swift; sourceTree = "<group>"; };
 		1D7B7A0A2BCE7DB500A18E12 /* BoardRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardRoute.swift; sourceTree = "<group>"; };
@@ -362,8 +382,15 @@
 		1DA1DD282BCD989E00185C76 /* BoardRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardRecord.swift; sourceTree = "<group>"; };
 		1DA1DD2C2BCD9B8E00185C76 /* BoardsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardsRepository.swift; sourceTree = "<group>"; };
 		1DA1DD2F2BCD9BD800185C76 /* BoardRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardRepositoryImpl.swift; sourceTree = "<group>"; };
-		1DA1DD312BCD9C0600185C76 /* LoadGlobalBoardUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadGlobalBoardUseCase.swift; sourceTree = "<group>"; };
+		1DA1DD312BCD9C0600185C76 /* LoadBoardUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadBoardUseCase.swift; sourceTree = "<group>"; };
 		1DA1DD332BCDA07600185C76 /* ValidateNicknameUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateNicknameUseCase.swift; sourceTree = "<group>"; };
+		1DAA3FAE2BD4790F0035B77A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1DAA3FBE2BD5BD410035B77A /* PageControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlView.swift; sourceTree = "<group>"; };
+		1DAF51672BD3F79B00FCAE99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Memorizify/Application/Info/Info.plist; sourceTree = SOURCE_ROOT; };
+		1DAF51692BD3FD1900FCAE99 /* AnimatePlaceholders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatePlaceholders.swift; sourceTree = "<group>"; };
+		1DAF516D2BD41BE000FCAE99 /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
+		1DAF51702BD42BA000FCAE99 /* StorylineDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorylineDetailView.swift; sourceTree = "<group>"; };
+		1DAF51722BD42BB000FCAE99 /* StorylineDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorylineDetailViewModel.swift; sourceTree = "<group>"; };
 		1DC1E47B2BB0696E00D19181 /* StorylinesRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorylinesRoute.swift; sourceTree = "<group>"; };
 		1DC1E4802BB08EC000D19181 /* HomeRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRoute.swift; sourceTree = "<group>"; };
 		1DC1E4822BB08EE900D19181 /* SettingsRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRoute.swift; sourceTree = "<group>"; };
@@ -512,6 +539,59 @@
 			path = GuildDetailUpdateGuild;
 			sourceTree = "<group>";
 		};
+		1D0F825A2BD2A5F900FAD74C /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				1D0F82622BD2A6F700FAD74C /* Errors */,
+				1D0F826C2BD2B56000FAD74C /* Models */,
+				1D0F825B2BD2A61100FAD74C /* UseCases */,
+				1D0F825C2BD2A61600FAD74C /* Repositories */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		1D0F825B2BD2A61100FAD74C /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				1D0F82652BD2A75C00FAD74C /* ChangeLanguageSettingsUseCase.swift */,
+				1D0F82672BD2AD9A00FAD74C /* ChangeNotificationsSettingsUseCase.swift */,
+				1D0F826A2BD2B55900FAD74C /* GetFullLanguageNameForIdentifierUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		1D0F825C2BD2A61600FAD74C /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				1D0F825D2BD2A62900FAD74C /* SettingsRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		1D0F825F2BD2A63500FAD74C /* SettingsToolkit */ = {
+			isa = PBXGroup;
+			children = (
+				1D0F82602BD2A64900FAD74C /* SettingsRepositoryImpl.swift */,
+			);
+			path = SettingsToolkit;
+			sourceTree = "<group>";
+		};
+		1D0F82622BD2A6F700FAD74C /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				1D0F82632BD2A70100FAD74C /* SettingsError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		1D0F826C2BD2B56000FAD74C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1D0F826D2BD2B56F00FAD74C /* LanguageSetting.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		1D12AD2C2BAD62FB00257CB7 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -526,6 +606,7 @@
 			children = (
 				1D12AD362BAD637600257CB7 /* Root */,
 				1D12AD372BAD637A00257CB7 /* Carousel */,
+				1DAA3FBB2BD5BD0E0035B77A /* PageControl */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -546,6 +627,14 @@
 				1D12AD322BAD636600257CB7 /* OnboardingCarouselThirdView.swift */,
 			);
 			path = Carousel;
+			sourceTree = "<group>";
+		};
+		1D17DA052BD715240077FFB9 /* ResetPasswordCompleted */ = {
+			isa = PBXGroup;
+			children = (
+				1D88B1E72BAA489700B3D903 /* ResetPasswordCompletedView.swift */,
+			);
+			path = ResetPasswordCompleted;
 			sourceTree = "<group>";
 		};
 		1D1AD3492BAD6651008827BA /* UseCases */ = {
@@ -608,6 +697,7 @@
 			isa = PBXGroup;
 			children = (
 				1DC1E47D2BB08E7900D19181 /* Root */,
+				1DAF516F2BD42B9600FCAE99 /* StorylineDetail */,
 				1DC1E47B2BB0696E00D19181 /* StorylinesRoute.swift */,
 			);
 			path = Storylines;
@@ -627,7 +717,6 @@
 			children = (
 				1DC1E47F2BB08EB900D19181 /* Root */,
 				1D7DA8DF2BC6C1870092E18C /* StorylineTile */,
-				1D08215D2BCACE1F00F1F8F3 /* StorylineTimer */,
 				1DC1E4802BB08EC000D19181 /* HomeRoute.swift */,
 			);
 			path = Home;
@@ -694,8 +783,10 @@
 		1D1BC5AE2BA64A8200B30A77 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				1DAF516B2BD4081900FCAE99 /* Info */,
 				1D84AD512BAB91EE0048AC9C /* Entitlements */,
 				1D1BC5AF2BA64A9400B30A77 /* Assets */,
+				1DAA3FAD2BD478F30035B77A /* LaunchScreen */,
 				1D1BC58A2BA6487D00B30A77 /* Preview Content */,
 				1DD8F5DA2BA655E00099BEA0 /* GoogleServices */,
 				1DD8F5CE2BA64F480099BEA0 /* Navigation */,
@@ -757,6 +848,7 @@
 		1D2BB2BC2BBB0D330052AB37 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				1D08215D2BCACE1F00F1F8F3 /* StorylineTimer */,
 				1D26EBB42BC5840100F5E1B5 /* StorylineSetup */,
 			);
 			path = Common;
@@ -843,6 +935,7 @@
 				1DF42B3A2BCEE1370094C263 /* Invitations */,
 				1D7B7A192BCE81FC00A18E12 /* Guilds */,
 				1D9CC6052BCFDB6F00D279BB /* Members */,
+				1D0F825A2BD2A5F900FAD74C /* Settings */,
 			);
 			path = DomainLayer;
 			sourceTree = "<group>";
@@ -969,8 +1062,9 @@
 		1D544E042BA76B04003C486F /* UIToolkit */ = {
 			isa = PBXGroup;
 			children = (
-				1D88B1D82BAA1F3400B3D903 /* AlertData */,
 				1D544E052BA76B0B003C486F /* SwiftUI */,
+				1D88B1D82BAA1F3400B3D903 /* AlertData */,
+				1DAF516C2BD41BCD00FCAE99 /* Slider */,
 			);
 			path = UIToolkit;
 			sourceTree = "<group>";
@@ -981,6 +1075,7 @@
 				1D88B1DD2BAA216000B3D903 /* Alert */,
 				1D5E9CBE2BA9F89800EF6400 /* TextField */,
 				1D544E062BA76B12003C486F /* Buttons */,
+				1DAF51682BD3FCFD00FCAE99 /* AnimatePlaceholders */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -1014,13 +1109,13 @@
 			path = TextField;
 			sourceTree = "<group>";
 		};
-		1D7B7A062BCE7DB500A18E12 /* GlobalBoardDetail */ = {
+		1D7B7A062BCE7DB500A18E12 /* BoardDetail */ = {
 			isa = PBXGroup;
 			children = (
-				1D7B7A042BCE7DB500A18E12 /* GlobalBoardDetailView.swift */,
-				1D7B7A052BCE7DB500A18E12 /* GlobalBoardDetailViewModel.swift */,
+				1D7B7A042BCE7DB500A18E12 /* BoardDetailView.swift */,
+				1D7B7A052BCE7DB500A18E12 /* BoardDetailViewModel.swift */,
 			);
-			path = GlobalBoardDetail;
+			path = BoardDetail;
 			sourceTree = "<group>";
 		};
 		1D7B7A092BCE7DB500A18E12 /* Root */ = {
@@ -1036,7 +1131,7 @@
 			isa = PBXGroup;
 			children = (
 				1D7B7A092BCE7DB500A18E12 /* Root */,
-				1D7B7A062BCE7DB500A18E12 /* GlobalBoardDetail */,
+				1D7B7A062BCE7DB500A18E12 /* BoardDetail */,
 				1D7B7A0A2BCE7DB500A18E12 /* BoardRoute.swift */,
 			);
 			path = Boards;
@@ -1328,9 +1423,9 @@
 		1D88B1E22BAA479000B3D903 /* ResetPassword */ = {
 			isa = PBXGroup;
 			children = (
+				1D17DA052BD715240077FFB9 /* ResetPasswordCompleted */,
 				1D88B1E32BAA47A900B3D903 /* ResetPasswordView.swift */,
 				1D88B1E52BAA488B00B3D903 /* ResetPasswordViewModel.swift */,
-				1D88B1E72BAA489700B3D903 /* ResetPasswordCompletedView.swift */,
 			);
 			path = ResetPassword;
 			sourceTree = "<group>";
@@ -1355,6 +1450,7 @@
 				1DF42B402BCEE2090094C263 /* InvitationsToolkit */,
 				1D7B7A222BCE83E300A18E12 /* GuildsToolkit */,
 				1D9CC60A2BCFDBC000D279BB /* MembersToolkit */,
+				1D0F825F2BD2A63500FAD74C /* SettingsToolkit */,
 			);
 			path = Toolkits;
 			sourceTree = "<group>";
@@ -1432,7 +1528,7 @@
 		1DA1DD2A2BCD9B4C00185C76 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				1DA1DD312BCD9C0600185C76 /* LoadGlobalBoardUseCase.swift */,
+				1DA1DD312BCD9C0600185C76 /* LoadBoardUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -1451,6 +1547,55 @@
 				1DA1DD2F2BCD9BD800185C76 /* BoardRepositoryImpl.swift */,
 			);
 			path = BoardsToolkit;
+			sourceTree = "<group>";
+		};
+		1DAA3FAD2BD478F30035B77A /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				1DAA3FAE2BD4790F0035B77A /* LaunchScreen.storyboard */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		1DAA3FBB2BD5BD0E0035B77A /* PageControl */ = {
+			isa = PBXGroup;
+			children = (
+				1DAA3FBE2BD5BD410035B77A /* PageControlView.swift */,
+			);
+			path = PageControl;
+			sourceTree = "<group>";
+		};
+		1DAF51682BD3FCFD00FCAE99 /* AnimatePlaceholders */ = {
+			isa = PBXGroup;
+			children = (
+				1DAF51692BD3FD1900FCAE99 /* AnimatePlaceholders.swift */,
+			);
+			path = AnimatePlaceholders;
+			sourceTree = "<group>";
+		};
+		1DAF516B2BD4081900FCAE99 /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				1DAF51672BD3F79B00FCAE99 /* Info.plist */,
+			);
+			path = Info;
+			sourceTree = "<group>";
+		};
+		1DAF516C2BD41BCD00FCAE99 /* Slider */ = {
+			isa = PBXGroup;
+			children = (
+				1DAF516D2BD41BE000FCAE99 /* SliderView.swift */,
+			);
+			path = Slider;
+			sourceTree = "<group>";
+		};
+		1DAF516F2BD42B9600FCAE99 /* StorylineDetail */ = {
+			isa = PBXGroup;
+			children = (
+				1DAF51702BD42BA000FCAE99 /* StorylineDetailView.swift */,
+				1DAF51722BD42BB000FCAE99 /* StorylineDetailViewModel.swift */,
+			);
+			path = StorylineDetail;
 			sourceTree = "<group>";
 		};
 		1DC1E47D2BB08E7900D19181 /* Root */ = {
@@ -1737,6 +1882,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D1BC58C2BA6487D00B30A77 /* Preview Assets.xcassets in Resources */,
+				1DAA3FAF2BD4790F0035B77A /* LaunchScreen.storyboard in Resources */,
 				1D1BC5892BA6487D00B30A77 /* Assets.xcassets in Resources */,
 				1DD8F5DC2BA656C80099BEA0 /* GoogleService-Info.plist in Resources */,
 			);
@@ -1772,7 +1918,7 @@
 				1D7B7A402BCEC9B700A18E12 /* LoadMyInvitationsUseCase.swift in Sources */,
 				1D3D32822BA6F8A40039DA08 /* SignUpViewModel.swift in Sources */,
 				1D7B7A392BCEB1AF00A18E12 /* GuildSetupViewModel.swift in Sources */,
-				1D7B7A0D2BCE7DB500A18E12 /* GlobalBoardDetailViewModel.swift in Sources */,
+				1D7B7A0D2BCE7DB500A18E12 /* BoardDetailViewModel.swift in Sources */,
 				1D88B1DA2BAA1F3F00B3D903 /* AlertData.swift in Sources */,
 				1D08215F2BCACE3A00F1F8F3 /* StorylineTimerViewModel.swift in Sources */,
 				1DA1DD1E2BCD7A9200185C76 /* IncreaseUserScoreUseCase.swift in Sources */,
@@ -1783,6 +1929,7 @@
 				1D7B7A0F2BCE7DB500A18E12 /* BoardViewModel.swift in Sources */,
 				1D1AD3682BAD837E008827BA /* StorylinesView.swift in Sources */,
 				1D88B1DC2BAA215300B3D903 /* Alert+Extensions.swift in Sources */,
+				1D0F82682BD2AD9A00FAD74C /* ChangeNotificationsSettingsUseCase.swift in Sources */,
 				1D26EBB62BC5841600F5E1B5 /* StorylineSetupView.swift in Sources */,
 				1D88B1E42BAA47A900B3D903 /* ResetPasswordView.swift in Sources */,
 				1D84AD392BAB77D30048AC9C /* UserDefaultsError.swift in Sources */,
@@ -1809,9 +1956,11 @@
 				1D84AD472BAB82B20048AC9C /* KeychainKey.swift in Sources */,
 				1D0F82552BD18DD000FAD74C /* GuildDetailUpdateGuildView.swift in Sources */,
 				1D9CC6042BCFD40F00D279BB /* LoadGuildUseCase.swift in Sources */,
+				1D0F82642BD2A70100FAD74C /* SettingsError.swift in Sources */,
 				1D1AD34C2BAD6674008827BA /* CheckHasUserSeenOnboardingUseCase.swift in Sources */,
 				1DD7EB172BB09B81005CE24D /* RequestLocalNotificationAuthorizationUseCase.swift in Sources */,
 				1D7B7A312BCEAA3900A18E12 /* GuildPreview.swift in Sources */,
+				1DAF51712BD42BA000FCAE99 /* StorylineDetailView.swift in Sources */,
 				1D7B7A422BCED11E00A18E12 /* DeleteGuildUseCase.swift in Sources */,
 				1D7B7A182BCE7FCE00A18E12 /* Guild.swift in Sources */,
 				1D26EBB32BC5633E00F5E1B5 /* StorylinesViewModel.swift in Sources */,
@@ -1824,9 +1973,10 @@
 				1DF42B3F2BCEE17B0094C263 /* InvitationsRepository.swift in Sources */,
 				1D84AD292BAB71340048AC9C /* AuthenticationRepositoryImpl.swift in Sources */,
 				1D9CC5FE2BCF19ED00D279BB /* GuildDetailAddFriendView.swift in Sources */,
-				1DA1DD322BCD9C0600185C76 /* LoadGlobalBoardUseCase.swift in Sources */,
+				1DA1DD322BCD9C0600185C76 /* LoadBoardUseCase.swift in Sources */,
 				1D544E082BA76B1D003C486F /* PrimaryButtonStyle.swift in Sources */,
 				1DD8F5D22BA64F620099BEA0 /* Router.swift in Sources */,
+				1D0F82662BD2A75C00FAD74C /* ChangeLanguageSettingsUseCase.swift in Sources */,
 				1D0821702BCC6D6300F1F8F3 /* User.swift in Sources */,
 				1DC1E47C2BB0696E00D19181 /* StorylinesRoute.swift in Sources */,
 				1D7B7A462BCED5EE00A18E12 /* AcceptGuildInvitationUseCase.swift in Sources */,
@@ -1855,15 +2005,19 @@
 				1D0AA5502BC71F75003016EF /* DeleteStorylineUseCase.swift in Sources */,
 				1D5E9CBD2BA9F00200EF6400 /* SecondaryButtonStyle.swift in Sources */,
 				1D1AD3662BAD8374008827BA /* HomeView.swift in Sources */,
+				1DAF51732BD42BB000FCAE99 /* StorylineDetailViewModel.swift in Sources */,
 				1D7DA8D62BC6838E0092E18C /* StorylinesRepositoryImpl.swift in Sources */,
 				1D544DFA2BA76A31003C486F /* FirebaseUserError.swift in Sources */,
 				1D1AD34E2BAD66BF008827BA /* OnboardingRepository.swift in Sources */,
+				1D0F825E2BD2A62900FAD74C /* SettingsRepository.swift in Sources */,
 				1D5E9CC22BA9FC3F00EF6400 /* SignUpCompletedView.swift in Sources */,
 				1D88B1E62BAA488B00B3D903 /* ResetPasswordViewModel.swift in Sources */,
 				1D08216E2BCAE10F00F1F8F3 /* TimeFormatterError.swift in Sources */,
 				1DF42B482BCEF8620094C263 /* GuildsError.swift in Sources */,
+				1DAA3FBF2BD5BD410035B77A /* PageControlView.swift in Sources */,
 				1D7B7A2D2BCE891300A18E12 /* GuildDetailView.swift in Sources */,
 				1D5E9CB52BA9E06400EF6400 /* ValidateNameUseCase.swift in Sources */,
+				1DAF516A2BD3FD1A00FCAE99 /* AnimatePlaceholders.swift in Sources */,
 				1D7B7A2F2BCE891E00A18E12 /* GuildDetailViewModel.swift in Sources */,
 				1DD7EB1D2BB0A136005CE24D /* CheckLocalNotificationAuthorizationUseCase.swift in Sources */,
 				1D0821592BCAC76E00F1F8F3 /* GetCurrentStorylinePageUseCase.swift in Sources */,
@@ -1875,7 +2029,7 @@
 				1D0821742BCC6DE700F1F8F3 /* UserRepository.swift in Sources */,
 				1D0821692BCAE0A400F1F8F3 /* FormatSecondsToStringUseCase.swift in Sources */,
 				1D7B7A2A2BCE851300A18E12 /* GuildsViewModel.swift in Sources */,
-				1D7B7A0C2BCE7DB500A18E12 /* GlobalBoardDetailView.swift in Sources */,
+				1D7B7A0C2BCE7DB500A18E12 /* BoardDetailView.swift in Sources */,
 				1DA1DD2D2BCD9B8E00185C76 /* BoardsRepository.swift in Sources */,
 				1D0F824E2BD154D300FAD74C /* RemoveGuildForCurrentUserUseCase.swift in Sources */,
 				1D5E9CB92BA9E10C00EF6400 /* ValidatePasswordUseCase.swift in Sources */,
@@ -1890,8 +2044,10 @@
 				1D0F82592BD1904A00FAD74C /* UpdateGuildUseCase.swift in Sources */,
 				1D544DF62BA769DF003C486F /* SendEmailVerificationUseCase.swift in Sources */,
 				1DD8F5D02BA64F530099BEA0 /* Tab.swift in Sources */,
+				1D0F826B2BD2B55900FAD74C /* GetFullLanguageNameForIdentifierUseCase.swift in Sources */,
 				1D7DA8DE2BC6A6E30092E18C /* HomeViewModel.swift in Sources */,
 				1D88B1E12BAA2ECF00B3D903 /* IsUserLoggedInUseCase.swift in Sources */,
+				1D0F82612BD2A64900FAD74C /* SettingsRepositoryImpl.swift in Sources */,
 				1D3D32712BA6F1690039DA08 /* SignUpUseCase.swift in Sources */,
 				1D2BB2B62BB758930052AB37 /* PomodoroTimer.swift in Sources */,
 				1D88B1E82BAA489700B3D903 /* ResetPasswordCompletedView.swift in Sources */,
@@ -1902,10 +2058,12 @@
 				1D7DA8DC2BC69EDF0092E18C /* StorylinesError.swift in Sources */,
 				1D12AD2F2BAD635400257CB7 /* OnboardingCarouselFirstView.swift in Sources */,
 				1D7B7A0E2BCE7DB500A18E12 /* BoardView.swift in Sources */,
+				1DAF516E2BD41BE000FCAE99 /* SliderView.swift in Sources */,
 				1D3D327F2BA6F7640039DA08 /* UseCases+Resolver.swift in Sources */,
 				1D5E9CB72BA9E0D800EF6400 /* ValidateEmailUseCase.swift in Sources */,
 				1D9CC60C2BCFDBD300D279BB /* MembersRepositoryImpl.swift in Sources */,
 				1D0821612BCACF3400F1F8F3 /* StorylineTimerView.swift in Sources */,
+				1D0F826E2BD2B56F00FAD74C /* LanguageSetting.swift in Sources */,
 				1D7B7A482BCED69400A18E12 /* DeclineGuildInvitationUseCase.swift in Sources */,
 				1D1AD36A2BAD8775008827BA /* SettingsViewModel.swift in Sources */,
 				1D0821762BCC6E1800F1F8F3 /* GetCurrentUserUseCase.swift in Sources */,
@@ -2080,21 +2238,23 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Memorizify/Application/Entitlements/Memorizify.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202404181953;
+				CURRENT_PROJECT_VERSION = 202404231504;
 				DEVELOPMENT_ASSET_PATHS = "\"Memorizify/Application/Preview Content\"";
 				DEVELOPMENT_TEAM = 4C5MQDTY94;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Memorizify/Application/Info/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.5;
+				MARKETING_VERSION = 0.1.16;
 				PRODUCT_BUNDLE_IDENTIFIER = com.smejkalp.memorizify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -2110,21 +2270,23 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Memorizify/Application/Entitlements/Memorizify.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202404181953;
+				CURRENT_PROJECT_VERSION = 202404231504;
 				DEVELOPMENT_ASSET_PATHS = "\"Memorizify/Application/Preview Content\"";
 				DEVELOPMENT_TEAM = 4C5MQDTY94;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Memorizify/Application/Info/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.5;
+				MARKETING_VERSION = 0.1.16;
 				PRODUCT_BUNDLE_IDENTIFIER = com.smejkalp.memorizify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

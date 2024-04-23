@@ -40,6 +40,30 @@ final class Router: ObservableObject {
         settingsPath = NavigationPath()
     }
     
+    func clearAuthenticationPath() {
+        authenticationPath = NavigationPath()
+    }
+    
+    func clearHomePath() {
+        homePath = NavigationPath()
+    }
+    
+    func clearStorylinesPath() {
+        storylinesPath = NavigationPath()
+    }
+    
+    func clearGuildsPath() {
+        guildsPath = NavigationPath()
+    }
+    
+    func clearBoardPath() {
+        boardPath = NavigationPath()
+    }
+    
+    func clearSettingsPath() {
+        settingsPath = NavigationPath()
+    }
+    
     func logIn() {
         clearAllPaths()
         checkIsUserLoggedIn()

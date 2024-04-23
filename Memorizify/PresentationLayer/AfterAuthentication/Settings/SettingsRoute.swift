@@ -6,5 +6,7 @@
 //
 
 enum SettingsRoute: Hashable {
-    case testPush
+    case changeUsername
+    case changeEmail
+    case changePassword
 }

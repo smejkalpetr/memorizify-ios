@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Storyline: Codable, Identifiable {
+struct Storyline: Identifiable {
     
     // MARK: Properties
     
@@ -71,6 +71,10 @@ struct Storyline: Codable, Identifiable {
         self.id = id ?? copy.id
         self.guild = guild ?? copy.guild
     }
+    
+}
+
+extension Storyline: Codable {
     
     // MARK: Codable
     

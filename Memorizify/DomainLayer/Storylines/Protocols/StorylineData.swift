@@ -8,6 +8,7 @@
 import Foundation
 
 protocol StorylineData {
+    var description: String { get }
     var pages: [StorylinePage] { get }
     
     func getCurrentPage(finished: TimeInterval, goal: TimeInterval) throws -> StorylinePage

@@ -1,15 +1,15 @@
 //
-//  LoadGlobalBoardUseCase.swift
+//  LoadBoardUseCase.swift
 //  Memorizify
 //
 //  Created by Petr Šmejkal on 15.04.2024.
 //
 
-protocol LoadGlobalBoardUseCase {
+protocol LoadBoardUseCase {
     func execute() async throws -> Board
 }
 
-struct LoadGlobalBoardUseCaseImpl: LoadGlobalBoardUseCase {
+struct LoadBoardUseCaseImpl: LoadBoardUseCase {
     
     private let boardsRepository: BoardsRepository
     
@@ -18,6 +18,6 @@ struct LoadGlobalBoardUseCaseImpl: LoadGlobalBoardUseCase {
     }
     
     func execute() async throws -> Board {
-        try await boardsRepository.getGlobalBoard()
+        try await boardsRepository.getBoard()
     }
 }

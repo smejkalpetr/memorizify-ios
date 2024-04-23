@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SecondaryButtonStyle: ButtonStyle {
     
+    @Environment(\.colorScheme) var colorScheme
+    
     let isLoading: Bool
     
     init(isLoading: Bool = false) {
@@ -21,19 +23,21 @@ struct SecondaryButtonStyle: ButtonStyle {
                 ProgressView()
             } else {
                 configuration.label
-                    .font(.callout)
-                    .foregroundColor(.cyan)
+                    .bold()
             }
         }
         .frame(maxWidth: .infinity)
         .padding()
-        .background(
-            ZStack {
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(.yellow, lineWidth: 3)
-            }
-        )
+        .background(Color("secondary_color").opacity(colorScheme == .dark ? 0 : 1))
         .cornerRadius(5)
+        .overlay(
+            RoundedRectangle(cornerRadius: 5)
+                .stroke(
+                    colorScheme == .dark ? Color("secondary_color") : Color("primary_color"),
+                    lineWidth: 3
+                )
+        )
+        .shadow(radius: 2.5, x: 1.5, y: 1.5)
     }
 }
 

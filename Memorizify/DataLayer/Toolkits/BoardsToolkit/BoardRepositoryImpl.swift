@@ -15,7 +15,7 @@ struct BoardsRepositoryImpl: BoardsRepository {
         self.authenticationRepository = authenticationRepository
     }
     
-    func getGlobalBoard() async throws -> Board {
+    func getBoard() async throws -> Board {
         let db = Firestore.firestore()
         
         let firUser = try authenticationRepository.getUser()

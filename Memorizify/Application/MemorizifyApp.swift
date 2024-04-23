@@ -27,7 +27,6 @@ struct MemorizifyApp: App {
                         RootOnboardingView()
                             .environmentObject(router)
                     }
-                    
                 }
             }
             .onAppear { router.initialize() }

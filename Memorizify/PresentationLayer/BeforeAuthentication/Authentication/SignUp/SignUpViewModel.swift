@@ -20,6 +20,7 @@ final class SignUpViewModel: ObservableObject {
     @Injected private var validateRepeatedPasswordUseCase: ValidateRepeatedPasswordUseCase
     
     struct State {
+        var alert: AlertData?
         var name = ""
         var nickname = ""
         var email = ""
@@ -65,7 +66,10 @@ final class SignUpViewModel: ObservableObject {
                 )
                 completion()
             } catch {
-                state.signUpError = error.localizedDescription
+                state.alert = AlertData(
+                    title: "Sign Up Failed",
+                    message: "An error occured during Sing Up. Please try again."
+                )
             }
         }
     }
@@ -149,6 +153,10 @@ final class SignUpViewModel: ObservableObject {
         state.emailError = ""
         state.passwordError = ""
         state.repeatedPasswordError = ""
-        state.signUpError = ""
+    }
+    
+    @MainActor
+    func dismissAlert() {
+        state.alert = nil
     }
 }
