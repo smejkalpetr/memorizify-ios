@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct SliderView: View {
     
@@ -14,8 +15,8 @@ struct SliderView: View {
     
     private var valueBinding: Binding<Double>
 
-    init(title: String, range: ClosedRange<Double>, valueBinding: Binding<Double>) {
-        self.title = title
+    init(title: LocalizedStringResource, range: ClosedRange<Double>, valueBinding: Binding<Double>) {
+        self.title = String(localized: title)
         self.range = range
         self.valueBinding = valueBinding
     }

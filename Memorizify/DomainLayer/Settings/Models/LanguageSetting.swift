@@ -5,8 +5,9 @@
 //  Created by Petr Šmejkal on 19.04.2024.
 //
 
-enum LanguageSetting: String {
-    #warning("FIXME: Use localization here when available!")
+import Foundation
+
+enum LanguageSetting: LocalizedStringResource {
     case en = "English"
     case cs = "Czech"
     case unknown

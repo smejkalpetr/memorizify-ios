@@ -1,0 +1,1413 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "" : {
+
+    },
+    "%@" : {
+
+    },
+    "%lld" : {
+
+    },
+    "🥇" : {
+
+    },
+    "🥈" : {
+
+    },
+    "🥉" : {
+
+    },
+    "Accept" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Přijmout"
+          }
+        }
+      }
+    },
+    "Account" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Účet"
+          }
+        }
+      }
+    },
+    "Add Friend" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Přidat člena"
+          }
+        }
+      }
+    },
+    "Already invited" : {
+
+    },
+    "Already member" : {
+
+    },
+    "An error occured during Sing Up. Please try again." : {
+
+    },
+    "An error occured when accepting invitation. Please try again." : {
+
+    },
+    "An error occured when changing password. Please try again." : {
+
+    },
+    "An error occured when creating a new guild. Please try again." : {
+
+    },
+    "An error occured when declining invitation. Please try again." : {
+
+    },
+    "An error occured when deleting guild. Please try again." : {
+
+    },
+    "An error occured when fetching user data." : {
+
+    },
+    "An error occured when loading guilds. Please try again." : {
+
+    },
+    "An error occured when loading invitations. Please try again." : {
+
+    },
+    "An error occured when loading the global board. Please try again later." : {
+
+    },
+    "An error occured when opening System Settings. Please try again." : {
+
+    },
+    "An error occured when seding verification email: %@" : {
+
+    },
+    "An error occured when sending invitation to friend. Please try again." : {
+
+    },
+    "An error occured when starting the storyline. Please try again!" : {
+
+    },
+    "An unknown error occured. Please try again." : {
+
+    },
+    "Are you sure you want to delete the storyline?" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jste si jisti, že chcete smazat tento příběh?"
+          }
+        }
+      }
+    },
+    "Back" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zpět"
+          }
+        }
+      }
+    },
+    "Board" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tabulka"
+          }
+        }
+      }
+    },
+    "Break interval" : {
+
+    },
+    "Break Interval" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Interval odpočinku"
+          }
+        }
+      }
+    },
+    "Cancel" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zrušit"
+          }
+        }
+      }
+    },
+    "Change language" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Změna jazyka"
+          }
+        }
+      }
+    },
+    "Change notifications settings" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nastavení upozornění"
+          }
+        }
+      }
+    },
+    "Change Notifications Settings" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Změnit nastavení notifikací"
+          }
+        }
+      }
+    },
+    "Change Password" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Změnit heslo"
+          }
+        }
+      }
+    },
+    "Close" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zavřít"
+          }
+        }
+      }
+    },
+    "Continue" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pokračovat"
+          }
+        }
+      }
+    },
+    "Continue to Sign Up" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pokračovat k registraci"
+          }
+        }
+      }
+    },
+    "create a new guild!" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "vytvořte nový cech!"
+          }
+        }
+      }
+    },
+    "Create Guild" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vytvořit cech"
+          }
+        }
+      }
+    },
+    "Current Password" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Současné heslo"
+          }
+        }
+      }
+    },
+    "Czech" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Čeština"
+          }
+        }
+      }
+    },
+    "Decline" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odmítnout"
+          }
+        }
+      }
+    },
+    "Delete" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odstranit"
+          }
+        }
+      }
+    },
+    "Delete Guild" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odstranit cech"
+          }
+        }
+      }
+    },
+    "Delete Storyline" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Smazat příběh"
+          }
+        }
+      }
+    },
+    "Deleting storyline failed!" : {
+
+    },
+    "Done" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hotovo"
+          }
+        }
+      }
+    },
+    "Done!" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hotovo!"
+          }
+        }
+      }
+    },
+    "Email" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Email"
+          }
+        }
+      }
+    },
+    "Email not verified" : {
+
+    },
+    "English" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Angličtina"
+          }
+        }
+      }
+    },
+    "Error" : {
+
+    },
+    "Error changing password" : {
+
+    },
+    "Error fetching user" : {
+
+    },
+    "Error loading global board" : {
+
+    },
+    "Error loading guilds" : {
+
+    },
+    "Error loading invitations" : {
+
+    },
+    "Error occured when loading storylines" : {
+
+    },
+    "Error openning System Settings" : {
+
+    },
+    "Error setting up storyline!" : {
+
+    },
+    "Error starting storyline" : {
+
+    },
+    "error.localizedDescription" : {
+
+    },
+    "Failed to accept invitation" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pozvánku se nepodařilo přijmout"
+          }
+        }
+      }
+    },
+    "Failed to create guild" : {
+
+    },
+    "Failed to decline invitation" : {
+
+    },
+    "Failed to delete" : {
+
+    },
+    "Failed to delete guild" : {
+
+    },
+    "Failed to fetch guild detail" : {
+
+    },
+    "Failed to fetch guild detail data. Please try again." : {
+
+    },
+    "Failed to invite a friend" : {
+
+    },
+    "Failed to invite friend" : {
+
+    },
+    "Failed to load user data" : {
+
+    },
+    "Failed to save guild score data." : {
+
+    },
+    "Failed to save score data." : {
+
+    },
+    "Failed to save storyline data." : {
+
+    },
+    "Failed to update the guild. Please try again." : {
+
+    },
+    "first" : {
+
+    },
+    "Forgot password?" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zapomenuté heslo?"
+          }
+        }
+      }
+    },
+    "Friend's email" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Email přítele"
+          }
+        }
+      }
+    },
+    "Get an invite from a fiend or" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dostaňte pozvánku od přítele nebo"
+          }
+        }
+      }
+    },
+    "Guild error" : {
+
+    },
+    "Guild Goal" : {
+
+    },
+    "Guild Goal: %lld" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cíl cechu: %lld"
+          }
+        }
+      }
+    },
+    "Guild Info" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informace o cechu"
+          }
+        }
+      }
+    },
+    "Guild Setup" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nastavení cechu"
+          }
+        }
+      }
+    },
+    "Guild update failed" : {
+
+    },
+    "Guilds" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cechy"
+          }
+        }
+      }
+    },
+    "Home" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Domů"
+          }
+        }
+      }
+    },
+    "Hours" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Počet hodin"
+          }
+        }
+      }
+    },
+    "I agree to the Terms and Conditions" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Souhlasím s podmínkami TODO"
+          }
+        }
+      }
+    },
+    "If there is an account associated with the provided email, a link will be sent to the email which will contain instruction on how to reset the password." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pokud existuje účet, který patří k zadanému emailu, pokusíme se Vám na něj zaslat instrukce k obnově hesla."
+          }
+        }
+      }
+    },
+    "Invitation from" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pozvánka od"
+          }
+        }
+      }
+    },
+    "Invitation has been sent to %@. Tell them to check their Guilds to accept the invitation." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pozvánka byla odeslána uživateli s emailem %@. Požádejte ho, aby ji přijmul."
+          }
+        }
+      }
+    },
+    "Invitation sent" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pozvánka byla odeslána"
+          }
+        }
+      }
+    },
+    "Invitations" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pozvánky"
+          }
+        }
+      }
+    },
+    "Invite Friend" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pozvat přítele"
+          }
+        }
+      }
+    },
+    "Invite Friends" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pozvat přátele"
+          }
+        }
+      }
+    },
+    "Kick from Guild" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vyhodit z cechu"
+          }
+        }
+      }
+    },
+    "Leader actions" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Správa cechu"
+          }
+        }
+      }
+    },
+    "Leave Guild" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opustit cech"
+          }
+        }
+      }
+    },
+    "Log In" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Přihlásit se"
+          }
+        }
+      }
+    },
+    "Logout" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odhlásit se"
+          }
+        }
+      }
+    },
+    "Members" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Členové"
+          }
+        }
+      }
+    },
+    "Members: %lld" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Členů: %lld"
+          }
+        }
+      }
+    },
+    "Minutes" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Minut"
+          }
+        }
+      }
+    },
+    "My storylines" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moje příběhy"
+          }
+        }
+      }
+    },
+    "Name" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jméno"
+          }
+        }
+      }
+    },
+    "New Password" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nové heslo"
+          }
+        }
+      }
+    },
+    "Nickname" : {
+
+    },
+    "Nickname Ascending" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podle jména (a-z)"
+          }
+        }
+      }
+    },
+    "Nickname Descending" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podle jména (z-a)"
+          }
+        }
+      }
+    },
+    "No guilds yet" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zde není žádný cech"
+          }
+        }
+      }
+    },
+    "No pending invitaions" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zde nejsou žádné pozvánky"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No pending invitaions"
+          }
+        }
+      }
+    },
+    "No records loaded!" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nepodařilo se načíst žádné záznamy"
+          }
+        }
+      }
+    },
+    "No storylines yet" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zde nejsou žádné příběhy"
+          }
+        }
+      }
+    },
+    "Number of members: %lld" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Počet členů: %lld"
+          }
+        }
+      }
+    },
+    "Other" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ostatní"
+          }
+        }
+      }
+    },
+    "Password" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heslo"
+          }
+        }
+      }
+    },
+    "Password changed" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heslo bylo změněno"
+          }
+        }
+      }
+    },
+    "Pause" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zastavit"
+          }
+        }
+      }
+    },
+    "Plain Pomodoro Timer" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pomodoro Timer"
+          }
+        }
+      }
+    },
+    "Plain Timer" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pomodoro Timer"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pomodoro Timer"
+          }
+        }
+      }
+    },
+    "Plain timer error" : {
+
+    },
+    "Please try to invite friend again from the guild detail." : {
+
+    },
+    "Please, check your inbox and verify the address using a link which was sent to your email!" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prosím, potvrďte Vaši emailovou adresu pomocí odkazu zaslaného do Vaší emailové schránky"
+          }
+        }
+      }
+    },
+    "Please, fill in your email and we will attempt to send you a password reset link" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prosím, vyplňte svou emailovou adresu a my se Vám pokusíme zaslat email s odkazem na obnovení hesla"
+          }
+        }
+      }
+    },
+    "Profile" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Profil"
+          }
+        }
+      }
+    },
+    "Rank" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pořadí"
+          }
+        }
+      }
+    },
+    "Remove" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odstranit"
+          }
+        }
+      }
+    },
+    "Repeat" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opakovat"
+          }
+        }
+      }
+    },
+    "Repeat New Password" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nové heslo znovu"
+          }
+        }
+      }
+    },
+    "Repeat Password" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heslo znovu"
+          }
+        }
+      }
+    },
+    "Reset it now!" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obnovte si ho!"
+          }
+        }
+      }
+    },
+    "Reset Password" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obnovit heslo"
+          }
+        }
+      }
+    },
+    "Resume" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pokračovat"
+          }
+        }
+      }
+    },
+    "Score" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skóre"
+          }
+        }
+      }
+    },
+    "Score Ascending" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Od nenižšího skóre"
+          }
+        }
+      }
+    },
+    "Score Descending" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Od nejvyššího skóre"
+          }
+        }
+      }
+    },
+    "second" : {
+
+    },
+    "Select Storyline" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vybrat příběh"
+          }
+        }
+      }
+    },
+    "Send" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odeslat"
+          }
+        }
+      }
+    },
+    "Settings" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nastavení"
+          }
+        }
+      }
+    },
+    "Setup Storyline" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nastavit příběh"
+          }
+        }
+      }
+    },
+    "Show more" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zobrazit více"
+          }
+        }
+      }
+    },
+    "Sign Up" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Registrovat"
+          }
+        }
+      }
+    },
+    "Sign Up Failed" : {
+
+    },
+    "Some Label" : {
+
+    },
+    "Some Other Label" : {
+
+    },
+    "some title" : {
+
+    },
+    "Something went wrong: %@" : {
+
+    },
+    "Sorting" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Řazení"
+          }
+        }
+      }
+    },
+    "Start" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Začít"
+          }
+        }
+      }
+    },
+    "Start a new storyline NOW!" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Začněte nový příběh!"
+          }
+        }
+      }
+    },
+    "Storyline" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Příběh"
+          }
+        }
+      }
+    },
+    "Storyline error" : {
+
+    },
+    "Storyline finished!" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Příběh dokončen!"
+          }
+        }
+      }
+    },
+    "Storyline Goal" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cílové skóre"
+          }
+        }
+      }
+    },
+    "Storylines" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Příběhy"
+          }
+        }
+      }
+    },
+    "Study interval" : {
+
+    },
+    "Study Interval" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Interval studia"
+          }
+        }
+      }
+    },
+    "Success!" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Úspěch!"
+          }
+        }
+      }
+    },
+    "Switch Language" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Změna jayzka"
+          }
+        }
+      }
+    },
+    "Tap here to create a new guild" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vytvořte nový cech"
+          }
+        }
+      }
+    },
+    "Tap to start a classic pomodoro timer." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spusťte klasický Pomodoro timer."
+          }
+        }
+      }
+    },
+    "There was an error when deleting member!" : {
+
+    },
+    "third" : {
+
+    },
+    "This user has already been invited to the guild. Tell them to check their pending invtitations." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tento uživatel již obdržel Vaši pozvánku. Požádejte ho, aby ji přijmul."
+          }
+        }
+      }
+    },
+    "This user is already a member of the guild." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tento uživatel je již členem tohoto cechu."
+          }
+        }
+      }
+    },
+    "Timer Parameters" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parametry timeru"
+          }
+        }
+      }
+    },
+    "Timer Settings" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nastavení timeru"
+          }
+        }
+      }
+    },
+    "To change language, System Settings will open. Please select the desired laguage there." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pro změnu jazyka je nutné přejít do systémového nastavení a jazyk nastavit tam."
+          }
+        }
+      }
+    },
+    "To change notifications settings, System Settings will open. Please the settings there." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pro změnu upozornění je nutné přejít do systémového nastavení a nastavit je tam."
+          }
+        }
+      }
+    },
+    "to guild" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "do cechu"
+          }
+        }
+      }
+    },
+    "To verify your account, please click on the verification link in your email. Then, you'll be able to log in." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pro zpřístupnění účtu je nutné ověřit Váš email pomocí odkazu, který Vám byl zaslán."
+          }
+        }
+      }
+    },
+    "Top 10" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Top 10"
+          }
+        }
+      }
+    },
+    "unknown" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "neznámý"
+          }
+        }
+      }
+    },
+    "Unknown error" : {
+
+    },
+    "Update" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upravit"
+          }
+        }
+      }
+    },
+    "Update Guild" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upravit cech"
+          }
+        }
+      }
+    },
+    "Username" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uživatelské jméno"
+          }
+        }
+      }
+    },
+    "Verification sent" : {
+
+    },
+    "Welcome to Memorizify" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vítejte v Memorizify"
+          }
+        }
+      }
+    },
+    "Welcome to Memorizify! Your all-in-one study companion. Track your progress, study with friends, and make learning an adventure. Start now and elevate your study game!" : {
+
+    },
+    "You are already a member of this guild. Declining invitation." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Již jste členem tohoto cechu. Pozvánka byla zrušena."
+          }
+        }
+      }
+    },
+    "You can add up to 10 friends" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Můžete přidat až 10 přátel"
+          }
+        }
+      }
+    },
+    "Your email is not verified. Do you wish to resend the email verification link to your email?" : {
+
+    },
+    "Your password has been changed." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vaše heslo bylo změněno."
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

@@ -174,7 +174,7 @@ final class StorylineTimerViewModel: ObservableObject, PomodoroTimerDelegate {
         } catch {
             state.alert = AlertData(
                 title: "Storyline error",
-                message: "Failed to save storyline data!"
+                message: "Failed to save storyline data."
             )
         }
     }
@@ -196,7 +196,7 @@ final class StorylineTimerViewModel: ObservableObject, PomodoroTimerDelegate {
             print("error: \(error)")
             state.alert = AlertData(
                 title: "Guild error",
-                message: "Failed to save guild score data!"
+                message: "Failed to save guild score data."
             )
         }
     }
@@ -214,7 +214,7 @@ final class StorylineTimerViewModel: ObservableObject, PomodoroTimerDelegate {
         } catch {
             state.alert = AlertData(
                 title: "Plain timer error",
-                message: "Failed to save score data!"
+                message: "Failed to save score data."
             )
         }
     }

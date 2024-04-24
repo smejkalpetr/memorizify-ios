@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct StorylineSetupView: View {
     
@@ -64,13 +65,13 @@ struct StorylineSetupView: View {
     private var sliders: some View {
         VStack {
             VStack {
-                sliderGroupTitle("Storyline goal")
+                sliderGroupTitle("Storyline Goal")
                 SliderView(title: "Hours", range: StorylineSetupViewModel.goalHoursRange, valueBinding: $viewModel.state.goalHours)
                 SliderView(title: "Minutes", range: StorylineSetupViewModel.goalMinutesRange, valueBinding: $viewModel.state.goalMinutes)
             }
             .padding(.bottom)
             VStack {
-                sliderGroupTitle("Timer parameters")
+                sliderGroupTitle("Timer Parameters")
                 SliderView(title: "Study Interval", range: StorylineSetupViewModel.studyIntervalRange, valueBinding: $viewModel.state.studyInterval)
                 SliderView(title: "Break Interval", range: StorylineSetupViewModel.breakIntervalRange, valueBinding: $viewModel.state.breakInterval)
             }
@@ -79,10 +80,10 @@ struct StorylineSetupView: View {
         .padding()
     }
     
-    private func sliderGroupTitle(_ title: String) -> some View {
+    private func sliderGroupTitle(_ title: LocalizedStringResource) -> some View {
         VStack {
             HStack {
-                Text(title.uppercased())
+                Text(String(localized: title).uppercased())
                     .font(.callout)
                     .foregroundStyle(colorScheme == .dark ? .white.opacity(0.6) : .gray)
                 Spacer()

@@ -63,7 +63,7 @@ struct StorylineDetailView: View {
     
     private var footerButton: some View {
         VStack {
-            Button("Setup storyline") {
+            Button("Setup Storyline") {
                 viewModel.state.bottomSheetItem = viewModel.state.kind
             }
             .buttonStyle(PrimaryButtonStyle())

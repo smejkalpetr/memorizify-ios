@@ -116,7 +116,7 @@ struct SignUpView: View {
     }
     
     private var termsAndConditionsToggle: some View {
-        Toggle("I agree to the terms and conditions", isOn: $viewModel.state.isAgreementSigned)
+        Toggle("I agree to the Terms and Conditions", isOn: $viewModel.state.isAgreementSigned)
             .padding()
             .tint(Color("primary_color"))
     }

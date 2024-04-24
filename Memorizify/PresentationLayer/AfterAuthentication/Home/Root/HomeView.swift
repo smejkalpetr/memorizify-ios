@@ -89,7 +89,7 @@ struct HomeView: View {
     }
     
     private var plainTimer: some View {
-        Section("Plain timer") {
+        Section("Plain Timer") {
             Button() {
                 viewModel.state.isPlainTimerBottomSheetPresented = true
             } label: {
@@ -117,7 +117,7 @@ struct HomeView: View {
             Text("Plain Timer")
                 .font(.title)
                 .bold()
-            Text("Tap to start a classic pomodoro timer.".uppercased())
+            Text(String(localized: "Tap to start a classic pomodoro timer.").uppercased())
                 .font(.caption)
                 .opacity(0.45)
         }
@@ -182,7 +182,7 @@ struct HomeView: View {
     
     private var myStorylinesError: some View {
         VStack {
-            Text("Error occured when loading storylines!")
+            Text("Error occured when loading storylines")
                 .bold()
                 .foregroundStyle(.red)
         }

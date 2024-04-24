@@ -106,7 +106,7 @@ struct SettingsView: View {
     private var userSectionFailedToLoad: some View {
         HStack {
             Spacer()
-            Text("Failed to load user data.")
+            Text("Failed to load user data")
             Spacer()
         }
         .padding()

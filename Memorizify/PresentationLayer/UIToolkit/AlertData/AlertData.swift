@@ -21,13 +21,19 @@ struct AlertData: Equatable, Identifiable {
     let secondaryAction: AlertData.Action?
     
     init(
-        title: String,
-        message: String? = nil,
+        title: LocalizedStringResource,
+        message: LocalizedStringResource? = nil,
         primaryAction: AlertData.Action = AlertData.Action(title: "Close", style: .default),
         secondaryAction: AlertData.Action? = nil
     ) {
-        self.title = title
-        self.message = message
+        self.title = String(localized: title)
+        
+        if let message {
+            self.message = String(localized: message)
+        } else {
+            self.message = nil
+        }
+        
         self.primaryAction = primaryAction
         self.secondaryAction = secondaryAction
     }
@@ -42,12 +48,12 @@ struct AlertData: Equatable, Identifiable {
 
 extension AlertData {
     struct Action: Equatable {
-        let title: String
+        let title: LocalizedStringResource
         let style: Style
         let handler: (() -> Void)
         
         init(
-            title: String,
+            title: LocalizedStringResource,
             style: Style = .default,
             handler: @escaping (() -> Void) = {}
         ) {

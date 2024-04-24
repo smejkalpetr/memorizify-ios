@@ -14,7 +14,6 @@ struct GetFullLanguageNameForIdentifierUseCaseImpl: GetFullLanguageNameForIdenti
     init() {}
     
     func execute(identifier: String) -> LanguageSetting {
-        #warning("FIXME: Use localization when available!")
         return LanguageSetting(identifier: identifier)
     }
 }

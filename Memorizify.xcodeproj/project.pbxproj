@@ -93,6 +93,7 @@
 		1D5E9CBD2BA9F00200EF6400 /* SecondaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5E9CBC2BA9F00200EF6400 /* SecondaryButtonStyle.swift */; };
 		1D5E9CC02BA9F8A900EF6400 /* PrimaryTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5E9CBF2BA9F8A900EF6400 /* PrimaryTextFieldStyle.swift */; };
 		1D5E9CC22BA9FC3F00EF6400 /* SignUpCompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5E9CC12BA9FC3F00EF6400 /* SignUpCompletedView.swift */; };
+		1D69FC3D2BD92D6500BA2FDB /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1D69FC3C2BD92D6500BA2FDB /* Localizable.xcstrings */; };
 		1D7B7A0C2BCE7DB500A18E12 /* BoardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B7A042BCE7DB500A18E12 /* BoardDetailView.swift */; };
 		1D7B7A0D2BCE7DB500A18E12 /* BoardDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B7A052BCE7DB500A18E12 /* BoardDetailViewModel.swift */; };
 		1D7B7A0E2BCE7DB500A18E12 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B7A072BCE7DB500A18E12 /* BoardView.swift */; };
@@ -323,6 +324,7 @@
 		1D5E9CBC2BA9F00200EF6400 /* SecondaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButtonStyle.swift; sourceTree = "<group>"; };
 		1D5E9CBF2BA9F8A900EF6400 /* PrimaryTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryTextFieldStyle.swift; sourceTree = "<group>"; };
 		1D5E9CC12BA9FC3F00EF6400 /* SignUpCompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCompletedView.swift; sourceTree = "<group>"; };
+		1D69FC3C2BD92D6500BA2FDB /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		1D7B7A042BCE7DB500A18E12 /* BoardDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardDetailView.swift; sourceTree = "<group>"; };
 		1D7B7A052BCE7DB500A18E12 /* BoardDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardDetailViewModel.swift; sourceTree = "<group>"; };
 		1D7B7A072BCE7DB500A18E12 /* BoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
@@ -825,6 +827,7 @@
 				1D1AD3562BAD80C0008827BA /* BeforeAuthentication */,
 				1D1AD3572BAD8107008827BA /* AfterAuthentication */,
 				1D544E042BA76B04003C486F /* UIToolkit */,
+				1D69FC3B2BD92D5200BA2FDB /* Localization */,
 			);
 			path = PresentationLayer;
 			sourceTree = "<group>";
@@ -1149,6 +1152,14 @@
 				1D5E9CBF2BA9F8A900EF6400 /* PrimaryTextFieldStyle.swift */,
 			);
 			path = TextField;
+			sourceTree = "<group>";
+		};
+		1D69FC3B2BD92D5200BA2FDB /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				1D69FC3C2BD92D6500BA2FDB /* Localizable.xcstrings */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 		1D7B7A062BCE7DB500A18E12 /* BoardDetail */ = {
@@ -1900,6 +1911,7 @@
 			knownRegions = (
 				en,
 				Base,
+				cs,
 			);
 			mainGroup = 1D1BC5782BA6487C00B30A77;
 			packageReferences = (
@@ -1924,6 +1936,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D1BC58C2BA6487D00B30A77 /* Preview Assets.xcassets in Resources */,
+				1D69FC3D2BD92D6500BA2FDB /* Localizable.xcstrings in Resources */,
 				1DAA3FAF2BD4790F0035B77A /* LaunchScreen.storyboard in Resources */,
 				1D1BC5892BA6487D00B30A77 /* Assets.xcassets in Resources */,
 				1DD8F5DC2BA656C80099BEA0 /* GoogleService-Info.plist in Resources */,
@@ -2286,7 +2299,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Memorizify/Application/Entitlements/Memorizify.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202404231842;
+				CURRENT_PROJECT_VERSION = 202404241547;
 				DEVELOPMENT_ASSET_PATHS = "\"Memorizify/Application/Preview Content\"";
 				DEVELOPMENT_TEAM = 4C5MQDTY94;
 				ENABLE_PREVIEWS = YES;
@@ -2302,7 +2315,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.0;
+				MARKETING_VERSION = 0.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.smejkalp.memorizify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -2318,7 +2331,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Memorizify/Application/Entitlements/Memorizify.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202404231842;
+				CURRENT_PROJECT_VERSION = 202404241547;
 				DEVELOPMENT_ASSET_PATHS = "\"Memorizify/Application/Preview Content\"";
 				DEVELOPMENT_TEAM = 4C5MQDTY94;
 				ENABLE_PREVIEWS = YES;
@@ -2334,7 +2347,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.0;
+				MARKETING_VERSION = 0.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.smejkalp.memorizify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

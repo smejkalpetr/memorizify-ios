@@ -80,8 +80,8 @@ final class SettingsViewModel: ObservableObject {
     }
     
     func getLanguageName(identifier: String?) -> String {
-        guard let identifier else { return LanguageSetting.unknown.rawValue }
-        return getFullLanguageNameForIdentifierUseCase.execute(identifier: identifier).rawValue
+        guard let identifier else { return String(localized: LanguageSetting.unknown.rawValue) }
+        return String(localized: getFullLanguageNameForIdentifierUseCase.execute(identifier: identifier).rawValue)
     }
     
     // MARK: Private

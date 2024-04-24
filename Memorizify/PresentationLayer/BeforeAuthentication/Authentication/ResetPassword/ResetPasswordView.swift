@@ -65,7 +65,7 @@ struct ResetPasswordView: View {
     
     private var headline: some View {
         VStack {
-            Text("Fill in your email. We will send a password reset link to the given address.")
+            Text("Please, fill in your email and we will attempt to send you a password reset link")
                 .multilineTextAlignment(.center)
                 .padding()
         }
@@ -87,7 +87,7 @@ struct ResetPasswordView: View {
     
     private var resetPasswordButton: some View {
         VStack {
-            Button("Reset password") {
+            Button("Reset Password") {
                 viewModel.resetPassword() { router.authenticationPath.append(AuthenticationRoute.resetPasswordCompleted) }
             }
             .buttonStyle(PrimaryButtonStyle(isLoading: viewModel.state.isResetPasswordButtonLoading))

@@ -18,7 +18,7 @@ struct SignUpCompletedView: View {
                     .foregroundStyle(.green)
                     .bold()
                     .padding()
-                Text("Please verify your email address and then log in!")
+                Text("Please, check your inbox and verify the address using a link which was sent to your email!")
                     .multilineTextAlignment(.center)
             }
             .padding()

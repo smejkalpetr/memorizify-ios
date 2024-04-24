@@ -114,13 +114,16 @@ struct StorylineTimerView: View {
     }
     
     private var doneState: some View {
-        HStack {
+        VStack {
             Text("Done!")
                 .font(.largeTitle)
                 .bold()
+                .padding()
             Button("Repeat") {
                 viewModel.repeatTimer()
             }
+            .bold()
+            .foregroundStyle(.blue)
         }
     }
     

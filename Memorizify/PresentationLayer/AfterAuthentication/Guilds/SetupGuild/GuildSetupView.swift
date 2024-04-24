@@ -62,7 +62,7 @@ struct GuildSetupView: View {
     
     private var guildNameTextField: some View {
         VStack {
-            groupTitle("Guild setup")
+            groupTitle("Guild Setup")
             TextField("", text: $viewModel.state.name, onEditingChanged: { isStart in
                 guard (!isStart) else { return }
                 viewModel.validateNameField()
@@ -88,10 +88,10 @@ struct GuildSetupView: View {
         .padding()
     }
     
-    private func groupTitle(_ title: String) -> some View {
+    private func groupTitle(_ title: LocalizedStringResource) -> some View {
         VStack {
             HStack {
-                Text(title.uppercased())
+                Text(String(localized: title).uppercased())
                     .font(.callout)
                     .foregroundStyle(colorScheme == .dark ? .white.opacity(0.6) : .gray)
                 Spacer()
@@ -109,7 +109,7 @@ struct GuildSetupView: View {
     }
     
     private var storylinePicker: some View {
-        Picker(selection: $viewModel.state.storylineKindPickerSelection, label: Text("Select storyline")) {
+        Picker(selection: $viewModel.state.storylineKindPickerSelection, label: Text("Select Storyline")) {
             #warning("TODO: Remove next line when more storyline kinds are available!")
             ForEach(0..<3) { index in
                 ForEach(StorylineKind.allCases) { storylineKind in
@@ -143,7 +143,7 @@ struct GuildSetupView: View {
     
     private var friendsEmailTextField: some View {
         VStack {
-            groupTitle("Invite friends")
+            groupTitle("Invite Friends")
             TextField("", text: $viewModel.state.email)
                 .onChange(of: viewModel.state.email) { Task { await viewModel.validateEmailField(ignoreEmpty: true) } }
                 .textFieldStyle(PrimaryTextFieldStyle(title: "Friend's email"))
@@ -154,7 +154,7 @@ struct GuildSetupView: View {
     }
     
     private var addFriendButton: some View {
-        Button("Add friend") {
+        Button("Add Friend") {
             viewModel.addFriendEmail()
         }
         .foregroundStyle(.blue)
@@ -187,7 +187,7 @@ struct GuildSetupView: View {
     
     private var footerButton: some View {
         VStack {
-            Button("Create guild") {
+            Button("Create Guild") {
                 viewModel.createGuild() { presentationMode.wrappedValue.dismiss() }
             }
             .disabled(!viewModel.state.canCreateGuild)

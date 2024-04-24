@@ -68,7 +68,7 @@ final class LogInViewModel: ObservableObject {
             } catch {
                 state.alert = AlertData(
                     title: "Error",
-                    message: error.localizedDescription,
+                    message: "error.localizedDescription",
                     primaryAction: AlertData.Action(
                         title: "Cancel",
                         style: .cancel
@@ -89,7 +89,7 @@ final class LogInViewModel: ObservableObject {
         } catch {
             state.alert = AlertData(
                 title: "Error",
-                message: error.localizedDescription,
+                message: "error.localizedDescription",
                 primaryAction: AlertData.Action(
                     title: "Cancel",
                     style: .cancel

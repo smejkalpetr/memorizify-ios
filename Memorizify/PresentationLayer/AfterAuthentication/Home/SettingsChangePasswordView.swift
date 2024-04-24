@@ -91,7 +91,7 @@ struct SettingsChangePasswordView: View {
     
     private var changePasswordButton: some View {
         VStack {
-            Button("Change password") {
+            Button("Change Password") {
                 viewModel.changePassword() { presentationMode.wrappedValue.dismiss() }
             }
             .buttonStyle(PrimaryButtonStyle(isLoading: viewModel.state.isLoading))

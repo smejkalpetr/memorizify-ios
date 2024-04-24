@@ -134,7 +134,7 @@ struct GuildsView: View {
     }
     
     private var invitationsEmptyText: some View {
-        Text("No pending invitaions".uppercased())
+        Text(String(localized: "No pending invitaions").uppercased())
             .font(.footnote)
             .opacity(0.75)
     }
@@ -170,14 +170,14 @@ struct GuildsView: View {
     private func invitationInfoText(for invitation: Invitation) -> some View {
         VStack {
             HStack {
-                Text("Invitation from".uppercased())
+                Text(String(localized: "Invitation from").uppercased())
                     .font(.footnote)
                     .opacity(0.45)
                 Text("\(invitation.senderNickname)")
                     .bold()
             }
             HStack {
-                Text("To guild".uppercased())
+                Text(String(localized: "to guild").uppercased())
                     .font(.footnote)
                     .opacity(0.45)
                 Text("\(invitation.guildName)")
@@ -326,7 +326,7 @@ struct GuildsView: View {
                     .bold()
                     .opacity(0.45)
                     .foregroundStyle(colorScheme == .dark ? .white : .black)
-                Text("Members: \(guild.board.records.count)".uppercased())
+                Text(String(localized: "Members: \(guild.board.records.count)").uppercased())
                     .font(.caption)
                     .opacity(0.45)
                     .foregroundStyle(colorScheme == .dark ? .white : .black)
@@ -358,7 +358,7 @@ struct GuildsView: View {
             Button() {
                 viewModel.state.isBottomSheetPresented = true
             } label: {
-                Text("Tap here to create a new guild".uppercased())
+                Text(String(localized: "Tap here to create a new guild").uppercased())
                     .font(.footnote)
                     .foregroundStyle(colorScheme == .dark ? .white : .black)
             }

@@ -6,14 +6,15 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct PrimaryTextFieldStyle: TextFieldStyle {
     
-    let title: String
+    let title: LocalizedStringResource
     
     func _body(configuration: TextField<Self._Label>) -> some View {
         VStack(alignment: .leading) {
-            Text(title.uppercased())
+            Text(String(localized: title).uppercased())
                 .font(.caption)
                 .opacity(0.45)
             configuration

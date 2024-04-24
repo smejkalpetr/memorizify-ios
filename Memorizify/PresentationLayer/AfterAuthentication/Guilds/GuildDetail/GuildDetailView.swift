@@ -187,12 +187,12 @@ struct GuildDetailView: View {
             Button {
                 viewModel.state.isInviteBottomSheetPresented = true
             } label: {
-                Label("Invite friend", systemImage: "person.fill.badge.plus")
+                Label("Invite Friend", systemImage: "person.fill.badge.plus")
             }
             Button() {
                 viewModel.state.isUpdateBottomSheetPresented = true
             } label: {
-                Label("Update guild", systemImage: "gearshape.arrow.triangle.2.circlepath")
+                Label("Update Guild", systemImage: "gearshape.arrow.triangle.2.circlepath")
             }
             Button(role: .destructive) {
                 viewModel.deleteGuild() {
@@ -200,7 +200,7 @@ struct GuildDetailView: View {
                     viewModel.refreshGuildsOnGuildsTab()
                 }
             } label: {
-                Label("Delete guild", systemImage: "trash")
+                Label("Delete Guild", systemImage: "trash")
             }
             .disabled(viewModel.state.guild.board.records.count > 1)
         }
@@ -209,7 +209,7 @@ struct GuildDetailView: View {
     }
     
     private var guildInfo: some View {
-        Section("Guild info") {
+        Section("Guild Info") {
             VStack {
                 if let user = viewModel.state.user, viewModel.state.guild.checkIsLeader(userUid: user.uid) {
                     leaderActionsMenu
@@ -224,19 +224,19 @@ struct GuildDetailView: View {
     
     private var guildInfoText: some View {
         VStack {
-            Text("Guild goal: \(Int(viewModel.state.guild.goal))".uppercased())
+            Text(String(localized: "Guild Goal: \(Int(viewModel.state.guild.goal))").uppercased())
                 .font(.body)
                 .bold()
                 .opacity(0.45)
                 .padding()
-            Text("Number of members: \(viewModel.state.guild.board.records.count)".uppercased())
+            Text(String(localized: "Number of members: \(viewModel.state.guild.board.records.count)").uppercased())
                 .font(.caption)
                 .opacity(0.45)
         }
     }
     
     private var timerSettings: some View {
-        Section("Timer settings") {
+        Section("Timer Settings") {
             VStack {
                 timerSliders
                 startButton
@@ -266,7 +266,7 @@ struct GuildDetailView: View {
             let (storyline, page, timer) = viewModel.prepareStorylinePageTimer()
             router.guildsPath.append(GuildsRoute.storylineTimer(storyline, page, timer))
         } label: {
-            Text("Start".uppercased())
+            Text(String(localized: "Start").uppercased())
                 .bold()
         }
         .buttonStyle(.plain)
@@ -357,7 +357,7 @@ struct GuildDetailView: View {
             viewModel.removeUserFromGuild(userUid: record.uid)
         } label: {
             Label(
-                viewModel.state.guild.checkIsMyRecord(userUid: user.uid, record: record) ? "Leave guild" : "Kick from guild",
+                viewModel.state.guild.checkIsMyRecord(userUid: user.uid, record: record) ? "Leave Guild" : "Kick from Guild",
                 systemImage: viewModel.state.guild.checkIsMyRecord(userUid: user.uid, record: record) ? "door.left.hand.open" : "figure.kickboxing")
         }
         .disabled(record.isLeader)

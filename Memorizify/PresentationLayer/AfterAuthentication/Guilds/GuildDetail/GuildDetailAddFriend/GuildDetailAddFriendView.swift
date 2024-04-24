@@ -70,7 +70,7 @@ struct GuildDetailAddFriendView: View {
     }
     
     private var addFriendButton: some View {
-        Button("Invite friend") {
+        Button("Invite Friend") {
             viewModel.addFriend()
         }
         .disabled(!viewModel.state.canAddFriend)

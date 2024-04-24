@@ -54,7 +54,7 @@ final class StorylineTileViewModel: ObservableObject {
                 try await deleteStorylineUseCase.execute(state.storyline)
                 refreshStorylinesOnHomeTab()
             } catch {
-                state.alert = AlertData(title: "Deleting storyline failed!", message: error.localizedDescription)
+                state.alert = AlertData(title: "Deleting storyline failed!", message: "error.localizedDescription")
             }
         }
     }

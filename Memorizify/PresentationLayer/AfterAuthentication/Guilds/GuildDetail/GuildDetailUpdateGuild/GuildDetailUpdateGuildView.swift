@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct GuildDetailUpdateGuildView: View {
     
@@ -57,16 +58,16 @@ struct GuildDetailUpdateGuildView: View {
     
     private var hoursSlider: some View {
         VStack {
-            groupTitle("Guild goal")
+            groupTitle("Guild Goal")
             SliderView(title: "Hours", range: GuildDetailUpdateGuildViewModel.goalRange, valueBinding: $viewModel.state.goal)
         }
         .padding()
     }
     
-    private func groupTitle(_ title: String) -> some View {
+    private func groupTitle(_ title: LocalizedStringResource) -> some View {
         VStack {
             HStack {
-                Text(title.uppercased())
+                Text(String(localized: title).uppercased())
                     .font(.callout)
                     .foregroundStyle(colorScheme == .dark ? .white.opacity(0.6) : .gray)
                 Spacer()
@@ -85,7 +86,7 @@ struct GuildDetailUpdateGuildView: View {
     }
     
     private var storylinePicker: some View {
-        Picker(selection: $viewModel.state.storylineKindPickerSelection, label: Text("Select storyline")) {
+        Picker(selection: $viewModel.state.storylineKindPickerSelection, label: Text("Select Storyline")) {
             #warning("TODO: Remove next line when more storyline kinds are available!")
             ForEach(0..<3) { index in
                 ForEach(StorylineKind.allCases) { storylineKind in
@@ -100,7 +101,7 @@ struct GuildDetailUpdateGuildView: View {
     }
     
     private var updateButton: some View {
-        Button("Update guild") {
+        Button("Update Guild") {
             viewModel.updateGuild()
         }
         .buttonStyle(PrimaryButtonStyle(isLoading: viewModel.state.isLoading))

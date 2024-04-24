@@ -81,7 +81,7 @@ final class SignUpViewModel: ObservableObject {
         do {
             try validateNameUseCase.execute(name: state.name)
         } catch ValidationError.invalidName {
-            state.nameError = "Name must be 2-32 characters long"
+            state.nameError = "Username must be 2-32 characters long"
         } catch {
             state.signUpError = "Unknown error"
         }
