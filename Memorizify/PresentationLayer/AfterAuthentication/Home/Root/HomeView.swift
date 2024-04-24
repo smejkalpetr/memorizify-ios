@@ -29,11 +29,15 @@ struct HomeView: View {
                     backgroundImage
                 }
                 .scrollContentBackground(.hidden)
-                .refreshable { await viewModel.loadAllStorylines() }
+                .refreshable { viewModel.loadAllStorylines() }
                 .onReceive(Notification.Name.refreshStorylines.publisher) { _ in
-                    Task { await viewModel.loadAllStorylines() }
+                    Task { viewModel.loadAllStorylines() }
                 }
             }
+            .alert(item: Binding<AlertData?>(
+                get: { viewModel.state.alert },
+                set: { _ in viewModel.dismissAlert() }
+            )) { alert in .init(alert) }
             .navigationDestination(for: HomeRoute.self) { route in
                 switch route {
                 case let .plainTimer(studyInterval, breakInterval):
@@ -63,11 +67,8 @@ struct HomeView: View {
             }
             .navigationTitle(router.tab.rawValue)
             .navigationBarTitleDisplayMode(.large)
-            .task {
-                if !viewModel.state.hasInitialyLoadedStorylines {
-                    await viewModel.loadAllStorylines()
-                    viewModel.state.hasInitialyLoadedStorylines = true
-                }
+            .onFirstAppear {
+                viewModel.loadAllStorylines()
             }
             .sheet(isPresented: $viewModel.state.isPlainTimerBottomSheetPresented) {
                 PlainTimerSetupView(viewModel: PlainTimerSetupViewModel())
@@ -130,10 +131,10 @@ struct HomeView: View {
                 myStorylinesLoading
             } else if viewModel.state.isInErrorState {
                 myStorylinesError
-            } else if !viewModel.state.storylines.isEmpty {
-                myStorylinesContent
-            } else {
+            } else if viewModel.state.storylines.isEmpty {
                 myStorylinesEmpty
+            } else {
+                myStorylinesContent
             }
         }
     }
@@ -182,10 +183,16 @@ struct HomeView: View {
     
     private var myStorylinesError: some View {
         VStack {
-            Text("Error occured when loading storylines")
-                .bold()
-                .foregroundStyle(.red)
+            HStack {
+                Spacer()
+                Text("Oops! Failed to load the storylines :(")
+                    .bold()
+                    .foregroundStyle(.red)
+                    .multilineTextAlignment(.center)
+                Spacer()
+            }
         }
+        .padding()
     }
     
     private var myStorylinesContent: some View {

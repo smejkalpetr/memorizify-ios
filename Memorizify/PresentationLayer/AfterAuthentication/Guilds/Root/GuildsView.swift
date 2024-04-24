@@ -30,11 +30,8 @@ struct GuildsView: View {
             .scrollContentBackground(.hidden)
             .navigationTitle(router.tab.rawValue)
             .navigationBarTitleDisplayMode(.large)
-            .task {
-                if !viewModel.state.hasInitialyLoadedGuilds {
-                    await viewModel.refreshData()
-                    viewModel.state.hasInitialyLoadedGuilds = true
-                }
+            .onFirstAppear {
+                viewModel.refreshData()
             }
             .alert(item: Binding<AlertData?>(
                 get: { viewModel.state.alert },
@@ -43,7 +40,7 @@ struct GuildsView: View {
             .sheet(isPresented: $viewModel.state.isBottomSheetPresented) {
                 GuildSetupView(viewModel: GuildSetupViewModel())
             }
-            .refreshable { await viewModel.refreshData() }
+            .refreshable { viewModel.refreshData() }
             .onReceive(Notification.Name.refreshGuilds.publisher) { _ in
                 Task { await viewModel.loadMyGuilds() }
             }
@@ -52,12 +49,15 @@ struct GuildsView: View {
             }
             .navigationDestination(for: GuildsRoute.self) { route in
                 switch route {
-                case let .showGuildDetail(guild):
-                    GuildDetailView(viewModel: GuildDetailViewModel(guild: guild))
-                        .environmentObject(router)
-                case let .storylineTimer(storyline, page, timer):
-                    let vm = StorylineTimerViewModel(storyline: storyline, page: page, timer: timer, timerKind: .guild)
-                    StorylineTimerView(viewModel: vm)
+                case .showGuildDetail:
+                    if let vm = viewModel.state.guildDetailViewModel {
+                        GuildDetailView(viewModel: vm)
+                            .environmentObject(router)
+                    }
+                case .storylineTimer:
+                    if let vm = viewModel.state.guildDetailViewModel?.state.storylineTimerViewModel {
+                        StorylineTimerView(viewModel: vm)
+                    }
                 }
             }
         }
@@ -80,6 +80,8 @@ struct GuildsView: View {
         Section("Invitations") {
             if viewModel.state.isInvitationsLoading {
                 invitationsLoading
+            } else if viewModel.state.isInvitationsInErrorState {
+                invitationsError
             } else if viewModel.state.invitations.isEmpty {
                 invitationsEmpty
             } else {
@@ -124,6 +126,20 @@ struct GuildsView: View {
                 Spacer()
             }
         }
+    }
+    
+    private var invitationsError: some View {
+        VStack {
+            HStack {
+                Spacer()
+                Text("Oops! Failed to load the invitations :(")
+                    .bold()
+                    .foregroundStyle(.red)
+                    .multilineTextAlignment(.center)
+                Spacer()
+            }
+        }
+        .padding()
     }
     
     private var invitationsEmpty: some View {
@@ -225,6 +241,8 @@ struct GuildsView: View {
         Section("Guilds") {
             if viewModel.state.isGuildsLoading {
                 guildsLoading
+            } else if viewModel.state.isGuildsInErrorState {
+                guildsError
             } else if viewModel.state.guilds.isEmpty {
                 guildsEmpty
             } else {
@@ -275,6 +293,20 @@ struct GuildsView: View {
         }
     }
     
+    private var guildsError: some View {
+        VStack {
+            HStack {
+                Spacer()
+                Text("Oops! Failed to load the guilds :(")
+                    .bold()
+                    .foregroundStyle(.red)
+                    .multilineTextAlignment(.center)
+                Spacer()
+            }
+        }
+        .padding()
+    }
+    
     private var guildsEmpty: some View {
         ZStack {
             guildsEmptyImage
@@ -314,7 +346,9 @@ struct GuildsView: View {
     
     private func guildBody(guild: Guild) -> some View {
         Button() {
-            router.guildsPath.append(GuildsRoute.showGuildDetail(guild))
+            viewModel.initializeGuildDetailViewModel(with: guild) {
+                router.guildsPath.append(GuildsRoute.showGuildDetail)
+            }
         } label: {
             VStack(alignment: .leading, spacing: 8) {
                 Text("\(guild.name)")

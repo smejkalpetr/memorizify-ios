@@ -94,7 +94,11 @@ final class StorylineSetupViewModel: ObservableObject {
                 completion()
                 detailCompletion?()
             } catch {
-                state.alert = AlertData(title: "Error setting up storyline!")
+                NSLog("❌ Error in \(#file) on line \(#line): \(error.localizedDescription)")
+                state.alert = AlertData(
+                    title: "Storyline Setup Failed",
+                    message: "An error occured when setting up storyline. Please try again."
+                )
             }
         }
     }

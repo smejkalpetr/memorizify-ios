@@ -39,12 +39,9 @@ struct StorylineTimerView: View {
             get: { viewModel.state.alert },
             set: { _ in viewModel.dismissAlert() }
         )) { alert in .init(alert) }
-        .onAppear {
+        .onFirstAppear {
             viewModel.setDelegate()
             viewModel.start()
-        }
-        .onDisappear {
-            viewModel.cancel()
         }
         .navigationBarHidden(true)
     }

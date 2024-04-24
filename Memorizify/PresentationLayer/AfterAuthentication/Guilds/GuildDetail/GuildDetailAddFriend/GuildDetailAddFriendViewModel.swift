@@ -17,6 +17,8 @@ final class GuildDetailAddFriendViewModel: ObservableObject {
     @Injected private var validateEmailUseCase: ValidateEmailUseCase
     
     struct State {
+        var alert: AlertData?
+        
         var email = ""
         var emailError = ""
         
@@ -37,9 +39,13 @@ final class GuildDetailAddFriendViewModel: ObservableObject {
         do {
             try validateEmailUseCase.execute(email: state.email)
         } catch ValidationError.invalidEmail {
-            state.emailError = "Wrong email format"
+            state.emailError = "Wrong Email Format"
         } catch {
-            state.emailError = "Unknown error"
+            NSLog("❌ Error in \(#file) on line \(#line): \(error.localizedDescription)")
+            state.alert = AlertData(
+                title: "Unknown Error",
+                message: "An unknown error has occured."
+            )
         }
     }
     
@@ -48,5 +54,10 @@ final class GuildDetailAddFriendViewModel: ObservableObject {
         validateEmailField()
         guard state.canAddFriend else { return }
         completion(state.email)
+    }
+    
+    @MainActor
+    func dismissAlert() {
+        state.alert = nil
     }
 }

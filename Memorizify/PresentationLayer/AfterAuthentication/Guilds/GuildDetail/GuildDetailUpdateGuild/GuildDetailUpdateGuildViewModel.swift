@@ -19,11 +19,11 @@ final class GuildDetailUpdateGuildViewModel: ObservableObject {
     @Injected private var updateGuildUseCase: UpdateGuildUseCase
     
     struct State {
-        var guild: Guild
         var alert: AlertData?
         var isLoading = false
         var storylineKindPickerSelection = StorylineKind.allCases.first?.rawValue ?? StorylineKind.testStoryline(TestStoryline()).rawValue
         var goal: Double
+        var guild: Guild
                 
         init(guild: Guild) {
             self.guild = guild
@@ -50,9 +50,10 @@ final class GuildDetailUpdateGuildViewModel: ObservableObject {
                 refreshGuildDetail()
                 completion()
             } catch {
+                NSLog("❌ Error in \(#file) on line \(#line): \(error.localizedDescription)")
                 state.alert = AlertData(
-                    title: "Guild update failed",
-                    message: "Failed to update the guild. Please try again."
+                    title: "Updating Guild Failed",
+                    message: "An error occured when updating the guild. Please try again."
                 )
             }
             

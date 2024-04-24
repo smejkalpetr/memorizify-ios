@@ -23,15 +23,20 @@ final class GuildDetailViewModel: ObservableObject {
     @Injected private var getCurrentStorylinePageUseCase: GetCurrentStorylinePageUseCase
     
     struct State {
+        var alert: AlertData?
         var isLoading = false
         var isListLoading = false
+        var isInErrorState = false
+        var isListInErrorState = false
         var isInviteBottomSheetPresented = false
         var isUpdateBottomSheetPresented = false
-        var alert: AlertData?
+        
         var user: User?
         var guild: Guild
         var studyIntervalMinutes = 30.0
         var breakIntervalMinutes = 5.0
+        
+        var storylineTimerViewModel: StorylineTimerViewModel?
         
         init(guild: Guild) {
             self.guild = guild
@@ -45,8 +50,8 @@ final class GuildDetailViewModel: ObservableObject {
     @MainActor
     func removeUserFromGuild(userUid: String?) {
         let alertData = AlertData(
-            title: "Failed to delete",
-            message: "There was an error when deleting member!"
+            title: "User Remove Failed",
+            message: "An error occured when removing the user. Please try again."
         )
         
         guard let userUid else {
@@ -59,6 +64,7 @@ final class GuildDetailViewModel: ObservableObject {
                 try await removeGuildMemberUseCase.execute(userUid: userUid, from: state.guild)
                 await refreshGuildDetail()
             } catch {
+                NSLog("❌ Error in \(#file) on line \(#line): \(error.localizedDescription)")
                 state.alert = alertData
             }
         }
@@ -71,23 +77,24 @@ final class GuildDetailViewModel: ObservableObject {
                 try await sendGuildInvitationUseCase.execute(to: email, guildId: state.guild.id, guildName: state.guild.name, at: Date())
                 refreshGuildsOnGuildsTab()
                 state.alert = AlertData(
-                    title: "Invitation sent",
-                    message: "Invitation has been sent to \(email). Tell them to check their Guilds to accept the invitation."
+                    title: "Invitation Sent",
+                    message: "Invitation has been sent to user with the following email address: \(email). Please, tell them to check their Guilds to accept the invitation."
                 )
             } catch InvitationsError.alreadyMember {
                 state.alert = AlertData(
-                    title: "Already member",
+                    title: "Already Member",
                     message: "This user is already a member of the guild."
                 )
             } catch InvitationsError.alreadyInvited {
                 state.alert = AlertData(
-                    title: "Already invited",
-                    message: "This user has already been invited to the guild. Tell them to check their pending invtitations."
+                    title: "Already Invited",
+                    message: "This user has already been invited to the guild. Tell them to check their pending invtitations, please."
                 )
             } catch {
+                NSLog("❌ Error in \(#file) on line \(#line): \(error.localizedDescription)")
                 state.alert = AlertData(
-                    title: "Failed to invite friend",
-                    message: "An error occured when sending invitation to friend. Please try again."
+                    title: "Invitation Failed",
+                    message: "An error occured when sending invitation to your friend. Please try again."
                 )
             }
         }
@@ -100,35 +107,49 @@ final class GuildDetailViewModel: ObservableObject {
                 try await deleteGuildUseCase.execute(state.guild)
                 completion()
             } catch {
+                NSLog("❌ Error in \(#file) on line \(#line): \(error.localizedDescription)")
                 state.alert = AlertData(
-                    title: "Failed to delete guild",
-                    message: "An error occured when deleting guild. Please try again."
+                    title: "Guild Deletion Failed",
+                    message: "An error occured when deleting the guild. Please try again."
                 )
             }
         }
     }
     
     @MainActor
-    func refreshGuildDetail() async {
-        defer { state.isListLoading = false }
-        state.isListLoading = true
-        
-        do {
-            state.guild = try await loadGuildUseCase.execute(guild: state.guild)
-        } catch {
-            state.alert = AlertData(
-                title: "Failed to fetch guild detail",
-                message: "Failed to fetch guild detail data. Please try again."
-            )
+    func refreshGuildDetail() {
+        Task {
+            defer { state.isListLoading = false }
+            state.isListLoading = true
+            
+            do {
+                state.guild = try await loadGuildUseCase.execute(guild: state.guild)
+                state.isListInErrorState = false
+            } catch {
+                NSLog("❌ Error in \(#file) on line \(#line): \(error.localizedDescription)")
+                state.isListInErrorState = true
+                state.alert = AlertData(
+                    title: "Guild Detail Loading Failed",
+                    message: "Failed to load the guild data. Please try again."
+                )
+            }
         }
     }
     
     @MainActor
-    func getCurrentUser() async {
-        defer { state.isLoading = false }
-        state.isLoading = true
-        
-        state.user = try? await getCurrentUserUseCase.execute()
+    func getCurrentUser() {
+        Task {
+            defer { state.isLoading = false }
+            state.isLoading = true
+            
+            do {
+                state.user = try await getCurrentUserUseCase.execute()
+                state.isInErrorState = false
+            } catch {
+                state.isInErrorState = true
+                NSLog("❌ Error in \(#file) on line \(#line): \(error.localizedDescription)")
+            }
+        }
     }
     
     @MainActor
@@ -158,6 +179,11 @@ final class GuildDetailViewModel: ObservableObject {
     @MainActor
     func dismissAlert() {
         state.alert = nil
+    }
+    
+    func initializeStorylineTimerViewModel(storyline: Storyline, page: StorylinePage, timer: PomodoroTimer, completion: () -> ()) {
+        state.storylineTimerViewModel = StorylineTimerViewModel(storyline: storyline, page: page, timer: timer, timerKind: .guild)
+        completion()
     }
     
     func refreshGuildsOnGuildsTab() {

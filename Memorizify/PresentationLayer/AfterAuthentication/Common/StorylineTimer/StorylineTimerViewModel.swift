@@ -22,17 +22,16 @@ final class StorylineTimerViewModel: ObservableObject, PomodoroTimerDelegate {
     @Injected private var increaseMemberScoreUseCase: IncreaseMemberScoreUseCase
     
     struct State {
-        var timerKind: PomodorTimerKind
-        
-        var storyline: Storyline
-        var page: StorylinePage
-        
         var alert: AlertData?
         var isLoading = false
         var isDone = false
         var isPaused = false
         var countdown = ""
         var transition: String?
+        
+        var timerKind: PomodorTimerKind
+        var storyline: Storyline
+        var page: StorylinePage
         
         init(storyline: Storyline, page: StorylinePage, timerKind: PomodorTimerKind) {
             self.storyline = storyline
@@ -94,8 +93,11 @@ final class StorylineTimerViewModel: ObservableObject, PomodoroTimerDelegate {
     // MARK: PomodoroTimerDelegate
     
     func tick(with status: PomodoroTimerStatus) {
-        #warning("Thrown error not handled properly")
-        state.countdown = (try? formatSecondsToStringUseCase.execute(seconds: status.timeRemaining)) ?? "error"
+        do {
+            state.countdown = try formatSecondsToStringUseCase.execute(seconds: status.timeRemaining)
+        } catch {
+            NSLog("❌ Error in \(#file) on line \(#line): \(error.localizedDescription)")
+        }
     }
     
     @MainActor
@@ -172,9 +174,10 @@ final class StorylineTimerViewModel: ObservableObject, PomodoroTimerDelegate {
                 try await increaseUserScoreUseCase.execute(by: finished)
             }
         } catch {
+            NSLog("❌ Error in \(#file) on line \(#line): \(error.localizedDescription)")
             state.alert = AlertData(
-                title: "Storyline error",
-                message: "Failed to save storyline data."
+                title: "Saving Storyline Failed",
+                message: "An error occured when saving storyline data."
             )
         }
     }
@@ -193,10 +196,10 @@ final class StorylineTimerViewModel: ObservableObject, PomodoroTimerDelegate {
                 refreshGuildDetail()
             }
         } catch {
-            print("error: \(error)")
+            NSLog("❌ Error in \(#file) on line \(#line): \(error.localizedDescription)")
             state.alert = AlertData(
-                title: "Guild error",
-                message: "Failed to save guild score data."
+                title: "Saving Guild Score Failed",
+                message: "An error occured when saving guild score data."
             )
         }
     }
@@ -212,9 +215,10 @@ final class StorylineTimerViewModel: ObservableObject, PomodoroTimerDelegate {
                 try await increaseUserScoreUseCase.execute(by: finished)
             }
         } catch {
+            NSLog("❌ Error in \(#file) on line \(#line): \(error.localizedDescription)")
             state.alert = AlertData(
-                title: "Plain timer error",
-                message: "Failed to save score data."
+                title: "Saving Score Failed",
+                message: "An error occured when saving score data."
             )
         }
     }

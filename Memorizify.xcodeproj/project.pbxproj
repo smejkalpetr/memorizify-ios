@@ -57,6 +57,7 @@
 		1D1E2A512BD7F1B10005B4A6 /* SettingsChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1E2A502BD7F1B10005B4A6 /* SettingsChangePasswordView.swift */; };
 		1D1E2A532BD7F1BF0005B4A6 /* SettingsChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1E2A522BD7F1BF0005B4A6 /* SettingsChangePasswordViewModel.swift */; };
 		1D1E2A552BD7F65B0005B4A6 /* ChangePasswordUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1E2A542BD7F65B0005B4A6 /* ChangePasswordUseCase.swift */; };
+		1D1F97D42BD984870025FC73 /* OnFirstAppear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1F97D32BD984870025FC73 /* OnFirstAppear.swift */; };
 		1D26EBAF2BC55FC000F5E1B5 /* Storyline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D26EBAE2BC55FC000F5E1B5 /* Storyline.swift */; };
 		1D26EBB12BC5605000F5E1B5 /* StorylineKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D26EBB02BC5605000F5E1B5 /* StorylineKind.swift */; };
 		1D26EBB32BC5633E00F5E1B5 /* StorylinesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D26EBB22BC5633E00F5E1B5 /* StorylinesViewModel.swift */; };
@@ -288,6 +289,7 @@
 		1D1E2A502BD7F1B10005B4A6 /* SettingsChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsChangePasswordView.swift; path = Memorizify/PresentationLayer/AfterAuthentication/Home/SettingsChangePasswordView.swift; sourceTree = SOURCE_ROOT; };
 		1D1E2A522BD7F1BF0005B4A6 /* SettingsChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsChangePasswordViewModel.swift; sourceTree = "<group>"; };
 		1D1E2A542BD7F65B0005B4A6 /* ChangePasswordUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordUseCase.swift; sourceTree = "<group>"; };
+		1D1F97D32BD984870025FC73 /* OnFirstAppear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnFirstAppear.swift; sourceTree = "<group>"; };
 		1D26EBAE2BC55FC000F5E1B5 /* Storyline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyline.swift; sourceTree = "<group>"; };
 		1D26EBB02BC5605000F5E1B5 /* StorylineKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorylineKind.swift; sourceTree = "<group>"; };
 		1D26EBB22BC5633E00F5E1B5 /* StorylinesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorylinesViewModel.swift; sourceTree = "<group>"; };
@@ -841,6 +843,14 @@
 			path = SettingsChangePassword;
 			sourceTree = "<group>";
 		};
+		1D1F97D22BD984630025FC73 /* OnFirstAppear */ = {
+			isa = PBXGroup;
+			children = (
+				1D1F97D32BD984870025FC73 /* OnFirstAppear.swift */,
+			);
+			path = OnFirstAppear;
+			sourceTree = "<group>";
+		};
 		1D26EBB42BC5840100F5E1B5 /* StorylineSetup */ = {
 			isa = PBXGroup;
 			children = (
@@ -1120,6 +1130,7 @@
 				1D88B1DD2BAA216000B3D903 /* Alert */,
 				1D5E9CBE2BA9F89800EF6400 /* TextField */,
 				1D544E062BA76B12003C486F /* Buttons */,
+				1D1F97D22BD984630025FC73 /* OnFirstAppear */,
 				1DAF51682BD3FCFD00FCAE99 /* AnimatePlaceholders */,
 			);
 			path = SwiftUI;
@@ -2127,6 +2138,7 @@
 				1D0F826E2BD2B56F00FAD74C /* LanguageSetting.swift in Sources */,
 				1D7B7A482BCED69400A18E12 /* DeclineGuildInvitationUseCase.swift in Sources */,
 				1D1AD36A2BAD8775008827BA /* SettingsViewModel.swift in Sources */,
+				1D1F97D42BD984870025FC73 /* OnFirstAppear.swift in Sources */,
 				1D0821762BCC6E1800F1F8F3 /* GetCurrentUserUseCase.swift in Sources */,
 				1D88B1D12BAA090F00B3D903 /* LogInView.swift in Sources */,
 				1D84AD492BAB82BE0048AC9C /* KeychainError.swift in Sources */,
@@ -2315,7 +2327,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.1;
+				MARKETING_VERSION = 0.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.smejkalp.memorizify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -2347,7 +2359,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.1;
+				MARKETING_VERSION = 0.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.smejkalp.memorizify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

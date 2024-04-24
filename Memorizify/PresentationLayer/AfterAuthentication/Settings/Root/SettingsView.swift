@@ -40,7 +40,9 @@ struct SettingsView: View {
                 }
                 .scrollContentBackground(.hidden)
             }
-            .task { await viewModel.getUserInfo() }
+            .onFirstAppear {
+                viewModel.getUserInfo()
+            }
             .navigationDestination(for: SettingsRoute.self) { route in
                 switch route {
                 case .changePassword:
@@ -59,14 +61,23 @@ struct SettingsView: View {
     @ViewBuilder
     private var profileSection: some View {
         Section("Profile") {
-            if let user = viewModel.state.user {
-                userSectionLoaded(name: user.name, email: user.email)
-            } else if viewModel.state.isUserLoading {
+            if viewModel.state.isUserLoading {
                 userSectionLoading
+            } else if let user = viewModel.state.user {
+                userSectionLoaded(name: user.name, email: user.email)
             } else {
-                userSectionFailedToLoad
+                userError
             }
         }
+    }
+    
+    private var userSectionLoading: some View {
+        HStack {
+            Spacer()
+            ProgressView()
+            Spacer()
+        }
+        .padding()
     }
     
     private func userSectionLoaded(name: String, email: String) -> some View {
@@ -94,20 +105,16 @@ struct SettingsView: View {
         .padding(.vertical, 8)
     }
     
-    private var userSectionLoading: some View {
-        HStack {
-            Spacer()
-            ProgressView()
-            Spacer()
-        }
-        .padding()
-    }
-    
-    private var userSectionFailedToLoad: some View {
-        HStack {
-            Spacer()
-            Text("Failed to load user data")
-            Spacer()
+    private var userError: some View {
+        VStack {
+            HStack {
+                Spacer()
+                Text("Oops! Failed to load user data :(")
+                    .bold()
+                    .foregroundStyle(.red)
+                    .multilineTextAlignment(.center)
+                Spacer()
+            }
         }
         .padding()
     }

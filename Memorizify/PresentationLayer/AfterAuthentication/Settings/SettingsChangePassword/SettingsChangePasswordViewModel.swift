@@ -19,13 +19,14 @@ final class SettingsChangePasswordViewModel: ObservableObject {
     @Injected private var validateRepeatedPasswordUseCase: ValidateRepeatedPasswordUseCase
     
     struct State {
-        var isLoading = false
         var alert: AlertData?
+        var isLoading = false
         
         var currentPassword = ""
         var newPassword = ""
-        var newPasswordError = ""
         var repeatNewPassword = ""
+        
+        var newPasswordError = ""
         var repeatNewPasswordError = ""
         
         var canChange: Bool {
@@ -50,7 +51,7 @@ final class SettingsChangePasswordViewModel: ObservableObject {
                 try await changePasswordUseCase.execute(currentPassword: state.currentPassword, newPassword: state.newPassword)
                 
                 state.alert = AlertData(
-                    title: "Password changed",
+                    title: "Password Changed",
                     message: "Your password has been changed.",
                     primaryAction: .init(
                         title: "Close",
@@ -58,9 +59,10 @@ final class SettingsChangePasswordViewModel: ObservableObject {
                     )
                 )
             } catch {
+                NSLog("❌ Error in \(#file) on line \(#line): \(error.localizedDescription)")
                 state.alert = AlertData(
-                    title: "Error changing password",
-                    message: "An error occured when changing password. Please try again."
+                    title: "Changing Password Failed",
+                    message: "An error occured when changing the password. Please try again."
                 )
             }
         }
@@ -75,9 +77,10 @@ final class SettingsChangePasswordViewModel: ObservableObject {
         } catch ValidationError.invalidPassword {
             state.newPasswordError = "Password must be at least 8 characters long, contain at least one digit and at least one upper case letter"
         } catch {
+            NSLog("❌ Error in \(#file) on line \(#line): \(error.localizedDescription)")
             state.alert = AlertData(
-                title: "Unknown error",
-                message: "An unknown error occured. Please try again."
+                title: "Unknown Error",
+                message: "An unknown error has occured."
             )
         }
     }
@@ -94,9 +97,10 @@ final class SettingsChangePasswordViewModel: ObservableObject {
         } catch ValidationError.invalidRepeatedPassword {
             state.repeatNewPasswordError = "New passwords are not the same"
         } catch {
+            NSLog("❌ Error in \(#file) on line \(#line): \(error.localizedDescription)")
             state.alert = AlertData(
-                title: "Unknown error",
-                message: "An unknown error occured. Please try again."
+                title: "Unknown Error",
+                message: "An unknown error has occured."
             )
         }
     }

@@ -16,13 +16,12 @@ final class ResetPasswordViewModel: ObservableObject {
     @Injected private var resetPasswordUseCase: ResetPasswordUseCase
     
     struct State {
+        var alert: AlertData? = nil
+        var isResetPasswordButtonLoading = false
+        
         var email = ""
         var emailError = ""
 
-        var isResetPasswordButtonLoading = false
-        
-        var alert: AlertData? = nil
-        
         var canResetPassword: Bool {
             emailError == "" &&
             !email.isEmpty
@@ -39,13 +38,10 @@ final class ResetPasswordViewModel: ObservableObject {
                 try await resetPasswordUseCase.execute(email: state.email)
                 completion()
             } catch {
+                NSLog("❌ Error in \(#file) on line \(#line): \(error.localizedDescription)")
                 state.alert = AlertData(
-                    title: "Error",
-                    message: "Something went wrong: \(error.localizedDescription)",
-                    primaryAction: AlertData.Action(
-                        title: "Cancel",
-                        style: .cancel
-                    )
+                    title: "Password Reset Failed",
+                    message: "An error occured when reseting password. Please try again."
                 )
             }
         }
@@ -58,7 +54,7 @@ final class ResetPasswordViewModel: ObservableObject {
         do {
             try validateEmailUseCase.execute(email: state.email)
         } catch ValidationError.invalidEmail {
-            state.emailError = "Wrong email format"
+            state.emailError = "Wrong Email Format"
         } catch {}
     }
     

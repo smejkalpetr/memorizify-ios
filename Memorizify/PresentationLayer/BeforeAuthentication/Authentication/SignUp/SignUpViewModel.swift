@@ -21,6 +21,7 @@ final class SignUpViewModel: ObservableObject {
     
     struct State {
         var alert: AlertData?
+        
         var name = ""
         var nickname = ""
         var email = ""
@@ -32,7 +33,7 @@ final class SignUpViewModel: ObservableObject {
         var emailError = ""
         var passwordError = ""
         var repeatedPasswordError = ""
-        var signUpError = ""
+        var agreementError = ""
         
         var isAgreementSigned = false
         var isSignUpButtonLoading = false
@@ -66,9 +67,10 @@ final class SignUpViewModel: ObservableObject {
                 )
                 completion()
             } catch {
+                NSLog("❌ Error in \(#file) on line \(#line): \(error.localizedDescription)")
                 state.alert = AlertData(
                     title: "Sign Up Failed",
-                    message: "An error occured during Sing Up. Please try again."
+                    message: "An error occured during sign up. Please try again."
                 )
             }
         }
@@ -83,7 +85,11 @@ final class SignUpViewModel: ObservableObject {
         } catch ValidationError.invalidName {
             state.nameError = "Username must be 2-32 characters long"
         } catch {
-            state.signUpError = "Unknown error"
+            NSLog("❌ Error in \(#file) on line \(#line): \(error.localizedDescription)")
+            state.alert = AlertData(
+                title: "Unknown Error",
+                message: "An unknown error has occured."
+            )
         }
     }
     
@@ -96,7 +102,11 @@ final class SignUpViewModel: ObservableObject {
         } catch ValidationError.invalidNickname {
             state.nickname = "Nickname must be 2-32 characters long"
         } catch {
-            state.signUpError = "Unknown error"
+            NSLog("❌ Error in \(#file) on line \(#line): \(error.localizedDescription)")
+            state.alert = AlertData(
+                title: "Unknown Error",
+                message: "An unknown error has occured."
+            )
         }
     }
     
@@ -107,9 +117,13 @@ final class SignUpViewModel: ObservableObject {
         do {
             try validateEmailUseCase.execute(email: state.email)
         } catch ValidationError.invalidEmail {
-            state.emailError = "Wrong email format"
+            state.emailError = "Wrong Email Format"
         } catch {
-            state.signUpError = "Unknown error"
+            NSLog("❌ Error in \(#file) on line \(#line): \(error.localizedDescription)")
+            state.alert = AlertData(
+                title: "Unknown Error",
+                message: "An unknown error has occured."
+            )
         }
     }
     
@@ -122,7 +136,11 @@ final class SignUpViewModel: ObservableObject {
         } catch ValidationError.invalidPassword {
             state.passwordError = "Password must be at least 8 characters long, contain at least one digit and at least one upper case letter"
         } catch {
-            state.signUpError = "Unknown error"
+            NSLog("❌ Error in \(#file) on line \(#line): \(error.localizedDescription)")
+            state.alert = AlertData(
+                title: "Unknown Error",
+                message: "An unknown error has occured."
+            )
         }
     }
     
@@ -135,14 +153,18 @@ final class SignUpViewModel: ObservableObject {
         } catch ValidationError.invalidRepeatedPassword {
             state.repeatedPasswordError = "Password are not the same"
         } catch {
-            state.signUpError = "Unknown error"
+            NSLog("❌ Error in \(#file) on line \(#line): \(error.localizedDescription)")
+            state.alert = AlertData(
+                title: "Unknown Error",
+                message: "An unknown error has occured."
+            )
         }
     }
     
     @MainActor
     func validateAgreementSignature() {
         guard state.isAgreementSigned else {
-            state.signUpError = "You have to agree to the terms and conditions"
+            state.agreementError = "You have to agree to the terms and conditions"
             return
         }
     }
@@ -153,6 +175,7 @@ final class SignUpViewModel: ObservableObject {
         state.emailError = ""
         state.passwordError = ""
         state.repeatedPasswordError = ""
+        state.agreementError = ""
     }
     
     @MainActor

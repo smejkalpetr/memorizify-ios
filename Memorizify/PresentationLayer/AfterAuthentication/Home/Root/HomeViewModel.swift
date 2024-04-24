@@ -15,31 +15,38 @@ final class HomeViewModel: ObservableObject {
     @Injected private var loadAllStorylinesUseCase: LoadAllStorylinesUseCase
     
     struct State {
+        var alert: AlertData?
         var isInErrorState = false
         var isStorylinesLoading = false
-        var hasInitialyLoadedStorylines = false
         var isPlainTimerBottomSheetPresented = false
         var storylines: [Storyline] = []
     }
     
     @MainActor
-    func loadAllStorylines() async {
-        defer { state.isStorylinesLoading = false }
-        state.isStorylinesLoading = true
-        clearErrors()
-        
-        do {
-            let storylines = try await loadAllStorylinesUseCase.execute()
-            state.storylines = storylines ?? []
-        } catch {
-            #warning("TODO: Error handling not finished!")
-            print("Error loading storylines: \(error)")
-            state.isInErrorState = true
+    func loadAllStorylines() {
+        Task {
+            defer { state.isStorylinesLoading = false }
+            state.isStorylinesLoading = true
+            clearErrors()
+            
+            do {
+                let storylines = try await loadAllStorylinesUseCase.execute()
+                state.storylines = storylines ?? []
+                state.isInErrorState = false
+            } catch {
+                NSLog("❌ Error in \(#file) on line \(#line): \(error.localizedDescription)")
+                state.isInErrorState = true
+            }
         }
     }
     
     @MainActor
     func clearErrors() {
         state.isInErrorState = false
+    }
+    
+    @MainActor
+    func dismissAlert() {
+        state.alert = nil
     }
 }

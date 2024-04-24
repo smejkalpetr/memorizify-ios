@@ -18,8 +18,8 @@ final class StorylineTileViewModel: ObservableObject {
     
     struct State {
         var alert: AlertData?
-        var bottomSheetItem: Storyline?
         var isLoading = false
+        var bottomSheetItem: Storyline?
         var storyline: Storyline
     }
     
@@ -54,7 +54,11 @@ final class StorylineTileViewModel: ObservableObject {
                 try await deleteStorylineUseCase.execute(state.storyline)
                 refreshStorylinesOnHomeTab()
             } catch {
-                state.alert = AlertData(title: "Deleting storyline failed!", message: "error.localizedDescription")
+                NSLog("❌ Error in \(#file) on line \(#line): \(error.localizedDescription)")
+                state.alert = AlertData(
+                    title: "Deleting Storyline Failed",
+                    message: "An error occured when deleting the storyline. Please try again."
+                )
             }
         }
     }
@@ -64,10 +68,10 @@ final class StorylineTileViewModel: ObservableObject {
             let (page, timer) = try startStorylineUseCase.execute(state.storyline)
             completion(state.storyline, page, timer)
         } catch {
-            print("error: \(error)")
+            NSLog("❌ Error in \(#file) on line \(#line): \(error.localizedDescription)")
             state.alert = AlertData(
-                title: "Error starting storyline", 
-                message: "An error occured when starting the storyline. Please try again!"
+                title: "Starting Storyline Failed",
+                message: "An error occured when starting the storyline. Please try again."
             )
         }
     }

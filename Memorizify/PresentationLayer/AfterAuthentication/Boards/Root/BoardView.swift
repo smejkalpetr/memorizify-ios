@@ -22,6 +22,8 @@ struct BoardView: View {
                     Section("Top 10") {
                         if viewModel.state.isBoardLoading {
                             boardLoading
+                        } else if viewModel.state.isInErrorState {
+                            boardError
                         } else if let records = viewModel.state.board?.records {
                             boardLoaded(records: records)
                         } else {
@@ -35,7 +37,7 @@ struct BoardView: View {
                     backgroundImage
                 }
                 .scrollContentBackground(.hidden)
-                .refreshable { await viewModel.loadBoard() }
+                .refreshable { viewModel.loadBoard() }
             }
             .navigationDestination(for: BoardRoute.self) { route in
                 switch route {
@@ -51,10 +53,8 @@ struct BoardView: View {
             }
             .navigationTitle(router.tab.rawValue)
             .navigationBarTitleDisplayMode(.large)
-            .task {
-                if !viewModel.state.hasInitialyLoadedBoard {
-                    await viewModel.loadBoard()
-                }
+            .onFirstAppear {
+                viewModel.loadBoard()
             }
             .alert(item: Binding<AlertData?>(
                 get: { viewModel.state.alert },
@@ -130,6 +130,19 @@ struct BoardView: View {
         }
     }
     
+    private var boardError: some View {
+        VStack {
+            HStack {
+                Spacer()
+                Text("Oops! Failed to load the board :(")
+                    .bold()
+                    .foregroundStyle(.red)
+                    .multilineTextAlignment(.center)
+                Spacer()
+            }
+        }
+        .padding()
+    }
     
     private func boardLoaded(records: [BoardRecord]) -> some View {
         VStack {

@@ -20,33 +20,36 @@ final class SettingsViewModel: ObservableObject {
     @Injected private var getFullLanguageNameForIdentifierUseCase: GetFullLanguageNameForIdentifierUseCase
     
     struct State {
-        var isUserLoading = false
         var alert: AlertData?
+        var isUserLoading = false
         var user: User?
     }
     
     // MARK: Public
     
     @MainActor
-    func getUserInfo() async {
-        defer { state.isUserLoading = false }
-        state.isUserLoading = true
-        
-        do {
-            state.user = try await getCurrentUserUseCase.execute()
-        } catch {
-            state.alert = AlertData(
-                title: "Error fetching user",
-                message: "An error occured when fetching user data."
-            )
+    func getUserInfo() {
+        Task {
+            defer { state.isUserLoading = false }
+            state.isUserLoading = true
+            
+            do {
+                state.user = try await getCurrentUserUseCase.execute()
+            } catch {
+                NSLog("❌ Error in \(#file) on line \(#line): \(error.localizedDescription)")
+                state.alert = AlertData(
+                    title: "Loading User Failed",
+                    message: "An error occured when loading user data. Please try again."
+                )
+            }
         }
     }
     
     @MainActor
     func openLanguageSettings() {
         state.alert = AlertData(
-            title: "Change language",
-            message: "To change language, System Settings will open. Please select the desired laguage there.",
+            title: "Change Language",
+            message: "To change the language, System Settings will open. Please select your desired laguage there.",
             primaryAction: .init(
                 title: "Continue",
                 style: .cancel,
@@ -61,8 +64,8 @@ final class SettingsViewModel: ObservableObject {
     @MainActor
     func openNotificationsSettings() {
         state.alert = AlertData(
-            title: "Change notifications settings",
-            message: "To change notifications settings, System Settings will open. Please the settings there.",
+            title: "Change Notification Preferences",
+            message: "To change notifications settings, System Settings will open. Please select your notification preferences there.",
             primaryAction: .init(
                 title: "Continue",
                 style: .cancel,
@@ -90,9 +93,10 @@ final class SettingsViewModel: ObservableObject {
         do {
             try changeLanguageSettingsUseCase.execute()
         } catch {
+            NSLog("❌ Error in \(#file) on line \(#line): \(error.localizedDescription)")
             state.alert = AlertData(
-                title: "Error openning System Settings",
-                message: "An error occured when opening System Settings. Please try again."
+                title: "Opening System Settings Failed",
+                message: "An error occured when opening the System Settings. Please try again."
             )
         }
     }
@@ -101,9 +105,10 @@ final class SettingsViewModel: ObservableObject {
         do {
             try changeNotificationsSettingsUseCase.execute()
         } catch {
+            NSLog("❌ Error in \(#file) on line \(#line): \(error.localizedDescription)")
             state.alert = AlertData(
-                title: "Error openning System Settings",
-                message: "An error occured when opening System Settings. Please try again."
+                title: "Opening System Settings Failed",
+                message: "An error occured when opening the System Settings. Please try again."
             )
         }
     }

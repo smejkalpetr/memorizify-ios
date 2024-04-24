@@ -23,13 +23,16 @@ final class GuildSetupViewModel: ObservableObject {
     struct State {
         var alert: AlertData?
         var isLoading = false
-        var storylineKindPickerSelection = StorylineKind.allCases.first?.rawValue ?? StorylineKind.testStoryline(TestStoryline()).rawValue
+        
         var name = ""
-        var nameError = ""
         var email = ""
+        
+        var nameError = ""
         var emailError = ""
+        
         var goal = (goalRange.lowerBound + goalRange.upperBound) / 2
         var emailInvitations: [String] = []
+        var storylineKindPickerSelection = StorylineKind.allCases.first?.rawValue ?? StorylineKind.testStoryline(TestStoryline()).rawValue
         
         var canCreateGuild: Bool {
             [nameError].allSatisfy { $0 == "" } &&
@@ -52,7 +55,11 @@ final class GuildSetupViewModel: ObservableObject {
         } catch ValidationError.invalidName {
             state.nameError = "Name must be 2-32 characters long"
         } catch {
-            state.nameError = "Unknown error"
+            NSLog("❌ Error in \(#file) on line \(#line): \(error.localizedDescription)")
+            state.alert = AlertData(
+                title: "Unknown Error",
+                message: "An unknown error has occured."
+            )
         }
     }
     
@@ -65,12 +72,16 @@ final class GuildSetupViewModel: ObservableObject {
             state.emailError = ""
         } catch ValidationError.invalidEmail {
             if !state.email.isEmpty && ignoreEmpty {
-                state.emailError = "Wrong email format"
+                state.emailError = "Wrong Email Format"
             }
         } catch InvitationsError.alreadyMember {
             state.emailError = "You cannot add yourself"
         } catch {
-            state.emailError = "Unknown error"
+            NSLog("❌ Error in \(#file) on line \(#line): \(error.localizedDescription)")
+            state.alert = AlertData(
+                title: "Unknown Error",
+                message: "An unknown error has occured."
+            )
         }
     }
     
@@ -113,8 +124,8 @@ final class GuildSetupViewModel: ObservableObject {
                 for email in state.emailInvitations {
                     if (try? await sendGuildInvitationUseCase.execute(to: email, guildId: guildId, guildName: state.name, at: Date())) == nil {
                         state.alert = AlertData(
-                            title: "Failed to invite a friend",
-                            message: "Please try to invite friend again from the guild detail."
+                            title: "Friend Invite Failed",
+                            message: "An error occured when inviting friend. Please try again."
                         )
                         try? await Task.sleep(nanoseconds: 2_500_000_000)
                     }
@@ -124,10 +135,11 @@ final class GuildSetupViewModel: ObservableObject {
                 refreshGuildTab()
             } catch InvitationsError.alreadyMember {
                 // ignore this error (shouldn't occur anyways)
+                NSLog("⚠️ Warning \(#file) on line \(#line): InvitationsError.alreadyMember")
             } catch {
-                print("Error: \(error)")
+                NSLog("❌ Error in \(#file) on line \(#line): \(error.localizedDescription)")
                 state.alert = AlertData(
-                    title: "Failed to create guild",
+                    title: "Creating Guild Failed",
                     message: "An error occured when creating a new guild. Please try again."
                 )
             }

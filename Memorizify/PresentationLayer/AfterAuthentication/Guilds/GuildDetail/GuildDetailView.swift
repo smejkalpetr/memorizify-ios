@@ -21,6 +21,8 @@ struct GuildDetailView: View {
         List {
             if viewModel.state.isLoading {
                 guildDetailLoading
+            } else if viewModel.state.isInErrorState {
+                guildDetailError
             } else {
                 guildDetailLoaded
             }
@@ -31,14 +33,14 @@ struct GuildDetailView: View {
             backgroundImage
         }
         .scrollContentBackground(.hidden)
-        .refreshable { await viewModel.refreshGuildDetail() }
+        .refreshable { viewModel.refreshGuildDetail() }
         .navigationTitle(viewModel.state.guild.name)
-        .task { 
-            await viewModel.getCurrentUser()
-            await viewModel.refreshGuildDetail()
+        .onFirstAppear {
+            viewModel.getCurrentUser()
+            viewModel.refreshGuildDetail()
         }
         .onReceive(Notification.Name.refreshGuildDetail.publisher) { _ in
-            Task { await viewModel.refreshGuildDetail() }
+            Task { viewModel.refreshGuildDetail() }
         }
         .alert(item: Binding<AlertData?>(
             get: { viewModel.state.alert },
@@ -175,6 +177,20 @@ struct GuildDetailView: View {
         }
     }
     
+    private var guildDetailError: some View {
+        VStack {
+            HStack {
+                Spacer()
+                Text("Oops! Failed to load the guild detail :(")
+                    .bold()
+                    .foregroundStyle(.red)
+                    .multilineTextAlignment(.center)
+                Spacer()
+            }
+        }
+        .padding()
+    }
+    
     @ViewBuilder
     private var guildDetailLoaded: some View {
         guildInfo
@@ -264,7 +280,9 @@ struct GuildDetailView: View {
     private var startButton: some View {
         Button() {
             let (storyline, page, timer) = viewModel.prepareStorylinePageTimer()
-            router.guildsPath.append(GuildsRoute.storylineTimer(storyline, page, timer))
+            viewModel.initializeStorylineTimerViewModel(storyline: storyline, page: page, timer: timer) {
+                router.guildsPath.append(GuildsRoute.storylineTimer)
+            }
         } label: {
             Text(String(localized: "Start").uppercased())
                 .bold()
@@ -278,6 +296,8 @@ struct GuildDetailView: View {
         Section(header: Text("Members")) {
             if viewModel.state.isListLoading {
                 memberListLoading
+            } else if viewModel.state.isListInErrorState {
+                guildDetailListError
             } else {
                 memberListLoaded
             }
@@ -291,6 +311,20 @@ struct GuildDetailView: View {
             guildDetailLoadingTextHorizontalFull
         }
         .animatePlaceholder(isLoading: $viewModel.state.isListLoading)
+    }
+    
+    private var guildDetailListError: some View {
+        VStack {
+            HStack {
+                Spacer()
+                Text("Oops! Failed to load the guild member list :(")
+                    .bold()
+                    .foregroundStyle(.red)
+                    .multilineTextAlignment(.center)
+                Spacer()
+            }
+        }
+        .padding()
     }
     
     private var memberListLoaded: some View {

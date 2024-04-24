@@ -18,15 +18,20 @@ final class GuildsViewModel: ObservableObject {
     @Injected private var declineGuildInvitationUseCase: DeclineGuildInvitationUseCase
     
     struct State {
-        var hasInitialyLoadedGuilds = false
+        var alert: AlertData?
         var isInvitationsLoading = false
         var isGuildsLoading = false
+        var isInvitationsInErrorState = false
+        var isGuildsInErrorState = false
+        var isBottomSheetPresented = false
+        
         var decliningInvitation: Invitation?
         var acceptingInvitation: Invitation?
-        var alert: AlertData?
-        var isBottomSheetPresented = false
+        
         var invitations: [Invitation] = []
         var guilds: [Guild] = []
+        
+        var guildDetailViewModel: GuildDetailViewModel?
     }
     
     @MainActor
@@ -36,9 +41,12 @@ final class GuildsViewModel: ObservableObject {
         
         do {
             state.invitations = try await loadMyInvitationsUseCase.execute()
+            state.isInvitationsInErrorState = false
         } catch {
+            NSLog("❌ Error in \(#file) on line \(#line): \(error.localizedDescription)")
+            state.isInvitationsInErrorState = true
             state.alert = AlertData(
-                title: "Error loading invitations",
+                title: "Loading Invitations Failed",
                 message: "An error occured when loading invitations. Please try again."
             )
         }
@@ -52,9 +60,12 @@ final class GuildsViewModel: ObservableObject {
         do {
             let guilds = try await loadMyGuildsUseCase.execute()
             state.guilds = guilds ?? []
+            state.isGuildsInErrorState = false
         } catch {
+            NSLog("❌ Error in \(#file) on line \(#line): \(error.localizedDescription)")
+            state.isGuildsInErrorState = true
             state.alert = AlertData(
-                title: "Error loading guilds",
+                title: "Loading Guilds Failed",
                 message: "An error occured when loading guilds. Please try again."
             )
         }
@@ -73,14 +84,14 @@ final class GuildsViewModel: ObservableObject {
             } catch InvitationsError.alreadyMember {
                 state.alert = AlertData(
                     title: "Already member",
-                    message: "You are already a member of this guild. Declining invitation."
+                    message: "You are already a member of this guild. The invitation will be declined."
                 )
                 try await declineGuildInvitationUseCase.execute(invitation)
             } catch {
-                print("Error: \(error)")
+                NSLog("❌ Error in \(#file) on line \(#line): \(error.localizedDescription)")
                 state.alert = AlertData(
-                    title: "Failed to accept invitation",
-                    message: "An error occured when accepting invitation. Please try again."
+                    title: "Accepting Invitation Failed",
+                    message: "An error occured when accepting the invitation. Please try again."
                 )
             }
         }
@@ -96,24 +107,31 @@ final class GuildsViewModel: ObservableObject {
                 try await declineGuildInvitationUseCase.execute(invitation)
                 refreshInvitationsOnGuildsTab()
             } catch {
-                print("Error: \(error)")
+                NSLog("❌ Error in \(#file) on line \(#line): \(error.localizedDescription)")
                 state.alert = AlertData(
-                    title: "Failed to decline invitation",
-                    message: "An error occured when declining invitation. Please try again."
+                    title: "Declining Invitation Failed",
+                    message: "An error occured when declining the invitation. Please try again."
                 )
             }
         }
     }
     
     @MainActor
-    func refreshData() async {
-        await loadMyInvitations()
-        await loadMyGuilds()
+    func refreshData() {
+        Task {
+            await loadMyInvitations()
+            await loadMyGuilds()
+        }
     }
     
     @MainActor
     func dismissAlert() {
         state.alert = nil
+    }
+    
+    func initializeGuildDetailViewModel(with guild: Guild, completion: () -> ()) {
+        state.guildDetailViewModel = GuildDetailViewModel(guild: guild)
+        completion()
     }
     
     private func refreshInvitationsOnGuildsTab() {

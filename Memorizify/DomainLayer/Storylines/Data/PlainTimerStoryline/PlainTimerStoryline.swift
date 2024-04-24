@@ -12,6 +12,6 @@ struct PlainTimerStoryline: StorylineData {
 }
 
 struct PlainTimerStorylinePage: StorylinePage {
-    let title: String = String(localized: "Plain Pomodoro Timer")
+    let title: String = String(localized: "Pomodoro Timer")
     let story: String = ""
 }

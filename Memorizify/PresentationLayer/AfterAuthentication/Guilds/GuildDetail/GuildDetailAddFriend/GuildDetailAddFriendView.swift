@@ -23,6 +23,10 @@ struct GuildDetailAddFriendView: View {
         .background {
             backgroundImage
         }
+        .alert(item: Binding<AlertData?>(
+            get: { viewModel.state.alert },
+            set: { _ in viewModel.dismissAlert() }
+        )) { alert in .init(alert) }
     }
     
     private var backgroundImage: some View {

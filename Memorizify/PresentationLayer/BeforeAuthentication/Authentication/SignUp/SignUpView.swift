@@ -123,7 +123,7 @@ struct SignUpView: View {
     
     private var footer: some View {
         VStack {
-            Text(viewModel.state.signUpError)
+            Text(viewModel.state.agreementError)
                 .foregroundStyle(.red)
             Button("Sign Up") {
                 viewModel.signUp() { router.authenticationPath.append(AuthenticationRoute.signUpCompleted) }

@@ -15,27 +15,32 @@ final class BoardViewModel: ObservableObject {
     @Injected private var loadBoardUseCase: LoadBoardUseCase
     
     struct State {
-        var hasInitialyLoadedBoard = false
         var alert: AlertData?
-        var bottomSheetItem: Board?
         var isBoardLoading = false
+        var isInErrorState = false
+        var bottomSheetItem: Board?
+
         var board: Board?
     }
     
     @MainActor
-    func loadBoard() async {
-        defer { state.isBoardLoading = false }
-        state.isBoardLoading = true
-        
-        do {
-            state.board = try await loadBoardUseCase.execute()
-            state.board?.sortByScoreDescending()
-        } catch {
-            print("Error: \(error)")
-            state.alert = AlertData(
-                title: "Error loading global board",
-                message: "An error occured when loading the global board. Please try again later."
-            )
+    func loadBoard() {
+        Task {
+            defer { state.isBoardLoading = false }
+            state.isBoardLoading = true
+            
+            do {
+                state.board = try await loadBoardUseCase.execute()
+                state.board?.sortByScoreDescending()
+                state.isInErrorState = false
+            } catch {
+                NSLog("❌ Error in \(#file) on line \(#line): \(error.localizedDescription)")
+                state.isInErrorState = true
+                state.alert = AlertData(
+                    title: "Loading Board Failed",
+                    message: "An error occured when loading the board. Please try again."
+                )
+            }
         }
     }
 
