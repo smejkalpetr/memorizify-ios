@@ -11,25 +11,15 @@ import SwiftUI
 struct MemorizifyApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
-    @StateObject var router = Router()
-
     var body: some Scene {
         WindowGroup {
             VStack {
-                if router.isLoggedIn {
-                    RootView()
-                        .environmentObject(router)
+                if RootState.isAppShowing {
+                    AppView()
                 } else {
-                    if router.hasSeenOnboarding {
-                        RootAuthenticationView()
-                            .environmentObject(router)
-                    } else {
-                        RootOnboardingView()
-                            .environmentObject(router)
-                    }
+                    EmptyView()
                 }
             }
-            .onAppear { router.initialize() }
         }
     }
 }

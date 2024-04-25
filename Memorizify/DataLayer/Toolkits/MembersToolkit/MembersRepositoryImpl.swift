@@ -20,18 +20,21 @@ struct MembersRepositoryImpl: MembersRepository {
     func remove(with uid: String, from guild: Guild) async throws {
         let db = Firestore.firestore()
         
+        // Refresh guild before request because somebody could have changed it meanwhile
+        let refreshedGuild = try await guildsRepository.load(guild)
+        
         // Remove the user from the guild board and update it
-        var newBoard = guild.board
+        var newBoard = refreshedGuild.board
         newBoard.records.removeAll { $0.uid == uid }
         
-        let newGuild = Guild(copy: guild, board: newBoard)
+        let newGuild = Guild(copy: refreshedGuild, board: newBoard)
         try await guildsRepository.update(newGuild)
         
         // Remove the guild from the User entity
         let user = try await userRepository.getUser(uid: uid)
         
         var newGuildIds = user.guildIds
-        newGuildIds?.removeAll { $0 == guild.id }
+        newGuildIds?.removeAll { $0 == refreshedGuild.id }
         
         
         let newUser = User(copy: user, guildIds: newGuildIds)

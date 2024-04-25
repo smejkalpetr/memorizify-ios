@@ -58,6 +58,7 @@
 		1D1E2A532BD7F1BF0005B4A6 /* SettingsChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1E2A522BD7F1BF0005B4A6 /* SettingsChangePasswordViewModel.swift */; };
 		1D1E2A552BD7F65B0005B4A6 /* ChangePasswordUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1E2A542BD7F65B0005B4A6 /* ChangePasswordUseCase.swift */; };
 		1D1F97D42BD984870025FC73 /* OnFirstAppear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1F97D32BD984870025FC73 /* OnFirstAppear.swift */; };
+		1D1F97DA2BD9A69D0025FC73 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1F97D92BD9A69D0025FC73 /* LaunchScreenView.swift */; };
 		1D26EBAF2BC55FC000F5E1B5 /* Storyline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D26EBAE2BC55FC000F5E1B5 /* Storyline.swift */; };
 		1D26EBB12BC5605000F5E1B5 /* StorylineKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D26EBB02BC5605000F5E1B5 /* StorylineKind.swift */; };
 		1D26EBB32BC5633E00F5E1B5 /* StorylinesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D26EBB22BC5633E00F5E1B5 /* StorylinesViewModel.swift */; };
@@ -94,6 +95,9 @@
 		1D5E9CBD2BA9F00200EF6400 /* SecondaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5E9CBC2BA9F00200EF6400 /* SecondaryButtonStyle.swift */; };
 		1D5E9CC02BA9F8A900EF6400 /* PrimaryTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5E9CBF2BA9F8A900EF6400 /* PrimaryTextFieldStyle.swift */; };
 		1D5E9CC22BA9FC3F00EF6400 /* SignUpCompletedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5E9CC12BA9FC3F00EF6400 /* SignUpCompletedView.swift */; };
+		1D6652FE2BDA792500D24943 /* RootState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6652FD2BDA792500D24943 /* RootState.swift */; };
+		1D6653002BDA795100D24943 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6652FF2BDA795100D24943 /* AppView.swift */; };
+		1D6653032BDA8ED900D24943 /* CancelLocalNotificationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6653022BDA8ED900D24943 /* CancelLocalNotificationUseCase.swift */; };
 		1D69FC3D2BD92D6500BA2FDB /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1D69FC3C2BD92D6500BA2FDB /* Localizable.xcstrings */; };
 		1D7B7A0C2BCE7DB500A18E12 /* BoardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B7A042BCE7DB500A18E12 /* BoardDetailView.swift */; };
 		1D7B7A0D2BCE7DB500A18E12 /* BoardDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B7A052BCE7DB500A18E12 /* BoardDetailViewModel.swift */; };
@@ -177,6 +181,7 @@
 		1DC1E47C2BB0696E00D19181 /* StorylinesRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC1E47B2BB0696E00D19181 /* StorylinesRoute.swift */; };
 		1DC1E4812BB08EC000D19181 /* HomeRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC1E4802BB08EC000D19181 /* HomeRoute.swift */; };
 		1DC1E4832BB08EE900D19181 /* SettingsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC1E4822BB08EE900D19181 /* SettingsRoute.swift */; };
+		1DCA58212BDAF88D000DB378 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCA58202BDAF88D000DB378 /* NetworkMonitor.swift */; };
 		1DD7EB172BB09B81005CE24D /* RequestLocalNotificationAuthorizationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD7EB162BB09B81005CE24D /* RequestLocalNotificationAuthorizationUseCase.swift */; };
 		1DD7EB192BB09BAE005CE24D /* ScheduleLocalNotificationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD7EB182BB09BAE005CE24D /* ScheduleLocalNotificationUseCase.swift */; };
 		1DD7EB1B2BB09BBD005CE24D /* LocalNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD7EB1A2BB09BBD005CE24D /* LocalNotification.swift */; };
@@ -290,6 +295,7 @@
 		1D1E2A522BD7F1BF0005B4A6 /* SettingsChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsChangePasswordViewModel.swift; sourceTree = "<group>"; };
 		1D1E2A542BD7F65B0005B4A6 /* ChangePasswordUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordUseCase.swift; sourceTree = "<group>"; };
 		1D1F97D32BD984870025FC73 /* OnFirstAppear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnFirstAppear.swift; sourceTree = "<group>"; };
+		1D1F97D92BD9A69D0025FC73 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		1D26EBAE2BC55FC000F5E1B5 /* Storyline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyline.swift; sourceTree = "<group>"; };
 		1D26EBB02BC5605000F5E1B5 /* StorylineKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorylineKind.swift; sourceTree = "<group>"; };
 		1D26EBB22BC5633E00F5E1B5 /* StorylinesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorylinesViewModel.swift; sourceTree = "<group>"; };
@@ -326,6 +332,9 @@
 		1D5E9CBC2BA9F00200EF6400 /* SecondaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButtonStyle.swift; sourceTree = "<group>"; };
 		1D5E9CBF2BA9F8A900EF6400 /* PrimaryTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryTextFieldStyle.swift; sourceTree = "<group>"; };
 		1D5E9CC12BA9FC3F00EF6400 /* SignUpCompletedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCompletedView.swift; sourceTree = "<group>"; };
+		1D6652FD2BDA792500D24943 /* RootState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootState.swift; sourceTree = "<group>"; };
+		1D6652FF2BDA795100D24943 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		1D6653022BDA8ED900D24943 /* CancelLocalNotificationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelLocalNotificationUseCase.swift; sourceTree = "<group>"; };
 		1D69FC3C2BD92D6500BA2FDB /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		1D7B7A042BCE7DB500A18E12 /* BoardDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardDetailView.swift; sourceTree = "<group>"; };
 		1D7B7A052BCE7DB500A18E12 /* BoardDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardDetailViewModel.swift; sourceTree = "<group>"; };
@@ -410,6 +419,7 @@
 		1DC1E47B2BB0696E00D19181 /* StorylinesRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorylinesRoute.swift; sourceTree = "<group>"; };
 		1DC1E4802BB08EC000D19181 /* HomeRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRoute.swift; sourceTree = "<group>"; };
 		1DC1E4822BB08EE900D19181 /* SettingsRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRoute.swift; sourceTree = "<group>"; };
+		1DCA58202BDAF88D000DB378 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		1DD7EB162BB09B81005CE24D /* RequestLocalNotificationAuthorizationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestLocalNotificationAuthorizationUseCase.swift; sourceTree = "<group>"; };
 		1DD7EB182BB09BAE005CE24D /* ScheduleLocalNotificationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleLocalNotificationUseCase.swift; sourceTree = "<group>"; };
 		1DD7EB1A2BB09BBD005CE24D /* LocalNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotification.swift; sourceTree = "<group>"; };
@@ -808,6 +818,7 @@
 				1D1BC58A2BA6487D00B30A77 /* Preview Content */,
 				1DD8F5DA2BA655E00099BEA0 /* GoogleServices */,
 				1DD8F5CE2BA64F480099BEA0 /* Navigation */,
+				1D6652FC2BDA791C00D24943 /* RootState */,
 				1D3D32792BA6F4FD0039DA08 /* DependencyInjection */,
 				1D1BC5842BA6487D00B30A77 /* MemorizifyApp.swift */,
 				1D1BC5B12BA64AC100B30A77 /* AppDelegate.swift */,
@@ -826,6 +837,7 @@
 		1D1BC5B32BA64B6000B30A77 /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				1D6653012BDA7AAA00D24943 /* AppView */,
 				1D1AD3562BAD80C0008827BA /* BeforeAuthentication */,
 				1D1AD3572BAD8107008827BA /* AfterAuthentication */,
 				1D544E042BA76B04003C486F /* UIToolkit */,
@@ -963,8 +975,10 @@
 				1DA1DD1F2BCD890600185C76 /* Notifications */,
 				1DD7EB132BB09B4F005CE24D /* LocalNotifications */,
 				1D0821642BCAE06D00F1F8F3 /* TimeFormatter */,
+				1DCA581F2BDAF87A000DB378 /* NetworkMonitor */,
 				1D12AD2C2BAD62FB00257CB7 /* Onboarding */,
 				1D3D326B2BA6EFF00039DA08 /* Authentication */,
+				1D5E9CB32BA9E04500EF6400 /* Validation */,
 				1D544DF72BA76A00003C486F /* User */,
 				1D2BB2B12BB756390052AB37 /* PomodoroTimer */,
 				1D2BB2C62BBB2B4D0052AB37 /* Storylines */,
@@ -991,7 +1005,6 @@
 		1D3D326C2BA6F1260039DA08 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				1D5E9CB32BA9E04500EF6400 /* ValidationUseCases */,
 				1D3D32702BA6F1690039DA08 /* SignUpUseCase.swift */,
 				1D544DF52BA769DF003C486F /* SendEmailVerificationUseCase.swift */,
 				1D88B1D42BAA134500B3D903 /* LogInUseCase.swift */,
@@ -1145,16 +1158,12 @@
 			path = Buttons;
 			sourceTree = "<group>";
 		};
-		1D5E9CB32BA9E04500EF6400 /* ValidationUseCases */ = {
+		1D5E9CB32BA9E04500EF6400 /* Validation */ = {
 			isa = PBXGroup;
 			children = (
-				1D5E9CB42BA9E06400EF6400 /* ValidateNameUseCase.swift */,
-				1DA1DD332BCDA07600185C76 /* ValidateNicknameUseCase.swift */,
-				1D5E9CB62BA9E0D800EF6400 /* ValidateEmailUseCase.swift */,
-				1D5E9CB82BA9E10C00EF6400 /* ValidatePasswordUseCase.swift */,
-				1D5E9CBA2BA9E15900EF6400 /* ValidateRepeatedPassword.swift */,
+				1DCA58222BDB06BF000DB378 /* UseCases */,
 			);
-			path = ValidationUseCases;
+			path = Validation;
 			sourceTree = "<group>";
 		};
 		1D5E9CBE2BA9F89800EF6400 /* TextField */ = {
@@ -1163,6 +1172,22 @@
 				1D5E9CBF2BA9F8A900EF6400 /* PrimaryTextFieldStyle.swift */,
 			);
 			path = TextField;
+			sourceTree = "<group>";
+		};
+		1D6652FC2BDA791C00D24943 /* RootState */ = {
+			isa = PBXGroup;
+			children = (
+				1D6652FD2BDA792500D24943 /* RootState.swift */,
+			);
+			path = RootState;
+			sourceTree = "<group>";
+		};
+		1D6653012BDA7AAA00D24943 /* AppView */ = {
+			isa = PBXGroup;
+			children = (
+				1D6652FF2BDA795100D24943 /* AppView.swift */,
+			);
+			path = AppView;
 			sourceTree = "<group>";
 		};
 		1D69FC3B2BD92D5200BA2FDB /* Localization */ = {
@@ -1617,6 +1642,7 @@
 			isa = PBXGroup;
 			children = (
 				1DAA3FAE2BD4790F0035B77A /* LaunchScreen.storyboard */,
+				1D1F97D92BD9A69D0025FC73 /* LaunchScreenView.swift */,
 			);
 			path = LaunchScreen;
 			sourceTree = "<group>";
@@ -1689,6 +1715,26 @@
 			path = Root;
 			sourceTree = "<group>";
 		};
+		1DCA581F2BDAF87A000DB378 /* NetworkMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				1DCA58202BDAF88D000DB378 /* NetworkMonitor.swift */,
+			);
+			path = NetworkMonitor;
+			sourceTree = "<group>";
+		};
+		1DCA58222BDB06BF000DB378 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				1D5E9CB42BA9E06400EF6400 /* ValidateNameUseCase.swift */,
+				1DA1DD332BCDA07600185C76 /* ValidateNicknameUseCase.swift */,
+				1D5E9CB62BA9E0D800EF6400 /* ValidateEmailUseCase.swift */,
+				1D5E9CB82BA9E10C00EF6400 /* ValidatePasswordUseCase.swift */,
+				1D5E9CBA2BA9E15900EF6400 /* ValidateRepeatedPassword.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
 		1DD7EB132BB09B4F005CE24D /* LocalNotifications */ = {
 			isa = PBXGroup;
 			children = (
@@ -1710,8 +1756,9 @@
 			isa = PBXGroup;
 			children = (
 				1DD7EB162BB09B81005CE24D /* RequestLocalNotificationAuthorizationUseCase.swift */,
-				1DD7EB182BB09BAE005CE24D /* ScheduleLocalNotificationUseCase.swift */,
 				1DD7EB1C2BB0A136005CE24D /* CheckLocalNotificationAuthorizationUseCase.swift */,
+				1DD7EB182BB09BAE005CE24D /* ScheduleLocalNotificationUseCase.swift */,
+				1D6653022BDA8ED900D24943 /* CancelLocalNotificationUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -1998,6 +2045,7 @@
 				1D88B1DC2BAA215300B3D903 /* Alert+Extensions.swift in Sources */,
 				1D0F82682BD2AD9A00FAD74C /* ChangeNotificationsSettingsUseCase.swift in Sources */,
 				1D26EBB62BC5841600F5E1B5 /* StorylineSetupView.swift in Sources */,
+				1D1F97DA2BD9A69D0025FC73 /* LaunchScreenView.swift in Sources */,
 				1D88B1E42BAA47A900B3D903 /* ResetPasswordView.swift in Sources */,
 				1D84AD392BAB77D30048AC9C /* UserDefaultsError.swift in Sources */,
 				1DC1E4832BB08EE900D19181 /* SettingsRoute.swift in Sources */,
@@ -2007,6 +2055,7 @@
 				1D5E9CC02BA9F8A900EF6400 /* PrimaryTextFieldStyle.swift in Sources */,
 				1D12AD352BAD637000257CB7 /* RootOnboardingView.swift in Sources */,
 				1D3D32892BA6FA100039DA08 /* RootAuthenticationView.swift in Sources */,
+				1DCA58212BDAF88D000DB378 /* NetworkMonitor.swift in Sources */,
 				1D1AD35A2BAD8135008827BA /* RootView.swift in Sources */,
 				1D7B7A162BCE7F9400A18E12 /* SendGuildInvitationUseCase.swift in Sources */,
 				1D7DA8CE2BC682AB0092E18C /* SaveStorylineUseCase.swift in Sources */,
@@ -2038,8 +2087,10 @@
 				1D5E9CBB2BA9E15900EF6400 /* ValidateRepeatedPassword.swift in Sources */,
 				1D544E032BA76ABD003C486F /* ValidationError.swift in Sources */,
 				1D26EBB12BC5605000F5E1B5 /* StorylineKind.swift in Sources */,
+				1D6652FE2BDA792500D24943 /* RootState.swift in Sources */,
 				1DF42B3F2BCEE17B0094C263 /* InvitationsRepository.swift in Sources */,
 				1D84AD292BAB71340048AC9C /* AuthenticationRepositoryImpl.swift in Sources */,
+				1D6653032BDA8ED900D24943 /* CancelLocalNotificationUseCase.swift in Sources */,
 				1D9CC5FE2BCF19ED00D279BB /* GuildDetailAddFriendView.swift in Sources */,
 				1DA1DD322BCD9C0600185C76 /* LoadBoardUseCase.swift in Sources */,
 				1D544E082BA76B1D003C486F /* PrimaryButtonStyle.swift in Sources */,
@@ -2069,6 +2120,7 @@
 				1D08215C2BCAC98800F1F8F3 /* CreatePomodoroTimerUseCase.swift in Sources */,
 				1D3D328C2BA6FB4F0039DA08 /* AuthenticationRoute.swift in Sources */,
 				1D0821632BCADD8400F1F8F3 /* SetPomodoroTimerDelegateUseCase.swift in Sources */,
+				1D6653002BDA795100D24943 /* AppView.swift in Sources */,
 				1D9CC6002BCF19F400D279BB /* GuildDetailAddFriendViewModel.swift in Sources */,
 				1D0F82522BD1664C00FAD74C /* IncreaseMemberScoreUseCase.swift in Sources */,
 				1D84AD2D2BAB71640048AC9C /* UserDefaultsProvider.swift in Sources */,
@@ -2311,7 +2363,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Memorizify/Application/Entitlements/Memorizify.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202404242144;
+				CURRENT_PROJECT_VERSION = 202404260052;
 				DEVELOPMENT_ASSET_PATHS = "\"Memorizify/Application/Preview Content\"";
 				DEVELOPMENT_TEAM = 4C5MQDTY94;
 				ENABLE_PREVIEWS = YES;
@@ -2330,7 +2382,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.3;
+				MARKETING_VERSION = 0.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.smejkalp.memorizify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -2346,7 +2398,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Memorizify/Application/Entitlements/Memorizify.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202404242144;
+				CURRENT_PROJECT_VERSION = 202404260052;
 				DEVELOPMENT_ASSET_PATHS = "\"Memorizify/Application/Preview Content\"";
 				DEVELOPMENT_TEAM = 4C5MQDTY94;
 				ENABLE_PREVIEWS = YES;
@@ -2365,7 +2417,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.3;
+				MARKETING_VERSION = 0.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.smejkalp.memorizify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

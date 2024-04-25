@@ -28,7 +28,7 @@ struct SignUpView: View {
             backgroundImage
         }
         .navigationBarTitleDisplayMode(.large)
-        .navigationTitle("Sign Up")
+        .navigationTitle(String(localized: "Sign Up"))
         .alert(item: Binding<AlertData?>(
             get: { viewModel.state.alert },
             set: { _ in viewModel.dismissAlert() }

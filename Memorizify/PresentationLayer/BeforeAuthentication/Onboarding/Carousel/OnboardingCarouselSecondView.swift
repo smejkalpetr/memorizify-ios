@@ -29,11 +29,10 @@ struct OnboardingCarouselSecondView: View {
     }
     
     private var pageText: some View {
-        Text("Welcome to Memorizify! Your all-in-one study companion. Track your progress, study with friends, and make learning an adventure. Start now and elevate your study game!")
+        Text("Memorizify offers captivating storylines that immerse you in intriguing tales, enhancing your focus during Pomodoro Timer sessions. Explore these narratives to make your study sessions both productive and enjoyable.")
             .font(.title3)
             .bold()
             .multilineTextAlignment(.center)
-            .foregroundStyle(.black)
             .padding()
     }
     

@@ -55,7 +55,8 @@ struct AuthenticationRepositoryImpl: AuthenticationRepository {
     }
     
     func isUserLoggedIn() -> Bool {
-        return Auth.auth().currentUser != nil
+        guard let user = try? getUser() else { return false }
+        return user.isEmailVerified
     }
     
     func resetPassword(with email: String) async throws {

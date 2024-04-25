@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import Firebase
 import Resolver
+import UserNotifications
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     
@@ -31,6 +32,11 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         return true
     }
     
+    func applicationWillTerminate(_ application: UIApplication) {
+        // Cancel all scheduled local notifications
+        cancelAllScheduledLocalNotificationsOnTermination()
+    }
+    
     // MARK: Private
     
     private func configureFirebase() {
@@ -51,7 +57,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
             let _ = try userDefaultsProvider.read(.hasEverRunBefore)
         } catch UserDefaultsError.valueForKeyNotFound {
             do {
-                try keychainProvider.removeAll(except: [.hasUserSeenOnboarding])
+                try keychainProvider.removeAll()
                 try userDefaultsProvider.add(.hasEverRunBefore, value: "true")
             } catch {}
         } catch {}
@@ -60,5 +66,9 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     private func authorizeLocalNotifications() {
         @Injected var checkLocalNotificationAuthorizationUseCase: CheckLocalNotificationAuthorizationUseCase
         checkLocalNotificationAuthorizationUseCase.execute()
+    }
+    
+    private func cancelAllScheduledLocalNotificationsOnTermination() {
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
     }
 }

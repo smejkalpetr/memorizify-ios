@@ -28,7 +28,7 @@ struct SettingsChangePasswordView: View {
             backgroundImage
         }
         .navigationBarTitleDisplayMode(.large)
-        .navigationTitle("Change Password")
+        .navigationTitle(String(localized: "Change Password"))
         .alert(item: Binding<AlertData?>(
             get: { viewModel.state.alert },
             set: { _ in viewModel.dismissAlert() }
@@ -37,7 +37,7 @@ struct SettingsChangePasswordView: View {
     
     private var backgroundImage: some View {
         ZStack {
-            Image("background_settings")
+            Image("bg_settings")
                 .resizable()
                 .scaledToFill()
                 .edgesIgnoringSafeArea(.all)

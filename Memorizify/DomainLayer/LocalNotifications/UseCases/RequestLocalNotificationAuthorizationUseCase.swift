@@ -18,12 +18,12 @@ struct RequestLocalNotificationAuthorizationUseCaseImpl: RequestLocalNotificatio
     func execute() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
             if let error = error {
-                print("Error requesting authorization for notifications: \(error.localizedDescription)")
+                NSLog("❌ Error in \(#file) on line \(#line): \(error.localizedDescription)")
             } else {
                 if granted {
-                    print("Notification authorization granted")
+                    NSLog("✅ Notification authorization granted (\(#file) on line \(#line))")
                 } else {
-                    print("Notification authorization denied")
+                    NSLog("⚠️ Notification authorization denied (\(#file) on line \(#line))")
                 }
             }
         }

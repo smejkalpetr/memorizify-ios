@@ -16,9 +16,13 @@ struct ValidateEmailUseCaseImpl: ValidateEmailUseCase {
     init() {}
     
     func execute(email: String) throws {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailPattern = #"^\S+@\S+\.\S+$"#
+        
+        let result = email.range(
+            of: emailPattern,
+            options: .regularExpression
+        )
 
-        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        guard emailPred.evaluate(with: email) else { throw ValidationError.invalidEmail }
+        guard result != nil else { throw ValidationError.invalidEmail }
     }
 }

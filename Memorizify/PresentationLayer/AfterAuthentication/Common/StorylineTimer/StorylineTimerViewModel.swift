@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Resolver
+import Foundation
 
 final class StorylineTimerViewModel: ObservableObject, PomodoroTimerDelegate {
     
@@ -27,7 +28,7 @@ final class StorylineTimerViewModel: ObservableObject, PomodoroTimerDelegate {
         var isDone = false
         var isPaused = false
         var countdown = ""
-        var transition: String?
+        var transition: LocalizedStringResource?
         
         var timerKind: PomodorTimerKind
         var storyline: Storyline
@@ -77,7 +78,12 @@ final class StorylineTimerViewModel: ObservableObject, PomodoroTimerDelegate {
     
     @MainActor
     func repeatTimer() {
-        state.page = (try? getCurrentStorylinePageUseCase.execute(state.storyline)) ?? state.page
+        switch state.timerKind {
+        case .plain:
+            state.page = PlainTimerStorylinePage()
+        default:
+            state.page = (try? getCurrentStorylinePageUseCase.execute(state.storyline)) ?? state.page
+        }
         
         timer.reset(with: state.storyline.studyInterval * 60)
         timer.start()
@@ -172,6 +178,7 @@ final class StorylineTimerViewModel: ObservableObject, PomodoroTimerDelegate {
                 state.storyline = Storyline(copy: state.storyline, finished: state.storyline.finished + finished)
                 try await saveStorylineUseCase.execute(Storyline(copy: state.storyline, finished: state.storyline.finished))
                 try await increaseUserScoreUseCase.execute(by: finished)
+                refreshStorylines()
             }
         } catch {
             NSLog("❌ Error in \(#file) on line \(#line): \(error.localizedDescription)")
@@ -183,7 +190,7 @@ final class StorylineTimerViewModel: ObservableObject, PomodoroTimerDelegate {
     }
     
     @MainActor
-    func saveGuildScore() async {
+    private func saveGuildScore() async {
         defer { state.isLoading = false }
         state.isLoading = true
         
@@ -205,7 +212,7 @@ final class StorylineTimerViewModel: ObservableObject, PomodoroTimerDelegate {
     }
     
     @MainActor
-    func savePlainTimerScore() async {
+    private func savePlainTimerScore() async {
         defer { state.isLoading = false }
         state.isLoading = true
         
@@ -236,7 +243,11 @@ final class StorylineTimerViewModel: ObservableObject, PomodoroTimerDelegate {
         state.transition = nil
     }
     
-    func refreshGuildDetail() {
+    private func refreshGuildDetail() {
         NotificationCenter.default.post(name: .refreshGuildDetail, object: nil)
+    }
+    
+    func refreshStorylines() {
+        NotificationCenter.default.post(name: .refreshStorylines, object: nil)
     }
 }

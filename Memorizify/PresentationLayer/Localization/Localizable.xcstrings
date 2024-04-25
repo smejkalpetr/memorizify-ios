@@ -231,6 +231,16 @@
         }
       }
     },
+    "An error occured when loading my storylines. Please try again." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Při načítání mých příběhů nastala chyba. Prosím, zkuste to znovu."
+          }
+        }
+      }
+    },
     "An error occured when loading the board. Please try again." : {
       "localizations" : {
         "cs" : {
@@ -417,6 +427,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Interval odpočinku"
+          }
+        }
+      }
+    },
+    "Break starting in %lld..." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Přestávka začíná za %lld..."
           }
         }
       }
@@ -621,6 +641,16 @@
         }
       }
     },
+    "Do you really wish to delete the guild?" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opravdu chcete odstranit tento cech?"
+          }
+        }
+      }
+    },
     "Done" : {
       "localizations" : {
         "cs" : {
@@ -697,6 +727,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zapomenuté heslo?"
+          }
+        }
+      }
+    },
+    "Form a guild with your friends and embark on a collaborative studying journey together. Compare progress, engage in friendly competition, and most importantly, enjoy the process of learning as a team!" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vytvořte s přáteli cech a vydejte se na společnou cestu studiem plnou spolupráce. Porovnávejte pokrok, zapojte se do soupeření a především si užijte proces společného učení!"
           }
         }
       }
@@ -972,6 +1012,16 @@
         }
       }
     },
+    "Loading My Storylines Failed" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chyba při načítání mých příběhů"
+          }
+        }
+      }
+    },
     "Loading User Failed" : {
       "localizations" : {
         "cs" : {
@@ -1022,6 +1072,16 @@
         }
       }
     },
+    "Memorizify offers captivating storylines that immerse you in intriguing tales, enhancing your focus during Pomodoro Timer sessions. Explore these narratives to make your study sessions both productive and enjoyable." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Memorizify nabízí poutavé příběhy, které vás vtáhnou do zajímavého děje a zlepšují Vaši koncentraci během učení s Pomodoro timerem. Prozkoumejte tyto příběhy, abyste své studium udělali jak produktivní, tak zajímavé."
+          }
+        }
+      }
+    },
     "Minutes" : {
       "localizations" : {
         "cs" : {
@@ -1052,12 +1112,32 @@
         }
       }
     },
+    "Name must be 2-32 characters long" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jméno musí mít 2-32 znaků"
+          }
+        }
+      }
+    },
     "New Password" : {
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nové heslo"
+          }
+        }
+      }
+    },
+    "New passwords are not the same" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nová hesla nejsou stejná"
           }
         }
       }
@@ -1098,6 +1178,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zde není žádný cech"
+          }
+        }
+      }
+    },
+    "No Internet Connection" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bez připojení"
           }
         }
       }
@@ -1243,12 +1333,32 @@
         }
       }
     },
+    "Password are not the same" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hesla nejsou stejná"
+          }
+        }
+      }
+    },
     "Password Changed" : {
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Heslo bylo změněno"
+          }
+        }
+      }
+    },
+    "Password must be at least 8 characters long, contain at least one digit and at least one upper case character" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heslo musí mít alespoň 8 znaků, jednu číslici a jedno velké písmeno"
           }
         }
       }
@@ -1733,6 +1843,16 @@
         }
       }
     },
+    "testStoryline" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "testStoryline"
+          }
+        }
+      }
+    },
     "third" : {
       "localizations" : {
         "cs" : {
@@ -1759,6 +1879,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tento uživatel je již členem tohoto cechu."
+          }
+        }
+      }
+    },
+    "Timer Finished" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Timer dokončen"
           }
         }
       }
@@ -1903,6 +2033,16 @@
         }
       }
     },
+    "Username must be 2-32 characters long" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uživatelské jméno musí mít 2-32 znaků"
+          }
+        }
+      }
+    },
     "Verification Sent" : {
       "localizations" : {
         "cs" : {
@@ -1933,6 +2073,16 @@
         }
       }
     },
+    "Wrong Email Format" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chybný formát emailu"
+          }
+        }
+      }
+    },
     "You are already a member of this guild. The invitation will be declined." : {
       "localizations" : {
         "cs" : {
@@ -1953,6 +2103,26 @@
         }
       }
     },
+    "You cannot add yourself" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nelze přidat sebe sama"
+          }
+        }
+      }
+    },
+    "You have to agree to the terms and conditions" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Je nutné souhlasit s podmínkami použití"
+          }
+        }
+      }
+    },
     "Your email is not verified. Do you wish to resend the email verification link to your email?" : {
       "localizations" : {
         "cs" : {
@@ -1969,6 +2139,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vaše heslo bylo změněno."
+          }
+        }
+      }
+    },
+    "Your Pomodoro Timer has just finished. Open Memorizify to see your progress!" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Timer právě doběhl. Otevřete Memorizify, abyste viděli svůj pokrok!"
           }
         }
       }

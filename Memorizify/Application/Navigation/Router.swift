@@ -11,6 +11,7 @@ import Resolver
 final class Router: ObservableObject {
     @Published private(set) var isLoggedIn = false
     @Published private(set) var hasSeenOnboarding = false
+    @Published private(set) var isShowingOnboarding = false
     
     @Published var authenticationPath = NavigationPath()
     @Published var homePath = NavigationPath()
@@ -29,6 +30,10 @@ final class Router: ObservableObject {
     func initialize() {
         checkIsUserLoggedIn()
         checkHasUserSeenOnboarding()
+        
+        /* This is here so that Onboarding is only shown at the point when it is sure that
+           no other view should be shown. By that time the LaunchScreen is showing. */
+        if !isLoggedIn && !hasSeenOnboarding { isShowingOnboarding = true }
     }
     
     func clearAllPaths() {
@@ -73,6 +78,7 @@ final class Router: ObservableObject {
         clearAllPaths()
         try? logOutUseCase.execute()
         checkIsUserLoggedIn()
+        RootState.resetData()
     }
     
     func saveHasUserSeenOnboarding() {

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Resolver
+import Foundation
 
 final class SignUpViewModel: ObservableObject {
     
@@ -28,12 +29,12 @@ final class SignUpViewModel: ObservableObject {
         var password = ""
         var repeatedPassword = ""
         
-        var nameError = ""
-        var nicknameError = ""
-        var emailError = ""
-        var passwordError = ""
-        var repeatedPasswordError = ""
-        var agreementError = ""
+        var nameError: LocalizedStringResource = ""
+        var nicknameError: LocalizedStringResource = ""
+        var emailError: LocalizedStringResource = ""
+        var passwordError: LocalizedStringResource = ""
+        var repeatedPasswordError: LocalizedStringResource = ""
+        var agreementError: LocalizedStringResource = ""
         
         var isAgreementSigned = false
         var isSignUpButtonLoading = false
@@ -134,7 +135,7 @@ final class SignUpViewModel: ObservableObject {
         do {
             try validatePasswordUseCase.execute(password: state.password)
         } catch ValidationError.invalidPassword {
-            state.passwordError = "Password must be at least 8 characters long, contain at least one digit and at least one upper case letter"
+            state.passwordError = "Password must be at least 8 characters long, contain at least one digit and at least one upper case character"
         } catch {
             NSLog("❌ Error in \(#file) on line \(#line): \(error.localizedDescription)")
             state.alert = AlertData(

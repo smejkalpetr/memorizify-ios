@@ -11,6 +11,8 @@ struct GuildDetailView: View {
     
     @ObservedObject var viewModel: GuildDetailViewModel
     
+    @ObservedObject var networkMonitor = NetworkMonitor()
+    
     @EnvironmentObject var router: Router
     
     @Environment(\.presentationMode) var presentationMode
@@ -19,7 +21,9 @@ struct GuildDetailView: View {
     
     var body: some View {
         List {
-            if viewModel.state.isLoading {
+            if !networkMonitor.isConnected {
+                disconnectedState
+            } else if viewModel.state.isLoading {
                 guildDetailLoading
             } else if viewModel.state.isInErrorState {
                 guildDetailError
@@ -62,7 +66,7 @@ struct GuildDetailView: View {
     
     private var backgroundImage: some View {
         ZStack {
-            Image("background_home")
+            Image("bg_guilds")
                 .resizable()
                 .scaledToFill()
                 .edgesIgnoringSafeArea(.all)
@@ -71,6 +75,36 @@ struct GuildDetailView: View {
                     .edgesIgnoringSafeArea(.all)
             }
         }
+    }
+    
+    private var disconnectedState: some View {
+        VStack {
+            disconnectedStateImage
+            disconnectedStateText
+        }
+    }
+    
+    private var disconnectedStateImage: some View {
+        HStack {
+            Spacer()
+            Image(systemName: "wifi.exclamationmark")
+                .font(.largeTitle)
+                .foregroundStyle(Color("primary_color"))
+            Spacer()
+        }
+        .padding()
+    }
+    
+    private var disconnectedStateText: some View {
+        HStack {
+            Spacer()
+            Text("No Internet Connection")
+                .bold()
+                .font(.title3)
+                .multilineTextAlignment(.center)
+            Spacer()
+        }
+        .padding([.horizontal, .bottom])
     }
     
     @ViewBuilder
@@ -211,10 +245,19 @@ struct GuildDetailView: View {
                 Label("Update Guild", systemImage: "gearshape.arrow.triangle.2.circlepath")
             }
             Button(role: .destructive) {
-                viewModel.deleteGuild() {
-                    presentationMode.wrappedValue.dismiss()
-                    viewModel.refreshGuildsOnGuildsTab()
-                }
+                viewModel.state.alert = AlertData(
+                    title: "Delete Guild",
+                    message: "Do you really wish to delete the guild?",
+                    primaryAction: AlertData.Action(
+                        title: "Cancel",
+                        style: .cancel
+                    ),
+                    secondaryAction: AlertData.Action(
+                        title: "Delete",
+                        style: .destruction,
+                        handler: deleteGuild
+                    )
+                )
             } label: {
                 Label("Delete Guild", systemImage: "trash")
             }
@@ -412,6 +455,13 @@ struct GuildDetailView: View {
             Text("\(Int(record.score))")
         }
         .padding()
+    }
+    
+    private func deleteGuild() {
+        viewModel.deleteGuild() {
+            presentationMode.wrappedValue.dismiss()
+            viewModel.refreshGuildsOnGuildsTab()
+        }
     }
 }
 

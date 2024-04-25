@@ -11,6 +11,8 @@ struct BoardView: View {
     
     @ObservedObject var viewModel: BoardViewModel
     
+    @ObservedObject var networkMonitor = NetworkMonitor()
+    
     @EnvironmentObject var router: Router
     
     @Environment(\.colorScheme) var colorScheme
@@ -20,7 +22,9 @@ struct BoardView: View {
             VStack {
                 List {
                     Section("Top 10") {
-                        if viewModel.state.isBoardLoading {
+                        if !networkMonitor.isConnected {
+                            disconnectedState
+                        } else if viewModel.state.isBoardLoading {
                             boardLoading
                         } else if viewModel.state.isInErrorState {
                             boardError
@@ -51,7 +55,7 @@ struct BoardView: View {
                     }
                 }
             }
-            .navigationTitle(router.tab.rawValue)
+            .navigationTitle(String(localized: router.tab.rawValue))
             .navigationBarTitleDisplayMode(.large)
             .onFirstAppear {
                 viewModel.loadBoard()
@@ -65,7 +69,7 @@ struct BoardView: View {
     
     private var backgroundImage: some View {
         ZStack {
-            Image("background_home")
+            Image("bg_board")
                 .resizable()
                 .scaledToFill()
                 .edgesIgnoringSafeArea(.all)
@@ -76,29 +80,49 @@ struct BoardView: View {
         }
     }
     
-    private var boardLoading: some View {
-        ForEach(0..<3) { _ in
-            ZStack(alignment: .bottomLeading) {
-                boardLoadingImage
-                boardLoadingText
-                if colorScheme == .dark {
-                    Color.black.opacity(0.5)
-                }
-            }
-            .listRowInsets(EdgeInsets())
-            .animatePlaceholder(isLoading: $viewModel.state.isBoardLoading)
+    private var disconnectedState: some View {
+        VStack {
+            disconnectedStateImage
+            disconnectedStateText
         }
     }
     
-    private var boardLoadingImage: some View {
-        ZStack(alignment: .bottomLeading) {
-            Image("storyline_placeholder")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .clipped()
-            Color.white.opacity(0.6)
+    private var disconnectedStateImage: some View {
+        HStack {
+            Spacer()
+            Image(systemName: "wifi.exclamationmark")
+                .font(.largeTitle)
+                .foregroundStyle(Color("primary_color"))
+            Spacer()
         }
+        .padding()
+    }
+    
+    private var disconnectedStateText: some View {
+        HStack {
+            Spacer()
+            Text("No Internet Connection")
+                .bold()
+                .font(.title3)
+                .multilineTextAlignment(.center)
+            Spacer()
+        }
+        .padding([.horizontal, .bottom])
+    }
+    
+    private var boardLoading: some View {
+        ZStack() {
+            VStack {
+                ForEach(0..<10) { _ in
+                    boardLoadingText
+                }
+            }
+            .padding()
+            if colorScheme == .dark {
+                Color.black.opacity(0.5)
+            }
+        }
+        .listRowInsets(EdgeInsets())
     }
     
     private var boardLoadingText: some View {
@@ -107,27 +131,10 @@ struct BoardView: View {
                 RoundedRectangle(cornerRadius: 5)
                     .fill(Color.gray.opacity(0.35))
                     .frame(height: 32)
-                    .padding([.horizontal])
-            }
-            HStack {
-                RoundedRectangle(cornerRadius: 5)
-                    .fill(Color.gray.opacity(0.35))
-                    .frame(height: 32)
-                    .padding([.horizontal])
-            }
-            HStack {
-                RoundedRectangle(cornerRadius: 5)
-                    .fill(Color.gray.opacity(0.5))
-                    .frame(height: 32)
-                    .padding(.horizontal)
-            }
-            HStack {
-                RoundedRectangle(cornerRadius: 5)
-                    .fill(Color.gray.opacity(0.35))
-                    .frame(height: 32)
-                    .padding([.horizontal, .bottom])
+                    .padding(5)
             }
         }
+        .animatePlaceholder(isLoading: $viewModel.state.isBoardLoading)
     }
     
     private var boardError: some View {
@@ -192,13 +199,20 @@ struct BoardView: View {
                 Button("Show more") {
                     router.boardPath.append(BoardRoute.showFullBoard)
                 }
+                .foregroundStyle(.blue)
             }
             .padding()
         }
     }
     
     private var boardNotLoaded: some View {
-        Text("No records loaded!")
+        HStack {
+            Spacer()
+            Text("No records loaded!")
+                .bold()
+                .multilineTextAlignment(.center)
+            Spacer()
+        }
     }
 }
 

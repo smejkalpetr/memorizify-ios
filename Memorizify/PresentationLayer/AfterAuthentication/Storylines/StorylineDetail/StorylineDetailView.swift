@@ -76,7 +76,7 @@ struct StorylineDetailView: View {
     StorylineDetailView(
         viewModel: StorylineDetailViewModel(
             kind: StorylineKind(
-                rawValue: StorylineKind.TEST_STORYLINE_RAW_VALUE) ?? .testStoryline(TestStoryline()
+                rawValue: String(localized:StorylineKind.TEST_STORYLINE_RAW_VALUE)) ?? .testStoryline(TestStoryline()
             ),
             completion: {}
         )

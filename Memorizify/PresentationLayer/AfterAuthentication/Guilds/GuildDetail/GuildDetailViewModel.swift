@@ -10,8 +10,8 @@ import Resolver
 
 final class GuildDetailViewModel: ObservableObject {
     
-    static let studyIntervalRange = 0...60.0
-    static let breakIntervalRange = 0...15.0
+    static let studyIntervalRange = 5...60.0
+    static let breakIntervalRange = 1...15.0
     
     @Published var state: State
     

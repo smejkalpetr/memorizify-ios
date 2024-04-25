@@ -33,7 +33,7 @@ struct StorylinesView: View {
                     })
                 }
             }
-            .navigationTitle(router.tab.rawValue)
+            .navigationTitle(String(localized: router.tab.rawValue))
             .navigationBarTitleDisplayMode(.large)
         }
     }

@@ -36,6 +36,10 @@ final class HomeViewModel: ObservableObject {
             } catch {
                 NSLog("❌ Error in \(#file) on line \(#line): \(error.localizedDescription)")
                 state.isInErrorState = true
+                state.alert = AlertData(
+                    title: "Loading My Storylines Failed",
+                    message: "An error occured when loading my storylines. Please try again."
+                )
             }
         }
     }

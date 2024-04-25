@@ -31,11 +31,10 @@ struct OnboardingCarouselThirdView: View {
     }
     
     private var pageText: some View {
-        Text("Welcome to Memorizify! Your all-in-one study companion. Track your progress, study with friends, and make learning an adventure. Start now and elevate your study game!")
+        Text("Form a guild with your friends and embark on a collaborative studying journey together. Compare progress, engage in friendly competition, and most importantly, enjoy the process of learning as a team!")
             .font(.title3)
             .bold()
             .multilineTextAlignment(.center)
-            .foregroundStyle(.black)
             .padding()
     }
     

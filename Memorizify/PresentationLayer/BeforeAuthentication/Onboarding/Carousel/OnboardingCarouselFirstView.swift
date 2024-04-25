@@ -33,7 +33,6 @@ struct OnboardingCarouselFirstView: View {
             .font(.title3)
             .bold()
             .multilineTextAlignment(.center)
-            .foregroundStyle(.black)
             .padding()
     }
     

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct StorylineTimerView: View {
     
@@ -98,22 +99,23 @@ struct StorylineTimerView: View {
         .padding()
     }
     
-    private func transitionText(transition: String) -> some View {
+    private func transitionText(transition: LocalizedStringResource) -> some View {
         Text(transition)
-            .font(.largeTitle)
+            .font(.title)
             .bold()
+            .multilineTextAlignment(.center)
     }
     
     private var storylineFinishedText: some View {
         Text("Storyline finished!")
-            .font(.largeTitle)
+            .font(.title)
             .bold()
     }
     
     private var doneState: some View {
         VStack {
             Text("Done!")
-                .font(.largeTitle)
+                .font(.title)
                 .bold()
                 .padding()
             Button("Repeat") {
@@ -126,7 +128,7 @@ struct StorylineTimerView: View {
     
     private var countdownTimer: some View {
         Text(viewModel.state.countdown)
-            .font(.title)
+            .font(.title2)
             .bold()
     }
     

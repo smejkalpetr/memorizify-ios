@@ -28,7 +28,7 @@ struct SettingsView: View {
                 .shadow(radius: 5, x: 3.5, y: 3.5)
                 .background {
                     ZStack {
-                        Image("background_settings")
+                        Image("bg_settings")
                             .resizable()
                             .scaledToFill()
                             .edgesIgnoringSafeArea(.all)
@@ -49,7 +49,7 @@ struct SettingsView: View {
                     SettingsChangePasswordView(viewModel: SettingsChangePasswordViewModel())
                 }
             }
-            .navigationTitle(router.tab.rawValue)
+            .navigationTitle(String(localized: router.tab.rawValue))
             .navigationBarTitleDisplayMode(.large)
             .alert(item: Binding<AlertData?>(
                 get: { viewModel.state.alert },

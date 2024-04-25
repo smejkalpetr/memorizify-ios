@@ -21,6 +21,12 @@ struct RootOnboardingView: View {
             PageControlView(numberOfPages: 3, currentPage: $selection)
                 .padding(.bottom, 20)
         }
+        .background(
+            RoundedRectangle(cornerRadius: 10)
+                .fill(colorScheme == .dark ? .black : .white)
+                .shadow(radius: 5, x: 3.5, y: 3.5)
+        )
+        .padding()
         .background {
             backgroundImage
         }

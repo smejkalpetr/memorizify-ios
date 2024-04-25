@@ -28,7 +28,7 @@ struct LogInView: View {
             backgroundImage
         }
         .navigationBarTitleDisplayMode(.large)
-        .navigationTitle("Log In")
+        .navigationTitle(String(localized: "Log In"))
         .alert(item: Binding<AlertData?>(
             get: { viewModel.state.alert },
             set: { _ in viewModel.dismissAlert() }

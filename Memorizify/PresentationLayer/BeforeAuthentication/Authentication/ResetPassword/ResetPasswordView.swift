@@ -28,7 +28,7 @@ struct ResetPasswordView: View {
             backgroundImage
         }
         .navigationBarTitleDisplayMode(.large)
-        .navigationTitle("Reset Password")
+        .navigationTitle(String(localized: "Reset Password"))
         .alert(item: Binding<AlertData?>(
             get: { viewModel.state.alert },
             set: { _ in viewModel.dismissAlert() }

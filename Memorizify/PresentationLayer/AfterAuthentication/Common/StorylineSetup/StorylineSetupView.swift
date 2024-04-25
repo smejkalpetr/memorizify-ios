@@ -21,6 +21,7 @@ struct StorylineSetupView: View {
     var body: some View {
         VStack {
             ScrollView {
+                topNotch
                 storylineSettings
             }
             Spacer()
@@ -45,6 +46,17 @@ struct StorylineSetupView: View {
                 Color.black.opacity(0.4)
                     .edgesIgnoringSafeArea(.all)
             }
+        }
+    }
+    
+    private var topNotch: some View {
+        HStack {
+            Spacer()
+            RoundedRectangle(cornerRadius: 3)
+                .frame(width: 65, height: 6)
+                .foregroundColor(colorScheme == .dark ? Color.white.opacity(0.7) : Color.black.opacity(0.6))
+                .padding(.top, 12)
+            Spacer()
         }
     }
     
@@ -107,10 +119,6 @@ struct StorylineSetupView: View {
                 }
                 .buttonStyle(PrimaryButtonStyle())
             }
-            Button("Back") {
-                presentationMode.wrappedValue.dismiss()
-            }
-            .buttonStyle(SecondaryButtonStyle())
         }
         .padding()
     }

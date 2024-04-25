@@ -26,8 +26,8 @@ final class SettingsChangePasswordViewModel: ObservableObject {
         var newPassword = ""
         var repeatNewPassword = ""
         
-        var newPasswordError = ""
-        var repeatNewPasswordError = ""
+        var newPasswordError: LocalizedStringResource = ""
+        var repeatNewPasswordError: LocalizedStringResource = ""
         
         var canChange: Bool {
             [newPasswordError, repeatNewPasswordError].allSatisfy { $0 == "" } &&
@@ -75,7 +75,7 @@ final class SettingsChangePasswordViewModel: ObservableObject {
         do {
             try validatePasswordUseCase.execute(password: state.newPassword)
         } catch ValidationError.invalidPassword {
-            state.newPasswordError = "Password must be at least 8 characters long, contain at least one digit and at least one upper case letter"
+            state.newPasswordError = "Password must be at least 8 characters long, contain at least one digit and at least one upper case character"
         } catch {
             NSLog("❌ Error in \(#file) on line \(#line): \(error.localizedDescription)")
             state.alert = AlertData(

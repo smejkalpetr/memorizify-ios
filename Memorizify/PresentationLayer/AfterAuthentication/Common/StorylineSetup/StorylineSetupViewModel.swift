@@ -12,9 +12,9 @@ import Foundation
 final class StorylineSetupViewModel: ObservableObject {
     
     static let goalMinutesRange = 0...60.0
-    static let goalHoursRange = 0...300.0
-    static let studyIntervalRange = 0...120.0
-    static let breakIntervalRange = 0...30.0
+    static let goalHoursRange = 10...100.0
+    static let studyIntervalRange = 5...60.0
+    static let breakIntervalRange = 1...15.0
     
     enum Setup {
         case create(StorylineKind)
@@ -38,18 +38,18 @@ final class StorylineSetupViewModel: ObservableObject {
         var alert: AlertData?
         var isButtonLoading = false
         
-        var goalMinutes = (goalMinutesRange.lowerBound + goalMinutesRange.upperBound) / 2
-        var goalHours = (goalHoursRange.lowerBound + goalHoursRange.upperBound) / 2
-        var studyInterval = (studyIntervalRange.lowerBound + studyIntervalRange.upperBound) / 2
-        var breakInterval = (breakIntervalRange.lowerBound + breakIntervalRange.upperBound) / 2
+        var goalMinutes = 0.0
+        var goalHours = 50.0
+        var studyInterval = 30.0
+        var breakInterval = 5.0
         
         init(setup: Setup) {
             switch setup {
             case .create:
-                self.goalMinutes = (goalMinutesRange.lowerBound + goalMinutesRange.upperBound) / 2
-                self.goalHours = (goalHoursRange.lowerBound + goalHoursRange.upperBound) / 2
-                self.studyInterval = (studyIntervalRange.lowerBound + studyIntervalRange.upperBound) / 2
-                self.breakInterval = (breakIntervalRange.lowerBound + breakIntervalRange.upperBound) / 2
+                self.goalMinutes = 0.0
+                self.goalHours = 50.0
+                self.studyInterval = 30.0
+                self.breakInterval = 5.0
             case let .update(storyline):
                 self.goalMinutes = storyline.goalMinutes
                 self.goalHours = storyline.goalHours

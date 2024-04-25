@@ -27,8 +27,8 @@ final class GuildSetupViewModel: ObservableObject {
         var name = ""
         var email = ""
         
-        var nameError = ""
-        var emailError = ""
+        var nameError: LocalizedStringResource = ""
+        var emailError: LocalizedStringResource = ""
         
         var goal = (goalRange.lowerBound + goalRange.upperBound) / 2
         var emailInvitations: [String] = []

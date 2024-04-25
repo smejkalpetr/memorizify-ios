@@ -10,15 +10,17 @@ import Resolver
 public extension Resolver {
     static func registerUseCases() {
         
-        // Notifications
+        // LocalNotifications
         register { RequestLocalNotificationAuthorizationUseCaseImpl() as RequestLocalNotificationAuthorizationUseCase }
-        
-        register { ScheduleLocalNotificationUseCaseImpl() as ScheduleLocalNotificationUseCase }
         
         register {
             CheckLocalNotificationAuthorizationUseCaseImpl(requestLocalNotificationAuthorizationUseCase: resolve())
             as CheckLocalNotificationAuthorizationUseCase
         }
+        
+        register { ScheduleLocalNotificationUseCaseImpl() as ScheduleLocalNotificationUseCase }
+        
+        register { CancelLocalNotificationUseCaseImpl() as CancelLocalNotificationUseCase }
         
         // TimeFormatter
         register { FormatSecondsToStringUseCaseImpl() as FormatSecondsToStringUseCase }

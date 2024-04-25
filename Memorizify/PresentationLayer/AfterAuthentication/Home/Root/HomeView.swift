@@ -11,6 +11,8 @@ struct HomeView: View {
     
     @ObservedObject var viewModel: HomeViewModel
     
+    @ObservedObject var networkMonitor = NetworkMonitor()
+    
     @EnvironmentObject var router: Router
     
     @Environment(\.colorScheme) var colorScheme
@@ -45,8 +47,8 @@ struct HomeView: View {
                         viewModel: StorylineTimerViewModel(
                             storyline: Storyline(
                                 kind: StorylineKind(
-                                    rawValue: StorylineKind
-                                        .PLAIN_TIMER_STORYLINE_RAW_VALUE) ??
+                                    rawValue: String(localized: StorylineKind
+                                        .PLAIN_TIMER_STORYLINE_RAW_VALUE)) ??
                                         .plainTimerStoryline(PlainTimerStoryline()
                                 ),
                                 goalHours: .infinity,
@@ -65,7 +67,7 @@ struct HomeView: View {
                     StorylineTimerView(viewModel: vm)
                 }
             }
-            .navigationTitle(router.tab.rawValue)
+            .navigationTitle(String(localized: router.tab.rawValue))
             .navigationBarTitleDisplayMode(.large)
             .onFirstAppear {
                 viewModel.loadAllStorylines()
@@ -78,7 +80,7 @@ struct HomeView: View {
     
     private var backgroundImage: some View {
         ZStack {
-            Image("background_home")
+            Image("bg_home")
                 .resizable()
                 .scaledToFill()
                 .edgesIgnoringSafeArea(.all)
@@ -127,7 +129,9 @@ struct HomeView: View {
     
     private var myStorylines: some View {
         Section("My storylines") {
-            if viewModel.state.isStorylinesLoading {
+            if !networkMonitor.isConnected {
+                disconnectedState
+            } else if viewModel.state.isStorylinesLoading {
                 myStorylinesLoading
             } else if viewModel.state.isInErrorState {
                 myStorylinesError
@@ -137,6 +141,36 @@ struct HomeView: View {
                 myStorylinesContent
             }
         }
+    }
+    
+    private var disconnectedState: some View {
+        VStack {
+            disconnectedStateImage
+            disconnectedStateText
+        }
+    }
+    
+    private var disconnectedStateImage: some View {
+        HStack {
+            Spacer()
+            Image(systemName: "wifi.exclamationmark")
+                .font(.largeTitle)
+                .foregroundStyle(Color("primary_color"))
+            Spacer()
+        }
+        .padding()
+    }
+    
+    private var disconnectedStateText: some View {
+        HStack {
+            Spacer()
+            Text("No Internet Connection")
+                .bold()
+                .font(.title3)
+                .multilineTextAlignment(.center)
+            Spacer()
+        }
+        .padding([.horizontal, .bottom])
     }
     
     private var myStorylinesLoading: some View {

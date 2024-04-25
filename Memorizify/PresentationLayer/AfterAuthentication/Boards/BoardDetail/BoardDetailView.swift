@@ -35,7 +35,7 @@ struct BoardDetailView: View {
     
     private var backgroundImage: some View {
         ZStack {
-            Image("background_home")
+            Image("bg_board")
                 .resizable()
                 .scaledToFill()
                 .edgesIgnoringSafeArea(.all)
@@ -69,6 +69,7 @@ struct BoardDetailView: View {
                 Label("Nickname Ascending", systemImage: "arrow.up.square")
             }
         }
+        .foregroundStyle(.blue)
         .padding()
     }
     

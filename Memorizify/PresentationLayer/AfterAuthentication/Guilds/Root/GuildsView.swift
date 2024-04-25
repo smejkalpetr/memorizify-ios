@@ -11,6 +11,8 @@ struct GuildsView: View {
     
     @ObservedObject var viewModel: GuildsViewModel
     
+    @ObservedObject var networkMonitor = NetworkMonitor()
+    
     @EnvironmentObject var router: Router
     
     @Environment(\.colorScheme) var colorScheme
@@ -18,8 +20,12 @@ struct GuildsView: View {
     var body: some View {
         NavigationStack(path: $router.guildsPath) {
             List {
-                invitationsSection
-                guildsSection
+                if !networkMonitor.isConnected {
+                    disconnectedState
+                } else {
+                    invitationsSection
+                    guildsSection
+                }
             }
             .listRowSpacing(25)
             .padding()
@@ -28,7 +34,7 @@ struct GuildsView: View {
                 backgroundImage
             }
             .scrollContentBackground(.hidden)
-            .navigationTitle(router.tab.rawValue)
+            .navigationTitle(String(localized: router.tab.rawValue))
             .navigationBarTitleDisplayMode(.large)
             .onFirstAppear {
                 viewModel.refreshData()
@@ -37,10 +43,10 @@ struct GuildsView: View {
                 get: { viewModel.state.alert },
                 set: { _ in viewModel.dismissAlert() }
             )) { alert in .init(alert) }
+            .refreshable { viewModel.refreshData() }
             .sheet(isPresented: $viewModel.state.isBottomSheetPresented) {
                 GuildSetupView(viewModel: GuildSetupViewModel())
             }
-            .refreshable { viewModel.refreshData() }
             .onReceive(Notification.Name.refreshGuilds.publisher) { _ in
                 Task { await viewModel.loadMyGuilds() }
             }
@@ -65,7 +71,7 @@ struct GuildsView: View {
     
     private var backgroundImage: some View {
         ZStack {
-            Image("background_home")
+            Image("bg_guilds")
                 .resizable()
                 .scaledToFill()
                 .edgesIgnoringSafeArea(.all)
@@ -74,6 +80,36 @@ struct GuildsView: View {
                     .edgesIgnoringSafeArea(.all)
             }
         }
+    }
+    
+    private var disconnectedState: some View {
+        VStack {
+            disconnectedStateImage
+            disconnectedStateText
+        }
+    }
+    
+    private var disconnectedStateImage: some View {
+        HStack {
+            Spacer()
+            Image(systemName: "wifi.exclamationmark")
+                .font(.largeTitle)
+                .foregroundStyle(Color("primary_color"))
+            Spacer()
+        }
+        .padding()
+    }
+    
+    private var disconnectedStateText: some View {
+        HStack {
+            Spacer()
+            Text("No Internet Connection")
+                .bold()
+                .font(.title3)
+                .multilineTextAlignment(.center)
+            Spacer()
+        }
+        .padding([.horizontal, .bottom])
     }
     
     private var invitationsSection: some View {

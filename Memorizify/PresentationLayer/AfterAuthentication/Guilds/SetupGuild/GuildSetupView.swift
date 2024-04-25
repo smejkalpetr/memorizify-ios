@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct GuildSetupView: View {
     
@@ -18,10 +19,12 @@ struct GuildSetupView: View {
     var body: some View {
         VStack {
             ScrollView {
+                topNotch
                 guildSettings
                 addFriendSection
-                footerButton
             }
+            Spacer()
+            footerButton
         }
         .background {
             backgroundImage
@@ -34,12 +37,23 @@ struct GuildSetupView: View {
     
     private var backgroundImage: some View {
         ZStack {
-            Image("background_home")
+            Image("bg_guilds")
                 .resizable()
                 .scaledToFill()
                 .edgesIgnoringSafeArea(.all)
             Color.black.opacity(colorScheme == .dark ? 0.5 : 0.3)
                 .edgesIgnoringSafeArea(.all)
+        }
+    }
+    
+    private var topNotch: some View {
+        HStack {
+            Spacer()
+            RoundedRectangle(cornerRadius: 3)
+                .frame(width: 65, height: 6)
+                .foregroundColor(colorScheme == .dark ? Color.white.opacity(0.6) : Color.black.opacity(0.5))
+                .padding(.top, 12)
+            Spacer()
         }
     }
     
@@ -74,7 +88,7 @@ struct GuildSetupView: View {
         .padding([.horizontal, .top])
     }
     
-    private func errorText(_ text: String) -> some View {
+    private func errorText(_ text: LocalizedStringResource) -> some View {
         Text(text)
             .font(.footnote)
             .foregroundStyle(.red)

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Resolver
+import Foundation
 
 final class LogInViewModel: ObservableObject {
     
@@ -23,7 +24,7 @@ final class LogInViewModel: ObservableObject {
         var email = ""
         var password = ""
         
-        var emailError = ""
+        var emailError: LocalizedStringResource = ""
         
         var canLogIn: Bool {
             emailError == "" &&

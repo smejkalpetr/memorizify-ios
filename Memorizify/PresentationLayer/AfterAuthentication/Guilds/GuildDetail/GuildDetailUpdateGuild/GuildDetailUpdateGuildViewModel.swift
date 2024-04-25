@@ -10,7 +10,7 @@ import Resolver
 
 final class GuildDetailUpdateGuildViewModel: ObservableObject {
     
-    static let goalRange = 1...300.0
+    static let goalRange = 10...100.0
     
     private let completion: () -> ()
     

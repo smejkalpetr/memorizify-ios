@@ -17,9 +17,11 @@ struct GuildDetailUpdateGuildView: View {
     var body: some View {
         VStack {
             ScrollView {
+                topNotch
                 guildSettings
-                updateButton
             }
+            Spacer()
+            updateButton
         }
         .background {
             backgroundImage
@@ -38,6 +40,17 @@ struct GuildDetailUpdateGuildView: View {
                 .edgesIgnoringSafeArea(.all)
             Color.black.opacity(colorScheme == .dark ? 0.5 : 0.3)
                 .edgesIgnoringSafeArea(.all)
+        }
+    }
+    
+    private var topNotch: some View {
+        HStack {
+            Spacer()
+            RoundedRectangle(cornerRadius: 3)
+                .frame(width: 65, height: 6)
+                .foregroundColor(colorScheme == .dark ? Color.white.opacity(0.6) : Color.black.opacity(0.5))
+                .padding(.top, 12)
+            Spacer()
         }
     }
 

@@ -22,6 +22,7 @@ struct PlainTimerSetupView: View {
             ZStack(alignment: .bottom) {
                 alarmImage
                 ScrollView {
+                    topNotch
                     plainTimerSettings
                 }
             }
@@ -52,6 +53,17 @@ struct PlainTimerSetupView: View {
                 .resizable()
                 .scaledToFit()
                 .padding()
+        }
+    }
+    
+    private var topNotch: some View {
+        HStack {
+            Spacer()
+            RoundedRectangle(cornerRadius: 3)
+                .frame(width: 65, height: 6)
+                .foregroundColor(colorScheme == .dark ? Color.white.opacity(0.7) : Color.black.opacity(0.6))
+                .padding(.top, 12)
+            Spacer()
         }
     }
     
