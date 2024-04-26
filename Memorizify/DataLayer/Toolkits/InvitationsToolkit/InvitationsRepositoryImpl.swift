@@ -39,9 +39,11 @@ struct InvitationsRepositoryImpl: InvitationsRepository {
                
         let invitationDict = try Firestore.Encoder().encode(invitation)
         
+        let collectionRef = db.collection(Constants.FIREBASE_COLLECTION_INVITATIONS)
+        
         // Save Invation to the 'invitations' collection
-        try await db.collection(Constants.FIREBASE_COLLECTION_INVITATIONS)
-                    .addDocument(data: invitationDict)
+        MemorizifyLogger.logDocumentsUpdate(file: #file, line: #line, documentPath: collectionRef.path + "/newDocument", data: invitationDict)
+        try await collectionRef.addDocument(data: invitationDict)
     }
     
     func getAll() async throws -> [Invitation] {
@@ -53,6 +55,7 @@ struct InvitationsRepositoryImpl: InvitationsRepository {
         let invitationsCollectionRef = db.collection(Constants.FIREBASE_COLLECTION_INVITATIONS)
         
         // Fetch all documents from the collection
+        MemorizifyLogger.logDocumentsFetch(file: #file, line: #line, documentPath: invitationsCollectionRef.path)
         let querySnapshot = try await invitationsCollectionRef.getDocuments()
         
         // Iterate through the documents and decode them into Invitation objects
@@ -75,6 +78,7 @@ struct InvitationsRepositoryImpl: InvitationsRepository {
         let invitationsCollectionRef = db.collection(Constants.FIREBASE_COLLECTION_INVITATIONS)
         
         // Fetch all documents from the collection
+        MemorizifyLogger.logDocumentsFetch(file: #file, line: #line, documentPath: invitationsCollectionRef.path)
         let querySnapshot = try await invitationsCollectionRef.getDocuments()
         
         // Iterate through the documents and decode them into Invitation objects
@@ -154,6 +158,7 @@ struct InvitationsRepositoryImpl: InvitationsRepository {
         let invitationsCollectionRef = db.collection(Constants.FIREBASE_COLLECTION_INVITATIONS)
     
         // Fetch all documents from the collection
+        MemorizifyLogger.logDocumentsFetch(file: #file, line: #line, documentPath: invitationsCollectionRef.path)
         let querySnapshot = try await invitationsCollectionRef.getDocuments()
 
         // Iterate through the documents, find and delete the invitation
@@ -162,7 +167,9 @@ struct InvitationsRepositoryImpl: InvitationsRepository {
             
             if searchedInvitation == invitation {
                 let invitationDict = try Firestore.Encoder().encode(invitation)
-                try await invitationsCollectionRef.document(document.documentID).setData(invitationDict)
+                let documentRef = invitationsCollectionRef.document(document.documentID)
+                MemorizifyLogger.logDocumentsUpdate(file: #file, line: #line, documentPath: documentRef.path, data: invitationDict)
+                try await documentRef.setData(invitationDict)
                 break
             }
         }
@@ -194,7 +201,9 @@ struct InvitationsRepositoryImpl: InvitationsRepository {
             let searchedInvitation = try document.data(as: Invitation.self)
             
             if searchedInvitation == invitation {
-                try await invitationsCollectionRef.document(document.documentID).delete()
+                let documentRef = invitationsCollectionRef.document(document.documentID)
+                MemorizifyLogger.logDocumentsDelete(file: #file, line: #line, documentPath: documentRef.path)
+                try await documentRef.delete()
                 break
             }
         }

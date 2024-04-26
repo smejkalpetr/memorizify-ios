@@ -40,9 +40,10 @@ struct GuildsRepositoryImpl: GuildsRepository {
         
         let guildDict = try Firestore.Encoder().encode(guild)
         
-        try await db.collection(Constants.FIREBASE_COLLECTION_GUILDS)
-                    .document(guild.id)
-                    .setData(guildDict)
+        let documentRef = db.collection(Constants.FIREBASE_COLLECTION_GUILDS).document(guild.id)
+                    
+        MemorizifyLogger.logDocumentsUpdate(file: #file, line: #line, documentPath: documentRef.path, data: guildDict)
+        try await documentRef.setData(guildDict)
         
         // Save new guildId to User entity
         var userGuilds = user.guildIds ?? []
@@ -82,6 +83,7 @@ struct GuildsRepositoryImpl: GuildsRepository {
         let guildsCollectionRef = db.collection(Constants.FIREBASE_COLLECTION_GUILDS)
     
         // Fetch all documents from the collection
+        MemorizifyLogger.logDocumentsFetch(file: #file, line: #line, documentPath: guildsCollectionRef.path)
         let querySnapshot = try await guildsCollectionRef.getDocuments()
         
         // Iterate through the documents and decode them into Guild objects
@@ -105,6 +107,7 @@ struct GuildsRepositoryImpl: GuildsRepository {
         let guildsCollectionRef = db.collection(Constants.FIREBASE_COLLECTION_GUILDS)
     
         // Fetch all documents from the collection
+        MemorizifyLogger.logDocumentsFetch(file: #file, line: #line, documentPath: guildsCollectionRef.path)
         let querySnapshot = try await guildsCollectionRef.getDocuments()
         
         // Iterate through the documents and decode them into Guild objects
@@ -124,9 +127,10 @@ struct GuildsRepositoryImpl: GuildsRepository {
         
         let guildDict = try Firestore.Encoder().encode(guild)
         
-        try await db.collection(Constants.FIREBASE_COLLECTION_GUILDS)
-                    .document(guild.id)
-                    .setData(guildDict)
+        let documentRef = db.collection(Constants.FIREBASE_COLLECTION_GUILDS).document(guild.id)
+        
+        MemorizifyLogger.logDocumentsUpdate(file: #file, line: #line, documentPath: documentRef.path, data: guildDict)
+        try await documentRef.setData(guildDict)
         
         // Save new guildId to User entity
         var userGuilds = user.guildIds ?? []
@@ -144,6 +148,7 @@ struct GuildsRepositoryImpl: GuildsRepository {
         let guildsCollectionRef = db.collection(Constants.FIREBASE_COLLECTION_GUILDS)
     
         // Fetch all documents from the collection
+        MemorizifyLogger.logDocumentsFetch(file: #file, line: #line, documentPath: guildsCollectionRef.path)
         let querySnapshot = try await guildsCollectionRef.getDocuments()
         
         // Iterate through the documents and decode them into Guild objects

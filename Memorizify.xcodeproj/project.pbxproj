@@ -60,6 +60,7 @@
 		1D1F97D42BD984870025FC73 /* OnFirstAppear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1F97D32BD984870025FC73 /* OnFirstAppear.swift */; };
 		1D1F97DA2BD9A69D0025FC73 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1F97D92BD9A69D0025FC73 /* LaunchScreenView.swift */; };
 		1D23E2F02BDBA6F6007F35FB /* ValidateGuildNameUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D23E2EF2BDBA6F6007F35FB /* ValidateGuildNameUseCase.swift */; };
+		1D23E2F52BDBAE67007F35FB /* MemorizifyLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D23E2F42BDBAE67007F35FB /* MemorizifyLogger.swift */; };
 		1D26EBAF2BC55FC000F5E1B5 /* Storyline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D26EBAE2BC55FC000F5E1B5 /* Storyline.swift */; };
 		1D26EBB12BC5605000F5E1B5 /* StorylineKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D26EBB02BC5605000F5E1B5 /* StorylineKind.swift */; };
 		1D26EBB32BC5633E00F5E1B5 /* StorylinesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D26EBB22BC5633E00F5E1B5 /* StorylinesViewModel.swift */; };
@@ -297,6 +298,7 @@
 		1D1F97D32BD984870025FC73 /* OnFirstAppear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnFirstAppear.swift; sourceTree = "<group>"; };
 		1D1F97D92BD9A69D0025FC73 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		1D23E2EF2BDBA6F6007F35FB /* ValidateGuildNameUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateGuildNameUseCase.swift; sourceTree = "<group>"; };
+		1D23E2F42BDBAE67007F35FB /* MemorizifyLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizifyLogger.swift; sourceTree = "<group>"; };
 		1D26EBAE2BC55FC000F5E1B5 /* Storyline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyline.swift; sourceTree = "<group>"; };
 		1D26EBB02BC5605000F5E1B5 /* StorylineKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorylineKind.swift; sourceTree = "<group>"; };
 		1D26EBB22BC5633E00F5E1B5 /* StorylinesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorylinesViewModel.swift; sourceTree = "<group>"; };
@@ -863,6 +865,14 @@
 			path = OnFirstAppear;
 			sourceTree = "<group>";
 		};
+		1D23E2F12BDBAE4A007F35FB /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				1D23E2F42BDBAE67007F35FB /* MemorizifyLogger.swift */,
+			);
+			path = Logging;
+			sourceTree = "<group>";
+		};
 		1D26EBB42BC5840100F5E1B5 /* StorylineSetup */ = {
 			isa = PBXGroup;
 			children = (
@@ -972,6 +982,7 @@
 			isa = PBXGroup;
 			children = (
 				1D7DA8D72BC6972D0092E18C /* Constants */,
+				1D23E2F12BDBAE4A007F35FB /* Logging */,
 				1DA1DD1F2BCD890600185C76 /* Notifications */,
 				1DD7EB132BB09B4F005CE24D /* LocalNotifications */,
 				1D0821642BCAE06D00F1F8F3 /* TimeFormatter */,
@@ -2118,6 +2129,7 @@
 				1D7DA8D02BC682CE0092E18C /* LoadAllStorylinesUseCase.swift in Sources */,
 				1D0821532BCAC1B600F1F8F3 /* StartStorylineUseCase.swift in Sources */,
 				1D08215C2BCAC98800F1F8F3 /* CreatePomodoroTimerUseCase.swift in Sources */,
+				1D23E2F52BDBAE67007F35FB /* MemorizifyLogger.swift in Sources */,
 				1D3D328C2BA6FB4F0039DA08 /* AuthenticationRoute.swift in Sources */,
 				1D0821632BCADD8400F1F8F3 /* SetPomodoroTimerDelegateUseCase.swift in Sources */,
 				1D6653002BDA795100D24943 /* AppView.swift in Sources */,
@@ -2363,7 +2375,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Memorizify/Application/Entitlements/Memorizify.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202404261126;
+				CURRENT_PROJECT_VERSION = 202404261403;
 				DEVELOPMENT_ASSET_PATHS = "\"Memorizify/Application/Preview Content\"";
 				DEVELOPMENT_TEAM = 4C5MQDTY94;
 				ENABLE_PREVIEWS = YES;
@@ -2382,7 +2394,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.1;
+				MARKETING_VERSION = 0.3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.smejkalp.memorizify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -2398,7 +2410,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Memorizify/Application/Entitlements/Memorizify.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202404261126;
+				CURRENT_PROJECT_VERSION = 202404261403;
 				DEVELOPMENT_ASSET_PATHS = "\"Memorizify/Application/Preview Content\"";
 				DEVELOPMENT_TEAM = 4C5MQDTY94;
 				ENABLE_PREVIEWS = YES;
@@ -2417,7 +2429,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.1;
+				MARKETING_VERSION = 0.3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.smejkalp.memorizify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

@@ -5,8 +5,6 @@
 //  Created by Petr Šmejkal on 17.03.2024.
 //
 
-import Firebase
-
 protocol AuthenticationRepository {
     func getUser() throws -> FirebaseUser
     func signUp(data: SignUpData) async throws -> FirebaseUser

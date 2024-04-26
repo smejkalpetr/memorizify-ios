@@ -5,8 +5,6 @@
 //  Created by Petr Šmejkal on 17.04.2024.
 //
 
-import Firebase
-
 struct MembersRepositoryImpl: MembersRepository {
     
     private let guildsRepository: GuildsRepository
@@ -18,8 +16,6 @@ struct MembersRepositoryImpl: MembersRepository {
     }
     
     func remove(with uid: String, from guild: Guild) async throws {
-        let db = Firestore.firestore()
-        
         // Refresh guild before request because somebody could have changed it meanwhile
         let refreshedGuild = try await guildsRepository.load(guild)
         

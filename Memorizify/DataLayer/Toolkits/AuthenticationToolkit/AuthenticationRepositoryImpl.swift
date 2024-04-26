@@ -30,9 +30,10 @@ struct AuthenticationRepositoryImpl: AuthenticationRepository {
             )
         )
         
-        try await db.collection(Constants.FIREBASE_COLLECTION_USERS)
-            .document(authResult.user.uid)
-            .setData(userDict)
+        let documentRef = db.collection(Constants.FIREBASE_COLLECTION_USERS).document(authResult.user.uid)
+        
+        MemorizifyLogger.logDocumentsUpdate(file: #file, line: #line, documentPath: documentRef.path, data: userDict)
+        try await documentRef.setData(userDict)
         
         return authResult.user
     }

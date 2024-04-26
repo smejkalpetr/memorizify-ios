@@ -26,6 +26,7 @@ struct BoardsRepositoryImpl: BoardsRepository {
         let usersCollectionRef = db.collection(Constants.FIREBASE_COLLECTION_USERS)
     
         // Fetch all documents from the subcollection
+        MemorizifyLogger.logDocumentsFetch(file: #file, line: #line, documentPath: usersCollectionRef.path)
         let querySnapshot = try await usersCollectionRef.getDocuments()
         
         // Iterate through the documents

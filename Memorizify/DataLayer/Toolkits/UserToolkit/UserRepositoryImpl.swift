@@ -24,6 +24,7 @@ struct UserRepositoryImpl: UserRepository {
         let documentReference = usersCollectionRef.document(firUser.uid)
         let documentSnapshot = try await documentReference.getDocument()
         
+        MemorizifyLogger.logDocumentsFetch(file: #file, line: #line, documentPath: documentReference.path)
         return try documentSnapshot.data(as: User.self)
     }
     
@@ -36,6 +37,8 @@ struct UserRepositoryImpl: UserRepository {
         let user = try authenticationRepository.getUser()
         
         // Fetch all documents from the collection
+        
+        MemorizifyLogger.logDocumentsFetch(file: #file, line: #line, documentPath: usersCollectionRef.path)
         let querySnapshot = try await usersCollectionRef.getDocuments()
         
         // Iterate through the documents and decode them into Guild objects
@@ -58,6 +61,7 @@ struct UserRepositoryImpl: UserRepository {
         let user = try authenticationRepository.getUser()
         
         // Fetch all documents from the collection
+        MemorizifyLogger.logDocumentsFetch(file: #file, line: #line, documentPath: usersCollectionRef.path)
         let querySnapshot = try await usersCollectionRef.getDocuments()
         
         // Iterate through the documents and decode them into Guild objects
@@ -76,6 +80,7 @@ struct UserRepositoryImpl: UserRepository {
         let usersCollectionRef = db.collection(Constants.FIREBASE_COLLECTION_USERS)
         
         // Fetch all documents from the collection
+        MemorizifyLogger.logDocumentsFetch(file: #file, line: #line, documentPath: usersCollectionRef.path, description: "Where Field 'uid' == \(user.uid)")
         let query = usersCollectionRef.whereField("uid", isEqualTo: user.uid)
         
         let querySnapshot = try await query.getDocuments()
@@ -84,6 +89,7 @@ struct UserRepositoryImpl: UserRepository {
         for document in querySnapshot.documents {
             let userDict = try Firestore.Encoder().encode(user)
             let documentRef = usersCollectionRef.document(document.documentID)
+            MemorizifyLogger.logDocumentsUpdate(file: #file, line: #line, documentPath: documentRef.path, data: userDict)
             try await documentRef.setData(userDict)
         }
     }
