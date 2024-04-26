@@ -64,7 +64,7 @@ struct SettingsView: View {
             if viewModel.state.isUserLoading {
                 userSectionLoading
             } else if let user = viewModel.state.user {
-                userSectionLoaded(name: user.name, email: user.email)
+                userSectionLoaded(username: user.username, email: user.email)
             } else {
                 userError
             }
@@ -80,7 +80,7 @@ struct SettingsView: View {
         .padding()
     }
     
-    private func userSectionLoaded(name: String, email: String) -> some View {
+    private func userSectionLoaded(username: String, email: String) -> some View {
         HStack {
             Image("profile_avatar")
                 .resizable()
@@ -94,7 +94,7 @@ struct SettingsView: View {
                 )
                 .padding(4)
             VStack(alignment: .leading) {
-                Text(name)
+                Text(username)
                     .font(.headline)
                 Text(email)
                     .font(.subheadline)
@@ -147,7 +147,7 @@ struct SettingsView: View {
             HStack {
                 Text("Username")
                 Spacer()
-                Text(viewModel.state.user?.nickname ?? "")
+                Text(viewModel.state.user?.username ?? "")
                     .font(.subheadline)
                     .foregroundStyle(.gray)
             }

@@ -409,7 +409,7 @@ struct GuildDetailView: View {
     
     @ViewBuilder
     private func myRecord(_ record: BoardRecord) -> some View {
-        Text(record.nickname)
+        Text(record.username)
             .bold()
         if record.isLeader {
             Image(systemName: "crown")
@@ -421,7 +421,7 @@ struct GuildDetailView: View {
     
     @ViewBuilder
     private func othersRecord(_ record: BoardRecord) -> some View {
-        Text(record.nickname)
+        Text(record.username)
         if record.isLeader {
             Image(systemName: "crown")
         }
@@ -447,7 +447,7 @@ struct GuildDetailView: View {
             } else {
                 Image(systemName: "xmark")
             }
-            Text(record.nickname)
+            Text(record.username)
             if record.isLeader {
                 Image(systemName: "crown")
             }

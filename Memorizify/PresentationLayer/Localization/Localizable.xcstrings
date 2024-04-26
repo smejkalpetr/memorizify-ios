@@ -1142,36 +1142,6 @@
         }
       }
     },
-    "Nickname" : {
-      "localizations" : {
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Přezdívka"
-          }
-        }
-      }
-    },
-    "Nickname Ascending" : {
-      "localizations" : {
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Podle jména (a-z)"
-          }
-        }
-      }
-    },
-    "Nickname Descending" : {
-      "localizations" : {
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Podle jména (z-a)"
-          }
-        }
-      }
-    },
     "No guilds yet" : {
       "localizations" : {
         "cs" : {
@@ -2029,6 +1999,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Uživatelské jméno"
+          }
+        }
+      }
+    },
+    "Username (a-z)" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podle jména (a-z)"
+          }
+        }
+      }
+    },
+    "Username (z-a)" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Podle jména (z-a)"
           }
         }
       }

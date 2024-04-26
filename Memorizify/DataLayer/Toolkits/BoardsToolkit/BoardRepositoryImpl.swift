@@ -31,8 +31,7 @@ struct BoardsRepositoryImpl: BoardsRepository {
         // Iterate through the documents
         for document in querySnapshot.documents {
             let user = try document.data(as: User.self)
-            #warning("FIXME: Use localized string here instead of hardcoded string")
-            let boardRecord = BoardRecord(uid: user.uid, nickname: user.nickname ?? "Anonymous", score: user.score, isLeader: user.uid == firUser.uid)
+            let boardRecord = BoardRecord(uid: user.uid, username: user.username, score: user.score, isLeader: user.uid == firUser.uid)
             boardRecords.append(boardRecord)
         }
         

@@ -31,16 +31,6 @@ public extension Resolver {
         register { CheckHasUserSeenOnboardingUseCaseImpl(onboardingRepository: resolve()) as CheckHasUserSeenOnboardingUseCase }
         
         // Authentication
-        register { ValidateNameUseCaseImpl() as ValidateNameUseCase }
-        
-        register { ValidateNicknameUseCaseImpl() as ValidateNicknameUseCase }
-        
-        register { ValidateEmailUseCaseImpl() as ValidateEmailUseCase }
-        
-        register { ValidatePasswordUseCaseImpl() as ValidatePasswordUseCase }
-        
-        register { ValidateRepeatedPasswordImpl() as ValidateRepeatedPasswordUseCase }
-        
         register { SendEmailVerificationUseCaseImpl(authenticationRepository: resolve()) as SendEmailVerificationUseCase }
         
         register { SignUpUseCaseImpl(authenticationRepository: resolve(), sendEmailVerificationUseCase: resolve()) as SignUpUseCase }
@@ -54,6 +44,17 @@ public extension Resolver {
         register { ResetPasswordUseCaseImpl(authenticationRepository: resolve()) as ResetPasswordUseCase }
         
         register { ChangePasswordUseCaseImpl(authenticationRepository: resolve()) as ChangePasswordUseCase }
+        
+        // Validation
+        register { ValidateUsernameUseCaseImpl() as ValidateUsernameUseCase }
+        
+        register { ValidateEmailUseCaseImpl() as ValidateEmailUseCase }
+        
+        register { ValidatePasswordUseCaseImpl() as ValidatePasswordUseCase }
+        
+        register { ValidateRepeatedPasswordImpl() as ValidateRepeatedPasswordUseCase }
+        
+        register { ValidateGuildNameUseCaseImpl() as ValidateGuildNameUseCase }
         
         // User
         register { GetCurrentUserUseCaseImpl(userRepository: resolve()) as GetCurrentUserUseCase }

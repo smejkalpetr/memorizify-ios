@@ -18,8 +18,8 @@ struct Board: Identifiable, Codable {
     enum Sorted: String, Codable {
         case scoreAscending
         case scoreDescending
-        case nicknameAscending
-        case nicknameDescending
+        case usernameAscending
+        case usernameDescending
         case unsorted
     }
     
@@ -65,13 +65,13 @@ struct Board: Identifiable, Codable {
         sorted = .scoreDescending
     }
     
-    mutating func sortByNicknameAscending() {
-        records.sort { $0.nickname.lowercased() < $1.nickname.lowercased() }
-        sorted = .nicknameAscending
+    mutating func sortByUsernameAscending() {
+        records.sort { $0.username.lowercased() < $1.username.lowercased() }
+        sorted = .usernameAscending
     }
     
-    mutating func sortByNicknameDescending() {
-        records.sort { $0.nickname.lowercased() > $1.nickname.lowercased() }
-        sorted = .nicknameDescending
+    mutating func sortByUsernameDescending() {
+        records.sort { $0.username.lowercased() > $1.username.lowercased() }
+        sorted = .usernameDescending
     }
 }

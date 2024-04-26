@@ -14,8 +14,7 @@ final class SignUpViewModel: ObservableObject {
     @Published var state = State()
     
     @Injected private var signUpUseCase: SignUpUseCase
-    @Injected private var validateNameUseCase: ValidateNameUseCase
-    @Injected private var validateNicknameUseCase: ValidateNicknameUseCase
+    @Injected private var validateUsernameUseCase: ValidateUsernameUseCase
     @Injected private var validateEmailUseCase: ValidateEmailUseCase
     @Injected private var validatePasswordUseCase: ValidatePasswordUseCase
     @Injected private var validateRepeatedPasswordUseCase: ValidateRepeatedPasswordUseCase
@@ -23,14 +22,12 @@ final class SignUpViewModel: ObservableObject {
     struct State {
         var alert: AlertData?
         
-        var name = ""
-        var nickname = ""
+        var username = ""
         var email = ""
         var password = ""
         var repeatedPassword = ""
         
-        var nameError: LocalizedStringResource = ""
-        var nicknameError: LocalizedStringResource = ""
+        var usernameError: LocalizedStringResource = ""
         var emailError: LocalizedStringResource = ""
         var passwordError: LocalizedStringResource = ""
         var repeatedPasswordError: LocalizedStringResource = ""
@@ -40,8 +37,8 @@ final class SignUpViewModel: ObservableObject {
         var isSignUpButtonLoading = false
         
         var canSignUp: Bool {
-            [nameError, emailError, passwordError, repeatedPasswordError].allSatisfy { $0 == "" } &&
-            [name, email, password, repeatedPassword].allSatisfy { !$0.isEmpty } &&
+            [usernameError, emailError, passwordError, repeatedPasswordError].allSatisfy { $0 == "" } &&
+            [username, email, password, repeatedPassword].allSatisfy { !$0.isEmpty } &&
             isAgreementSigned
         }
     }
@@ -59,8 +56,7 @@ final class SignUpViewModel: ObservableObject {
             do {
                 try await signUpUseCase.execute(
                     data: SignUpData(
-                        name: state.name,
-                        nickname: state.nickname,
+                        username: state.username,
                         email: state.email,
                         password: state.password,
                         repeatedPassword: state.repeatedPassword
@@ -79,29 +75,12 @@ final class SignUpViewModel: ObservableObject {
     
     @MainActor
     func validateNameField() {
-        state.nameError = ""
+        state.usernameError = ""
         
         do {
-            try validateNameUseCase.execute(name: state.name)
-        } catch ValidationError.invalidName {
-            state.nameError = "Username must be 2-32 characters long"
-        } catch {
-            NSLog("❌ Error in \(#file) on line \(#line): \(error.localizedDescription)")
-            state.alert = AlertData(
-                title: "Unknown Error",
-                message: "An unknown error has occured."
-            )
-        }
-    }
-    
-    @MainActor
-    func validateNicknameField() {
-        state.nameError = ""
-        
-        do {
-            try validateNicknameUseCase.execute(nickname: state.nickname)
-        } catch ValidationError.invalidNickname {
-            state.nickname = "Nickname must be 2-32 characters long"
+            try validateUsernameUseCase.execute(username: state.username)
+        } catch ValidationError.invalidUsername {
+            state.usernameError = "Username must be 2-32 characters long"
         } catch {
             NSLog("❌ Error in \(#file) on line \(#line): \(error.localizedDescription)")
             state.alert = AlertData(
@@ -172,7 +151,7 @@ final class SignUpViewModel: ObservableObject {
     
     @MainActor
     func clearAllErrors() {
-        state.nameError = ""
+        state.usernameError = ""
         state.emailError = ""
         state.passwordError = ""
         state.repeatedPasswordError = ""

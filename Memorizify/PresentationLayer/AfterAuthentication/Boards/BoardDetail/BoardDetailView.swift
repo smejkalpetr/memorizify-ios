@@ -59,14 +59,14 @@ struct BoardDetailView: View {
                 Label("Score Ascending", systemImage: "arrow.up.square")
             }
             Button {
-                viewModel.state.board.sortByNicknameDescending()
+                viewModel.state.board.sortByUsernameDescending()
             } label: {
-                Label("Nickname Descending", systemImage: "arrow.down.square")
+                Label("Username (z-a)", systemImage: "arrow.down.square")
             }
             Button {
-                viewModel.state.board.sortByNicknameAscending()
+                viewModel.state.board.sortByUsernameAscending()
             } label: {
-                Label("Nickname Ascending", systemImage: "arrow.up.square")
+                Label("Username (a-z)", systemImage: "arrow.up.square")
             }
         }
         .foregroundStyle(.blue)
@@ -75,7 +75,7 @@ struct BoardDetailView: View {
     
     private var listTitleRow: some View {
         HStack {
-            Text("Nickname")
+            Text("Username")
                 .bold()
             Spacer()
             Text("Score")
@@ -87,7 +87,7 @@ struct BoardDetailView: View {
     private func listRecords(records: [BoardRecord]) -> some View {
         ForEach(records) { record in
             HStack {
-                Text(record.nickname)
+                Text(record.username)
                 Spacer()
                 Text("\(Int(record.score))")
             }

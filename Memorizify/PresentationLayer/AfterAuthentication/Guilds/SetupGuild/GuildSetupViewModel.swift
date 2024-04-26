@@ -14,7 +14,7 @@ final class GuildSetupViewModel: ObservableObject {
     
     @Published var state = State()
     
-    @Injected private var validateNameUseCase: ValidateNameUseCase
+    @Injected private var validateGuildNameUseCase: ValidateGuildNameUseCase
     @Injected private var validateEmailUseCase: ValidateEmailUseCase
     @Injected private var createGuildUseCase: CreateGuildUseCase
     @Injected private var sendGuildInvitationUseCase: SendGuildInvitationUseCase
@@ -51,8 +51,8 @@ final class GuildSetupViewModel: ObservableObject {
         state.nameError = ""
         
         do {
-            try validateNameUseCase.execute(name: state.name)
-        } catch ValidationError.invalidName {
+            try validateGuildNameUseCase.execute(name: state.name)
+        } catch ValidationError.invalidGuildName {
             state.nameError = "Name must be 2-32 characters long"
         } catch {
             NSLog("❌ Error in \(#file) on line \(#line): \(error.localizedDescription)")

@@ -12,11 +12,11 @@ struct BoardRecord: Identifiable , Codable {
     // MARK: Properties
     
     var id: String {
-        uid + nickname + String(score) + String(isLeader)
+        uid + username + String(score) + String(isLeader)
     }
     
     let uid: String
-    let nickname: String
+    let username: String
     let score: Double
     let isLeader: Bool
     
@@ -28,12 +28,12 @@ struct BoardRecord: Identifiable , Codable {
     
     init(
         uid: String,
-        nickname: String,
+        username: String,
         score: Double,
         isLeader: Bool = false
     ) {
         self.uid = uid
-        self.nickname = nickname
+        self.username = username
         self.score = score
         self.isLeader = isLeader
     }
@@ -41,12 +41,12 @@ struct BoardRecord: Identifiable , Codable {
     init(
         copy: BoardRecord,
         uid: String? = nil,
-        nickname: String? = nil,
+        username: String? = nil,
         score: Double? = nil,
         isLeader: Bool? = nil
     ) {
         self.uid = uid ?? copy.uid
-        self.nickname = nickname ?? copy.nickname
+        self.username = username ?? copy.username
         self.score = score ?? copy.score
         self.isLeader = isLeader ?? copy.isLeader
     }

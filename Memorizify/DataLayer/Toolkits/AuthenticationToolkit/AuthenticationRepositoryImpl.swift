@@ -24,8 +24,7 @@ struct AuthenticationRepositoryImpl: AuthenticationRepository {
         let userDict = try Firestore.Encoder().encode(
             User(
                 uid: authResult.user.uid,
-                name: data.name,
-                nickname: data.nickname.isEmpty ? nil : data.nickname,
+                username: data.username,
                 email: data.email,
                 score: 0
             )

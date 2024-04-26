@@ -25,14 +25,14 @@ final class BoardDetailViewModel: ObservableObject {
     }
     
     @MainActor
-    func changeNicknameSorting() {
+    func changeUsernameSorting() {
         switch state.board.sorted {
-        case .nicknameAscending:
-            state.board.sortByNicknameDescending()
-        case .nicknameDescending:
-            state.board.sortByNicknameAscending()
+        case .usernameAscending:
+            state.board.sortByUsernameDescending()
+        case .usernameDescending:
+            state.board.sortByUsernameAscending()
         default:
-            state.board.sortByNicknameAscending()
+            state.board.sortByUsernameAscending()
         }
     }
     

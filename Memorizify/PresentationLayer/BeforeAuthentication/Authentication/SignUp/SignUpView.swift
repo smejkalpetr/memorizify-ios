@@ -68,14 +68,14 @@ struct SignUpView: View {
     
     @ViewBuilder
     private var usernameField: some View {
-        TextField("", text: $viewModel.state.name, onEditingChanged: { isStart in
+        TextField("", text: $viewModel.state.username, onEditingChanged: { isStart in
             guard (!isStart) else { return }
             viewModel.validateNameField()
         })
-            .textFieldStyle(PrimaryTextFieldStyle(title: "Name"))
+            .textFieldStyle(PrimaryTextFieldStyle(title: "Username"))
             .autocorrectionDisabled()
             .textInputAutocapitalization(.never)
-        Text(viewModel.state.nameError)
+        Text(viewModel.state.usernameError)
             .foregroundStyle(.red)
             .font(.caption)
     }

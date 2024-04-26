@@ -1,17 +1,17 @@
 //
-//  ValidateNameUseCase.swift
+//  ValidateGuildNameUseCase.swift
 //  Memorizify
 //
-//  Created by Petr Šmejkal on 19.03.2024.
+//  Created by Petr Šmejkal on 26.04.2024.
 //
 
 import Foundation
 
-protocol ValidateNameUseCase {
+protocol ValidateGuildNameUseCase {
     func execute(name: String) throws
 }
 
-struct ValidateNameUseCaseImpl: ValidateNameUseCase {
+struct ValidateGuildNameUseCaseImpl: ValidateGuildNameUseCase {
     
     init() {}
     
@@ -19,6 +19,6 @@ struct ValidateNameUseCaseImpl: ValidateNameUseCase {
         let nameRegEx = "^[0-9a-zA-Z_ ]{2,32}$"
         
         let namePred = NSPredicate(format:"SELF MATCHES %@", nameRegEx)
-        guard namePred.evaluate(with: name) else { throw ValidationError.invalidName }
+        guard namePred.evaluate(with: name) else { throw ValidationError.invalidGuildName }
     }
 }

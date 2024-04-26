@@ -59,6 +59,7 @@
 		1D1E2A552BD7F65B0005B4A6 /* ChangePasswordUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1E2A542BD7F65B0005B4A6 /* ChangePasswordUseCase.swift */; };
 		1D1F97D42BD984870025FC73 /* OnFirstAppear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1F97D32BD984870025FC73 /* OnFirstAppear.swift */; };
 		1D1F97DA2BD9A69D0025FC73 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1F97D92BD9A69D0025FC73 /* LaunchScreenView.swift */; };
+		1D23E2F02BDBA6F6007F35FB /* ValidateGuildNameUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D23E2EF2BDBA6F6007F35FB /* ValidateGuildNameUseCase.swift */; };
 		1D26EBAF2BC55FC000F5E1B5 /* Storyline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D26EBAE2BC55FC000F5E1B5 /* Storyline.swift */; };
 		1D26EBB12BC5605000F5E1B5 /* StorylineKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D26EBB02BC5605000F5E1B5 /* StorylineKind.swift */; };
 		1D26EBB32BC5633E00F5E1B5 /* StorylinesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D26EBB22BC5633E00F5E1B5 /* StorylinesViewModel.swift */; };
@@ -88,7 +89,7 @@
 		1D544DFD2BA76A79003C486F /* FirebaseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D544DFC2BA76A79003C486F /* FirebaseUser.swift */; };
 		1D544E032BA76ABD003C486F /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D544E022BA76ABD003C486F /* ValidationError.swift */; };
 		1D544E082BA76B1D003C486F /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D544E072BA76B1D003C486F /* PrimaryButtonStyle.swift */; };
-		1D5E9CB52BA9E06400EF6400 /* ValidateNameUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5E9CB42BA9E06400EF6400 /* ValidateNameUseCase.swift */; };
+		1D5E9CB52BA9E06400EF6400 /* ValidateUsernameUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5E9CB42BA9E06400EF6400 /* ValidateUsernameUseCase.swift */; };
 		1D5E9CB72BA9E0D800EF6400 /* ValidateEmailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5E9CB62BA9E0D800EF6400 /* ValidateEmailUseCase.swift */; };
 		1D5E9CB92BA9E10C00EF6400 /* ValidatePasswordUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5E9CB82BA9E10C00EF6400 /* ValidatePasswordUseCase.swift */; };
 		1D5E9CBB2BA9E15900EF6400 /* ValidateRepeatedPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5E9CBA2BA9E15900EF6400 /* ValidateRepeatedPassword.swift */; };
@@ -171,7 +172,6 @@
 		1DA1DD2D2BCD9B8E00185C76 /* BoardsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1DD2C2BCD9B8E00185C76 /* BoardsRepository.swift */; };
 		1DA1DD302BCD9BD800185C76 /* BoardRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1DD2F2BCD9BD800185C76 /* BoardRepositoryImpl.swift */; };
 		1DA1DD322BCD9C0600185C76 /* LoadBoardUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1DD312BCD9C0600185C76 /* LoadBoardUseCase.swift */; };
-		1DA1DD342BCDA07600185C76 /* ValidateNicknameUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1DD332BCDA07600185C76 /* ValidateNicknameUseCase.swift */; };
 		1DAA3FAF2BD4790F0035B77A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DAA3FAE2BD4790F0035B77A /* LaunchScreen.storyboard */; };
 		1DAA3FBF2BD5BD410035B77A /* PageControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAA3FBE2BD5BD410035B77A /* PageControlView.swift */; };
 		1DAF516A2BD3FD1A00FCAE99 /* AnimatePlaceholders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAF51692BD3FD1900FCAE99 /* AnimatePlaceholders.swift */; };
@@ -296,6 +296,7 @@
 		1D1E2A542BD7F65B0005B4A6 /* ChangePasswordUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordUseCase.swift; sourceTree = "<group>"; };
 		1D1F97D32BD984870025FC73 /* OnFirstAppear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnFirstAppear.swift; sourceTree = "<group>"; };
 		1D1F97D92BD9A69D0025FC73 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
+		1D23E2EF2BDBA6F6007F35FB /* ValidateGuildNameUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateGuildNameUseCase.swift; sourceTree = "<group>"; };
 		1D26EBAE2BC55FC000F5E1B5 /* Storyline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyline.swift; sourceTree = "<group>"; };
 		1D26EBB02BC5605000F5E1B5 /* StorylineKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorylineKind.swift; sourceTree = "<group>"; };
 		1D26EBB22BC5633E00F5E1B5 /* StorylinesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorylinesViewModel.swift; sourceTree = "<group>"; };
@@ -325,7 +326,7 @@
 		1D544DFC2BA76A79003C486F /* FirebaseUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUser.swift; sourceTree = "<group>"; };
 		1D544E022BA76ABD003C486F /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 		1D544E072BA76B1D003C486F /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
-		1D5E9CB42BA9E06400EF6400 /* ValidateNameUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateNameUseCase.swift; sourceTree = "<group>"; };
+		1D5E9CB42BA9E06400EF6400 /* ValidateUsernameUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateUsernameUseCase.swift; sourceTree = "<group>"; };
 		1D5E9CB62BA9E0D800EF6400 /* ValidateEmailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateEmailUseCase.swift; sourceTree = "<group>"; };
 		1D5E9CB82BA9E10C00EF6400 /* ValidatePasswordUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatePasswordUseCase.swift; sourceTree = "<group>"; };
 		1D5E9CBA2BA9E15900EF6400 /* ValidateRepeatedPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateRepeatedPassword.swift; sourceTree = "<group>"; };
@@ -408,7 +409,6 @@
 		1DA1DD2C2BCD9B8E00185C76 /* BoardsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardsRepository.swift; sourceTree = "<group>"; };
 		1DA1DD2F2BCD9BD800185C76 /* BoardRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardRepositoryImpl.swift; sourceTree = "<group>"; };
 		1DA1DD312BCD9C0600185C76 /* LoadBoardUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadBoardUseCase.swift; sourceTree = "<group>"; };
-		1DA1DD332BCDA07600185C76 /* ValidateNicknameUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateNicknameUseCase.swift; sourceTree = "<group>"; };
 		1DAA3FAE2BD4790F0035B77A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1DAA3FBE2BD5BD410035B77A /* PageControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlView.swift; sourceTree = "<group>"; };
 		1DAF51672BD3F79B00FCAE99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Memorizify/Application/Info/Info.plist; sourceTree = SOURCE_ROOT; };
@@ -1726,11 +1726,11 @@
 		1DCA58222BDB06BF000DB378 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				1D5E9CB42BA9E06400EF6400 /* ValidateNameUseCase.swift */,
-				1DA1DD332BCDA07600185C76 /* ValidateNicknameUseCase.swift */,
+				1D5E9CB42BA9E06400EF6400 /* ValidateUsernameUseCase.swift */,
 				1D5E9CB62BA9E0D800EF6400 /* ValidateEmailUseCase.swift */,
 				1D5E9CB82BA9E10C00EF6400 /* ValidatePasswordUseCase.swift */,
 				1D5E9CBA2BA9E15900EF6400 /* ValidateRepeatedPassword.swift */,
+				1D23E2EF2BDBA6F6007F35FB /* ValidateGuildNameUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -2139,7 +2139,7 @@
 				1DF42B482BCEF8620094C263 /* GuildsError.swift in Sources */,
 				1DAA3FBF2BD5BD410035B77A /* PageControlView.swift in Sources */,
 				1D7B7A2D2BCE891300A18E12 /* GuildDetailView.swift in Sources */,
-				1D5E9CB52BA9E06400EF6400 /* ValidateNameUseCase.swift in Sources */,
+				1D5E9CB52BA9E06400EF6400 /* ValidateUsernameUseCase.swift in Sources */,
 				1DAF516A2BD3FD1A00FCAE99 /* AnimatePlaceholders.swift in Sources */,
 				1D7B7A2F2BCE891E00A18E12 /* GuildDetailViewModel.swift in Sources */,
 				1DD7EB1D2BB0A136005CE24D /* CheckLocalNotificationAuthorizationUseCase.swift in Sources */,
@@ -2152,6 +2152,7 @@
 				1D0821742BCC6DE700F1F8F3 /* UserRepository.swift in Sources */,
 				1D0821692BCAE0A400F1F8F3 /* FormatSecondsToStringUseCase.swift in Sources */,
 				1D7B7A2A2BCE851300A18E12 /* GuildsViewModel.swift in Sources */,
+				1D23E2F02BDBA6F6007F35FB /* ValidateGuildNameUseCase.swift in Sources */,
 				1D7B7A0C2BCE7DB500A18E12 /* BoardDetailView.swift in Sources */,
 				1DA1DD2D2BCD9B8E00185C76 /* BoardsRepository.swift in Sources */,
 				1D0F824E2BD154D300FAD74C /* RemoveGuildForCurrentUserUseCase.swift in Sources */,
@@ -2160,7 +2161,6 @@
 				1D0F82572BD18DD800FAD74C /* GuildDetailUpdateGuildViewModel.swift in Sources */,
 				1D84AD2F2BAB71A20048AC9C /* UserDefaultsKey.swift in Sources */,
 				1D0821552BCAC31800F1F8F3 /* Phase.swift in Sources */,
-				1DA1DD342BCDA07600185C76 /* ValidateNicknameUseCase.swift in Sources */,
 				1DA1DD302BCD9BD800185C76 /* BoardRepositoryImpl.swift in Sources */,
 				1D7B7A242BCE841900A18E12 /* GuildsRepositoryImpl.swift in Sources */,
 				1D3D32842BA6F8AB0039DA08 /* SignUpView.swift in Sources */,
@@ -2363,7 +2363,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Memorizify/Application/Entitlements/Memorizify.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202404260052;
+				CURRENT_PROJECT_VERSION = 202404261126;
 				DEVELOPMENT_ASSET_PATHS = "\"Memorizify/Application/Preview Content\"";
 				DEVELOPMENT_TEAM = 4C5MQDTY94;
 				ENABLE_PREVIEWS = YES;
@@ -2382,7 +2382,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.0;
+				MARKETING_VERSION = 0.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.smejkalp.memorizify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -2398,7 +2398,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Memorizify/Application/Entitlements/Memorizify.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202404260052;
+				CURRENT_PROJECT_VERSION = 202404261126;
 				DEVELOPMENT_ASSET_PATHS = "\"Memorizify/Application/Preview Content\"";
 				DEVELOPMENT_TEAM = 4C5MQDTY94;
 				ENABLE_PREVIEWS = YES;
@@ -2417,7 +2417,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.0;
+				MARKETING_VERSION = 0.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.smejkalp.memorizify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

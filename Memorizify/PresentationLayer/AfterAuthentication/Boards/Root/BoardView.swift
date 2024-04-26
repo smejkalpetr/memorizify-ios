@@ -164,7 +164,7 @@ struct BoardView: View {
             Text("Rank")
                 .bold()
                 .padding([.vertical, .trailing])
-            Text("Nickname")
+            Text("Username")
                 .bold()
             Spacer()
             Text("Score")
@@ -177,7 +177,7 @@ struct BoardView: View {
             HStack {
                 Text("\(index + 1)")
                     .padding([.vertical, .trailing])
-                Text(record.nickname)
+                Text(record.username)
                 if index == 0 {
                     Text("🥇")
                 } else if index == 1 {

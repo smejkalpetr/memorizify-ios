@@ -26,12 +26,11 @@ struct GuildsRepositoryImpl: GuildsRepository {
         guard let storylineKind = StorylineKind(rawValue: storylineKindRawValue) else { throw StorylinesError.failedToInitializeFromRawValue }
                
         // Save new Guild
-        #warning("FIXME: Remove hard-coded strings when localization is available!")
         let guild = Guild(
             name: name,
             board: Board(
                 records: [
-                    BoardRecord(uid: user.uid, nickname: user.nickname ?? "Anonymous", score: 0.0, isLeader: true)
+                    BoardRecord(uid: user.uid, username: user.username, score: 0.0, isLeader: true)
                 ]
             ),
             leaderUid: user.uid,

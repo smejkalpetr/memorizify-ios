@@ -35,8 +35,7 @@ struct InvitationsRepositoryImpl: InvitationsRepository {
         let usersInvitations = try await getInvitationsForUser(with: email)
         guard !usersInvitations.contains(where: { $0.guildId == guildId }) else { throw InvitationsError.alreadyInvited }
         
-        #warning("FIXME: Remove hard-coded strings when localization is available!")
-        let invitation = Invitation(email: email, guildId: guildId, guildName: guildName, senderNickname: user.nickname ?? "Anonymous", senderUid: user.uid, date: date)
+        let invitation = Invitation(email: email, guildId: guildId, guildName: guildName, senderUsername: user.username, senderUid: user.uid, date: date)
                
         let invitationDict = try Firestore.Encoder().encode(invitation)
         
@@ -125,11 +124,10 @@ struct InvitationsRepositoryImpl: InvitationsRepository {
         guard !searchedGuild.board.records.contains(where: { $0.uid == user.uid }) else { throw InvitationsError.alreadyMember }
         
         var newBoard = searchedGuild.board
-        #warning("FIXME: Remove hard-coded strings when localization is available!")
         newBoard.records.append(
             BoardRecord(
                 uid: user.uid,
-                nickname: user.nickname ?? "Anonymous",
+                username: user.username,
                 score: 0.0
             )
         )

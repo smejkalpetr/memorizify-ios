@@ -225,7 +225,7 @@ struct GuildsView: View {
                 Text(String(localized: "Invitation from").uppercased())
                     .font(.footnote)
                     .opacity(0.45)
-                Text("\(invitation.senderNickname)")
+                Text("\(invitation.senderUsername)")
                     .bold()
             }
             HStack {
