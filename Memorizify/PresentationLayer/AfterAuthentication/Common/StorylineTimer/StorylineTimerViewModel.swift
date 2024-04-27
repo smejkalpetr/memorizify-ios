@@ -30,18 +30,18 @@ final class StorylineTimerViewModel: ObservableObject, PomodoroTimerDelegate {
         var countdown = ""
         var transition: LocalizedStringResource?
         
-        var timerKind: PomodorTimerKind
+        var timerKind: PomodoroTimerKind
         var storyline: Storyline
         var page: StorylinePage
         
-        init(storyline: Storyline, page: StorylinePage, timerKind: PomodorTimerKind) {
+        init(storyline: Storyline, page: StorylinePage, timerKind: PomodoroTimerKind) {
             self.storyline = storyline
             self.page = page
             self.timerKind = timerKind
         }
     }
     
-    init(storyline: Storyline, page: StorylinePage, timer: PomodoroTimer, timerKind: PomodorTimerKind) {
+    init(storyline: Storyline, page: StorylinePage, timer: PomodoroTimer, timerKind: PomodoroTimerKind) {
         self.timer = timer
         self.state = State(storyline: storyline, page: page, timerKind: timerKind)
     }

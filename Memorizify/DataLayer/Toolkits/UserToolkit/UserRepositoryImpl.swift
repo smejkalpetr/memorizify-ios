@@ -7,14 +7,19 @@
 
 import Firebase
 
+/// Implementation of the UserRepository protocol.
 struct UserRepositoryImpl: UserRepository {
     
     private let authenticationRepository: AuthenticationRepository
     
+    /// Initializes a new instance of UserRepositoryImpl.
+    /// - Parameter authenticationRepository: The repository for authentication operations.
     init(authenticationRepository: AuthenticationRepository) {
         self.authenticationRepository = authenticationRepository
     }
     
+    /// Retrieves the current user asynchronously.
+    /// - Returns: The current user.
     func getCurrentUser() async throws -> User {
         let db = Firestore.firestore()
         let usersCollectionRef = db.collection(Constants.FIREBASE_COLLECTION_USERS)
@@ -28,6 +33,9 @@ struct UserRepositoryImpl: UserRepository {
         return try documentSnapshot.data(as: User.self)
     }
     
+    /// Retrieves a user with the specified email address asynchronously.
+    /// - Parameter email: The email address of the user to retrieve.
+    /// - Returns: The user with the specified email address.
     func getUser(with email: String) async throws -> User {
         let db = Firestore.firestore()
         
@@ -52,6 +60,9 @@ struct UserRepositoryImpl: UserRepository {
         throw UserError.notFound
     }
     
+    /// Retrieves a user with the specified UID asynchronously.
+    /// - Parameter uid: The UID of the user to retrieve.
+    /// - Returns: The user with the specified UID.
     func getUser(uid: String) async throws -> User {
         let db = Firestore.firestore()
         
@@ -75,6 +86,8 @@ struct UserRepositoryImpl: UserRepository {
         throw UserError.notFound
     }
     
+    /// Updates the user asynchronously.
+    /// - Parameter user: The user to update.
     func update(user: User) async throws {
         let db = Firestore.firestore()
         let usersCollectionRef = db.collection(Constants.FIREBASE_COLLECTION_USERS)
@@ -94,6 +107,8 @@ struct UserRepositoryImpl: UserRepository {
         }
     }
     
+    /// Removes a guild for the current user asynchronously.
+    /// - Parameter guild: The guild to remove.
     func removeGuildForCurrentUser(_ guild: Guild) async throws {
         // Remove guild from User entity
         let user = try await getCurrentUser()
@@ -105,6 +120,8 @@ struct UserRepositoryImpl: UserRepository {
         try await update(user: newUser)
     }
     
+    /// Deletes a user asynchronously.
+    /// - Parameter user: The user to delete.
     func delete(user: User) async throws {
         let db = Firestore.firestore()
         let usersCollectionRef = db.collection(Constants.FIREBASE_COLLECTION_USERS)

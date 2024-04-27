@@ -5,10 +5,15 @@
 //  Created by Petr Šmejkal on 27.04.2024.
 //
 
+/// Protocol for deleting user account.
 protocol DeleteAccountUseCase {
+    
+    /// Deletes the user account.
+    /// - Parameter password: The password of the user.
     func execute(password: String) async throws
 }
 
+/// Implementation of `DeleteAccountUseCase`.
 struct DeleteAccountUseCaseImpl: DeleteAccountUseCase {
     
     private let storylinesRepository: StorylinesRepository
@@ -18,6 +23,14 @@ struct DeleteAccountUseCaseImpl: DeleteAccountUseCase {
     private let authenticationRepository: AuthenticationRepository
     private let checkPasswordUseCase: CheckPasswordUseCase
     
+    /// Initializes the use case.
+    /// - Parameters:
+    ///   - storylinesRepository: Repository for managing storylines.
+    ///   - invitationsRepository: Repository for managing invitations.
+    ///   - guildsRepository: Repository for managing guilds.
+    ///   - userRepository: Repository for managing user data.
+    ///   - authenticationRepository: Repository for managing authentication.
+    ///   - checkPasswordUseCase: Use case for checking the user's password.
     init(
         storylinesRepository: StorylinesRepository,
         invitationsRepository: InvitationsRepository,
@@ -34,21 +47,20 @@ struct DeleteAccountUseCaseImpl: DeleteAccountUseCase {
         self.checkPasswordUseCase = checkPasswordUseCase
     }
     
+    /// Deletes the user account.
+    /// - Parameter password: The password of the user.
     func execute(password: String) async throws {
         // Check if user has provided correct password
         try await checkPasswordUseCase.execute(password: password)
         
+        // Get current user
         if let user = try? await userRepository.getCurrentUser() {
-            // Delete all storylines
+            // Delete all storylines, invitations, and guilds associated with the user
             try? await storylinesRepository.deleteAll(of: user.uid)
-            
-            // Delete all invitations
             try? await invitationsRepository.deleteAll(of: user.uid)
-            
-            // Delete all guilds
             try? await guildsRepository.deleteAll(of: user.uid)
             
-            // Delete user
+            // Delete user data
             try? await userRepository.delete(user: user)
         }
         

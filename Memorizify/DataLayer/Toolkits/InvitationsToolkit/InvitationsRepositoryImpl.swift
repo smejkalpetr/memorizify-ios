@@ -8,18 +8,30 @@
 import Foundation
 import Firebase
 
+/// Implementation of the InvitationsRepository protocol.
 struct InvitationsRepositoryImpl: InvitationsRepository {
     
     private let authenticationRepository: AuthenticationRepository
     private let userRepository: UserRepository
     private let guildsRepository: GuildsRepository
-        
+    
+    /// Initializes a new instance of InvitationsRepositoryImpl.
+    /// - Parameters:
+    ///   - authenticationRepository: The repository for authentication operations.
+    ///   - userRepository: The repository for user-related operations.
+    ///   - guildsRepository: The repository for guild-related operations.
     init(authenticationRepository: AuthenticationRepository, userRepository: UserRepository, guildsRepository: GuildsRepository) {
         self.authenticationRepository = authenticationRepository
         self.userRepository = userRepository
         self.guildsRepository = guildsRepository
     }
     
+    /// Adds an invitation asynchronously.
+    /// - Parameters:
+    ///   - email: The email of the invited user.
+    ///   - guildId: The ID of the guild.
+    ///   - guildName: The name of the guild.
+    ///   - date: The date of the invitation.
     func add(to email: String, guildId: String, guildName: String, at date: Date) async throws {
         let db = Firestore.firestore()
         
@@ -41,17 +53,19 @@ struct InvitationsRepositoryImpl: InvitationsRepository {
         
         let collectionRef = db.collection(Constants.FIREBASE_COLLECTION_INVITATIONS)
         
-        // Save Invation to the 'invitations' collection
+        // Save Invitation to the 'invitations' collection
         MemorizifyLogger.logDocumentsUpdate(file: #file, line: #line, documentPath: collectionRef.path + "/newDocument", data: invitationDict)
         try await collectionRef.addDocument(data: invitationDict)
     }
     
+    /// Retrieves all invitations asynchronously.
+    /// - Returns: An array of invitations.
     func getAll() async throws -> [Invitation] {
         let db = Firestore.firestore()
         
         var invitations: [Invitation] = []
         
-        // Make reference to invtiations collection
+        // Make reference to invitations collection
         let invitationsCollectionRef = db.collection(Constants.FIREBASE_COLLECTION_INVITATIONS)
         
         // Fetch all documents from the collection
@@ -67,6 +81,9 @@ struct InvitationsRepositoryImpl: InvitationsRepository {
         return invitations
     }
     
+    /// Retrieves invitations for a specific user asynchronously.
+    /// - Parameter email: The email of the user.
+    /// - Returns: An array of invitations for the user.
     func getInvitationsForUser(with email: String) async throws -> [Invitation] {
         let db = Firestore.firestore()
         
@@ -74,7 +91,7 @@ struct InvitationsRepositoryImpl: InvitationsRepository {
         
         var invitations: [Invitation] = []
         
-        // Make reference to invtiations collection
+        // Make reference to invitations collection
         let invitationsCollectionRef = db.collection(Constants.FIREBASE_COLLECTION_INVITATIONS)
         
         // Fetch all documents from the collection
@@ -87,14 +104,14 @@ struct InvitationsRepositoryImpl: InvitationsRepository {
             invitations.append(invitation)
         }
         
-        // Delete invtations which are older than 48 hours
+        // Delete invitations which are older than 48 hours
         for invitation in invitations {
             if let diff = Calendar.current.dateComponents([.hour], from: invitation.date, to: Date()).hour, diff > 48 {
                 try await delete(invitation)
             }
         }
         
-        // Filter out invitaions (those which contain user's uid)
+        // Filter out invitations (those which contain user's uid)
         var filteredInvitations: [Invitation] = []
         for invitation in invitations {
             let invitedUser = try await userRepository.getUser(with: invitation.email)
@@ -107,11 +124,15 @@ struct InvitationsRepositoryImpl: InvitationsRepository {
         return filteredInvitations
     }
     
+    /// Retrieves invitations for the current user asynchronously.
+    /// - Returns: An array of invitations for the current user.
     func getMyInvitations() async throws -> [Invitation] {
         let user = try await userRepository.getCurrentUser()
         return try await getInvitationsForUser(with: user.email)
     }
     
+    /// Accepts an invitation asynchronously.
+    /// - Parameter invitation: The invitation to accept.
     func accept(_ invitation: Invitation) async throws {
         // Delete the invitation from invitations collection
         try await delete(invitation)
@@ -147,14 +168,18 @@ struct InvitationsRepositoryImpl: InvitationsRepository {
         try await userRepository.update(user: newUser)
     }
     
+    /// Declines an invitation asynchronously.
+    /// - Parameter invitation: The invitation to decline.
     func decline(_ invitation: Invitation) async throws {
         try await delete(invitation)
     }
     
+    /// Updates an invitation asynchronously.
+    /// - Parameter invitation: The invitation to update.
     func update(_ invitation: Invitation) async throws {
         let db = Firestore.firestore()
 
-        // Make reference to invtiations collection
+        // Make reference to invitations collection
         let invitationsCollectionRef = db.collection(Constants.FIREBASE_COLLECTION_INVITATIONS)
     
         // Fetch all documents from the collection
@@ -175,6 +200,8 @@ struct InvitationsRepositoryImpl: InvitationsRepository {
         }
     }
     
+    /// Deletes all invitations for a specific guild asynchronously.
+    /// - Parameter guild: The guild for which invitations should be deleted.
     func deleteAllForGuild(_ guild: Guild) async throws {
         let invitations = try await getAll()
         
@@ -185,10 +212,12 @@ struct InvitationsRepositoryImpl: InvitationsRepository {
         }
     }
     
+    /// Deletes all invitations for a specific user asynchronously.
+    /// - Parameter userUid: The UID of the user for whom invitations should be deleted.
     func deleteAll(of userUid: String) async throws {
         let db = Firestore.firestore()
 
-        // Make reference to invtiations collection
+        // Make reference to invitations collection
         let invitationsCollectionRef = db.collection(Constants.FIREBASE_COLLECTION_INVITATIONS)
         
         // Get the user's email
@@ -210,10 +239,12 @@ struct InvitationsRepositoryImpl: InvitationsRepository {
     
     // MARK: Private
     
+    /// Deletes an invitation asynchronously.
+    /// - Parameter invitation: The invitation to delete.
     private func delete(_ invitation: Invitation) async throws {
         let db = Firestore.firestore()
 
-        // Make reference to invtiations collection
+        // Make reference to invitations collection
         let invitationsCollectionRef = db.collection(Constants.FIREBASE_COLLECTION_INVITATIONS)
     
         // Fetch all documents from the collection

@@ -134,7 +134,6 @@
 		1D7B7A2A2BCE851300A18E12 /* GuildsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B7A292BCE851300A18E12 /* GuildsViewModel.swift */; };
 		1D7B7A2D2BCE891300A18E12 /* GuildDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B7A2C2BCE891300A18E12 /* GuildDetailView.swift */; };
 		1D7B7A2F2BCE891E00A18E12 /* GuildDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B7A2E2BCE891E00A18E12 /* GuildDetailViewModel.swift */; };
-		1D7B7A312BCEAA3900A18E12 /* GuildPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B7A302BCEAA3900A18E12 /* GuildPreview.swift */; };
 		1D7B7A342BCEAD3E00A18E12 /* InvitationsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B7A332BCEAD3E00A18E12 /* InvitationsError.swift */; };
 		1D7B7A372BCEB1A600A18E12 /* GuildSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B7A362BCEB1A600A18E12 /* GuildSetupView.swift */; };
 		1D7B7A392BCEB1AF00A18E12 /* GuildSetupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7B7A382BCEB1AF00A18E12 /* GuildSetupViewModel.swift */; };
@@ -392,7 +391,6 @@
 		1D7B7A292BCE851300A18E12 /* GuildsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildsViewModel.swift; sourceTree = "<group>"; };
 		1D7B7A2C2BCE891300A18E12 /* GuildDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildDetailView.swift; sourceTree = "<group>"; };
 		1D7B7A2E2BCE891E00A18E12 /* GuildDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildDetailViewModel.swift; sourceTree = "<group>"; };
-		1D7B7A302BCEAA3900A18E12 /* GuildPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildPreview.swift; sourceTree = "<group>"; };
 		1D7B7A332BCEAD3E00A18E12 /* InvitationsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationsError.swift; sourceTree = "<group>"; };
 		1D7B7A362BCEB1A600A18E12 /* GuildSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildSetupView.swift; sourceTree = "<group>"; };
 		1D7B7A382BCEB1AF00A18E12 /* GuildSetupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildSetupViewModel.swift; sourceTree = "<group>"; };
@@ -1373,7 +1371,6 @@
 			isa = PBXGroup;
 			children = (
 				1D7B7A172BCE7FCE00A18E12 /* Guild.swift */,
-				1D7B7A302BCEAA3900A18E12 /* GuildPreview.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2212,7 +2209,6 @@
 				1D0F82642BD2A70100FAD74C /* SettingsError.swift in Sources */,
 				1D1AD34C2BAD6674008827BA /* CheckHasUserSeenOnboardingUseCase.swift in Sources */,
 				1DD7EB172BB09B81005CE24D /* RequestLocalNotificationAuthorizationUseCase.swift in Sources */,
-				1D7B7A312BCEAA3900A18E12 /* GuildPreview.swift in Sources */,
 				1DAF51712BD42BA000FCAE99 /* StorylineDetailView.swift in Sources */,
 				1D7B7A422BCED11E00A18E12 /* DeleteGuildUseCase.swift in Sources */,
 				1D7B7A182BCE7FCE00A18E12 /* Guild.swift in Sources */,
@@ -2517,7 +2513,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Memorizify/Application/Entitlements/Memorizify.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202404272346;
+				CURRENT_PROJECT_VERSION = 202404280137;
 				DEVELOPMENT_ASSET_PATHS = "\"Memorizify/Application/Preview Content\"";
 				DEVELOPMENT_TEAM = 4C5MQDTY94;
 				ENABLE_PREVIEWS = YES;
@@ -2536,7 +2532,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.6;
+				MARKETING_VERSION = 0.3.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.smejkalp.memorizify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -2552,7 +2548,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Memorizify/Application/Entitlements/Memorizify.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202404272346;
+				CURRENT_PROJECT_VERSION = 202404280137;
 				DEVELOPMENT_ASSET_PATHS = "\"Memorizify/Application/Preview Content\"";
 				DEVELOPMENT_TEAM = 4C5MQDTY94;
 				ENABLE_PREVIEWS = YES;
@@ -2571,7 +2567,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.6;
+				MARKETING_VERSION = 0.3.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.smejkalp.memorizify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

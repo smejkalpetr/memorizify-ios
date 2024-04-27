@@ -7,14 +7,19 @@
 
 import Firebase
 
+/// Implementation of the BoardsRepository protocol.
 struct BoardsRepositoryImpl: BoardsRepository {
     
     private let authenticationRepository: AuthenticationRepository
     
+    /// Initializes a new instance of BoardsRepositoryImpl.
+    /// - Parameter authenticationRepository: The repository for authentication operations.
     init(authenticationRepository: AuthenticationRepository) {
         self.authenticationRepository = authenticationRepository
     }
     
+    /// Retrieves the leaderboard asynchronously.
+    /// - Returns: The leaderboard containing board records.
     func getBoard() async throws -> Board {
         let db = Firestore.firestore()
         

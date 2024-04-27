@@ -8,16 +8,27 @@
 import Foundation
 import Firebase
 
+/// Implementation of the GuildsRepository protocol.
 struct GuildsRepositoryImpl: GuildsRepository {
     
     private let authenticationRepository: AuthenticationRepository
     private let userRepository: UserRepository
     
+    /// Initializes a new instance of GuildsRepositoryImpl.
+    /// - Parameters:
+    ///   - authenticationRepository: The repository for authentication operations.
+    ///   - userRepository: The repository for user-related operations.
     init(authenticationRepository: AuthenticationRepository, userRepository: UserRepository) {
         self.authenticationRepository = authenticationRepository
         self.userRepository = userRepository
     }
     
+    /// Adds a guild asynchronously.
+    /// - Parameters:
+    ///   - name: The name of the guild.
+    ///   - goal: The goal of the guild.
+    ///   - storylineKindRawValue: The raw value of the storyline kind.
+    /// - Returns: The ID of the added guild.
     func add(name: String, goal: TimeInterval, storylineKindRawValue: String) async throws -> String {
         let db = Firestore.firestore()
         
@@ -56,6 +67,9 @@ struct GuildsRepositoryImpl: GuildsRepository {
         return guild.id
     }
     
+    /// Retrieves all guilds for a specific user asynchronously.
+    /// - Parameter email: The email of the user.
+    /// - Returns: An array of guilds for the user.
     func getAllGuildsForUser(with email: String) async throws -> [Guild]? {
         guard let guilds = try await getAllGuilds() else { return nil }
         
@@ -69,11 +83,15 @@ struct GuildsRepositoryImpl: GuildsRepository {
         return guilds.filter { guildIds.contains($0.id) }
     }
     
+    /// Retrieves guilds for the current user asynchronously.
+    /// - Returns: An array of guilds for the current user.
     func getMyGuilds() async throws -> [Guild]? {
         let user = try await userRepository.getCurrentUser()
         return try await getAllGuildsForUser(with: user.email)
     }
     
+    /// Retrieves all guilds asynchronously.
+    /// - Returns: An array of all guilds.
     func getAllGuilds() async throws -> [Guild]? {
         let db = Firestore.firestore()
         
@@ -95,11 +113,15 @@ struct GuildsRepositoryImpl: GuildsRepository {
         return guilds.isEmpty ? nil : guilds
     }
     
+    /// Updates a guild asynchronously.
+    /// - Parameter guild: The guild to update.
     func update(_ guild: Guild) async throws {
         try await delete(guild)
         try await add(guild)
     }
     
+    /// Deletes a guild asynchronously.
+    /// - Parameter guild: The guild to delete.
     func delete(_ guild: Guild) async throws {
         let db = Firestore.firestore()
         
@@ -110,7 +132,7 @@ struct GuildsRepositoryImpl: GuildsRepository {
         MemorizifyLogger.logDocumentsFetch(file: #file, line: #line, documentPath: guildsCollectionRef.path)
         let querySnapshot = try await guildsCollectionRef.getDocuments()
         
-        // Iterate through the documents and decode them into Guild objects
+        // Iterate through the documents and delete the specified guild
         for document in querySnapshot.documents {
             let searchedGuild = try document.data(as: Guild.self)
             if searchedGuild.id == guild.id {
@@ -120,6 +142,8 @@ struct GuildsRepositoryImpl: GuildsRepository {
         }
     }
     
+    /// Adds a guild asynchronously.
+    /// - Parameter guild: The guild to add.
     func add(_ guild: Guild) async throws {
         let db = Firestore.firestore()
         
@@ -141,6 +165,8 @@ struct GuildsRepositoryImpl: GuildsRepository {
         try await userRepository.update(user: newUser)
     }
     
+    /// Loads a guild asynchronously.
+    /// - Parameter guild: The guild to load.
     func load(_ guild: Guild) async throws -> Guild {
         let db = Firestore.firestore()
         
@@ -151,7 +177,7 @@ struct GuildsRepositoryImpl: GuildsRepository {
         MemorizifyLogger.logDocumentsFetch(file: #file, line: #line, documentPath: guildsCollectionRef.path)
         let querySnapshot = try await guildsCollectionRef.getDocuments()
         
-        // Iterate through the documents and decode them into Guild objects
+        // Iterate through the documents and load the specified guild
         for document in querySnapshot.documents {
             let searchedGuild = try document.data(as: Guild.self)
             if searchedGuild.id == guild.id {
@@ -162,6 +188,8 @@ struct GuildsRepositoryImpl: GuildsRepository {
         throw GuildsError.notFound
     }
     
+    /// Deletes all guilds associated with a specific user asynchronously.
+    /// - Parameter userUid: The UID of the user.
     func deleteAll(of userUid: String) async throws {
         // Get all guilds
         guard let guilds = try await getAllGuilds() else { return }

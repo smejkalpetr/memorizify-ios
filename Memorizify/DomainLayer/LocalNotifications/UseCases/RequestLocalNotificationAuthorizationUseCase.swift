@@ -7,14 +7,19 @@
 
 import UserNotifications
 
+/// Handles the request for local notification authorization.
 protocol RequestLocalNotificationAuthorizationUseCase {
+    
+    /// Executes the request for local notification authorization.
     func execute()
 }
 
+/// Implementation of the RequestLocalNotificationAuthorizationUseCase protocol.
 struct RequestLocalNotificationAuthorizationUseCaseImpl: RequestLocalNotificationAuthorizationUseCase {
     
     init() {}
     
+    /// Executes the request for local notification authorization.
     func execute() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
             if let error = error {

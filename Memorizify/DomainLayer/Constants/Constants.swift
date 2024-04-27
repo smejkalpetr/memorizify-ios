@@ -5,6 +5,7 @@
 //  Created by Petr Šmejkal on 10.04.2024.
 //
 
+/// Constants used throughout the application.
 struct Constants {
     
     // Firestore collections

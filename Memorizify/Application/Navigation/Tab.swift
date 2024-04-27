@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Represents the tabs of the application.
 enum Tab: LocalizedStringResource, Hashable {
     case home = "Home"
     case storylines = "Storylines"

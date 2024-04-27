@@ -7,14 +7,30 @@
 
 import Foundation
 
+/// Represents the data associated with a storyline.
 protocol StorylineData {
+    
+    /// A description of the storyline data.
     var description: String { get }
+    
+    /// The pages associated with the storyline data.
     var pages: [StorylinePage] { get }
     
+    /// Retrieves the current page based on the progress of the storyline.
+    /// - Parameters:
+    ///   - finished: The elapsed time of the storyline.
+    ///   - goal: The total goal time of the storyline.
+    /// - Returns: The current page of the storyline.
     func getCurrentPage(finished: TimeInterval, goal: TimeInterval) throws -> StorylinePage
 }
 
 extension StorylineData {
+    
+    /// Default implementation of retrieving the current page based on the progress of the storyline.
+    /// - Parameters:
+    ///   - finished: The elapsed time of the storyline.
+    ///   - goal: The total goal time of the storyline.
+    /// - Returns: The current page of the storyline.
     func getCurrentPage(finished: TimeInterval, goal: TimeInterval) throws -> StorylinePage {
         let epsilon = 1e-10
         

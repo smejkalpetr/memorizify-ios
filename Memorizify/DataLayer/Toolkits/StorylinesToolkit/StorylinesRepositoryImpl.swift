@@ -8,14 +8,19 @@
 import Firebase
 import FirebaseFirestore
 
+/// Implementation of the StorylinesRepository protocol.
 struct StorylinesRepositoryImpl: StorylinesRepository {
     
     private let authenticationRepository: AuthenticationRepository
     
+    /// Initializes a new instance of StorylinesRepositoryImpl.
+    /// - Parameter authenticationRepository: The repository for authentication operations.
     init(authenticationRepository: AuthenticationRepository) {
         self.authenticationRepository = authenticationRepository
     }
     
+    /// Loads all storylines associated with the current user asynchronously.
+    /// - Returns: An array of Storyline objects, or nil if no storylines are found.
     func loadAll() async throws -> [Storyline]? {
         let db = Firestore.firestore()
         
@@ -41,6 +46,8 @@ struct StorylinesRepositoryImpl: StorylinesRepository {
         return storylines.isEmpty ? nil : storylines
     }
     
+    /// Updates the specified storyline asynchronously.
+    /// - Parameter storyline: The storyline to update.
     func update(_ storyline: Storyline) async throws {
         let db = Firestore.firestore()
         
@@ -59,6 +66,8 @@ struct StorylinesRepositoryImpl: StorylinesRepository {
         try await documentRef.setData(storylineDict)
     }
     
+    /// Deletes the specified storyline asynchronously.
+    /// - Parameter storyline: The storyline to delete.
     func delete(_ storyline: Storyline) async throws {
         let db = Firestore.firestore()
         
@@ -74,6 +83,8 @@ struct StorylinesRepositoryImpl: StorylinesRepository {
         try await documentRef.delete()
     }
     
+    /// Deletes all storylines associated with the specified user UID asynchronously.
+    /// - Parameter userUid: The UID of the user whose storylines will be deleted.
     func deleteAll(of userUid: String) async throws {
         let db = Firestore.firestore()
             

@@ -7,7 +7,10 @@
 
 import Foundation
 
+/// Enum defining keys used for accessing values stored in UserDefaults.
 enum UserDefaultsKey: String, CaseIterable {
+    // Key indicating whether the app has run before. This is important
+    // to be able to clear Keychian after app delete and install (see AppDelegate).
     case hasEverRunBefore
     
     

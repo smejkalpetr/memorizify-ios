@@ -61,7 +61,7 @@ public extension Resolver {
         // User
         register { GetCurrentUserUseCaseImpl(userRepository: resolve()) as GetCurrentUserUseCase }
         
-        register { IncreaseUserScoreUseCaseImpl(userRepository: resolve(), getCurretUserUseCase: resolve()) as IncreaseUserScoreUseCase }
+        register { IncreaseUserScoreUseCaseImpl(userRepository: resolve(), getCurrentUserUseCase: resolve()) as IncreaseUserScoreUseCase }
         
         register { RemoveGuildForCurrentUserUseCaseImpl(userRepository: resolve()) as RemoveGuildForCurrentUserUseCase }
         

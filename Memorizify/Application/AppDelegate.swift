@@ -49,6 +49,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         FirebaseApp.configure(options: options)
     }
     
+    // Clear Keychain on first launch of the app (after delete, for example)
     private func clearKeychain() {
         let keychainProvider: KeychainProvider = Resolver.resolve()
         let userDefaultsProvider: UserDefaultsProvider = Resolver.resolve()

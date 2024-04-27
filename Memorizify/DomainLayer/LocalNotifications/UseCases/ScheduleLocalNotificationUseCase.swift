@@ -7,14 +7,28 @@
 
 import UserNotifications
 
+/// Manages the scheduling of local notifications.
 protocol ScheduleLocalNotificationUseCase {
+    
+    /// Executes the scheduling of a local notification.
+    /// - Parameters:
+    ///   - notification: The notification to be scheduled.
+    ///   - timeInterval: The time interval after which the notification should be delivered.
+    /// - Returns: The scheduled local notification.
     func execute(_ notification: LocalNotification, timeInterval: Double) -> LocalNotification
 }
 
+/// Implementation of the ScheduleLocalNotificationUseCase protocol.
 struct ScheduleLocalNotificationUseCaseImpl: ScheduleLocalNotificationUseCase {
     
+    /// Initializes the ScheduleLocalNotificationUseCaseImpl instance.
     init() {}
     
+    /// Executes the scheduling of a local notification.
+    /// - Parameters:
+    ///   - notification: The notification to be scheduled.
+    ///   - timeInterval: The time interval after which the notification should be delivered.
+    /// - Returns: The scheduled local notification.
     func execute(_ notification: LocalNotification, timeInterval: Double) -> LocalNotification {
         let content = UNMutableNotificationContent()
         content.title = notification.title
