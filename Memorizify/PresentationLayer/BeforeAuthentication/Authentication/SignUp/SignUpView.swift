@@ -54,7 +54,7 @@ struct SignUpView: View {
             emailField
             passwordField
             repeatPasswordField
-            termsAndConditionsToggle
+            privacyPolicy
         }
         .padding()
         .background(
@@ -115,8 +115,33 @@ struct SignUpView: View {
             .font(.caption)
     }
     
-    private var termsAndConditionsToggle: some View {
-        Toggle("I agree to the Terms and Conditions", isOn: $viewModel.state.isAgreementSigned)
+    private var privacyPolicy: some View {
+        HStack {
+            privacyPolicyText
+            Spacer()
+            privacyPolicyToggle
+        }
+        .frame(maxWidth: .infinity)
+    }
+    
+    private var privacyPolicyText: some View {
+        HStack {
+            Text("I agree to the")
+                .font(.callout)
+            if let url = URL(string: Constants.PRIVACY_POLICY_URL) {
+                Link("Privacy Policy", destination: url)
+                    .font(.callout)
+            } else {
+                Text("Error, please visit \(Constants.PRIVACY_POLICY_URL) to review the assignment!")
+                    .font(.footnote)
+                    .foregroundStyle(.red)
+            }
+        }
+    }
+    
+    private var privacyPolicyToggle: some View {
+        Toggle("", isOn: $viewModel.state.isAgreementSigned)
+            .labelsHidden()
             .padding()
             .tint(Color("primary_color"))
     }

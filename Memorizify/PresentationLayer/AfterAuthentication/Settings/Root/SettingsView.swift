@@ -23,6 +23,7 @@ struct SettingsView: View {
                     accountSection
                     otherSection
                     logoutSection
+                    versionSection
                 }
                 .padding()
                 .shadow(radius: 5, x: 3.5, y: 3.5)
@@ -133,12 +134,6 @@ struct SettingsView: View {
             changeNotificationsSettingsItem
         }
     }
-        
-    private var logoutSection: some View {
-        Section {
-            logoutItem
-        }
-    }
     
     private var changeUsernameItem: some View {
         Button() {
@@ -220,11 +215,38 @@ struct SettingsView: View {
         .foregroundStyle(.primary)
     }
     
+    private var logoutSection: some View {
+        Section {
+            logoutItem
+        }
+    }
+    
     private var logoutItem: some View {
         Button("Logout") {
             router.logOut()
         }
         .foregroundStyle(.red)
+    }
+    
+    @ViewBuilder
+    private var versionSection: some View {
+        if let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+            Section() {
+            } footer: {
+                versionNumber(appVersion: appVersion)
+            }
+        }
+    }
+    
+    private func versionNumber(appVersion: String) -> some View {
+        HStack {
+            Spacer()
+            Text("Memorizify \(appVersion)".uppercased())
+                .font(.caption2)
+                .foregroundStyle(colorScheme == .dark ? .white.opacity(0.5) : .black.opacity(0.3))
+            Spacer()
+        }
+        .compositingGroup()
     }
 }
 

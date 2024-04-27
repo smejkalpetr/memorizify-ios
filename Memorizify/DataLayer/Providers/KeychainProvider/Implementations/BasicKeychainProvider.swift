@@ -5,6 +5,10 @@
 //  Created by Petr Šmejkal on 20.03.2024.
 //
 
+// NOTE: This data structure has been taken from a publicly available
+//       project called "Devstack Native App" by "MateeDevs".
+//       The project is available at: https://github.com/MateeDevs/devstack-native-app
+
 import Foundation
 import KeychainAccess
 

@@ -701,6 +701,16 @@
         }
       }
     },
+    "Error, please visit %@ to review the assignment!" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chyba, prosím navštivte %@!"
+          }
+        }
+      }
+    },
     "Failed to load the guild data. Please try again." : {
       "localizations" : {
         "cs" : {
@@ -862,12 +872,12 @@
         }
       }
     },
-    "I agree to the Terms and Conditions" : {
+    "I agree to the" : {
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Souhlasím s podmínkami TODO"
+            "value" : "Souhlasím se"
           }
         }
       }
@@ -1389,6 +1399,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pomodoro Timer"
+          }
+        }
+      }
+    },
+    "Privacy Policy" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zásadami ochrany osobních údajů"
           }
         }
       }
