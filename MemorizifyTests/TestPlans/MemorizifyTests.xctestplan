@@ -1,0 +1,36 @@
+{
+  "configurations" : [
+    {
+      "id" : "FB6CF335-0BB3-4CAD-9CFF-B5C4ABF036BB",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Memorizify.xcodeproj",
+      "identifier" : "1D1BC5802BA6487D00B30A77",
+      "name" : "Memorizify"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Memorizify.xcodeproj",
+        "identifier" : "1D1BC5902BA6487E00B30A77",
+        "name" : "MemorizifyTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Memorizify.xcodeproj",
+        "identifier" : "1D1BC59A2BA6487E00B30A77",
+        "name" : "MemorizifyUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
