@@ -104,4 +104,20 @@ struct UserRepositoryImpl: UserRepository {
         let newUser = User(copy: user, guildIds: newGuildIds)
         try await update(user: newUser)
     }
+    
+    func delete(user: User) async throws {
+        let db = Firestore.firestore()
+        let usersCollectionRef = db.collection(Constants.FIREBASE_COLLECTION_USERS)
+        
+        // Fetch all documents from the collection
+        MemorizifyLogger.logDocumentsFetch(file: #file, line: #line, documentPath: usersCollectionRef.path, description: "Where Field 'uid' == \(user.uid)")
+        let query = usersCollectionRef.whereField("uid", isEqualTo: user.uid)
+        
+        let querySnapshot = try await query.getDocuments()
+        
+        // Iterate through the documents and delete them
+        for document in querySnapshot.documents {
+            try await document.reference.delete()
+        }
+    }
 }

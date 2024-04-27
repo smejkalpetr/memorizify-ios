@@ -14,4 +14,6 @@ protocol AuthenticationRepository {
     func isUserLoggedIn() -> Bool
     func resetPassword(with email: String) async throws
     func changePassword(from currentPassword: String, to newPassword: String) async throws
+    func deleteAccountOfCurrentUser(password: String) async throws
+    func checkPassword(_ password: String) async throws
 }

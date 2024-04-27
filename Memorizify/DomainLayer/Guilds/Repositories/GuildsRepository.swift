@@ -16,4 +16,5 @@ protocol GuildsRepository {
     func delete(_ guild: Guild) async throws
     func add(_ guild: Guild) async throws
     func load(_ guild: Guild) async throws -> Guild
+    func deleteAll(of userUid: String) async throws
 }

@@ -81,6 +81,12 @@ final class Router: ObservableObject {
         RootState.resetData()
     }
     
+    func logOutAfterDelete() {
+        isLoggedIn = false
+        clearAllPaths()
+        RootState.resetData()
+    }
+    
     func saveHasUserSeenOnboarding() {
         try? saveHasUserSeenOnboardingUseCase.execute()
         checkHasUserSeenOnboarding()

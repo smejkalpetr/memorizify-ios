@@ -11,4 +11,5 @@ protocol UserRepository {
     func getUser(uid: String) async throws -> User
     func update(user: User) async throws
     func removeGuildForCurrentUser(_ guild: Guild) async throws
+    func delete(user: User) async throws
 }

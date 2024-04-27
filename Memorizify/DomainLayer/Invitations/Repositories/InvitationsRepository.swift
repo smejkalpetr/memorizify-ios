@@ -16,4 +16,5 @@ protocol InvitationsRepository {
     func decline(_ invitation: Invitation) async throws
     func update(_ invitation: Invitation) async throws
     func deleteAllForGuild(_ guild: Guild) async throws
+    func deleteAll(of userUid: String) async throws
 }

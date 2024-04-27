@@ -185,6 +185,29 @@ struct InvitationsRepositoryImpl: InvitationsRepository {
         }
     }
     
+    func deleteAll(of userUid: String) async throws {
+        let db = Firestore.firestore()
+
+        // Make reference to invtiations collection
+        let invitationsCollectionRef = db.collection(Constants.FIREBASE_COLLECTION_INVITATIONS)
+        
+        // Get the user's email
+        let email = try await userRepository.getUser(uid: userUid).email
+    
+        // Fetch all documents from the collection
+        MemorizifyLogger.logDocumentsFetch(file: #file, line: #line, documentPath: invitationsCollectionRef.path)
+        let querySnapshot = try await invitationsCollectionRef.getDocuments()
+
+        // Iterate through the documents, find and delete the user's invitations
+        for document in querySnapshot.documents {
+            let searchedInvitation = try document.data(as: Invitation.self)
+            
+            if searchedInvitation.email == email || searchedInvitation.senderUid == userUid {
+                try await delete(searchedInvitation)
+            }
+        }
+    }
+    
     // MARK: Private
     
     private func delete(_ invitation: Invitation) async throws {

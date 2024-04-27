@@ -73,4 +73,15 @@ struct StorylinesRepositoryImpl: StorylinesRepository {
         MemorizifyLogger.logDocumentsDelete(file: #file, line: #line, documentPath: documentRef.path)
         try await documentRef.delete()
     }
+    
+    func deleteAll(of userUid: String) async throws {
+        let db = Firestore.firestore()
+            
+        // Reference to the user's storylines subcollection
+        let storylinesCollectionRef = db.collection(Constants.FIREBASE_COLLECTION_STORYLINES).document(userUid)
+    
+        // Delete the collection
+        MemorizifyLogger.logDocumentsDelete(file: #file, line: #line, documentPath: storylinesCollectionRef.path)
+        try await storylinesCollectionRef.delete()
+    }
 }

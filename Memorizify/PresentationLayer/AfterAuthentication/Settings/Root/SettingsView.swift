@@ -48,6 +48,8 @@ struct SettingsView: View {
                 switch route {
                 case .changePassword:
                     SettingsChangePasswordView(viewModel: SettingsChangePasswordViewModel())
+                case .deleteAccount:
+                    SettingsDeleteAccountView(viewModel: SettingsDeleteAccountViewModel())
                 }
             }
             .navigationTitle(String(localized: router.tab.rawValue))
@@ -125,6 +127,7 @@ struct SettingsView: View {
             changeUsernameItem
             changeEmailItem
             changePasswordItem
+            deleteAccount
         }
     }
     
@@ -213,6 +216,24 @@ struct SettingsView: View {
             }
         }
         .foregroundStyle(.primary)
+    }
+    
+    private var deleteAccount: some View {
+        Button(role: .destructive) {
+            router.settingsPath.append(SettingsRoute.deleteAccount)
+        } label: {
+            deleteAccountItemText
+        }
+    }
+    
+    private var deleteAccountItemText: some View {
+        HStack {
+            Text("Delete Account")
+            Spacer()
+            Image(systemName: "chevron.right")
+                .font(.subheadline)
+                .foregroundStyle(.gray)
+        }
     }
     
     private var logoutSection: some View {

@@ -45,6 +45,8 @@ public extension Resolver {
         
         register { ChangePasswordUseCaseImpl(authenticationRepository: resolve()) as ChangePasswordUseCase }
         
+        register { CheckPasswordUseCaseImpl(authenticationRepository: resolve()) as CheckPasswordUseCase }
+        
         // Validation
         register { ValidateUsernameUseCaseImpl() as ValidateUsernameUseCase }
         
@@ -124,5 +126,17 @@ public extension Resolver {
         register { ChangeNotificationsSettingsUseCaseImpl(settingsRepository: resolve()) as ChangeNotificationsSettingsUseCase }
         
         register { GetFullLanguageNameForIdentifierUseCaseImpl() as GetFullLanguageNameForIdentifierUseCase }
+        
+        // Account
+        register {
+            DeleteAccountUseCaseImpl(
+                storylinesRepository: resolve(),
+                invitationsRepository: resolve(),
+                guildsRepository: resolve(),
+                userRepository: resolve(),
+                authenticationRepository: resolve(),
+                checkPasswordUseCase: resolve()
+            ) as DeleteAccountUseCase
+        }
     }
 }

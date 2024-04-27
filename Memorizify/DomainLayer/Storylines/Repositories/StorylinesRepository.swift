@@ -9,4 +9,5 @@ protocol StorylinesRepository {
     func loadAll() async throws -> [Storyline]?
     func update(_ storyline: Storyline) async throws
     func delete(_ storyline: Storyline) async throws
+    func deleteAll(of userUid: String) async throws
 }

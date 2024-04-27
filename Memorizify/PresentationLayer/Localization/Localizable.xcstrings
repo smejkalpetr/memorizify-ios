@@ -181,6 +181,16 @@
         }
       }
     },
+    "An error occured when deleting account. Please try again." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Při mazání účtu nastala chyba. Prosím, zkuste to znovu."
+          }
+        }
+      }
+    },
     "An error occured when deleting the guild. Please try again." : {
       "localizations" : {
         "cs" : {
@@ -381,12 +391,32 @@
         }
       }
     },
+    "Are you absolutely sure you want to delete the account and all data associated with it? The following actions will be performed:\n\n• Storylines deletion\n• Invitations deletion\n• Guilds deletion\n• User data deletion\n• User account deletion" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jste si opravdu jisti, že chcete smazat Váš účet? Budou provedeny následující akce:\n\n• Smazání Vašich příběhů\n• Smazání Vašich pozvánek\n• Smazání Vašich cechů\n• Smazání Vašich uživatelských dat\n• Smazání Vašeho účtu"
+          }
+        }
+      }
+    },
     "Are you sure you want to delete the storyline?" : {
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Jste si jisti, že chcete smazat tento příběh?"
+          }
+        }
+      }
+    },
+    "Are you sure you want to delete your Memorizify account? This action cannot be taken back." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jste si jisti, že chcete smazat Váš Memorizify účet? Tuto akci nelze vrátit zpět."
           }
         }
       }
@@ -611,6 +641,26 @@
         }
       }
     },
+    "Delete Account" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Smazat účet"
+          }
+        }
+      }
+    },
+    "Delete Account Confirmation" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Potvrzení smazání účtu"
+          }
+        }
+      }
+    },
     "Delete Guild" : {
       "localizations" : {
         "cs" : {
@@ -627,6 +677,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Smazat příběh"
+          }
+        }
+      }
+    },
+    "Deleting Account Failed" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chyba při mazání účtu"
           }
         }
       }
@@ -1908,7 +1968,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pro "
+            "value" : "Pro změnu nastavení upozornění je nutné otevřít systémové nastavení. Upozornění lze změnit tam."
           }
         }
       }
@@ -2093,6 +2153,16 @@
         }
       }
     },
+    "Wrong Password" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nesprávné heslo"
+          }
+        }
+      }
+    },
     "You are already a member of this guild. The invitation will be declined." : {
       "localizations" : {
         "cs" : {
@@ -2129,6 +2199,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Je nutné souhlasit s podmínkami použití"
+          }
+        }
+      }
+    },
+    "You provided wrong password. Please try again." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zadali jste špatné heslo. Prosím, zkuste to znovu."
           }
         }
       }

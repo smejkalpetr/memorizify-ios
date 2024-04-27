@@ -61,6 +61,11 @@
 		1D1F97DA2BD9A69D0025FC73 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1F97D92BD9A69D0025FC73 /* LaunchScreenView.swift */; };
 		1D23E2F02BDBA6F6007F35FB /* ValidateGuildNameUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D23E2EF2BDBA6F6007F35FB /* ValidateGuildNameUseCase.swift */; };
 		1D23E2F52BDBAE67007F35FB /* MemorizifyLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D23E2F42BDBAE67007F35FB /* MemorizifyLogger.swift */; };
+		1D23E2FA2BDD1266007F35FB /* DeleteAccountUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D23E2F92BDD1266007F35FB /* DeleteAccountUseCase.swift */; };
+		1D23E2FD2BDD2163007F35FB /* SettingsDeleteAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D23E2FC2BDD2163007F35FB /* SettingsDeleteAccountView.swift */; };
+		1D23E2FF2BDD2169007F35FB /* SettingsDeleteAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D23E2FE2BDD2169007F35FB /* SettingsDeleteAccountViewModel.swift */; };
+		1D23E3012BDD2659007F35FB /* CheckPasswordUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D23E3002BDD2659007F35FB /* CheckPasswordUseCase.swift */; };
+		1D23E3042BDD26BA007F35FB /* AuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D23E3032BDD26BA007F35FB /* AuthenticationError.swift */; };
 		1D26EBAF2BC55FC000F5E1B5 /* Storyline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D26EBAE2BC55FC000F5E1B5 /* Storyline.swift */; };
 		1D26EBB12BC5605000F5E1B5 /* StorylineKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D26EBB02BC5605000F5E1B5 /* StorylineKind.swift */; };
 		1D26EBB32BC5633E00F5E1B5 /* StorylinesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D26EBB22BC5633E00F5E1B5 /* StorylinesViewModel.swift */; };
@@ -299,6 +304,11 @@
 		1D1F97D92BD9A69D0025FC73 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		1D23E2EF2BDBA6F6007F35FB /* ValidateGuildNameUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateGuildNameUseCase.swift; sourceTree = "<group>"; };
 		1D23E2F42BDBAE67007F35FB /* MemorizifyLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizifyLogger.swift; sourceTree = "<group>"; };
+		1D23E2F92BDD1266007F35FB /* DeleteAccountUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountUseCase.swift; sourceTree = "<group>"; };
+		1D23E2FC2BDD2163007F35FB /* SettingsDeleteAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDeleteAccountView.swift; sourceTree = "<group>"; };
+		1D23E2FE2BDD2169007F35FB /* SettingsDeleteAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDeleteAccountViewModel.swift; sourceTree = "<group>"; };
+		1D23E3002BDD2659007F35FB /* CheckPasswordUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPasswordUseCase.swift; sourceTree = "<group>"; };
+		1D23E3032BDD26BA007F35FB /* AuthenticationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationError.swift; sourceTree = "<group>"; };
 		1D26EBAE2BC55FC000F5E1B5 /* Storyline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyline.swift; sourceTree = "<group>"; };
 		1D26EBB02BC5605000F5E1B5 /* StorylineKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorylineKind.swift; sourceTree = "<group>"; };
 		1D26EBB22BC5633E00F5E1B5 /* StorylinesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorylinesViewModel.swift; sourceTree = "<group>"; };
@@ -736,6 +746,7 @@
 			children = (
 				1DC1E4842BB08EED00D19181 /* Root */,
 				1D1E2A4F2BD7F19D0005B4A6 /* SettingsChangePassword */,
+				1D23E2FB2BDD2146007F35FB /* SettingsDeleteAccount */,
 				1DC1E4822BB08EE900D19181 /* SettingsRoute.swift */,
 			);
 			path = Settings;
@@ -873,6 +884,39 @@
 			path = Logging;
 			sourceTree = "<group>";
 		};
+		1D23E2F62BDD1248007F35FB /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				1D23E2F72BDD1254007F35FB /* UseCases */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		1D23E2F72BDD1254007F35FB /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				1D23E2F92BDD1266007F35FB /* DeleteAccountUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		1D23E2FB2BDD2146007F35FB /* SettingsDeleteAccount */ = {
+			isa = PBXGroup;
+			children = (
+				1D23E2FC2BDD2163007F35FB /* SettingsDeleteAccountView.swift */,
+				1D23E2FE2BDD2169007F35FB /* SettingsDeleteAccountViewModel.swift */,
+			);
+			path = SettingsDeleteAccount;
+			sourceTree = "<group>";
+		};
+		1D23E3022BDD26AE007F35FB /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				1D23E3032BDD26BA007F35FB /* AuthenticationError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
 		1D26EBB42BC5840100F5E1B5 /* StorylineSetup */ = {
 			isa = PBXGroup;
 			children = (
@@ -998,6 +1042,7 @@
 				1D7B7A192BCE81FC00A18E12 /* Guilds */,
 				1D9CC6052BCFDB6F00D279BB /* Members */,
 				1D0F825A2BD2A5F900FAD74C /* Settings */,
+				1D23E2F62BDD1248007F35FB /* Account */,
 			);
 			path = DomainLayer;
 			sourceTree = "<group>";
@@ -1005,7 +1050,7 @@
 		1D3D326B2BA6EFF00039DA08 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				1D544E012BA76AB6003C486F /* Errors */,
+				1D23E3022BDD26AE007F35FB /* Errors */,
 				1D3D326F2BA6F13D0039DA08 /* Models */,
 				1D3D326C2BA6F1260039DA08 /* UseCases */,
 				1D3D326E2BA6F1330039DA08 /* Repositories */,
@@ -1023,6 +1068,7 @@
 				1D88B1E02BAA2ECF00B3D903 /* IsUserLoggedInUseCase.swift */,
 				1D88B1E92BAA4DEE00B3D903 /* ResetPasswordUseCase.swift */,
 				1D1E2A542BD7F65B0005B4A6 /* ChangePasswordUseCase.swift */,
+				1D23E3002BDD2659007F35FB /* CheckPasswordUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -1172,6 +1218,7 @@
 		1D5E9CB32BA9E04500EF6400 /* Validation */ = {
 			isa = PBXGroup;
 			children = (
+				1D544E012BA76AB6003C486F /* Errors */,
 				1DCA58222BDB06BF000DB378 /* UseCases */,
 			);
 			path = Validation;
@@ -2053,6 +2100,7 @@
 				1D7B7A3C2BCEC4A100A18E12 /* Invitation.swift in Sources */,
 				1D7B7A0F2BCE7DB500A18E12 /* BoardViewModel.swift in Sources */,
 				1D1AD3682BAD837E008827BA /* StorylinesView.swift in Sources */,
+				1D23E3012BDD2659007F35FB /* CheckPasswordUseCase.swift in Sources */,
 				1D88B1DC2BAA215300B3D903 /* Alert+Extensions.swift in Sources */,
 				1D0F82682BD2AD9A00FAD74C /* ChangeNotificationsSettingsUseCase.swift in Sources */,
 				1D26EBB62BC5841600F5E1B5 /* StorylineSetupView.swift in Sources */,
@@ -2069,6 +2117,7 @@
 				1DCA58212BDAF88D000DB378 /* NetworkMonitor.swift in Sources */,
 				1D1AD35A2BAD8135008827BA /* RootView.swift in Sources */,
 				1D7B7A162BCE7F9400A18E12 /* SendGuildInvitationUseCase.swift in Sources */,
+				1D23E2FD2BDD2163007F35FB /* SettingsDeleteAccountView.swift in Sources */,
 				1D7DA8CE2BC682AB0092E18C /* SaveStorylineUseCase.swift in Sources */,
 				1DF42B442BCEE41E0094C263 /* GuildsRoute.swift in Sources */,
 				1DD7EB1B2BB09BBD005CE24D /* LocalNotification.swift in Sources */,
@@ -2104,6 +2153,7 @@
 				1D6653032BDA8ED900D24943 /* CancelLocalNotificationUseCase.swift in Sources */,
 				1D9CC5FE2BCF19ED00D279BB /* GuildDetailAddFriendView.swift in Sources */,
 				1DA1DD322BCD9C0600185C76 /* LoadBoardUseCase.swift in Sources */,
+				1D23E2FF2BDD2169007F35FB /* SettingsDeleteAccountViewModel.swift in Sources */,
 				1D544E082BA76B1D003C486F /* PrimaryButtonStyle.swift in Sources */,
 				1DD8F5D22BA64F620099BEA0 /* Router.swift in Sources */,
 				1D0F82662BD2A75C00FAD74C /* ChangeLanguageSettingsUseCase.swift in Sources */,
@@ -2198,7 +2248,9 @@
 				1D3E70042BD8102800C5BB34 /* PlainTimerSetupViewModel.swift in Sources */,
 				1D5E9CB72BA9E0D800EF6400 /* ValidateEmailUseCase.swift in Sources */,
 				1D9CC60C2BCFDBD300D279BB /* MembersRepositoryImpl.swift in Sources */,
+				1D23E3042BDD26BA007F35FB /* AuthenticationError.swift in Sources */,
 				1D0821612BCACF3400F1F8F3 /* StorylineTimerView.swift in Sources */,
+				1D23E2FA2BDD1266007F35FB /* DeleteAccountUseCase.swift in Sources */,
 				1D0F826E2BD2B56F00FAD74C /* LanguageSetting.swift in Sources */,
 				1D7B7A482BCED69400A18E12 /* DeclineGuildInvitationUseCase.swift in Sources */,
 				1D1AD36A2BAD8775008827BA /* SettingsViewModel.swift in Sources */,
@@ -2375,7 +2427,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Memorizify/Application/Entitlements/Memorizify.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202404271236;
+				CURRENT_PROJECT_VERSION = 202404271716;
 				DEVELOPMENT_ASSET_PATHS = "\"Memorizify/Application/Preview Content\"";
 				DEVELOPMENT_TEAM = 4C5MQDTY94;
 				ENABLE_PREVIEWS = YES;
@@ -2394,7 +2446,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.3;
+				MARKETING_VERSION = 0.3.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.smejkalp.memorizify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -2410,7 +2462,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Memorizify/Application/Entitlements/Memorizify.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202404271236;
+				CURRENT_PROJECT_VERSION = 202404271716;
 				DEVELOPMENT_ASSET_PATHS = "\"Memorizify/Application/Preview Content\"";
 				DEVELOPMENT_TEAM = 4C5MQDTY94;
 				ENABLE_PREVIEWS = YES;
@@ -2429,7 +2481,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.3;
+				MARKETING_VERSION = 0.3.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.smejkalp.memorizify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

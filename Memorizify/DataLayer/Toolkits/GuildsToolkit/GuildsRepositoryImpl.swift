@@ -161,4 +161,44 @@ struct GuildsRepositoryImpl: GuildsRepository {
         
         throw GuildsError.notFound
     }
+    
+    func deleteAll(of userUid: String) async throws {
+        // Get all guilds
+        guard let guilds = try await getAllGuilds() else { return }
+        
+        for guild in guilds {
+            // Delete those guilds that the user who's being deleted is the only member of
+            if guild.board.records.count == 1, let firstRecord = guild.board.records.first, firstRecord.uid == userUid {
+                try await delete(guild)
+                continue
+            }
+            
+            var newRecords: [BoardRecord] = []
+            var reassignLeader = false
+            
+            // Remove user from all boards in all guilds
+            for record in guild.board.records {
+                if record.uid == userUid {
+                    if record.isLeader {
+                        reassignLeader = true
+                    }
+                } else {
+                    newRecords.append(record)
+                }
+            }
+            
+            if reassignLeader {
+                if let randomRecord = newRecords.randomElement() {
+                    newRecords.removeAll { $0.uid == randomRecord.uid }
+                    let newRandomRecord = BoardRecord(copy: randomRecord, isLeader: true)
+                    newRecords.append(newRandomRecord)
+                }
+            }
+            
+            let newBoard = Board(copy: guild.board, records: newRecords)
+            let newGuild = Guild(copy: guild, board: newBoard)
+            
+            try await update(newGuild)
+        }
+    }
 }

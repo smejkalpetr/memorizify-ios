@@ -7,4 +7,5 @@
 
 enum SettingsRoute: Hashable {
     case changePassword
+    case deleteAccount
 }

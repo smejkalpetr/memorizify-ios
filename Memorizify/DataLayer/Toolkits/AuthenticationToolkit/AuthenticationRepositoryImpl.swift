@@ -76,6 +76,33 @@ struct AuthenticationRepositoryImpl: AuthenticationRepository {
         try await firUser.updatePassword(to: newPassword)
     }
     
+    func deleteAccountOfCurrentUser(password: String) async throws {
+        // Get the Firebase user
+        let firUser = try getUser()
+        
+        // Reauthenticate user
+        guard let email = firUser.email else { throw FirebaseUserError.emailMissing }
+        let credential = EmailAuthProvider.credential(withEmail: email, password: password)
+        try await firUser.reauthenticate(with: credential)
+        
+        // Delete the user account
+        try await firUser.delete()
+    }
+    
+    func checkPassword(_ password: String) async throws {
+        // Get the Firebase user
+        let firUser = try getUser()
+        
+        do {
+            // Reauthenticate user to check password
+            guard let email = firUser.email else { throw FirebaseUserError.emailMissing }
+            let credential = EmailAuthProvider.credential(withEmail: email, password: password)
+            try await firUser.reauthenticate(with: credential)
+        } catch {
+            throw AuthenticationError.wrongPassword
+        }
+    }
+    
     // MARK: Private
     
     private func getFirebaseUser() throws -> FirebaseUser {
