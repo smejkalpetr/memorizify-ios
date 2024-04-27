@@ -27,7 +27,7 @@ class MockUIApplication: UIApplicationProtocol {
     }
 }
 
-class SettingsRepositoryImplTests: XCTestCase {
+class SettingsRepositoryTests: XCTestCase {
     var repository: SettingsRepositoryImpl!
     var mockApplication: MockUIApplication!
 

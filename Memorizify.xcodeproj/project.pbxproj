@@ -51,8 +51,6 @@
 		1D1BC5852BA6487D00B30A77 /* MemorizifyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1BC5842BA6487D00B30A77 /* MemorizifyApp.swift */; };
 		1D1BC5892BA6487D00B30A77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D1BC5882BA6487D00B30A77 /* Assets.xcassets */; };
 		1D1BC58C2BA6487D00B30A77 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D1BC58B2BA6487D00B30A77 /* Preview Assets.xcassets */; };
-		1D1BC5A02BA6487E00B30A77 /* MemorizifyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1BC59F2BA6487E00B30A77 /* MemorizifyUITests.swift */; };
-		1D1BC5A22BA6487E00B30A77 /* MemorizifyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1BC5A12BA6487E00B30A77 /* MemorizifyUITestsLaunchTests.swift */; };
 		1D1BC5B22BA64AC100B30A77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1BC5B12BA64AC100B30A77 /* AppDelegate.swift */; };
 		1D1E2A512BD7F1B10005B4A6 /* SettingsChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1E2A502BD7F1B10005B4A6 /* SettingsChangePasswordView.swift */; };
 		1D1E2A532BD7F1BF0005B4A6 /* SettingsChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1E2A522BD7F1BF0005B4A6 /* SettingsChangePasswordViewModel.swift */; };
@@ -74,9 +72,14 @@
 		1D23E3272BDD9087007F35FB /* UserRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D23E3262BDD9087007F35FB /* UserRepositoryTests.swift */; };
 		1D23E3292BDD9110007F35FB /* StorylinesRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D23E3282BDD9110007F35FB /* StorylinesRepositoryTests.swift */; };
 		1D23E32D2BDD9136007F35FB /* InvitationsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D23E32C2BDD9136007F35FB /* InvitationsRepositoryTests.swift */; };
-		1D23E32F2BDD9144007F35FB /* BoardsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D23E32E2BDD9144007F35FB /* BoardsRepositoryTests.swift */; };
+		1D23E32F2BDD9144007F35FB /* BoardRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D23E32E2BDD9144007F35FB /* BoardRepositoryTests.swift */; };
 		1D23E3312BDD914F007F35FB /* GuildsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D23E3302BDD914F007F35FB /* GuildsRepositoryTests.swift */; };
 		1D23E3332BDD9157007F35FB /* MembersRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D23E3322BDD9157007F35FB /* MembersRepositoryTests.swift */; };
+		1D23E3352BDD96BA007F35FB /* LaunchPerformanceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D23E3342BDD96BA007F35FB /* LaunchPerformanceUITests.swift */; };
+		1D23E3382BDD980A007F35FB /* AuthenticationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D23E3372BDD980A007F35FB /* AuthenticationUITests.swift */; };
+		1D23E33A2BDDA285007F35FB /* GuildsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D23E3392BDDA285007F35FB /* GuildsUITests.swift */; };
+		1D23E33C2BDDA6A4007F35FB /* StorylinesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D23E33B2BDDA6A4007F35FB /* StorylinesUITests.swift */; };
+		1D23E33E2BDDA86F007F35FB /* BoardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D23E33D2BDDA86F007F35FB /* BoardUITests.swift */; };
 		1D26EBAF2BC55FC000F5E1B5 /* Storyline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D26EBAE2BC55FC000F5E1B5 /* Storyline.swift */; };
 		1D26EBB12BC5605000F5E1B5 /* StorylineKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D26EBB02BC5605000F5E1B5 /* StorylineKind.swift */; };
 		1D26EBB32BC5633E00F5E1B5 /* StorylinesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D26EBB22BC5633E00F5E1B5 /* StorylinesViewModel.swift */; };
@@ -305,8 +308,6 @@
 		1D1BC58B2BA6487D00B30A77 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1D1BC5912BA6487E00B30A77 /* MemorizifyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemorizifyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D1BC59B2BA6487E00B30A77 /* MemorizifyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemorizifyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1D1BC59F2BA6487E00B30A77 /* MemorizifyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizifyUITests.swift; sourceTree = "<group>"; };
-		1D1BC5A12BA6487E00B30A77 /* MemorizifyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizifyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1D1BC5B12BA64AC100B30A77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D1E2A502BD7F1B10005B4A6 /* SettingsChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsChangePasswordView.swift; path = Memorizify/PresentationLayer/AfterAuthentication/Home/SettingsChangePasswordView.swift; sourceTree = SOURCE_ROOT; };
 		1D1E2A522BD7F1BF0005B4A6 /* SettingsChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsChangePasswordViewModel.swift; sourceTree = "<group>"; };
@@ -329,9 +330,14 @@
 		1D23E3262BDD9087007F35FB /* UserRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryTests.swift; sourceTree = "<group>"; };
 		1D23E3282BDD9110007F35FB /* StorylinesRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorylinesRepositoryTests.swift; sourceTree = "<group>"; };
 		1D23E32C2BDD9136007F35FB /* InvitationsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationsRepositoryTests.swift; sourceTree = "<group>"; };
-		1D23E32E2BDD9144007F35FB /* BoardsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardsRepositoryTests.swift; sourceTree = "<group>"; };
+		1D23E32E2BDD9144007F35FB /* BoardRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardRepositoryTests.swift; sourceTree = "<group>"; };
 		1D23E3302BDD914F007F35FB /* GuildsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildsRepositoryTests.swift; sourceTree = "<group>"; };
 		1D23E3322BDD9157007F35FB /* MembersRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersRepositoryTests.swift; sourceTree = "<group>"; };
+		1D23E3342BDD96BA007F35FB /* LaunchPerformanceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPerformanceUITests.swift; sourceTree = "<group>"; };
+		1D23E3372BDD980A007F35FB /* AuthenticationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationUITests.swift; sourceTree = "<group>"; };
+		1D23E3392BDDA285007F35FB /* GuildsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuildsUITests.swift; sourceTree = "<group>"; };
+		1D23E33B2BDDA6A4007F35FB /* StorylinesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorylinesUITests.swift; sourceTree = "<group>"; };
+		1D23E33D2BDDA86F007F35FB /* BoardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardUITests.swift; sourceTree = "<group>"; };
 		1D26EBAE2BC55FC000F5E1B5 /* Storyline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyline.swift; sourceTree = "<group>"; };
 		1D26EBB02BC5605000F5E1B5 /* StorylineKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorylineKind.swift; sourceTree = "<group>"; };
 		1D26EBB22BC5633E00F5E1B5 /* StorylinesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorylinesViewModel.swift; sourceTree = "<group>"; };
@@ -840,8 +846,11 @@
 		1D1BC59E2BA6487E00B30A77 /* MemorizifyUITests */ = {
 			isa = PBXGroup;
 			children = (
-				1D1BC59F2BA6487E00B30A77 /* MemorizifyUITests.swift */,
-				1D1BC5A12BA6487E00B30A77 /* MemorizifyUITestsLaunchTests.swift */,
+				1D23E3342BDD96BA007F35FB /* LaunchPerformanceUITests.swift */,
+				1D23E3372BDD980A007F35FB /* AuthenticationUITests.swift */,
+				1D23E3392BDDA285007F35FB /* GuildsUITests.swift */,
+				1D23E33B2BDDA6A4007F35FB /* StorylinesUITests.swift */,
+				1D23E33D2BDDA86F007F35FB /* BoardUITests.swift */,
 			);
 			path = MemorizifyUITests;
 			sourceTree = "<group>";
@@ -957,7 +966,7 @@
 				1D23E3242BDD8F52007F35FB /* AuthenticationRepositoryTests.swift */,
 				1D23E3262BDD9087007F35FB /* UserRepositoryTests.swift */,
 				1D23E3282BDD9110007F35FB /* StorylinesRepositoryTests.swift */,
-				1D23E32E2BDD9144007F35FB /* BoardsRepositoryTests.swift */,
+				1D23E32E2BDD9144007F35FB /* BoardRepositoryTests.swift */,
 				1D23E32C2BDD9136007F35FB /* InvitationsRepositoryTests.swift */,
 				1D23E3302BDD914F007F35FB /* GuildsRepositoryTests.swift */,
 				1D23E3322BDD9157007F35FB /* MembersRepositoryTests.swift */,
@@ -2338,7 +2347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D23E32F2BDD9144007F35FB /* BoardsRepositoryTests.swift in Sources */,
+				1D23E32F2BDD9144007F35FB /* BoardRepositoryTests.swift in Sources */,
 				1D23E3232BDD6980007F35FB /* SettingsRepositoryTests.swift in Sources */,
 				1D23E3252BDD8F52007F35FB /* AuthenticationRepositoryTests.swift in Sources */,
 				1D84AD3D2BAB7C090048AC9C /* UserDefaultsTests.swift in Sources */,
@@ -2356,8 +2365,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D1BC5A02BA6487E00B30A77 /* MemorizifyUITests.swift in Sources */,
-				1D1BC5A22BA6487E00B30A77 /* MemorizifyUITestsLaunchTests.swift in Sources */,
+				1D23E3352BDD96BA007F35FB /* LaunchPerformanceUITests.swift in Sources */,
+				1D23E3382BDD980A007F35FB /* AuthenticationUITests.swift in Sources */,
+				1D23E33E2BDDA86F007F35FB /* BoardUITests.swift in Sources */,
+				1D23E33A2BDDA285007F35FB /* GuildsUITests.swift in Sources */,
+				1D23E33C2BDDA6A4007F35FB /* StorylinesUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2505,7 +2517,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Memorizify/Application/Entitlements/Memorizify.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202404272212;
+				CURRENT_PROJECT_VERSION = 202404272346;
 				DEVELOPMENT_ASSET_PATHS = "\"Memorizify/Application/Preview Content\"";
 				DEVELOPMENT_TEAM = 4C5MQDTY94;
 				ENABLE_PREVIEWS = YES;
@@ -2524,7 +2536,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.5;
+				MARKETING_VERSION = 0.3.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.smejkalp.memorizify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -2540,7 +2552,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Memorizify/Application/Entitlements/Memorizify.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 202404272212;
+				CURRENT_PROJECT_VERSION = 202404272346;
 				DEVELOPMENT_ASSET_PATHS = "\"Memorizify/Application/Preview Content\"";
 				DEVELOPMENT_TEAM = 4C5MQDTY94;
 				ENABLE_PREVIEWS = YES;
@@ -2559,7 +2571,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.3.5;
+				MARKETING_VERSION = 0.3.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.smejkalp.memorizify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

@@ -8,7 +8,7 @@
 import XCTest
 @testable import Memorizify
 
-final class InvitationsRepositoryImplTests: XCTestCase {
+final class InvitationsRepositoryTests: XCTestCase {
     
     #warning("TODO: Tests in this class shall be finished when there's a Firebase Provider so that Firebase calls can be mocked!")
 
