@@ -170,7 +170,7 @@ final class GuildDetailViewModel: ObservableObject {
             guild: state.guild
         )
         
-        let page = (try? getCurrentStorylinePageUseCase.execute(storyline)) ?? TestStorylinePage1()
+        let page = (try? getCurrentStorylinePageUseCase.execute(storyline)) ?? PlainTimerStorylinePage()
         let timer = PomodoroTimer(duration: state.studyIntervalMinutes * 60)
         
         return (storyline, page, timer)

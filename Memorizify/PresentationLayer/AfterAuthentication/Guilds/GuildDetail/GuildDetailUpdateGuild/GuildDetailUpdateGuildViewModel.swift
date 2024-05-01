@@ -21,7 +21,7 @@ final class GuildDetailUpdateGuildViewModel: ObservableObject {
     struct State {
         var alert: AlertData?
         var isLoading = false
-        var storylineKindPickerSelection = StorylineKind.allCases.first?.rawValue ?? StorylineKind.testStoryline(TestStoryline()).rawValue
+        var storylineKindPickerSelection = StorylineKind.allCases.first?.rawValue ?? StorylineKind.plainTimerStoryline(PlainTimerStoryline()).rawValue
         var goal: Double
         var guild: Guild
                 

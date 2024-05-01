@@ -32,7 +32,7 @@ final class GuildSetupViewModel: ObservableObject {
         
         var goal = (goalRange.lowerBound + goalRange.upperBound) / 2
         var emailInvitations: [String] = []
-        var storylineKindPickerSelection = StorylineKind.allCases.first?.rawValue ?? StorylineKind.testStoryline(TestStoryline()).rawValue
+        var storylineKindPickerSelection = StorylineKind.allCases.first?.rawValue ?? StorylineKind.plainTimerStoryline(PlainTimerStoryline()).rawValue
         
         var canCreateGuild: Bool {
             [nameError].allSatisfy { $0 == "" } &&

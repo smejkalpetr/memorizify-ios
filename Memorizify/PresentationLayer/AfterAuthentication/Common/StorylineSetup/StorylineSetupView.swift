@@ -125,5 +125,5 @@ struct StorylineSetupView: View {
 }
 
 #Preview {
-    StorylineSetupView(viewModel: StorylineSetupViewModel(setup: .create(.testStoryline(TestStoryline()))))
+    StorylineSetupView(viewModel: StorylineSetupViewModel(setup: .create(.plainTimerStoryline(PlainTimerStoryline()))))
 }

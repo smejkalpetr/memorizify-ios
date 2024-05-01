@@ -11,6 +11,9 @@ struct PlainTimerStoryline: StorylineData {
     /// Description of the plain timer storyline.
     let description = ""
     
+    /// Short description of the plain timer storyline.
+    let shortDescription = ""
+    
     /// Pages associated with the plain timer storyline.
     let pages: [StorylinePage] = [PlainTimerStorylinePage()]
     
@@ -20,6 +23,6 @@ struct PlainTimerStoryline: StorylineData {
 
 /// Represents a page in the plain timer storyline.
 struct PlainTimerStorylinePage: StorylinePage {
-    let title: String = String(localized: "Pomodoro Timer")
-    let story: String = ""
+    let title = String(localized: "Pomodoro Timer")
+    let story = ""
 }

@@ -124,12 +124,9 @@ struct GuildSetupView: View {
     
     private var storylinePicker: some View {
         Picker(selection: $viewModel.state.storylineKindPickerSelection, label: Text("Select Storyline")) {
-            #warning("TODO: Remove next line when more storyline kinds are available!")
-            ForEach(0..<3) { index in
-                ForEach(StorylineKind.allCases) { storylineKind in
-                    Text(storylineKind.rawValue)
-                        .tag(storylineKind.rawValue + String(index))
-                }
+            ForEach(StorylineKind.allCases) { storylineKind in
+                Text(storylineKind.rawValue)
+                    .tag(storylineKind.rawValue)
             }
         }
         .pickerStyle(MenuPickerStyle())

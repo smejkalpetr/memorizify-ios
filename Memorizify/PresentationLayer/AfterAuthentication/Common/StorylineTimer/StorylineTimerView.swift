@@ -163,14 +163,14 @@ struct StorylineTimerView: View {
     StorylineTimerView(viewModel: 
         StorylineTimerViewModel(
             storyline: Storyline(
-                kind: .testStoryline(TestStoryline()),
-                goalHours: 0.0, 
+                kind: .plainTimerStoryline(PlainTimerStoryline()),
+                goalHours: 0.0,
                 goalMinutes: 0.0,
                 finished: 0.0,
                 studyInterval: 0.0,
                 breakInterval: 0.0
             ),
-            page: TestStorylinePage1(),
+            page: PlainTimerStorylinePage(),
             timer: PomodoroTimer(duration: 60.0),
             timerKind: .storyline
         )

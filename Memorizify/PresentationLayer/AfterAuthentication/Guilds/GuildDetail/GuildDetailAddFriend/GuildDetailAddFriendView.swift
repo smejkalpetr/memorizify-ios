@@ -20,6 +20,7 @@ struct GuildDetailAddFriendView: View {
                 inviteFriend
             }
             Spacer()
+            letterImage
             addFriendButton
         }
         .background {
@@ -39,6 +40,15 @@ struct GuildDetailAddFriendView: View {
                 .edgesIgnoringSafeArea(.all)
             Color.black.opacity(colorScheme == .dark ? 0.5 : 0.3)
                 .edgesIgnoringSafeArea(.all)
+        }
+    }
+    
+    private var letterImage: some View {
+        VStack {
+            Image("guilds_letter")
+                .resizable()
+                .scaledToFit()
+                .padding()
         }
     }
     

@@ -52,11 +52,24 @@ struct StorylineTileView: View {
     }
     
     private var storylineTileLabelImage: some View {
-        Image("transparent_placeholder")
+        getStorylineTileLabelImage
             .resizable()
             .aspectRatio(contentMode: .fill)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .clipped()
+    }
+    
+    private var getStorylineTileLabelImage: Image {
+        switch viewModel.state.storyline.kind {
+        case .plainTimerStoryline:
+            return Image("transparent_placeholder")
+        case .draagonStoryline:
+            return Image("storyline_dragon")
+        case .turtleStoryline:
+            return Image("storyline_turtle")
+        case .flowerStoryline:
+            return Image("storyline_flowers")
+        }
     }
     
     private var storylineTileLabelText: some View {
@@ -98,7 +111,7 @@ struct StorylineTileView: View {
     StorylineTileView(
         viewModel: StorylineTileViewModel(
             storyline: Storyline(
-                kind: .testStoryline(TestStoryline()),
+                kind: .plainTimerStoryline(PlainTimerStoryline()),
                 goalHours: 0.0,
                 goalMinutes: 0.0,
                 finished: 0.0,

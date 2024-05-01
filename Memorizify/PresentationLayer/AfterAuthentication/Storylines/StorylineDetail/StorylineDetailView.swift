@@ -76,7 +76,7 @@ struct StorylineDetailView: View {
     StorylineDetailView(
         viewModel: StorylineDetailViewModel(
             kind: StorylineKind(
-                rawValue: String(localized:StorylineKind.TEST_STORYLINE_RAW_VALUE)) ?? .testStoryline(TestStoryline()
+                rawValue: String(localized:StorylineKind.PLAIN_TIMER_STORYLINE_RAW_VALUE)) ?? .plainTimerStoryline(PlainTimerStoryline()
             ),
             completion: {}
         )

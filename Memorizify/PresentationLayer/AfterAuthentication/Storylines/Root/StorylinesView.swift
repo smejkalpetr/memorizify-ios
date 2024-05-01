@@ -40,16 +40,13 @@ struct StorylinesView: View {
 
     private var storylinesList: some View {
         List {
-            #warning("FIXME: Remove next line when there are more available storylines!")
-            ForEach(0..<3) { _ in
-                ForEach(viewModel.state.availableStorylines) { storylineKind in
-                    Button() {
-                        router.storylinesPath.append(StorylinesRoute.showDetail(storylineKind))
-                    } label: {
-                        storylineLabel(name: storylineKind.rawValue)
-                    }
-                    .listRowInsets(EdgeInsets())
+            ForEach(viewModel.state.availableStorylines) { storylineKind in
+                Button() {
+                    router.storylinesPath.append(StorylinesRoute.showDetail(storylineKind))
+                } label: {
+                    storylineLabel(name: storylineKind.rawValue, shortDescription: storylineKind.getShortDescription(), kind: storylineKind)
                 }
+                .listRowInsets(EdgeInsets())
             }
         }
         .padding()
@@ -71,30 +68,43 @@ struct StorylinesView: View {
         }
     }
     
-    private func storylineLabel(name: String) -> some View {
+    private func storylineLabel(name: String, shortDescription: String, kind: StorylineKind) -> some View {
         ZStack(alignment: .bottomLeading) {
-            storylineTileLabelImage
-            storylineTileLabelText(name: name)
+            storylineTileLabelImage(kind: kind)
+            storylineTileLabelText(name: name, shortDescription: shortDescription)
         }
     }
     
-    private var storylineTileLabelImage: some View {
-        Image("transparent_placeholder")
+    private func storylineTileLabelImage(kind: StorylineKind) -> some View {
+        getStorylineTileLabelImage(kind: kind)
             .resizable()
             .aspectRatio(contentMode: .fill)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .clipped()
     }
     
-    private func storylineTileLabelText(name: String) -> some View {
+    private func getStorylineTileLabelImage(kind: StorylineKind) -> Image {
+        switch kind {
+        case .plainTimerStoryline:
+            return Image("transparent_placeholder")
+        case .draagonStoryline:
+            return Image("storyline_dragon")
+        case .turtleStoryline:
+            return Image("storyline_turtle")
+        case .flowerStoryline:
+            return Image("storyline_flowers")
+        }
+    }
+    
+    private func storylineTileLabelText(name: String, shortDescription: String) -> some View {
         VStack(alignment: .leading, spacing: 8) {
             Text(name)
                 .font(.title)
                 .bold()
-                .foregroundStyle(colorScheme == .dark ? .white : .black)
-            Text("the other text".uppercased())
+                .foregroundStyle(.black)
+            Text(shortDescription.uppercased())
                 .font(.caption)
-                .foregroundStyle(colorScheme == .dark ? .white : .black)
+                .foregroundStyle(.black)
                 .opacity(0.45)
         }
         .padding()

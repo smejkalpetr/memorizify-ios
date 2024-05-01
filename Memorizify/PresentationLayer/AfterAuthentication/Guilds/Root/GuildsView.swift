@@ -415,10 +415,14 @@ struct GuildsView: View {
     
     private func getGuildImage(guild: Guild) -> Image {
         switch guild.storylineKind {
-        case .testStoryline:
-            return Image("transparent_placeholder")
         case .plainTimerStoryline:
             return Image("transparent_placeholder")
+        case .draagonStoryline:
+            return Image("storyline_dragon")
+        case .turtleStoryline:
+            return Image("storyline_turtle")
+        case .flowerStoryline:
+            return Image("storyline_flowers")
         }
     }
     

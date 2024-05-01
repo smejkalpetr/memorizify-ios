@@ -13,6 +13,9 @@ protocol StorylineData {
     /// A description of the storyline data.
     var description: String { get }
     
+    /// A short description of the storyline data.
+    var shortDescription: String { get }
+    
     /// The pages associated with the storyline data.
     var pages: [StorylinePage] { get }
     

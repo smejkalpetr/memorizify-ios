@@ -61,6 +61,66 @@
         }
       }
     },
+    "A Blossoming Friendship" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rozkvétající přátelství"
+          }
+        }
+      }
+    },
+    "A Dive into Fame" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ponor do slávy"
+          }
+        }
+      }
+    },
+    "A group of curious bees visited, intrigued by Fang's antics, leaving Petal to host a pollen party to show the beauty of her vegetarian ways." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skupina zvědavých včel navštívila zahradu, přilákána Fangovými kousky, zatímco Petal uspořádala pylouvou oslavu, aby ukázala krásu svého vegetariánského způsobu života."
+          }
+        }
+      }
+    },
+    "A New Perspective" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nový pohled"
+          }
+        }
+      }
+    },
+    "A Thirst for More" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chce to více"
+          }
+        }
+      }
+    },
+    "A well-meaning octopus tried to remove the bottle top, resulting in a slapstick series of failed attempts that only added to Tilly's internet fame." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dobře míněný chobotnice se pokusil odstranit vršek lahve, což vyústilo v sérii komických neúspěšných pokusů, které jen přidaly na Tillyině internetové slávě."
+          }
+        }
+      }
+    },
     "Accept" : {
       "localizations" : {
         "cs" : {
@@ -127,6 +187,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tento uživatel je členem"
+          }
+        }
+      }
+    },
+    "An Awkward Intervention" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nehoda zásahu"
           }
         }
       }
@@ -381,6 +451,16 @@
         }
       }
     },
+    "An Unexpected Guide" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neočekávaný průvodce"
+          }
+        }
+      }
+    },
     "An unknown error has occured." : {
       "localizations" : {
         "cs" : {
@@ -421,12 +501,42 @@
         }
       }
     },
+    "As Tilly's story spread, more divers visited the reef, hoping to snap a picture with the famous 'nose-jewel' turtle." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jak se šířil příběh Tilly, útes navštívilo více potápěčů v naději, že si vyfotí obrázek se slavnou 'nosově ozdobenou' želvou."
+          }
+        }
+      }
+    },
+    "At the feast, Fang unveiled a surprise dish of plant-based treats that amazed the carnivorous critters, while Petal presented a floral arrangement that dazzled." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Na hostině Fang představil překvapivý pokrm z rostlinných pochoutek, který ohromil masožravé tvory, zatímco Petal předvedla ohromující květinovou kompozici."
+          }
+        }
+      }
+    },
     "Back" : {
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zpět"
+          }
+        }
+      }
+    },
+    "Bloom and Gloom" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Květ a smutek"
           }
         }
       }
@@ -477,6 +587,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zrušit"
+          }
+        }
+      }
+    },
+    "Celebrating the Dragon" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oslava draka"
+          }
+        }
+      }
+    },
+    "Celebrating the Turtle" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oslava želvy"
           }
         }
       }
@@ -701,6 +831,16 @@
         }
       }
     },
+    "Dietary Differences" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rozdíly ve stravě"
+          }
+        }
+      }
+    },
     "Do you really wish to delete the guild?" : {
       "localizations" : {
         "cs" : {
@@ -731,6 +871,16 @@
         }
       }
     },
+    "During the festival, a child named Lia wandered into the forest, chasing a fluttering lantern. As night fell, her path home grew dark and menacing." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Během festivalu mladá dívka jménem Lia zabloudila do lesa, pronásledovala plápolající lampion. Když se setmělo, její cesta domů se stala temnou a hrozivou."
+          }
+        }
+      }
+    },
     "Email" : {
       "localizations" : {
         "cs" : {
@@ -747,6 +897,36 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nepotvrzený email"
+          }
+        }
+      }
+    },
+    "Ember, now seen in a new light, began to interact more with the villagers. He helped farmers by clearing large rocks and occasionally showered the village with gentle rains for their crops." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ember, nyní viděn v novém světle, začal více interagovat s vesničany. Pomáhal farmářům odstraňovat velké kameny a občas poléval vesnici jemným deštěm pro jejich plodiny."
+          }
+        }
+      }
+    },
+    "Ember's Contributions" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Emberovy příspěvky"
+          }
+        }
+      }
+    },
+    "Ember's Tale" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Příběh o Ember"
           }
         }
       }
@@ -781,12 +961,42 @@
         }
       }
     },
+    "Fang’s appetite grew, and one day, he tried to sneak a bite of a too-large beetle, ending up with a hilarious headgear of beetle legs." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fangova chuť k jídlu rostla a jednoho dne se pokusil zakousnout do příliš velkého brouka, což skončilo komickým pokrývkem hlavy z broučích nohou."
+          }
+        }
+      }
+    },
     "first" : {
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "first"
+          }
+        }
+      }
+    },
+    "Floral Bonds" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Květinová pouta"
+          }
+        }
+      }
+    },
+    "Floral Oddities" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Květinové zvláštnosti"
           }
         }
       }
@@ -831,12 +1041,82 @@
         }
       }
     },
+    "From Fear To Guardian" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Z postrachu ochráncem"
+          }
+        }
+      }
+    },
+    "From Trash to Treasure" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Z odpadu k pokladu"
+          }
+        }
+      }
+    },
+    "Garden Revelations" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zjevení v zahradě"
+          }
+        }
+      }
+    },
     "Get an invite from a fiend or" : {
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dostaňte pozvánku od přítele nebo"
+          }
+        }
+      }
+    },
+    "Gifts for the Guardian" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dary pro strážce"
+          }
+        }
+      }
+    },
+    "Gifts of Gratitude" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dary vděčnosti"
+          }
+        }
+      }
+    },
+    "Gradually, the humor faded and a serious message about pollution began to resonate with Tilly’s growing audience." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Postupně humor pohasl a vážné poselství o znečištění začalo rezonovat s rostoucím počtem Tillyiných fanoušků."
+          }
+        }
+      }
+    },
+    "Gradually, the villagers changed their views. They started leaving gifts of fruits and gems at the edge of the forest, thanking Ember for his silent guardianship." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Postupně vesničané změnili svůj názor. Začali nechávat dary z ovoce a drahokamů na okraji lesa, jako poděkování Emberovi za jeho tichou ochranu."
           }
         }
       }
@@ -912,6 +1192,16 @@
         }
       }
     },
+    "Hearing soft sobs between the trees, Ember approached Lia carefully, his large eyes glowing gently in the dark. He nudged her back toward the village with his snout, guiding her through the shadows." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Když slyšel jemné vzlyky mezi stromy, Ember se opatrně přiblížil k Lii, jeho velké oči jemně zářily ve tmě. Pomohl jí se svým čumákem najít cestu zpět do vesnice a vedl ji skrze stíny."
+          }
+        }
+      }
+    },
     "Home" : {
       "localizations" : {
         "cs" : {
@@ -948,6 +1238,76 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pokud existuje účet, který patří k zadanému emailu, pokusíme se Vám na něj zaslat instrukce k obnově hesla."
+          }
+        }
+      }
+    },
+    "In a bustling coastal reef, Tilly the turtle becomes an accidental celebrity when a plastic bottle top gets stuck in her nose. As the undersea community watches in a mix of horror and amusement, Tilly’s plight becomes a bizarre spectacle. But beneath the laughs lies a call to action, a reminder of the ocean’s fragility and our role in its fate. Will the marine inhabitants see the message behind the mishap, or will Tilly's predicament be lost in a sea of memes? Dive into the tale of the turtle who turned trash into a treasure of awareness." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "V rušném pobřežním útesu se želva Tilly stane náhodnou celebritou, když se jí do nosu zaklíne vršek plastové láhve. Zatímco podmořská komunita sleduje s míšenými pocity hrůzy a pobavení, Tillyina situace se stává bizarním divadlem. Ale pod smíchem leží výzva k jednání, připomínka křehkosti oceánu a naší role v jeho osudu. Uvidí mořští obyvatelé poselství za tímto neštěstím, nebo bude Tillyin případ ztracen v moři memů? Ponořte se do příběhu želvy, která proměnila odpad v poklad povědomí."
+          }
+        }
+      }
+    },
+    "In a corner of a vibrant garden, Petal and Fang sprouted just inches apart, one thriving on sunlight and water, the other sneakily eyeing the garden insects." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "V koutě živé zahrady vyklíčily Petal a Fang jen několik centimetrů od sebe, jeden prospíval na slunci a vodě, druhý potajmu pozoroval zahradní hmyz."
+          }
+        }
+      }
+    },
+    "In a kingdom cast in shadow and whispered tales, lives Ember, a dragon cloaked in mystery and feared as a beast of destruction. But beneath the rumors lies a secret, a truth only a lost child will uncover. As the night of the festival draws near, a chance encounter might reveal the gentle heart beneath the fearsome scales. Will the villagers see the protector in their midst, or will old fears blind them to the hero they have in Ember? Unveil the mystery of the dragon who longs to guard, not to destroy." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "V království zahaleném stíny a šeptandami žije Ember, drak obestřený tajemstvím a obávaný jako bestie zkázy. Ale pod povrchem lží skrývá se tajemství, pravda, kterou odhalí jen ztracené dítě. Jak se blíží noc festivalu, náhodné setkání může odhalit laskavé srdce pod hrozivými šupinami. Uvidí vesničané ochránce mezi sebou, nebo staré strachy je oslepí před hrdinou, kterého mají v Emberovi? Odhalte záhadu draka, který touží chránit, nikoli ničit."
+          }
+        }
+      }
+    },
+    "In a kingdom shadowed by mountains, a dragon named Ember was rumored to breathe fire of destruction. However, Ember, with his shimmering silver scales, only warmed cold nights for lost travelers." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "V království zahaleném horami se šířily pověsti, že drak jménem Ember vydává ničivý oheň. Avšak Ember, s jeho třpytivými stříbrnými šupinami, pouze zahříval chladné noci pro ztracené cestovatele."
+          }
+        }
+      }
+    },
+    "In the heart of a magical garden, two flowers live side by side: Petal, the gentle vegetarian bloom, and Fang, the carnivorous bud with a taste for meat. Their contrasting diets lead to a series of hilarious and unexpected adventures. As these floral friends explore their unique appetites, they discover that despite their differences, they share common roots. Join Petal and Fang as they navigate the complexities of garden life with humor and a touch of the absurd." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "V srdci kouzelné zahrady žijí vedle sebe dvě květiny: Petal, něžný vegetariánský květ, a Fang, masožravý pupen s chutí na maso. Jejich protikladné diety vedou k sérii vtipných a nečekaných dobrodružství. Když tyto květinové přátelé prozkoumávají své jedinečné chutě, zjistí, že přes své rozdíly mají společné kořeny. Přidejte se k Petal a Fangovi, jak se s humorem a špetkou absurdna vypořádávají se složitostmi života v zahradě."
+          }
+        }
+      }
+    },
+    "Inspired by Ember's act, Lia spoke to her village about the dragon's true nature. 'He’s not the monster in the mountains; he’s our protector,' she declared with confidence." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inspirací z Emberova činu, Lia promluvila ke své vesnici o pravé povaze draka. \"Není to příšera z hor; je to náš ochránce,\" prohlásila s důvěrou."
+          }
+        }
+      }
+    },
+    "Inspired by Tilly, a group of young environmentalists started a campaign to clean up ocean waste, using her image as the campaign face." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inspirací Tilly začala skupina mladých environmentalistů kampaň na čištění oceánského odpadu, přičemž použila její obraz jako tvář kampaně."
           }
         }
       }
@@ -1042,12 +1402,42 @@
         }
       }
     },
+    "Learning from Laughter" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Poučení ze smíchu"
+          }
+        }
+      }
+    },
     "Leave Guild" : {
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Opustit cech"
+          }
+        }
+      }
+    },
+    "Lia, recognizing the dragon's kind intentions, clung to his warm scales. Together, they emerged at the edge of the village, under the watchful eyes of the stunned crowd." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lia, poznávající drakovy laskavé úmysly, se držela jeho teplých šupin. Společně se objevili na okraji vesnice pod pozornými pohledy ohromeného davu."
+          }
+        }
+      }
+    },
+    "Lia's Testimony" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liina svědectví"
           }
         }
       }
@@ -1122,6 +1512,16 @@
         }
       }
     },
+    "Lost in the Night" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ztracena v noci"
+          }
+        }
+      }
+    },
     "Members" : {
       "localizations" : {
         "cs" : {
@@ -1158,6 +1558,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Minut"
+          }
+        }
+      }
+    },
+    "Misunderstood Decorations" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nesprávně pochopené dekorace"
+          }
+        }
+      }
+    },
+    "Murmurs spread as the villagers saw their supposed foe return their lost child. Ember, feeling hopeful, let out a small puff of smoke that glittered like stars, not the flames they feared." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Šumění se rozšířilo mezi vesničany, když viděli svého údajného nepřítele, jak vrací jejich ztracené dítě. Ember, cítě se plný naděje, vypustil malý obláček dýmu, který se třpytil jako hvězdy, ne plameny, kterých se obávali."
           }
         }
       }
@@ -1273,6 +1693,16 @@
         }
       }
     },
+    "One evening, as the village prepared for an annual festival, whispers of Ember's terror spread, fearing he would burn the village down. Unknown to them, Ember watched from afar, sad to be misunderstood." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jednoho večera, když se vesnice připravovala na roční festival, se šířily šeptandy o Emberově teroru, s obavami, že spálí vesnici. Ember z dálky sledoval, smutný z toho, že je nepochopen."
+          }
+        }
+      }
+    },
     "Oops! Failed to load the board :(" : {
       "localizations" : {
         "cs" : {
@@ -1363,6 +1793,26 @@
         }
       }
     },
+    "Over time, Ember wasn't just accepted; he was loved. Festivals now included an extra celebration for the dragon, and Ember, once a feared beast, became the village’s most cherished guardian." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "S časem byl Ember nejen přijat; byl milován. Festivaly nyní zahrnovaly dodatečnou oslavu pro draka, a Ember, kdysi obávaná bestie, se stal nejvíce ceněným strážcem vesnice."
+          }
+        }
+      }
+    },
+    "Overnight, Tilly became an internet sensation as divers captured her predicament, turning her into a meme across social networks." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Přes noc se Tilly stala internetovou senzací, když potápěči zachytili její situaci a proměnili ji v meme na sociálních sítích."
+          }
+        }
+      }
+    },
     "Password" : {
       "localizations" : {
         "cs" : {
@@ -1419,6 +1869,36 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zastavit"
+          }
+        }
+      }
+    },
+    "Petal and Fang decided to experiment with their diets, leading to a mix-up that saw Fang blooming unusually bright, and Petal accidentally trapping a confused ant." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Petal a Fang se rozhodli experimentovat se svými dietami, což vedlo k záměně, při které Fang neobvykle jasně rozkvetl a Petal omylem chytila zmateného mravence."
+          }
+        }
+      }
+    },
+    "Petal tried to convince Fang to try a diet of dew and sunlight, leading to humorous attempts at swapping diets for a day." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Petal se snažila přesvědčit Fanga, aby vyzkoušel stravu z rosy a slunečního svitu, což vedlo k humorným pokusům o výměnu diet na jeden den."
+          }
+        }
+      }
+    },
+    "Petal, ever peaceful, stretched towards the sun, while Fang snapped at passing flies, causing a commotion among the garden dwellers." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Petal, vždy mírumilovná, se natáhla ke slunci, zatímco Fang kousal do létajících much, čímž způsobil rozruch mezi obyvateli zahrady."
           }
         }
       }
@@ -1619,6 +2099,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Od nejvyššího skóre"
+          }
+        }
+      }
+    },
+    "Sea Change" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radikální změna"
           }
         }
       }
@@ -1893,12 +2383,112 @@
         }
       }
     },
-    "testStoryline" : {
+    "The Experiment" : {
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "testStoryline"
+            "value" : "Experiment"
+          }
+        }
+      }
+    },
+    "The experiment brought them closer, teaching each the value of the other's lifestyle, and they planned a garden feast that welcomed all creatures." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Experiment je sblížil, oba se naučili cenit si životního stylu toho druhého, a naplánovali zahradní hostinu, která přivítala všechny bytosti."
+          }
+        }
+      }
+    },
+    "The Festival of Fears" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Festival obav"
+          }
+        }
+      }
+    },
+    "The garden erupted in laughter at Fang’s beetle bonnet, and even Fang had to chuckle, seeing his reflection in a dewdrop." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zahrada se rozchechtala nad Fangovou broučí čepicí a dokonce i Fang se musel zasmát, když uviděl svůj odraz v kapce rosy."
+          }
+        }
+      }
+    },
+    "The garden thrived as Petal and Fang, with their unique quirks, proved that diversity is the garden’s true strength, celebrating their differences with every bloom." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zahrada prosperovala, protože Petal a Fang se svými jedinečnými vlastnostmi dokázali, že rozmanitost je opravdovou silou zahrady, a oslavovali své rozdíly s každým květem."
+          }
+        }
+      }
+    },
+    "The local sea creatures, realizing the impact of their actions, began offering gifts of natural beauty to Tilly, like coral pieces and colorful stones." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Místní mořské bytosti, uvědomující si dopad svých činů, začaly Tilly nabízet dary přírodní krásy, jako jsou kousky korálů a barevné kameny."
+          }
+        }
+      }
+    },
+    "The Message Emerges" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vzkaz se objevuje"
+          }
+        }
+      }
+    },
+    "The Misunderstood Guardian" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nepochopený strážce"
+          }
+        }
+      }
+    },
+    "The Return of the Good Dragon" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Návrat dobrého draka"
+          }
+        }
+      }
+    },
+    "The Unintended Ornament" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nevolný ozdobný předmět"
+          }
+        }
+      }
+    },
+    "The Vegetarian's Dilemma" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vegetariánovo dilema"
           }
         }
       }
@@ -1929,6 +2519,46 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tento uživatel je již členem tohoto cechu."
+          }
+        }
+      }
+    },
+    "Tilly the turtle was happily swimming through her reef when a plastic bottle top, a remnant of human carelessness, lodged itself comically in her nose." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Želva Tilly spokojeně plavala svým útesem, když se jí v nose komicky zasekl vršek plastové lahve, pozůstatek lidské nedbalosti."
+          }
+        }
+      }
+    },
+    "Tilly, once a comedic meme, became a symbol of resilience and a beloved figure in the fight against ocean pollution." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tilly, kdysi komický meme, se stala symbolem odolnosti a milovanou postavou v boji proti znečištění oceánů."
+          }
+        }
+      }
+    },
+    "Tilly's Contributions" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tillyiny příspěvky"
+          }
+        }
+      }
+    },
+    "Tilly's Triumph" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tillyho triumf"
           }
         }
       }
@@ -2009,6 +2639,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Top 10"
+          }
+        }
+      }
+    },
+    "Unexpected Guests" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neočekávaní hosté"
+          }
+        }
+      }
+    },
+    "Unity in Diversity" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jednota v rozmanitosti"
           }
         }
       }
@@ -2123,6 +2773,16 @@
         }
       }
     },
+    "Viral Sensation" : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Virální senzace"
+          }
+        }
+      }
+    },
     "Welcome to Memorizify" : {
       "localizations" : {
         "cs" : {
@@ -2139,6 +2799,26 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vítejte v Memorizify! Váš všestranný studijní společník. Sledujte svůj pokrok, učte se s přáteli a udělejte si z učení dobrodružství. Začněte teď a zvyšte svou úroveň ve studiu!"
+          }
+        }
+      }
+    },
+    "While Tilly dealt with her unwelcome accessory, other sea creatures started sporting garbage accessories in a misguided attempt at fashion." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zatímco Tilly se vypořádávala s nechtěným doplňkem, další mořské bytosti začaly nosit odpadkové doplňky v omylné snaze o módu."
+          }
+        }
+      }
+    },
+    "With her newfound fame, Tilly helped spread awareness by leading divers on tours of her reef, showing the beauty worth saving." : {
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "S nově nabytou slávou Tilly pomáhala šířit povědomí tím, že vedla potápěče na prohlídky svého útesu a ukazovala krásu, která stojí za záchranu."
           }
         }
       }

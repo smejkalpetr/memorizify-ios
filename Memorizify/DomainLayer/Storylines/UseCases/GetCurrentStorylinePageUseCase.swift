@@ -25,10 +25,14 @@ struct GetCurrentStorylinePageUseCaseImpl: GetCurrentStorylinePageUseCase {
     /// - Returns: The current page of the storyline.
     func execute(_ storyline: Storyline) throws -> any StorylinePage {
         switch storyline.kind {
-        case let .testStoryline(data):
-            return try data.getCurrentPage(finished: storyline.finished, goal: storyline.goal)
         case .plainTimerStoryline:
             return PlainTimerStorylinePage()
+        case let .draagonStoryline(data):
+            return try data.getCurrentPage(finished: storyline.finished, goal: storyline.goal)
+        case let .turtleStoryline(data):
+            return try data.getCurrentPage(finished: storyline.finished, goal: storyline.goal)
+        case let .flowerStoryline(data):
+            return try data.getCurrentPage(finished: storyline.finished, goal: storyline.goal)
         }
     }
 }

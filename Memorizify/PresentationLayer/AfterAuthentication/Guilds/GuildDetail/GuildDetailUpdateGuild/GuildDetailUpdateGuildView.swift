@@ -132,7 +132,7 @@ struct GuildDetailUpdateGuildView: View {
                 ),
                 leaderUid: "",
                 goal: 0.0,
-                storylineKind: .testStoryline(TestStoryline())
+                storylineKind: .plainTimerStoryline(PlainTimerStoryline())
             )
         ) {}
     )
